@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import axios from 'axios'
+// import axios from 'axios'
 import clsx from 'clsx'
 import React, { FC, useEffect, useState } from 'react'
-import { shallowEqual, useSelector } from 'react-redux'
+// import { shallowEqual, useSelector } from 'react-redux'
 import { Link, useLocation } from 'react-router-dom'
 import { UserModel } from '../../../../app/modules/auth/models/UserModel'
-import { RootState } from '../../../../setup'
+// import { RootState } from '../../../../setup'
 import { checkIsActive, KTSVG } from '../../../helpers'
 import {
   // HeaderNotificationsMenu,
@@ -21,10 +21,10 @@ const toolbarButtonMarginClass = 'ms-1 ms-lg-3',
   toolbarButtonIconSizeClass = 'svg-icon-1'
 
 const Topbar: FC = () => {
-  const user: UserModel = useSelector<RootState>(({ auth }) => auth.user, shallowEqual) as UserModel
+  // const user: UserModel = useSelector<RootState>(({ auth }) => auth.user, shallowEqual) as UserModel
   const userCan = {
-    aba: user.permissions.includes(`Notification ABA Payment`),
-    venderContract: user.permissions.includes(`Notification Vender Contract`),
+    // aba: user.permissions.includes(`Notification ABA Payment`),
+    // venderContract: user.permissions.includes(`Notification Vender Contract`),
   }
   const { config } = useLayout()
 
@@ -34,13 +34,13 @@ const Topbar: FC = () => {
 
   const [abaCount, setAbaCount] = useState(0)
   const [venContractCount, setVenContractCount] = useState(0)
-  useEffect(() => {
-    axios.get('payment/monitor-payment-abacount').then((res) => {
-      setAbaCount(res.data.aba_monitor?.count)
-      setVenContractCount(res.data.vender_monitor?.count)
-    })
-      .catch((error) => console.log(error))
-  })
+  // useEffect(() => {
+  //   axios.get('payment/monitor-payment-abacount').then((res) => {
+  //     setAbaCount(res.data.aba_monitor?.count)
+  //     setVenContractCount(res.data.vender_monitor?.count)
+  //   })
+  //     .catch((error) => console.log(error))
+  // })
 
   return (
     <div className='d-flex align-items-stretch flex-shrink-0'>
@@ -122,7 +122,7 @@ const Topbar: FC = () => {
         <HeaderNotificationsMenu />
         {/* end::Menu wrapper * /}
       </div> */}
-      {userCan.venderContract && (
+      {/* {userCan.venderContract && ( */}
         <Link
           className={
             clsx(
@@ -156,8 +156,8 @@ const Topbar: FC = () => {
 
           </div>
         </Link>
-      )}
-      {userCan.aba && (
+      {/* )} */}
+      {/* {userCan.aba && ( */}
         <Link
           className={
             clsx(
@@ -191,7 +191,7 @@ const Topbar: FC = () => {
 
           </div>
         </Link>
-      )}
+      {/* )} */}
       {/* begin::User */}
       <div
         className={clsx('d-flex align-items-center', toolbarButtonMarginClass)}
@@ -205,7 +205,7 @@ const Topbar: FC = () => {
           data-kt-menu-placement='bottom-end'
           data-kt-menu-flip='bottom'
         >
-          <img src={user.photo} alt='metronic' className='rounded-circle ' style={{ borderColor: '#0c5196', borderWidth: 4, borderStyle: 'solid' }} />
+          {/* <img src={user.photo} alt='metronic' className='rounded-circle ' style={{ borderColor: '#0c5196', borderWidth: 4, borderStyle: 'solid' }} /> */}
         </div>
         <HeaderUserMenu />
         {/* end::Toggle */}

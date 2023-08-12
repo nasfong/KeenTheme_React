@@ -1,12 +1,12 @@
-import {useContext} from 'react'
-import {DataContext} from '../app/reducer/GlobalState'
-import Toast from './ToastComponent'
-import {Toast as BToast} from 'react-bootstrap-v5'
+// import {useContext} from 'react'
+// import {DataContext} from '../app/reducer/GlobalState'
+// import Toast from './ToastComponent'
+import {Toast as BToast} from 'react-bootstrap'
 
 
 const Notify = () => {
-  const {state, dispatch} = useContext(DataContext)
-  const {notify} = state
+  // const {state, dispatch} = useContext(DataContext)
+  // const {notify} = state
   
   return (
     <>
@@ -14,7 +14,7 @@ const Notify = () => {
         className='toast-container position-fixed '
         style={{zIndex: 9999, top: '70px', right: '15px'}}
       >
-        {notify.error && (
+        {/* {notify.error && (
           <Toast
             msg={{msg: notify.error, title: 'Error'}}
             handleShow={() => dispatch({type: 'NOTIFY', payload: {}})}
@@ -39,7 +39,7 @@ const Notify = () => {
             bgColor='warning'
             count={state.count}
           />
-        )}
+        )} */}
       </BToast>
     </>
   )

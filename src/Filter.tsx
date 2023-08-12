@@ -1,10 +1,9 @@
 import { Col, Form, Row } from "react-bootstrap"
 
-function Filter({ filterApply, setFilterApply, reset, setPage }) {
+function Filter({ filterApply, setFilterApply }) {
   const handleChangeInput = (e) => {
     const { name, value } = e.target
     setFilterApply({ ...filterApply, [name]: value })
-    setPage(1)
   }
 
   return (
@@ -107,10 +106,6 @@ function Filter({ filterApply, setFilterApply, reset, setPage }) {
                       />
                     </Col>
                   </Form.Group>
-
-                  <button className='btn btn-danger btn-sm float-end' onClick={reset}>
-                    Reset
-                  </button>
 
                 </div>
               </div>

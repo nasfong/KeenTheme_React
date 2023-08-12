@@ -6,10 +6,10 @@ import { DrawerComponent } from '../../assets/ts/components'
 
 const Content: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const { classes } = useLayout()
-  const location = useLocation()
+  // const location = useLocation()
   useEffect(() => {
     DrawerComponent.hideAll()
-  }, [location])
+  }, [])
 
   return (
     <div id='kt_content_container' className={clsx(classes.footerContainer.join(' '))}>

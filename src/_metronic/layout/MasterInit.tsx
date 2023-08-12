@@ -1,4 +1,4 @@
-import {useEffect, useRef} from 'react'
+import { useEffect, useRef } from 'react'
 import {
   MenuComponent,
   DrawerComponent,
@@ -9,10 +9,10 @@ import {
   SwapperComponent,
 } from '../assets/ts/components'
 
-import {useLayout} from './core'
+import { useLayout } from './core'
 
-export function MasterInit() {
-  const {config} = useLayout()
+export const MasterInit: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { config } = useLayout()
   const isFirstRun = useRef(true)
   const pluginsInitialization = () => {
     isFirstRun.current = false
@@ -34,5 +34,5 @@ export function MasterInit() {
     }
   }, [config])
 
-  return <></>
+  return <>{children}</>
 }

@@ -1,6 +1,7 @@
 import { Modal } from "react-bootstrap"
 import { KTSVG } from "./_metronic/helpers"
 import Basic from "./Basic"
+import Advance from "./Advance"
 
 type props = {
     show: boolean
@@ -13,7 +14,7 @@ const FormikModal: React.FC<props> = ({ show, setShow }) => {
     const handleClose = () => setShow(!show)
 
     return (
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose} size="xl">
             <Modal.Header>
                 <Modal.Title>Modal heading</Modal.Title>
                 <div className='btn btn-icon btn-sm btn-light-primary' onClick={handleClose}>
@@ -21,7 +22,8 @@ const FormikModal: React.FC<props> = ({ show, setShow }) => {
                 </div>
             </Modal.Header>
             <Modal.Body>
-                <Basic />
+                {/* <Basic /> */}
+                <Advance />
             </Modal.Body>
 
         </Modal>

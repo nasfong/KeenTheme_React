@@ -1,13 +1,15 @@
-import { useState } from 'react'
+import { useState, useLayoutEffect } from 'react'
 import { KTSVG } from './_metronic/helpers'
 import { MyPagination } from './components/MyPagination'
 import { CalenderDropdown } from './CalenderDropdown'
 import FormModal from './FormModal'
 import Filter from './Filter'
 import FormikModal from './FormikModal'
+import { useTranslation } from 'react-i18next'
 
 
 function App() {
+  const { t, i18n } = useTranslation()
 
   const [count, setCount] = useState(0)
   const [show, setShow] = useState(false)
@@ -15,11 +17,20 @@ function App() {
   const [page, setPage] = useState(1)
 
   const handlePage = (updatePage: number) => setPage(updatePage)
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
+  useLayoutEffect(() => {
+    i18n.changeLanguage('en')
+  }, [i18n])
 
   return (
     <div className='container text-center'>
-      <h1>Vite + React</h1>
+      <button className='btn btn-danger btn-sm' onClick={() => changeLanguage("en")}>en</button>
+      <button className='btn btn-dark btn-sm' onClick={() => changeLanguage("kh")}>kh</button>
       <div className="card card-body">
+        <h1>{t('HELLO')}</h1>
         <div className='d-flex justify-content-start py-0 table-responsive mt-xl-10'>
           <div className='ms-0 p-5 bg-light border rounded'>
             <p className="h1">$0</p>
@@ -48,7 +59,7 @@ function App() {
 
         <table id='kt_customers_table' className='table align-middle table-row-dashed fs-6 gy-5'>
           <thead>
-            <tr className='text-start text-gray-400 fw-bolder fs-7 gs-0'>
+            <tr className='text-gray-400 fw-bolder fs-7 gs-0'>
               <th className=''>Name</th>
               <th className='min-w-100px'>Phone</th>
               <th className='min-w-125px'>E-mail</th>
@@ -64,7 +75,7 @@ function App() {
               <td>fongren007@gmail.com</td>
               <td>Phnom Penh</td>
               <td>Active</td>
-              <td>...</td>
+              <td className='text-end'>...</td>
             </tr>
           </tbody>
         </table>

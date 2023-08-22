@@ -1,9 +1,7 @@
 //
 // Theme style
 //
-:root{
-  --theme-mode: dark
-}
+
 // Mode
 $mode: default;
 
@@ -17,14 +15,3 @@ $mode: default;
 // Layout
 @import 'layout/layout';
 @import './core/layout/docs/layout';
-
-.table > :not(:first-child){
-    border-top: none !important;
-}
-.fv-help-block {
-    color: $danger !important;
-}
-
-.b-ground {
-  background-color: aquamarine;
-}

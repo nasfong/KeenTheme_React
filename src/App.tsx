@@ -56,29 +56,30 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
         <Filter filterApply={{}} setFilterApply={{}} />
-
-        <table id='kt_customers_table' className='table align-middle table-row-dashed fs-6 gy-5'>
-          <thead>
-            <tr className='text-gray-400 fw-bolder fs-7 gs-0'>
-              <th className=''>Name</th>
-              <th className='min-w-100px'>Phone</th>
-              <th className='min-w-125px'>E-mail</th>
-              <th className=''>Address</th>
-              <th className=''>Status</th>
-              <th className='text-end min-w-100px'>Action</th>
-            </tr>
-          </thead>
-          <tbody className='fw-bold text-gray-600'>
-            <tr>
-              <td>nasfong</td>
-              <td>093292931</td>
-              <td>fongren007@gmail.com</td>
-              <td>Phnom Penh</td>
-              <td>Active</td>
-              <td className='text-end'>...</td>
-            </tr>
-          </tbody>
-        </table>
+        <div className='table-responsive'>
+          <table id='kt_customers_table' className='table align-middle table-row-dashed fs-6 gy-5'>
+            <thead>
+              <tr className='text-gray-400 fw-bolder fs-7 gs-0'>
+                <th className=''>Name</th>
+                <th className='min-w-100px'>Phone</th>
+                <th className='min-w-125px'>E-mail</th>
+                <th className=''>Address</th>
+                <th className=''>Status</th>
+                <th className='text-end min-w-100px'>Action</th>
+              </tr>
+            </thead>
+            <tbody className='fw-bold text-gray-600'>
+              <tr>
+                <td>nasfong</td>
+                <td>093292931</td>
+                <td>fongren007@gmail.com</td>
+                <td>Phnom Penh</td>
+                <td>Active</td>
+                <td className='text-end'>...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <MyPagination page={page} totalPages={10} handlePagination={handlePage} perPage={10} />
       </div>
       <p className="read-the-docs">

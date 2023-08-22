@@ -1,34 +1,52 @@
+import { forwardRef, InputHTMLAttributes } from 'react';
+import { Col, Form, FormCheckProps, Row } from 'react-bootstrap';
 import clsx from 'clsx';
-import { FieldHookConfig, useField } from 'formik';
-import { forwardRef, DetailedHTMLProps, InputHTMLAttributes } from 'react';
-import { Form, FormCheckProps } from 'react-bootstrap';
-
-//* Get type {name} from  useField()
-type GetRequiredKeys<T> = { [K in keyof T as (undefined extends T[K] ? never : K)]: T[K] }
-type SomeTypeRequiredKeys = GetRequiredKeys<FieldHookConfig<string>>;
+import { useTranslation } from 'react-i18next';
+import { DotNestedKeys } from '../types/TGlobal';
+import { ILanguage } from '../_metronic/i18n';
+import { FormikProps } from 'formik';
 
 export const CheckBox = forwardRef<
   HTMLInputElement,
-  DetailedHTMLProps<
-    InputHTMLAttributes<HTMLInputElement>, HTMLInputElement
-  > & FormCheckProps & SomeTypeRequiredKeys & { label: string }
->(({ label, className, ...props }, ref) => {
+  InputHTMLAttributes<HTMLInputElement>
+  & FormCheckProps
+  & {
+    label?: DotNestedKeys<ILanguage>,
+    inline?: boolean,
+    name: string,
+    formik?: FormikProps<any>,
+    required?: boolean
+  }
+>(({ formik, label, inline, className, name, onChange, value, required, ...props }, ref) => {
+  const { t } = useTranslation()
+  const { handleChange, handleBlur, values, touched, errors } = formik || {}
+  const isInvalid = touched && errors && touched[name] && errors[name]
 
-  const [field, meta] = useField(props);
   return (
-    <Form.Group>
-      <Form.Label htmlFor={props.id || props.name} className='required form-label'>{label}</Form.Label>
-      <Form.Check
-        ref={ref}
-        id={props.id || props.name}
-        className={clsx(className, { 'form-control-solid': !meta.touched || !meta.error })}
-        isInvalid={!!meta.touched && !!meta.error}
-        {...field}
-        {...props}
-      />
-      {meta.touched && meta.error ? (
-        <Form.Control.Feedback type='invalid'>{meta.error}</Form.Control.Feedback>
-      ) : null}
+    <Form.Group as={Row} className={clsx(className, { 'mb-5': !isInvalid })}>
+      {label ?
+        <Form.Label
+          column={inline} lg='3' md='4' sm='3'
+          htmlFor={props.id || name}
+          className={clsx('form-label text-nowrap', { 'required': required })}
+        >
+          {t(label)}
+        </Form.Label>
+        : null}
+      <Col>
+        <Form.Check
+          ref={ref}
+          id={props.id || name}
+          className={clsx({ 'form-control-solid': !isInvalid })}
+          isInvalid={!!isInvalid}
+          name={name}
+          onChange={onChange || handleChange}
+          onBlur={handleBlur}
+          defaultValue={values ? values[name] : value}
+          {...props}
+        />
+        <Form.Control.Feedback type='invalid'>{isInvalid as string}</Form.Control.Feedback>
+      </Col>
     </Form.Group>
   )
 })

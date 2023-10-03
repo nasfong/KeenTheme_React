@@ -4,6 +4,7 @@
 
 // Form control
 .form-control {
+  background-color: $light;
   box-shadow: none !important;
 
   // Dropdown shown state
@@ -17,6 +18,8 @@
   &[readonly] {
     background-color: $input-readonly-bg;
   }
+
+
 
   // Solid style
   &.form-control-solid {
@@ -35,6 +38,10 @@
       border-color: $input-solid-bg-focus;
       color: $input-solid-color;
       transition: $transition-input;
+    }
+    &[disabled] {
+      color: $gray-600; 
+      opacity: 80%;
     }
   }
 

@@ -1,52 +1,37 @@
 import { forwardRef, SelectHTMLAttributes } from 'react';
-import { Col, Form, FormSelectProps, Row } from 'react-bootstrap';
-import { FieldHookConfig, useField } from 'formik';
+import { Form, FormControlProps } from 'react-bootstrap';
 import clsx from 'clsx';
-
-//* Get type {name} from  useField()
-type GetRequiredKeys<T> = { [K in keyof T as (undefined extends T[K] ? never : K)]: T[K] }
-type SomeTypeRequiredKeys = GetRequiredKeys<FieldHookConfig<string>>;
+import { FormikProps } from 'formik';
 
 export const Select = forwardRef<
   HTMLSelectElement,
-  SelectHTMLAttributes<HTMLInputElement>
-  & FormSelectProps
-  & SomeTypeRequiredKeys
+  SelectHTMLAttributes<HTMLSelectElement>
+  & FormControlProps
   & {
-    label: string,
-    required?: boolean,
-    inline?: boolean
+    name: string,
+    formik?: FormikProps<any>,
   }
->(({ children, label, required, inline, className, ...props }, ref) => {
+>(({ formik, className, name, onChange, value, required, children, ...props }, ref) => {
 
-  const [field, meta] = useField(props);
+  const { handleChange, handleBlur, values, touched, errors } = formik || {}
+  const isInvalid = touched && errors && touched[name] && errors[name]
 
-  const isInvalid = required && !!meta.touched && !!meta.error
-  // console.log({ field, meta, helper })
   return (
-    <Form.Group as={Row} className={clsx(className, { 'mb-5': !isInvalid })}>
-      <Form.Label
-        column={inline} lg='3' md='2' sm='2'
-        htmlFor={props.id || props.name}
-        className={clsx('form-label', { 'required': required })}
+    <>
+      <Form.Select
+        ref={ref}
+        id={props.id || name}
+        className={clsx({ 'form-select-solid': !isInvalid }, className)}
+        isInvalid={!!isInvalid}
+        name={name}
+        onChange={onChange || handleChange}
+        onBlur={handleBlur}
+        value={values ? values[name] : value}
+        {...props}
       >
-        {label}
-      </Form.Label>
-      <Col className='fv-row'>
-        <Form.Select
-          ref={ref}
-          id={props.id || props.name}
-          className={clsx({ 'form-select-solid': !isInvalid })}
-          isInvalid={isInvalid}
-          {...field}
-          {...props}
-        >
-          {children}
-        </Form.Select>
-        {isInvalid ? (
-          <Form.Control.Feedback type='invalid'>{meta.error}</Form.Control.Feedback>
-        ) : null}
-      </Col>
-    </Form.Group>
+        {children}
+      </Form.Select>
+      <Form.Control.Feedback type='invalid'> {isInvalid as string}</Form.Control.Feedback>
+    </>
   )
 })

@@ -9,12 +9,12 @@ import '@formatjs/intl-relativetimeformat/locale-data/fr'
 import '@formatjs/intl-relativetimeformat/locale-data/ja'
 import '@formatjs/intl-relativetimeformat/locale-data/zh'
 
-import deMessages from './messages/de.json'
-import enMessages from './messages/en.json'
-import esMessages from './messages/es.json'
-import frMessages from './messages/fr.json'
-import jaMessages from './messages/ja.json'
-import zhMessages from './messages/zh.json'
+import deMessages from './locale/de.json'
+import enMessages from './locale/en.json'
+import esMessages from './locale/es.json'
+import frMessages from './locale/fr.json'
+import jaMessages from './locale/ja.json'
+import zhMessages from './locale/zh.json'
 
 const allMessages = {
   de: deMessages,

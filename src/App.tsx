@@ -6,6 +6,11 @@ import FormModal from './FormModal'
 import Filter from './Filter'
 import FormikModal from './FormikModal'
 import { useTranslation } from 'react-i18next'
+import ReactHookFormModal from './ReactHookFormModal'
+import ReactHookForm from './components/ReactHookForm'
+import Table from 'components/Table'
+import { Link } from 'react-router-dom'
+// import ReactQuery from './components/ReactQuery'
 
 
 function App() {
@@ -14,6 +19,7 @@ function App() {
   const [count, setCount] = useState(0)
   const [show, setShow] = useState(false)
   const [show1, setShow1] = useState(false)
+  const [show2, setShow2] = useState(false)
   const [page, setPage] = useState(1)
 
   const handlePage = (updatePage: number) => setPage(updatePage)
@@ -27,8 +33,15 @@ function App() {
 
   return (
     <div className='container text-center'>
+      <Link to='management'>Management</Link>
+      {/* <ReactQuery /> */}
+      <div className='card card-body'>
+        <ReactHookForm />
+      </div>
+
       <button className='btn btn-danger btn-sm' onClick={() => changeLanguage("en")}>en</button>
       <button className='btn btn-dark btn-sm' onClick={() => changeLanguage("kh")}>kh</button>
+
       <div className="card card-body">
         <h1>{t('HELLO')}</h1>
         <div className='d-flex justify-content-start py-0 table-responsive mt-xl-10'>
@@ -56,37 +69,15 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
         <Filter filterApply={{}} setFilterApply={{}} />
-        <div className='table-responsive'>
-          <table id='kt_customers_table' className='table align-middle table-row-dashed fs-6 gy-5'>
-            <thead>
-              <tr className='text-gray-400 fw-bolder fs-7 gs-0'>
-                <th className=''>Name</th>
-                <th className='min-w-100px'>Phone</th>
-                <th className='min-w-125px'>E-mail</th>
-                <th className=''>Address</th>
-                <th className=''>Status</th>
-                <th className='text-end min-w-100px'>Action</th>
-              </tr>
-            </thead>
-            <tbody className='fw-bold text-gray-600'>
-              <tr>
-                <td>nasfong</td>
-                <td>093292931</td>
-                <td>fongren007@gmail.com</td>
-                <td>Phnom Penh</td>
-                <td>Active</td>
-                <td className='text-end'>...</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <Table />
         <MyPagination page={page} totalPages={10} handlePagination={handlePage} perPage={10} />
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
       <button className='btn btn-primary btn-lg me-2' onClick={() => setShow(true)}>button</button>
-      <button className='btn btn-info btn-lg' onClick={() => setShow1(true)}>Formik</button>
+      <button className='btn btn-info btn-lg me-2' onClick={() => setShow1(true)}>Formik</button>
+      <button className='btn btn-warning btn-lg' onClick={() => setShow2(true)}>ReactHookForm</button>
       <div className='card-toolbar'>
         <button
           type='button'
@@ -108,6 +99,9 @@ function App() {
 
       <FormModal show={show} setShow={setShow} />
       <FormikModal show={show1} setShow={setShow1} />
+      <ReactHookFormModal show={show2} setShow={setShow2} />
+
+
     </div>
   )
 }

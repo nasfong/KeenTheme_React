@@ -1,0 +1,13 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.g-y-3 {
+  row-gap: 0.3rem;
+}

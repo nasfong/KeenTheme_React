@@ -1,3 +1,3 @@
-export * from './messages/En'
-export * from './messages/Kh'
-export * from './types.d'
+export * from './locale/en'
+export * from './locale/kh'
+export * from './i18next.d'

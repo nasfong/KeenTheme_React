@@ -3,8 +3,8 @@ import { Col, Form, FormControlProps, Row } from 'react-bootstrap';
 import clsx from 'clsx';
 import { useTranslation } from 'react-i18next';
 import { DotNestedKeys } from '../types/TGlobal';
-import { ILanguage } from '../_metronic/i18n';
 import { FormikProps } from 'formik';
+import { ILanguage } from '_metronic/i18n';
 
 export const Input = forwardRef<
   HTMLInputElement,

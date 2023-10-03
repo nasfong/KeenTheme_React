@@ -34,6 +34,7 @@ const FormModal: React.FC<props> = ({ show, setShow }) => {
               name='username'
               // isInvalid={true}
               className='form-control-solid'
+              defaultValue='nasfong'
               placeholder='Username'
             />
             {/* <Form.Control.Feedback type='invalid'>name is required</Form.Control.Feedback> */}
@@ -43,13 +44,16 @@ const FormModal: React.FC<props> = ({ show, setShow }) => {
             <Form.Control
               type='number'
               name='phone'
-              isInvalid={true}
-              className=''
+              // isInvalid={true}
+              className='form-control-solid'
               placeholder='phone'
+              defaultValue={1900}
               disabled
+              // readOnly
             />
             <Form.Control.Feedback type='invalid'>phone is required</Form.Control.Feedback>
           </Form.Group>
+          <Form.Label className='form-label'>Date</Form.Label>
           <input
             className="form-control form-control-solid   active"
             placeholder="Select a date"

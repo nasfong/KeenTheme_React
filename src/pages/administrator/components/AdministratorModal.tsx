@@ -1,46 +1,44 @@
-import { KTSVG } from "_metronic/helpers"
-import { Form, Modal } from "react-bootstrap"
-import { useEffect, useState } from 'react';
-import { useFormik } from "formik";
 import * as Yup from 'yup';
+import { useEffect } from "react";
+import { Form, Modal } from "react-bootstrap"
+import { useFormik } from "formik";
+import { useLazyQuery, useMutation } from "@apollo/client";
 import { InputV } from "components/InputV";
-import { OperationVariables, WatchQueryOptions, useLazyQuery, useMutation } from "@apollo/client";
 import { CREATE_USER, UPDATE_USER } from "graphql/mutations/user.mutation";
-import { GET_ALL_ROLES } from "graphql/querys/role.query";
+import { GET_ROLE_DROPDOWN } from "graphql/querys/role.query";
+import { GetAllUsersQuery, GetUserQuery, UserInput } from "__generated__/graphql";
 import { Select } from "components/Select";
-import { GetAllUsersQuery, GetUserQuery } from "__generated__/graphql";
 import useOnceCall from "app/utils/useOneCall";
+import { KTSVG } from "_metronic/helpers"
+import { UpdateQuerys } from 'types/TGlobal';
 
 type Props = {
-  refetch: () => void
-  user?: GetUserQuery["getUser"]
-  updateQuery: <TVars extends OperationVariables>(mapFn: (previousQueryResult: GetAllUsersQuery, options: Pick<WatchQueryOptions<TVars, GetAllUsersQuery>, "variables">) => GetAllUsersQuery) => void
+  modal: boolean
+  handleCloseModal: () => void
+  user: GetUserQuery["getUser"] | null
+  updateQuery: UpdateQuerys<GetAllUsersQuery>
 }
 
-type userFormik = Omit<GetUserQuery["getUser"], 'id'>
-
-const AdministratorModal = ({ refetch, user, updateQuery }: Props) => {
-
+const AdministratorModal: React.FC<Props> = ({ modal, handleCloseModal, user, updateQuery }) => {
   // Submit
   const [addUser] = useMutation(CREATE_USER)
   const [updateUser] = useMutation(UPDATE_USER)
 
   // Dropdown
-  const [getRoleDropdown, { data: roleDropdown }] = useLazyQuery(GET_ALL_ROLES)
+  const [getRoleDropdown, { data: roleDropdown }] = useLazyQuery(GET_ROLE_DROPDOWN)
 
-  const [show, setShow] = useState(false)
 
   const handleClose = () => {
-    setShow(!show)
+    handleCloseModal()
     resetForm()
   }
 
-  const formik = useFormik<userFormik>({
+  const formik = useFormik<UserInput>({
     initialValues: {
       username: '',
       password: '',
       email: '',
-      role: []
+      role: ''
     },
     validationSchema: Yup.object({
       username: Yup.string()
@@ -56,18 +54,19 @@ const AdministratorModal = ({ refetch, user, updateQuery }: Props) => {
         .required("This field is required")
         .min(8, "Password must be 8 or more characters")
       ,
-      role: Yup.array()
+      role: Yup.string()
+        .required("This field is required")
 
     }),
-    onSubmit: (values) => {
+    onSubmit: (values, { setSubmitting }) => {
+      setSubmitting(true)
       // Update
       if (user) {
         updateUser({
           variables: {
             id: user.id,
             input: {
-              ...values,
-              role: values.role?.filter(role => role)
+              ...values
             },
           }
         }).then((res) => {
@@ -77,39 +76,36 @@ const AdministratorModal = ({ refetch, user, updateQuery }: Props) => {
           handleClose()
         })
           .catch((err) => console.log(err))
+          .finally(() => setSubmitting(false))
         return
       }
       // Create
       addUser({ variables: { input: values } })
-        .then(() => {
-          refetch()
+        .then((res) => {
+          updateQuery(({ getAllUsers }) => ({
+            getAllUsers: res.data?.createUser ? [...getAllUsers, res.data.createUser] : getAllUsers
+          }))
           handleClose()
         })
         .catch((err) => console.log(err))
-
+        .finally(() => setSubmitting(false))
     },
   });
-  const { setValues, resetForm } = formik
+  const { setValues, resetForm, isSubmitting } = formik
 
   useOnceCall(() => {
     getRoleDropdown()
-    console.log('fetch')
-  }, show)
+  }, modal)
 
   useEffect(() => {
     if (user) {
       const { id, ...rest } = user
-      setValues(rest)
+      setValues({ ...rest, role: user.role?.id })
     }
-    setShow(!!user)
-  }, [user])
+  }, [user, modal])
   return (
     <>
-      <button
-        className='btn btn-primary btn-sm'
-        onClick={() => setShow(true)}
-      >Create</button>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={modal} onHide={handleClose}>
         <Modal.Header>
           <Modal.Title>Modal heading</Modal.Title>
           <div className='btn btn-icon btn-sm btn-light-primary' onClick={handleClose}>
@@ -146,13 +142,12 @@ const AdministratorModal = ({ refetch, user, updateQuery }: Props) => {
               />
             </Form.Group>
             <Form.Group className='mb-5'>
-              <Form.Label column lg='4' className='form-label text-nowrap'>
+              <Form.Label column lg='4' className='form-label text-nowrap required'>
                 Roles
               </Form.Label>
               <Select
                 name='role'
                 formik={formik}
-                multiple
               >
                 <option value=''>Please choose</option>
                 {roleDropdown?.getRoleDropdown ? Object.keys(roleDropdown?.getRoleDropdown).map((key) => (
@@ -170,7 +165,14 @@ const AdministratorModal = ({ refetch, user, updateQuery }: Props) => {
               Close
             </button>
             <button className='btn btn-primary' type='submit'>
-              Save Changes
+              {isSubmitting ? (
+                <span className='indicator-progress' style={{ display: 'block' }}>
+                  Please wait...{' '}
+                  <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
+                </span>
+              ) : (
+                !user ? 'Save' : 'update'
+              )}
             </button>
           </Modal.Footer>
         </form>

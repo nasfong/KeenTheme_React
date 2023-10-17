@@ -8,13 +8,11 @@ export const CREATE_USER = gql(`
       id
       username
       password
-      createdAt
       email
       role {
         id
         name
       }
-      createdAt
     }
   }
 `)
@@ -26,8 +24,10 @@ export const UPDATE_USER = gql(`
       username
       password
       email
-      role
-      createdAt
+      role {
+        id
+        name
+      }
     }
   }
 `)

@@ -76,7 +76,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <button className='btn btn-primary btn-lg me-2' onClick={() => setShow(true)}>button</button>
-      <button className='btn btn-info btn-lg me-2' onClick={() => setShow1(true)}>Formik</button>
+      <button className='btn btn-success btn-lg me-2' onClick={() => setShow1(true)}>Formik</button>
       <button className='btn btn-warning btn-lg' onClick={() => setShow2(true)}>ReactHookForm</button>
       <div className='card-toolbar'>
         <button
@@ -100,8 +100,35 @@ function App() {
       <FormModal show={show} setShow={setShow} />
       <FormikModal show={show1} setShow={setShow1} />
       <ReactHookFormModal show={show2} setShow={setShow2} />
-
-
+      <a href="#" className="btn btn-icon btn-light pulse pulse-primary me-10 mb-10">
+        <KTSVG
+          path="/media/icons/duotune/general/gen025.svg"
+          className="svg-icon svg-icon-1"
+        />
+        <span className="pulse-ring"></span>
+      </a>
+      <div className="card card-bordered">
+        <div className="card-header ribbon ribbon-end ribbon-clip">
+          <div className="ribbon-label">
+            Ribbon
+            <span className="ribbon-inner bg-info"></span>
+          </div>
+          <div className="card-title">Ribbon Example</div>
+        </div>
+        <div className="card-body">
+          ...
+        </div>
+      </div>
+      <button type="button" className="btn btn-primary me-5 rotate" onClick={(e) => e.currentTarget.classList.toggle('active')}>
+        90 deg{" "}
+        <KTSVG
+          path="/media/icons/duotune/arrows/arr069.svg"
+          className="svg-icon-2 rotate-180 ms-3"
+        />
+      </button>
+      <div className="symbol symbol-50px me-10 mb-10">
+        <img src={("/media/avatars/300-6.jpg")} alt="" />
+      </div>
     </div>
   )
 }

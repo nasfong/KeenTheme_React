@@ -7,8 +7,10 @@ export const GET_ALL_USERS = gql(/* GraphQL */`
       username
       password
       email
-      role
-      createdAt
+      role {
+        id
+        name
+      }
     }
   }
 `)
@@ -19,8 +21,10 @@ export const GET_USER_BY_ID = gql(/* GraphQL */`
       id
       password
       username
-      role
       email
+      role {
+        id
+      }
     }
 }
 `)

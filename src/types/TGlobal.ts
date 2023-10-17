@@ -1,3 +1,4 @@
+import { OperationVariables, WatchQueryOptions } from "@apollo/client";
 
 //? Get Required type from Package or Functional type
 export type GetRequiredKeys<T> = { [K in keyof T as (undefined extends T[K] ? never : K)]: T[K] }
@@ -8,3 +9,4 @@ export type DotNestedKeys<T> = (T extends object ?
     { [K in Exclude<keyof T, symbol>]: `${K}${DotPrefix<DotNestedKeys<T[K]>>}` }[Exclude<keyof T, symbol>]
     : "") extends infer D ? Extract<D, string> : never;
 
+export type UpdateQuerys<T> = <TVars extends OperationVariables>(mapFn: (previousQueryResult: T, options: Pick<WatchQueryOptions<TVars, T>, "variables">) => T) => void

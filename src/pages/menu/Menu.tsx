@@ -1,31 +1,30 @@
 import { useMutation } from "@apollo/client"
-import AdministratorModal from "./components/AdministratorModal"
+import MenuModal from "./components/MenuModal"
 import { DELETE_USER } from "graphql/mutations/user.mutation"
 import { useCallback } from "react"
 import Swal from "sweetalert2"
 import { useState } from 'react';
-import { useUser } from "hook/useUser"
 import { KTSVG } from "_metronic/helpers"
+import { useQueryMenu } from "hook/useMenu"
 
-const Administrator = () => {
+const Menu = () => {
 
-  const { data, loading, error, updateQuery } = useUser()
+  const { data, loading, error, updateQuery } = useQueryMenu()
   const [deleteUser] = useMutation(DELETE_USER)
 
   const [modal, setModal] = useState(false)
-  const [user, setUser] = useState(null)
+  const [dataInput, setDataInput] = useState(null)
 
   const handleOpenModal = () => setModal(true)
 
   const handleCloseModal = () => {
     setModal(false)
-    setUser(null)
+    setDataInput(null)
   }
 
-  const handleEdit = (user: any) => {
+  const handleEdit = (data: any) => {
     handleOpenModal()
-    setUser(user)
-    return user
+    setDataInput(data)
   }
 
   const handleDelete = useCallback(async (id: string) => {
@@ -43,8 +42,8 @@ const Administrator = () => {
           .then((res) => {
             if (res.data?.deleteUser) {
               // delete filter by [id]
-              updateQuery(({ getAllUsers }) => ({
-                getAllUsers: getAllUsers.filter(user => user.id !== id)
+              updateQuery(({ getAllMenus }) => ({
+                getAllMenus: getAllMenus.filter(data => data.id !== id)
               }))
               Swal.fire(
                 'Deleted!',
@@ -77,25 +76,25 @@ const Administrator = () => {
             </tr>
           </thead>
           <tbody className='fw-bold text-gray-600'>
-            {data?.getAllUsers.map(user => (
-              <tr key={user.id}>
-                <td>{user.username}</td>
+            {data?.getAllMenus.map(menu => (
+              <tr key={menu.id}>
+                <td>{menu.name}</td>
                 <td>
                   <span className={`badge badge-light-primary`}>
-                    {user.role.name}
+                    {menu.url}
                   </span>
                 </td>
                 <td className='text-end'>
                   <button
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
-                    onClick={() => handleEdit(user)}
+                    onClick={() => handleEdit(menu)}
                     title='Edit'
                   >
                     <KTSVG path='/media/icons/duotune/art/art005.svg' className='svg-icon-3' />
                   </button>
                   <button
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
-                    onClick={() => handleDelete(user.id)}
+                    onClick={() => handleDelete(menu.id)}
                     title='Delete'
                   >
                     <KTSVG path='/media/icons/duotune/general/gen027.svg' className='svg-icon-3' />
@@ -106,14 +105,14 @@ const Administrator = () => {
           </tbody>
         </table>
       </div>
-      <AdministratorModal
+      <MenuModal
         modal={modal}
         handleCloseModal={handleCloseModal}
-        user={user}
+        dataInput={dataInput}
         updateQuery={updateQuery}
       />
     </>
   )
 }
 
-export default Administrator
+export default Menu

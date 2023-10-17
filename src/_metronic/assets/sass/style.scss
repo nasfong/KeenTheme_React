@@ -16,3 +16,8 @@ $mode: default;
 // Layout
 @import 'layout/layout';
 @import './core/layout/docs/layout';
+
+
+.table > :not(:first-child){
+  border-top: none !important;
+}

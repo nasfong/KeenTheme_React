@@ -121,7 +121,7 @@ class ScrollTopComponent {
 
   public static createInsance = (
     selector: string,
-    options: IScrollTopOptions = defaultScrollTopOptions
+    options: IScrollTopOptions = defaultScrollTopOptions,
   ): ScrollTopComponent | undefined => {
     const element = document.body.querySelector(selector)
     if (!element) {
@@ -147,4 +147,4 @@ class ScrollTopComponent {
     ElementAnimateUtil.scrollTop(0, defaultScrollTopOptions.speed)
   }
 }
-export {ScrollTopComponent, defaultScrollTopOptions}
+export { ScrollTopComponent, defaultScrollTopOptions }

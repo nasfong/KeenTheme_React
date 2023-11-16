@@ -12,7 +12,6 @@ import Table from 'components/Table'
 import { Link } from 'react-router-dom'
 // import ReactQuery from './components/ReactQuery'
 
-
 function App() {
   const { t, i18n } = useTranslation()
 
@@ -24,8 +23,8 @@ function App() {
 
   const handlePage = (updatePage: number) => setPage(updatePage)
   const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
+    i18n.changeLanguage(lng)
+  }
 
   useLayoutEffect(() => {
     i18n.changeLanguage('en')
@@ -39,30 +38,43 @@ function App() {
         <ReactHookForm />
       </div>
 
-      <button className='btn btn-danger btn-sm' onClick={() => changeLanguage("en")}>en</button>
-      <button className='btn btn-dark btn-sm' onClick={() => changeLanguage("kh")}>kh</button>
+      <button
+        className='btn btn-danger btn-sm'
+        onClick={() => changeLanguage('en')}
+      >
+        en
+      </button>
+      <button
+        className='btn btn-dark btn-sm'
+        onClick={() => changeLanguage('kh')}
+      >
+        kh
+      </button>
 
-      <div className="card card-body">
+      <div className='card card-body'>
         <h1>{t('HELLO')}</h1>
         <div className='d-flex justify-content-start py-0 table-responsive mt-xl-10'>
           <div className='ms-0 p-5 bg-light border rounded'>
-            <p className="h1">$0</p>
+            <p className='h1'>$0</p>
             <label>Credit Amount</label>
           </div>
           <div className='ms-2 p-5 bg-light border rounded'>
-            <p className="h1">$0</p>
+            <p className='h1'>$0</p>
             <label>Deposit</label>
           </div>
           <div className='ms-2 p-5 bg-light border rounded'>
-            <p className="h1">$0</p>
+            <p className='h1'>$0</p>
             <label>Unpaid Deposit</label>
           </div>
           <div className='ms-2 p-5 bg-light border rounded'>
-            <p className="h1">$0</p>
+            <p className='h1'>$0</p>
             <label>Invoice balance</label>
           </div>
         </div>
-        <button className='btn btn-info' onClick={() => setCount((count) => count + 1)}>
+        <button
+          className='btn btn-info'
+          onClick={() => setCount((count) => count + 1)}
+        >
           count is {count}
         </button>
         <p>
@@ -70,14 +82,31 @@ function App() {
         </p>
         <Filter filterApply={{}} setFilterApply={{}} />
         <Table />
-        <MyPagination page={page} totalPages={10} handlePagination={handlePage} perPage={10} />
+        <MyPagination
+          page={page}
+          totalPages={10}
+          handlePagination={handlePage}
+          perPage={10}
+        />
       </div>
-      <p className="read-the-docs">
+      <p className='read-the-docs'>
         Click on the Vite and React logos to learn more
       </p>
-      <button className='btn btn-primary btn-lg me-2' onClick={() => setShow(true)}>button</button>
-      <button className='btn btn-success btn-lg me-2' onClick={() => setShow1(true)}>Formik</button>
-      <button className='btn btn-warning btn-lg' onClick={() => setShow2(true)}>ReactHookForm</button>
+      <button
+        className='btn btn-primary btn-lg me-2'
+        onClick={() => setShow(true)}
+      >
+        button
+      </button>
+      <button
+        className='btn btn-success btn-lg me-2'
+        onClick={() => setShow1(true)}
+      >
+        Formik
+      </button>
+      <button className='btn btn-warning btn-lg' onClick={() => setShow2(true)}>
+        ReactHookForm
+      </button>
       <div className='card-toolbar'>
         <button
           type='button'
@@ -86,48 +115,56 @@ function App() {
           data-kt-menu-placement='bottom-end'
           data-kt-menu-flip='top-end'
         >
-          <KTSVG path='/media/icons/duotune/general/gen014.svg' className='svg-icon-2' />
+          <KTSVG
+            path='/media/icons/duotune/general/gen014.svg'
+            className='svg-icon-2'
+          />
         </button>
         <CalenderDropdown
           formInput={[]}
           setFormInput={() => []}
           dateRange={[]}
           setDateRange={() => []}
-          color="danger" />
+          color='danger'
+        />
       </div>
-
 
       <FormModal show={show} setShow={setShow} />
       <FormikModal show={show1} setShow={setShow1} />
       <ReactHookFormModal show={show2} setShow={setShow2} />
-      <a href="#" className="btn btn-icon btn-light pulse pulse-primary me-10 mb-10">
+      <a
+        href='#'
+        className='btn btn-icon btn-light pulse pulse-primary me-10 mb-10'
+      >
         <KTSVG
-          path="/media/icons/duotune/general/gen025.svg"
-          className="svg-icon svg-icon-1"
+          path='/media/icons/duotune/general/gen025.svg'
+          className='svg-icon svg-icon-1'
         />
-        <span className="pulse-ring"></span>
+        <span className='pulse-ring'></span>
       </a>
-      <div className="card card-bordered">
-        <div className="card-header ribbon ribbon-end ribbon-clip">
-          <div className="ribbon-label">
+      <div className='card card-bordered'>
+        <div className='card-header ribbon ribbon-end ribbon-clip'>
+          <div className='ribbon-label'>
             Ribbon
-            <span className="ribbon-inner bg-info"></span>
+            <span className='ribbon-inner bg-info'></span>
           </div>
-          <div className="card-title">Ribbon Example</div>
+          <div className='card-title'>Ribbon Example</div>
         </div>
-        <div className="card-body">
-          ...
-        </div>
+        <div className='card-body'>...</div>
       </div>
-      <button type="button" className="btn btn-primary me-5 rotate" onClick={(e) => e.currentTarget.classList.toggle('active')}>
-        90 deg{" "}
+      <button
+        type='button'
+        className='btn btn-primary me-5 rotate'
+        onClick={(e) => e.currentTarget.classList.toggle('active')}
+      >
+        90 deg{' '}
         <KTSVG
-          path="/media/icons/duotune/arrows/arr069.svg"
-          className="svg-icon-2 rotate-180 ms-3"
+          path='/media/icons/duotune/arrows/arr069.svg'
+          className='svg-icon-2 rotate-180 ms-3'
         />
       </button>
-      <div className="symbol symbol-50px me-10 mb-10">
-        <img src={("/media/avatars/300-6.jpg")} alt="" />
+      <div className='symbol symbol-50px me-10 mb-10'>
+        <img src={'/media/avatars/300-6.jpg'} alt='' />
       </div>
     </div>
   )

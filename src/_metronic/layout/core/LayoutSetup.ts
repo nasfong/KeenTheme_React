@@ -12,7 +12,8 @@ import {
 } from './LayoutModels'
 import { DefaultLayoutConfig } from './DefaultLayoutConfig'
 
-const LAYOUT_CONFIG_KEY = import.meta.env.REACT_APP_BASE_LAYOUT_CONFIG_KEY || 'LayoutConfig'
+const LAYOUT_CONFIG_KEY =
+  import.meta.env.REACT_APP_BASE_LAYOUT_CONFIG_KEY || 'LayoutConfig'
 
 export function getLayout(): ILayout {
   const ls = localStorage.getItem(LAYOUT_CONFIG_KEY)
@@ -110,7 +111,7 @@ export class LayoutSetup {
 
   private static initHeader(config: IHeader): void {
     LayoutSetup.classes.headerContainer.push(
-      config.width === 'fluid' ? 'container-fluid' : 'container'
+      config.width === 'fluid' ? 'container-fluid' : 'container',
     )
 
     if (config.fixed.desktop) {
@@ -129,7 +130,7 @@ export class LayoutSetup {
 
     document.body.classList.add('toolbar-enabled')
     LayoutSetup.classes.toolbarContainer.push(
-      config.width === 'fluid' ? 'container-fluid' : 'container'
+      config.width === 'fluid' ? 'container-fluid' : 'container',
     )
 
     if (config.fixed.desktop) {
@@ -178,14 +179,14 @@ export class LayoutSetup {
       LayoutSetup.attributes.pageTitle.set('data-kt-swapper-mode', 'prepend')
       LayoutSetup.attributes.pageTitle.set(
         'data-kt-swapper-parent',
-        `{ default: '#kt_content_container', '${config.responsiveBreakpoint}': '${config.responsiveTarget}'}`
+        `{ default: '#kt_content_container', '${config.responsiveBreakpoint}': '${config.responsiveTarget}'}`,
       )
     }
   }
 
   private static initContent(config: IContent): void {
     LayoutSetup.classes.contentContainer.push(
-      config.width === 'fluid' ? 'container-fluid' : 'container'
+      config.width === 'fluid' ? 'container-fluid' : 'container',
     )
     // if (Theme::getOption('layout', 'content/container-class')) {
     // 	Theme::addHtmlClass('content-container', Theme::getOption('layout', 'content/container-class'));
@@ -248,7 +249,9 @@ export class LayoutSetup {
   // }
 
   private static initFooter(config: IFooter): void {
-    LayoutSetup.classes.footerContainer.push(`container${config.width === 'fluid' ? '-fluid' : ''}`)
+    LayoutSetup.classes.footerContainer.push(
+      `container${config.width === 'fluid' ? '-fluid' : ''}`,
+    )
   }
 
   private static initConfig(config: ILayout): void {

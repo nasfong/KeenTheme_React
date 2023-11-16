@@ -1,13 +1,14 @@
-import { useMutation, useQuery } from "@apollo/client"
-import { DELETE_ROLE } from "graphql/mutations/role.mutation"
-import { GET_ALL_ROLES } from "graphql/querys/role.query"
-import { useCallback, useState } from "react"
-import Swal from "sweetalert2"
-import RoleModal from "./components/RoleModal"
+import { useMutation, useQuery } from '@apollo/client'
+import { DELETE_ROLE } from 'graphql/mutations/role.mutation'
+import { GET_ALL_ROLES } from 'graphql/querys/role.query'
+import { useCallback, useState } from 'react'
+import Swal from 'sweetalert2'
+import RoleModal from './components/RoleModal'
 
 const Role = () => {
-
-  const { data, updateQuery } = useQuery(GET_ALL_ROLES, { fetchPolicy: 'network-only' })
+  const { data, updateQuery } = useQuery(GET_ALL_ROLES, {
+    fetchPolicy: 'network-only',
+  })
   const [deleteRole] = useMutation(DELETE_ROLE, { fetchPolicy: 'network-only' })
 
   const [modal, setModal] = useState(false)
@@ -33,7 +34,7 @@ const Role = () => {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: 'Yes, delete it!',
     }).then(async (result) => {
       if (result.isConfirmed) {
         await deleteRole({ variables: { id } })
@@ -41,13 +42,9 @@ const Role = () => {
             if (res.data?.deleteRole) {
               // delete filter by [id]
               updateQuery(({ getAllRoles }) => ({
-                getAllRoles: getAllRoles.filter(user => user.id !== id)
+                getAllRoles: getAllRoles.filter((user) => user.id !== id),
               }))
-              Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-              )
+              Swal.fire('Deleted!', 'Your file has been deleted.', 'success')
             }
           })
           .catch((err) => console.log(err))
@@ -57,9 +54,11 @@ const Role = () => {
 
   return (
     <>
-      <button className='btn btn-primary btn-sm' onClick={handleOpen} >Create</button>
+      <button className='btn btn-primary btn-sm' onClick={handleOpen}>
+        Create
+      </button>
       <div className='grid'>
-        {data?.getAllRoles.map(role => (
+        {data?.getAllRoles.map((role) => (
           <div className='' key={role.id}>
             <div className='card card-flush h-md-100'>
               <div className='card-header'>
@@ -76,11 +75,14 @@ const Role = () => {
                 <div className='d-flex flex-column text-gray-600'>
                   {role.permission instanceof Array
                     ? role.permission.map((permission, pIndex) => (
-                      <div className='d-flex align-items-center py-2' key={pIndex}>
-                        <span className='bullet bg-primary me-3'></span>
-                        {permission?.name}
-                      </div>
-                    ))
+                        <div
+                          className='d-flex align-items-center py-2'
+                          key={pIndex}
+                        >
+                          <span className='bullet bg-primary me-3'></span>
+                          {permission?.name}
+                        </div>
+                      ))
                     : ''}
                 </div>
               </div>

@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useState} from 'react'
-import {useDispatch} from 'react-redux'
-import {useFormik} from 'formik'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import clsx from 'clsx'
 import * as auth from '../redux/AuthRedux'
-import {register} from '../redux/AuthCRUD'
-import {Link} from 'react-router-dom'
-import {toAbsoluteUrl} from '../../../../_metronic/helpers'
+import { register } from '../redux/AuthCRUD'
+import { Link } from 'react-router-dom'
+import { toAbsoluteUrl } from '../../../../_metronic/helpers'
 
 const initialValues = {
   firstname: '',
@@ -40,7 +40,10 @@ const registrationSchema = Yup.object().shape({
     .required('Password confirmation is required')
     .when('password', {
       is: (val: string) => (val && val.length > 0 ? true : false),
-      then: Yup.string().oneOf([Yup.ref('password')], "Password and Confirm Password didn't match"),
+      then: Yup.string().oneOf(
+        [Yup.ref('password')],
+        "Password and Confirm Password didn't match",
+      ),
     }),
   acceptTerms: Yup.bool().required('You must accept the terms and conditions'),
 })
@@ -51,11 +54,16 @@ export function Registration() {
   const formik = useFormik({
     initialValues,
     validationSchema: registrationSchema,
-    onSubmit: (values, {setStatus, setSubmitting}) => {
+    onSubmit: (values, { setStatus, setSubmitting }) => {
       setLoading(true)
       setTimeout(() => {
-        register(values.email, values.firstname, values.lastname, values.password)
-          .then(({data: {accessToken}}) => {
+        register(
+          values.email,
+          values.firstname,
+          values.lastname,
+          values.password,
+        )
+          .then(({ data: { accessToken } }) => {
             setLoading(false)
             dispatch(auth.actions.login(accessToken))
           })
@@ -84,7 +92,11 @@ export function Registration() {
         {/* begin::Link */}
         <div className='text-gray-400 fw-bold fs-4'>
           Already have an account?
-          <Link to='/auth/login' className='link-primary fw-bolder' style={{marginLeft: '5px'}}>
+          <Link
+            to='/auth/login'
+            className='link-primary fw-bolder'
+            style={{ marginLeft: '5px' }}
+          >
             Forgot Password ?
           </Link>
         </div>
@@ -93,7 +105,10 @@ export function Registration() {
       {/* end::Heading */}
 
       {/* begin::Action */}
-      <button type='button' className='btn btn-light-primary fw-bolder w-100 mb-10'>
+      <button
+        type='button'
+        className='btn btn-light-primary fw-bolder w-100 mb-10'
+      >
         <img
           alt='Logo'
           src={toAbsoluteUrl('/media/svg/brand-logos/google-icon.svg')}
@@ -118,7 +133,9 @@ export function Registration() {
       {/* begin::Form group Firstname */}
       <div className='row fv-row mb-7'>
         <div className='col-xl-6'>
-          <label className='class="form-label fw-bolder text-dark fs-6'>First name</label>
+          <label className='class="form-label fw-bolder text-dark fs-6'>
+            First name
+          </label>
           <input
             placeholder='First name'
             type='text'
@@ -127,11 +144,13 @@ export function Registration() {
             className={clsx(
               'form-control form-control-lg form-control-solid',
               {
-                'is-invalid': formik.touched.firstname && formik.errors.firstname,
+                'is-invalid':
+                  formik.touched.firstname && formik.errors.firstname,
               },
               {
-                'is-valid': formik.touched.firstname && !formik.errors.firstname,
-              }
+                'is-valid':
+                  formik.touched.firstname && !formik.errors.firstname,
+              },
             )}
           />
           {formik.touched.firstname && formik.errors.firstname && (
@@ -145,7 +164,9 @@ export function Registration() {
         <div className='col-xl-6'>
           {/* begin::Form group Lastname */}
           <div className='fv-row mb-5'>
-            <label className='form-label fw-bolder text-dark fs-6'>Last name</label>
+            <label className='form-label fw-bolder text-dark fs-6'>
+              Last name
+            </label>
             <input
               placeholder='Last name'
               type='text'
@@ -154,11 +175,13 @@ export function Registration() {
               className={clsx(
                 'form-control form-control-lg form-control-solid',
                 {
-                  'is-invalid': formik.touched.lastname && formik.errors.lastname,
+                  'is-invalid':
+                    formik.touched.lastname && formik.errors.lastname,
                 },
                 {
-                  'is-valid': formik.touched.lastname && !formik.errors.lastname,
-                }
+                  'is-valid':
+                    formik.touched.lastname && !formik.errors.lastname,
+                },
               )}
             />
             {formik.touched.lastname && formik.errors.lastname && (
@@ -184,10 +207,10 @@ export function Registration() {
           {...formik.getFieldProps('email')}
           className={clsx(
             'form-control form-control-lg form-control-solid',
-            {'is-invalid': formik.touched.email && formik.errors.email},
+            { 'is-invalid': formik.touched.email && formik.errors.email },
             {
               'is-valid': formik.touched.email && !formik.errors.email,
-            }
+            },
           )}
         />
         {formik.touched.email && formik.errors.email && (
@@ -203,7 +226,9 @@ export function Registration() {
       {/* begin::Form group Password */}
       <div className='mb-10 fv-row' data-kt-password-meter='true'>
         <div className='mb-1'>
-          <label className='form-label fw-bolder text-dark fs-6'>Password</label>
+          <label className='form-label fw-bolder text-dark fs-6'>
+            Password
+          </label>
           <div className='position-relative mb-3'>
             <input
               type='password'
@@ -213,11 +238,13 @@ export function Registration() {
               className={clsx(
                 'form-control form-control-lg form-control-solid',
                 {
-                  'is-invalid': formik.touched.password && formik.errors.password,
+                  'is-invalid':
+                    formik.touched.password && formik.errors.password,
                 },
                 {
-                  'is-valid': formik.touched.password && !formik.errors.password,
-                }
+                  'is-valid':
+                    formik.touched.password && !formik.errors.password,
+                },
               )}
             />
             {formik.touched.password && formik.errors.password && (
@@ -234,7 +261,9 @@ export function Registration() {
 
       {/* begin::Form group Confirm password */}
       <div className='fv-row mb-5'>
-        <label className='form-label fw-bolder text-dark fs-6'>Confirm Password</label>
+        <label className='form-label fw-bolder text-dark fs-6'>
+          Confirm Password
+        </label>
         <input
           type='password'
           placeholder='Password confirmation'
@@ -243,11 +272,13 @@ export function Registration() {
           className={clsx(
             'form-control form-control-lg form-control-solid',
             {
-              'is-invalid': formik.touched.changepassword && formik.errors.changepassword,
+              'is-invalid':
+                formik.touched.changepassword && formik.errors.changepassword,
             },
             {
-              'is-valid': formik.touched.changepassword && !formik.errors.changepassword,
-            }
+              'is-valid':
+                formik.touched.changepassword && !formik.errors.changepassword,
+            },
           )}
         />
         {formik.touched.changepassword && formik.errors.changepassword && (
@@ -296,11 +327,13 @@ export function Registration() {
           type='submit'
           id='kt_sign_up_submit'
           className='btn btn-lg btn-primary w-100 mb-5'
-          disabled={formik.isSubmitting || !formik.isValid || !formik.values.acceptTerms}
+          disabled={
+            formik.isSubmitting || !formik.isValid || !formik.values.acceptTerms
+          }
         >
           {!loading && <span className='indicator-label'>Submit</span>}
           {loading && (
-            <span className='indicator-progress' style={{display: 'block'}}>
+            <span className='indicator-progress' style={{ display: 'block' }}>
               Please wait...{' '}
               <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
             </span>

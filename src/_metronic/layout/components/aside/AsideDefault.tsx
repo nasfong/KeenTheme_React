@@ -1,15 +1,15 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {FC} from 'react'
-import {Link} from 'react-router-dom'
+import React, { FC } from 'react'
+import { Link } from 'react-router-dom'
 import clsx from 'clsx'
-import {useLayout} from '../../core'
-import {KTSVG, toAbsoluteUrl} from '../../../helpers'
-import {AsideMenu} from './AsideMenu'
+import { useLayout } from '../../core'
+import { KTSVG, toAbsoluteUrl } from '../../../helpers'
+import { AsideMenu } from './AsideMenu'
 
 const AsideDefault: FC = () => {
-  const {config, classes} = useLayout()
-  const {aside} = config
+  const { config, classes } = useLayout()
+  const { aside } = config
 
   return (
     <div
@@ -24,16 +24,27 @@ const AsideDefault: FC = () => {
       data-kt-drawer-toggle='#kt_aside_mobile_toggle'
     >
       {/* begin::Brand */}
-      <div className='aside-logo flex-column-auto bg-secondary' id='kt_aside_logo'>
+      <div
+        className='aside-logo flex-column-auto bg-secondary'
+        id='kt_aside_logo'
+      >
         {/* begin::Logo */}
         {aside.theme === 'dark' && (
           <Link to='/dashboard'>
-            <img alt='Logo' className='h-25px logo' src={toAbsoluteUrl('/MaxBIT-light.png')} />
+            <img
+              alt='Logo'
+              className='h-25px logo'
+              src={toAbsoluteUrl('/MaxBIT-light.png')}
+            />
           </Link>
         )}
         {aside.theme === 'light' && (
           <Link to='/dashboard'>
-            <img alt='Logo' className='h-40px logo' src='https://api-billing.maxbit.com.kh/print_logo.png' />
+            <img
+              alt='Logo'
+              className='h-40px logo'
+              src='https://api-billing.maxbit.com.kh/print_logo.png'
+            />
           </Link>
         )}
         {/* end::Logo */}
@@ -59,7 +70,10 @@ const AsideDefault: FC = () => {
       {/* end::Brand */}
 
       {/* begin::Aside menu */}
-      <div className='aside-menu flex-column-fluid' style={{backgroundImage: `linear-gradient(45deg, #361b7b, #0e5cfa)`}}>
+      <div
+        className='aside-menu flex-column-fluid'
+        style={{ backgroundImage: `linear-gradient(45deg, #361b7b, #0e5cfa)` }}
+      >
         <AsideMenu asideMenuCSSClasses={classes.asideMenu} />
       </div>
       {/* end::Aside menu */}
@@ -86,4 +100,4 @@ const AsideDefault: FC = () => {
   )
 }
 
-export {AsideDefault}
+export { AsideDefault }

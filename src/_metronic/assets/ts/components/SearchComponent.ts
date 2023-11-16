@@ -10,7 +10,7 @@ import {
   throttle,
 } from '../_utils/index'
 
-import {MenuComponent, defaultMenuOptions} from './MenuComponent'
+import { MenuComponent, defaultMenuOptions } from './MenuComponent'
 
 export interface ISearchOptions {
   minLength: number // Miniam text lenght to query search
@@ -62,7 +62,11 @@ class SearchComponent {
   processing: boolean = false
   menuObject: MenuComponent | undefined
 
-  constructor(_element: HTMLElement, _options: ISearchOptions, _queries: ISearchQueries) {
+  constructor(
+    _element: HTMLElement,
+    _options: ISearchOptions,
+    _queries: ISearchQueries,
+  ) {
     // Variables
     this.options = Object.assign(defaultSearchOptions, _options)
     this.queries = _queries
@@ -85,7 +89,10 @@ class SearchComponent {
     // Layout
     this.layout = this.getOption('layout')
     if (this.layout === 'menu') {
-      this.menuObject = new MenuComponent(this.contentElement, defaultMenuOptions)
+      this.menuObject = new MenuComponent(
+        this.contentElement,
+        defaultMenuOptions,
+      )
     }
 
     // Update
@@ -192,7 +199,7 @@ class SearchComponent {
   }
 
   private handlers(): void {
-    const context = this;
+    const context = this
 
     // Focus
     this.inputElement.addEventListener('focus', this.focus)
@@ -262,7 +269,7 @@ class SearchComponent {
         () => {
           this.update()
         },
-        200
+        200,
       )
     })
   }
@@ -276,7 +283,10 @@ class SearchComponent {
     if (this.layout === 'menu') {
       let responsiveFormMode = this.getResponsiveFormMode()
 
-      if (responsiveFormMode === 'on' && !this.contentElement.contains(this.formElement)) {
+      if (
+        responsiveFormMode === 'on' &&
+        !this.contentElement.contains(this.formElement)
+      ) {
         this.contentElement.prepend(this.formElement)
         this.formElement.classList.remove('d-none')
       } else if (
@@ -329,7 +339,7 @@ class SearchComponent {
       this.inputElement.focus()
 
       this.processing = true
-      EventHandlerUtil.trigger(this.element, 'kt.search.process', this);
+      EventHandlerUtil.trigger(this.element, 'kt.search.process', this)
     }
   }
 
@@ -428,7 +438,7 @@ class SearchComponent {
   // Static methods
   public static getInstance = (
     el: HTMLElement,
-    componentName: string = defaultSearchQueires.componentName
+    componentName: string = defaultSearchQueires.componentName,
   ) => {
     const Search = DataUtil.get(el, componentName)
     if (Search) {
@@ -441,7 +451,7 @@ class SearchComponent {
   public static createInstances = (
     selector: string = defaultSearchQueires.instanseQuery,
     options: ISearchOptions = defaultSearchOptions,
-    queries: ISearchQueries = defaultSearchQueires
+    queries: ISearchQueries = defaultSearchQueires,
   ) => {
     const elements = document.body.querySelectorAll(selector)
     elements.forEach((el) => {
@@ -456,7 +466,7 @@ class SearchComponent {
   public static createInsance = (
     selector: string = defaultSearchQueires.instanseQuery,
     options: ISearchOptions = defaultSearchOptions,
-    queries: ISearchQueries = defaultSearchQueires
+    queries: ISearchQueries = defaultSearchQueires,
   ): SearchComponent | undefined => {
     const element = document.body.querySelector(selector)
     if (!element) {
@@ -470,12 +480,16 @@ class SearchComponent {
     return Search
   }
 
-  public static bootstrap = (selector: string = defaultSearchQueires.instanseQuery) => {
+  public static bootstrap = (
+    selector: string = defaultSearchQueires.instanseQuery,
+  ) => {
     SearchComponent.createInstances(selector)
   }
 
-  public static reinitialization = (selector: string = defaultSearchQueires.instanseQuery) => {
+  public static reinitialization = (
+    selector: string = defaultSearchQueires.instanseQuery,
+  ) => {
     SearchComponent.createInstances(selector)
   }
 }
-export {SearchComponent, defaultSearchOptions, defaultSearchQueires}
+export { SearchComponent, defaultSearchOptions, defaultSearchQueires }

@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useEffect, useRef} from 'react'
-import {KTSVG} from '../../../helpers'
-import ApexCharts, {ApexOptions} from 'apexcharts'
-import {getCSS, getCSSVariableValue} from '../../../assets/ts/_utils'
+import React, { useEffect, useRef } from 'react'
+import { KTSVG } from '../../../helpers'
+import ApexCharts, { ApexOptions } from 'apexcharts'
+import { getCSS, getCSSVariableValue } from '../../../assets/ts/_utils'
 import clsx from 'clsx'
 
 type Props = {
@@ -13,7 +13,13 @@ type Props = {
   description: string
 }
 
-const StatisticsWidget4: React.FC<Props> = ({className, svgIcon, color, change, description}) => {
+const StatisticsWidget4: React.FC<Props> = ({
+  className,
+  svgIcon,
+  color,
+  change,
+  description,
+}) => {
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -28,7 +34,7 @@ const StatisticsWidget4: React.FC<Props> = ({className, svgIcon, color, change, 
 
     const chart = new ApexCharts(
       chartRef.current,
-      getChartOptions(height, labelColor, baseColor, lightColor)
+      getChartOptions(height, labelColor, baseColor, lightColor),
     )
     if (chart) {
       chart.render()
@@ -46,9 +52,18 @@ const StatisticsWidget4: React.FC<Props> = ({className, svgIcon, color, change, 
       {/* begin::Body */}
       <div className='card-body p-0'>
         <div className='d-flex flex-stack card-p flex-grow-1'>
-          <span className={clsx('symbol symbol-50px', `symbol-light-${color}`, 'me-2')}>
+          <span
+            className={clsx(
+              'symbol symbol-50px',
+              `symbol-light-${color}`,
+              'me-2',
+            )}
+          >
             <span className='symbol-label'>
-              <KTSVG path={svgIcon} className={`svg-icon-2x svg-icon-${color}`} />
+              <KTSVG
+                path={svgIcon}
+                className={`svg-icon-2x svg-icon-${color}`}
+              />
             </span>
           </span>
 
@@ -62,7 +77,7 @@ const StatisticsWidget4: React.FC<Props> = ({className, svgIcon, color, change, 
         <div
           ref={chartRef}
           className='statistics-widget-4-chart card-rounded-bottom'
-          style={{height: '150px'}}
+          style={{ height: '150px' }}
         ></div>
       </div>
       {/* end::Body */}
@@ -70,13 +85,13 @@ const StatisticsWidget4: React.FC<Props> = ({className, svgIcon, color, change, 
   )
 }
 
-export {StatisticsWidget4}
+export { StatisticsWidget4 }
 
 function getChartOptions(
   height: number,
   labelColor: string,
   baseColor: string,
-  lightColor: string
+  lightColor: string,
 ): ApexOptions {
   return {
     series: [

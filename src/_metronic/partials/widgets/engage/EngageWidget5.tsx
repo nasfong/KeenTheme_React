@@ -7,7 +7,11 @@ type Props = {
   innerPadding?: string
 }
 
-const EngageWidget5: React.FC<Props> = ({ className, innerPadding = '', children }) => {
+const EngageWidget5: React.FC<Props> = ({
+  className,
+  innerPadding = '',
+  children,
+}) => {
   return (
     <div className={`card ${className}`}>
       {/* begin::Body */}
@@ -26,7 +30,7 @@ const EngageWidget5: React.FC<Props> = ({ className, innerPadding = '', children
           <div
             className='flex-grow-1 bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom card-rounded-bottom h-200px'
             style={{
-              backgroundImage: `url('${('/media/illustrations/dozzy-1/terms-2.png')}')`,
+              backgroundImage: `url('${'/media/illustrations/dozzy-1/terms-2.png'}')`,
             }}
           ></div>
 

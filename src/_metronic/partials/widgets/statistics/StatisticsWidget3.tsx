@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useEffect, useRef} from 'react'
-import ApexCharts, {ApexOptions} from 'apexcharts'
-import {getCSS, getCSSVariableValue} from '../../../assets/ts/_utils'
+import React, { useEffect, useRef } from 'react'
+import ApexCharts, { ApexOptions } from 'apexcharts'
+import { getCSS, getCSSVariableValue } from '../../../assets/ts/_utils'
 
 type Props = {
   className: string
@@ -11,7 +11,13 @@ type Props = {
   color: string
 }
 
-const StatisticsWidget3: React.FC<Props> = ({className, title, description, change, color}) => {
+const StatisticsWidget3: React.FC<Props> = ({
+  className,
+  title,
+  description,
+  change,
+  color,
+}) => {
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -26,7 +32,7 @@ const StatisticsWidget3: React.FC<Props> = ({className, title, description, chan
 
     const chart = new ApexCharts(
       chartRef.current,
-      getChartOptions(height, labelColor, baseColor, lightColor)
+      getChartOptions(height, labelColor, baseColor, lightColor),
     )
     if (chart) {
       chart.render()
@@ -52,12 +58,14 @@ const StatisticsWidget3: React.FC<Props> = ({className, title, description, chan
 
             <span
               className='text-muted fw-bold mt-1'
-              dangerouslySetInnerHTML={{__html: description}}
+              dangerouslySetInnerHTML={{ __html: description }}
             ></span>
           </div>
 
           <span className='symbol symbol-50px'>
-            <span className={`symbol-label fs-5 fw-bolder bg-light-${color} text-${color}`}>
+            <span
+              className={`symbol-label fs-5 fw-bolder bg-light-${color} text-${color}`}
+            >
               {change}
             </span>
           </span>
@@ -65,7 +73,7 @@ const StatisticsWidget3: React.FC<Props> = ({className, title, description, chan
         <div
           ref={chartRef}
           className='statistics-widget-3-chart card-rounded-bottom'
-          style={{height: '150px'}}
+          style={{ height: '150px' }}
         ></div>
       </div>
       {/* end::Body */}
@@ -73,13 +81,13 @@ const StatisticsWidget3: React.FC<Props> = ({className, title, description, chan
   )
 }
 
-export {StatisticsWidget3}
+export { StatisticsWidget3 }
 
 function getChartOptions(
   height: number,
   labelColor: string,
   baseColor: string,
-  lightColor: string
+  lightColor: string,
 ): ApexOptions {
   const options: ApexOptions = {
     series: [

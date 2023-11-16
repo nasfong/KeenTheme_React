@@ -1,5 +1,5 @@
-import React, {FC} from 'react'
-import {toAbsoluteUrl} from '../../../helpers'
+import React, { FC } from 'react'
+import { toAbsoluteUrl } from '../../../helpers'
 
 const Demos: FC = () => {
   const demos = [
@@ -48,7 +48,9 @@ const Demos: FC = () => {
 
   return (
     <div className='mb-0'>
-      <h3 className='fw-bolder text-center mb-6'>{process.env.REACT_APP_THEME_NAME} Demos</h3>
+      <h3 className='fw-bolder text-center mb-6'>
+        {process.env.REACT_APP_THEME_NAME} Demos
+      </h3>
 
       <div className='row g-5'>
         {demos.map((item, index) => (
@@ -91,4 +93,4 @@ const Demos: FC = () => {
   )
 }
 
-export {Demos}
+export { Demos }

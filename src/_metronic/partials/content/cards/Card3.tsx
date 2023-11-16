@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {FC} from 'react'
-import {toAbsoluteUrl, KTSVG} from '../../../helpers'
+import { FC } from 'react'
+import { toAbsoluteUrl, KTSVG } from '../../../helpers'
 
 type Props = {
   color?: string
@@ -27,7 +27,9 @@ const Card3: FC<Props> = ({
         <div className='mb-5'>
           <div className='symbol symbol-75px symbol-circle'>
             {color ? (
-              <span className={`symbol-label bg-light-${color} text-${color} fs-5 fw-bolder`}>
+              <span
+                className={`symbol-label bg-light-${color} text-${color} fs-5 fw-bolder`}
+              >
                 {name.charAt(0)}
               </span>
             ) : (
@@ -39,7 +41,10 @@ const Card3: FC<Props> = ({
           </div>
         </div>
 
-        <a href='#' className='fs-4 text-gray-800 text-hover-primary fw-bolder mb-0'>
+        <a
+          href='#'
+          className='fs-4 text-gray-800 text-hover-primary fw-bolder mb-0'
+        >
           {name}
         </a>
 
@@ -58,7 +63,10 @@ const Card3: FC<Props> = ({
         </div>
 
         <a href='#' className='btn btn-sm btn-light'>
-          <KTSVG path='/media/icons/duotune/arrows/arr075.svg' className='svg-icon-3' />
+          <KTSVG
+            path='/media/icons/duotune/arrows/arr075.svg'
+            className='svg-icon-3'
+          />
           Connect
         </a>
       </div>
@@ -66,4 +74,4 @@ const Card3: FC<Props> = ({
   )
 }
 
-export {Card3}
+export { Card3 }

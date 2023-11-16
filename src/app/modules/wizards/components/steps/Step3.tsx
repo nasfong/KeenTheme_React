@@ -1,5 +1,5 @@
-import React, {FC} from 'react'
-import {Field, ErrorMessage} from 'formik'
+import React, { FC } from 'react'
+import { Field, ErrorMessage } from 'formik'
 
 const Step3: FC = () => {
   return (
@@ -20,7 +20,10 @@ const Step3: FC = () => {
       <div className='fv-row mb-10'>
         <label className='form-label required'>Business Name</label>
 
-        <Field name='businessName' className='form-control form-control-lg form-control-solid' />
+        <Field
+          name='businessName'
+          className='form-control form-control-lg form-control-solid'
+        />
         <div className='text-danger mt-2'>
           <ErrorMessage name='businessName' />
         </div>
@@ -77,9 +80,14 @@ const Step3: FC = () => {
       </div>
 
       <div className='fv-row mb-0'>
-        <label className='fs-6 fw-bold form-label required'>Contact Email</label>
+        <label className='fs-6 fw-bold form-label required'>
+          Contact Email
+        </label>
 
-        <Field name='businessEmail' className='form-control form-control-lg form-control-solid' />
+        <Field
+          name='businessEmail'
+          className='form-control form-control-lg form-control-solid'
+        />
         <div className='text-danger mt-2'>
           <ErrorMessage name='businessEmail' />
         </div>
@@ -88,4 +96,4 @@ const Step3: FC = () => {
   )
 }
 
-export {Step3}
+export { Step3 }

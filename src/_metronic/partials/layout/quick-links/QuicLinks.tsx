@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {FC} from 'react'
-import {Link} from 'react-router-dom'
-import {KTSVG, toAbsoluteUrl} from '../../../helpers'
+import React, { FC } from 'react'
+import { Link } from 'react-router-dom'
+import { KTSVG, toAbsoluteUrl } from '../../../helpers'
 
 const QuickLinks: FC = () => (
   <div
@@ -10,7 +10,9 @@ const QuickLinks: FC = () => (
   >
     <div
       className='d-flex flex-column flex-center bgi-no-repeat rounded-top px-9 py-10'
-      style={{backgroundImage: `url('${toAbsoluteUrl('/media/misc/pattern-1.jpg')}')`}}
+      style={{
+        backgroundImage: `url('${toAbsoluteUrl('/media/misc/pattern-1.jpg')}')`,
+      }}
     >
       <h3 className='text-white fw-bold mb-3'>Quick Links</h3>
 
@@ -41,13 +43,18 @@ const QuickLinks: FC = () => (
             path='/media/icons/duotune/communication/com010.svg'
             className='svg-icon-3x svg-icon-primary mb-2'
           />
-          <span className='fs-5 fw-bold text-gray-800 mb-0'>Administration</span>
+          <span className='fs-5 fw-bold text-gray-800 mb-0'>
+            Administration
+          </span>
           <span className='fs-7 text-gray-400'>Console</span>
         </a>
       </div>
 
       <div className='col-6'>
-        <a href='#' className='d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end'>
+        <a
+          href='#'
+          className='d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end'
+        >
           <KTSVG
             path='/media/icons/duotune/abstract/abs042.svg'
             className='svg-icon-3x svg-icon-primary mb-2'
@@ -58,7 +65,10 @@ const QuickLinks: FC = () => (
       </div>
 
       <div className='col-6'>
-        <a href='#' className='d-flex flex-column flex-center h-100 p-6 bg-hover-light'>
+        <a
+          href='#'
+          className='d-flex flex-column flex-center h-100 p-6 bg-hover-light'
+        >
           <KTSVG
             path='/media/icons/duotune/finance/fin006.svg'
             className='svg-icon-3x svg-icon-primary mb-2'
@@ -70,11 +80,18 @@ const QuickLinks: FC = () => (
     </div>
 
     <div className='py-2 text-center border-top'>
-      <Link to='/crafted/pages/profile' className='btn btn-color-gray-600 btn-active-color-primary'>
-        View All <KTSVG path='/media/icons/duotune/arrows/arr064.svg' className='svg-icon-5' />
+      <Link
+        to='/crafted/pages/profile'
+        className='btn btn-color-gray-600 btn-active-color-primary'
+      >
+        View All{' '}
+        <KTSVG
+          path='/media/icons/duotune/arrows/arr064.svg'
+          className='svg-icon-5'
+        />
       </Link>
     </div>
   </div>
 )
 
-export {QuickLinks}
+export { QuickLinks }

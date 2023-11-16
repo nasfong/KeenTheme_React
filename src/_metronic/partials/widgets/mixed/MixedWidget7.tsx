@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useEffect, useRef} from 'react'
-import ApexCharts, {ApexOptions} from 'apexcharts'
-import {KTSVG} from '../../../helpers'
-import {getCSSVariableValue} from '../../../assets/ts/_utils'
-import {Dropdown1} from '../../content/dropdown/Dropdown1'
+import React, { useEffect, useRef } from 'react'
+import ApexCharts, { ApexOptions } from 'apexcharts'
+import { KTSVG } from '../../../helpers'
+import { getCSSVariableValue } from '../../../assets/ts/_utils'
+import { Dropdown1 } from '../../content/dropdown/Dropdown1'
 
 type Props = {
   className: string
@@ -11,7 +11,11 @@ type Props = {
   chartHeight: string
 }
 
-const MixedWidget7: React.FC<Props> = ({className, chartColor, chartHeight}) => {
+const MixedWidget7: React.FC<Props> = ({
+  className,
+  chartColor,
+  chartHeight,
+}) => {
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -19,7 +23,10 @@ const MixedWidget7: React.FC<Props> = ({className, chartColor, chartHeight}) => 
       return
     }
 
-    const chart = new ApexCharts(chartRef.current, chartOptions(chartColor, chartHeight))
+    const chart = new ApexCharts(
+      chartRef.current,
+      chartOptions(chartColor, chartHeight),
+    )
     if (chart) {
       chart.render()
     }
@@ -38,7 +45,9 @@ const MixedWidget7: React.FC<Props> = ({className, chartColor, chartHeight}) => 
       <div className='card-header border-0 py-5'>
         <h3 className='card-title align-items-start flex-column'>
           <span className='card-label fw-bolder fs-3 mb-1'>Action Needed</span>
-          <span className='text-muted fw-bold fs-7'>Complete your profile setup</span>
+          <span className='text-muted fw-bold fs-7'>
+            Complete your profile setup
+          </span>
         </h3>
 
         <div className='card-toolbar'>
@@ -50,7 +59,10 @@ const MixedWidget7: React.FC<Props> = ({className, chartColor, chartHeight}) => 
             data-kt-menu-placement='bottom-end'
             data-kt-menu-flip='top-end'
           >
-            <KTSVG path='/media/icons/duotune/general/gen024.svg' className='svg-icon-2' />
+            <KTSVG
+              path='/media/icons/duotune/general/gen024.svg'
+              className='svg-icon-2'
+            />
           </button>
           <Dropdown1 />
           {/* end::Menu */}
@@ -66,8 +78,8 @@ const MixedWidget7: React.FC<Props> = ({className, chartColor, chartHeight}) => 
 
         <div className='pt-5'>
           <p className='text-center fs-6 pb-5 '>
-            <span className='badge badge-light-danger fs-8'>Notes:</span>&nbsp; Current sprint
-            requires stakeholders
+            <span className='badge badge-light-danger fs-8'>Notes:</span>&nbsp;
+            Current sprint requires stakeholders
             <br />
             to approve newly amended policies
           </p>
@@ -130,4 +142,4 @@ const chartOptions = (chartColor: string, chartHeight: string): ApexOptions => {
   }
 }
 
-export {MixedWidget7}
+export { MixedWidget7 }

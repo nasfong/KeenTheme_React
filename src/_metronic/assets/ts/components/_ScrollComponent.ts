@@ -9,7 +9,7 @@ import {
   getCSS,
   ElementStyleUtil,
 } from '../_utils/index'
-import {CookieComponent} from './_CookieComponent'
+import { CookieComponent } from './_CookieComponent'
 
 export interface ScrollOptions {
   saveState?: boolean
@@ -224,7 +224,11 @@ class ScrollComponent {
     const height = this.getOption(heightType || '')
     if (height instanceof Function) {
       return height.call(height)
-    } else if (height !== null && typeof height === 'string' && height.toLowerCase() === 'auto') {
+    } else if (
+      height !== null &&
+      typeof height === 'string' &&
+      height.toLowerCase() === 'auto'
+    ) {
       return this.getAutoHeight()
     } else {
       return height
@@ -267,7 +271,7 @@ class ScrollComponent {
 
   public static createInstance = (
     element: HTMLElement,
-    options: ScrollOptions = defaultScrollOptions
+    options: ScrollOptions = defaultScrollOptions,
   ): ScrollComponent | undefined => {
     let scroll = ScrollComponent.getInstance(element)
     if (!scroll) {
@@ -300,10 +304,10 @@ class ScrollComponent {
           // Locate and update Drawer instances on window resize
           ScrollComponent.updateAll()
         },
-        200
+        200,
       )
     })
   }
 }
 
-export {ScrollComponent, defaultScrollOptions}
+export { ScrollComponent, defaultScrollOptions }

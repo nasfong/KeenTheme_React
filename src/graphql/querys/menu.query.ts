@@ -1,4 +1,4 @@
-import { gql } from "__generated__";
+import { gql } from '__generated__'
 
 export const GET_ALL_MENUS = gql(`
   query getAllMenus {
@@ -20,6 +20,7 @@ export const GET_ALL_MENU_PARENTS = gql(`
     getAllMenuParents {
       id
       name
+      order
     }
   }
 `)

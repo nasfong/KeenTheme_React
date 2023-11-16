@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useRef, useEffect} from 'react'
-import ApexCharts, {ApexOptions} from 'apexcharts'
-import {KTSVG, toAbsoluteUrl} from '../../../helpers'
-import {Dropdown1} from '../../content/dropdown/Dropdown1'
-import {getCSS} from '../../../assets/ts/_utils'
+import React, { useRef, useEffect } from 'react'
+import ApexCharts, { ApexOptions } from 'apexcharts'
+import { KTSVG, toAbsoluteUrl } from '../../../helpers'
+import { Dropdown1 } from '../../content/dropdown/Dropdown1'
+import { getCSS } from '../../../assets/ts/_utils'
 
 export function SidebarUser() {
   const chartRef = useRef<HTMLDivElement | null>(null)
@@ -44,7 +44,9 @@ export function SidebarUser() {
               <div
                 className='d-flex flex-center position-relative bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-center'
                 style={{
-                  backgroundImage: `url('${toAbsoluteUrl('/media/svg/illustrations/bg-2.svg')}')`,
+                  backgroundImage: `url('${toAbsoluteUrl(
+                    '/media/svg/illustrations/bg-2.svg',
+                  )}')`,
                 }}
               >
                 <div className='position-absolute mb-7'>
@@ -58,7 +60,11 @@ export function SidebarUser() {
                     </span>
                   </div>
                 </div>
-                <div ref={chartRef} id='kt_user_chart' style={{height: '200px'}}></div>
+                <div
+                  ref={chartRef}
+                  id='kt_user_chart'
+                  style={{ height: '200px' }}
+                ></div>
               </div>
               {/* end::Chart */}
 
@@ -67,7 +73,9 @@ export function SidebarUser() {
                 {/* begin::Title */}
                 <div className='text-center pb-12'>
                   {/* begin::Username */}
-                  <h3 className='fw-bolder text-white fs-2 pb-4'>Mr. Anderson</h3>
+                  <h3 className='fw-bolder text-white fs-2 pb-4'>
+                    Mr. Anderson
+                  </h3>
                   {/* end::Username */}
 
                   {/* end::Action */}
@@ -81,29 +89,49 @@ export function SidebarUser() {
                 {/* begin::Row */}
                 <div className='row row-cols-2 px-xl-12 sidebar-toolbar'>
                   <div className='col p-3'>
-                    <a href='#' className='btn  p-5 w-100 text-start btn-active-primary'>
-                      <span className='text-white fw-bolder fs-1 d-block pb-1'>38</span>
+                    <a
+                      href='#'
+                      className='btn  p-5 w-100 text-start btn-active-primary'
+                    >
+                      <span className='text-white fw-bolder fs-1 d-block pb-1'>
+                        38
+                      </span>
                       <span className='fw-bold'>Pending</span>
                     </a>
                   </div>
 
                   <div className='col p-3'>
-                    <a href='#' className='btn  p-5 w-100 text-start btn-active-primary'>
-                      <span className='text-white fw-bolder fs-1 d-block pb-1'>204</span>
+                    <a
+                      href='#'
+                      className='btn  p-5 w-100 text-start btn-active-primary'
+                    >
+                      <span className='text-white fw-bolder fs-1 d-block pb-1'>
+                        204
+                      </span>
                       <span className='fw-bold'>Completed</span>
                     </a>
                   </div>
 
                   <div className='col p-3'>
-                    <a href='#' className='btn  p-5 w-100 text-start btn-active-primary'>
-                      <span className='text-white fw-bolder fs-1 d-block pb-1'>76</span>
+                    <a
+                      href='#'
+                      className='btn  p-5 w-100 text-start btn-active-primary'
+                    >
+                      <span className='text-white fw-bolder fs-1 d-block pb-1'>
+                        76
+                      </span>
                       <span className='fw-bold'>On Hold</span>
                     </a>
                   </div>
 
                   <div className='col p-3'>
-                    <a href='#' className='btn  p-5 w-100 text-start btn-active-primary'>
-                      <span className='text-white fw-bolder fs-1 d-block pb-1'>9</span>
+                    <a
+                      href='#'
+                      className='btn  p-5 w-100 text-start btn-active-primary'
+                    >
+                      <span className='text-white fw-bolder fs-1 d-block pb-1'>
+                        9
+                      </span>
                       <span className='fw-bold'>In Progress</span>
                     </a>
                   </div>
@@ -121,7 +149,9 @@ export function SidebarUser() {
         <div className='card card-custom bg-info'>
           {/* begin::Header */}
           <div className='card-header border-0'>
-            <h3 className='card-title fw-bolder text-white fs-3'>Fox Bestsellers</h3>
+            <h3 className='card-title fw-bolder text-white fs-3'>
+              Fox Bestsellers
+            </h3>
             <div className='card-toolbar'>
               {/* begin::Dropdown */}
               <button
@@ -132,7 +162,10 @@ export function SidebarUser() {
                 data-kt-menu-placement='bottom-end'
                 data-kt-menu-flip='top-end'
               >
-                <KTSVG path='/media/icons/duotune/general/gen024.svg' className='svg-icon-1' />
+                <KTSVG
+                  path='/media/icons/duotune/general/gen024.svg'
+                  className='svg-icon-1'
+                />
               </button>
               <Dropdown1 />
               {/* end::Dropdown */}
@@ -156,7 +189,10 @@ export function SidebarUser() {
 
               {/* begin::Title */}
               <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
+                <a
+                  href='#'
+                  className='text-white fw-bolder text-hover-primary fs-6'
+                >
                   Blue Donut
                 </a>
                 <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -181,7 +217,10 @@ export function SidebarUser() {
 
               {/* begin::Title */}
               <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
+                <a
+                  href='#'
+                  className='text-white fw-bolder text-hover-primary fs-6'
+                >
                   Lovely Hearts
                 </a>
                 <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -206,7 +245,10 @@ export function SidebarUser() {
 
               {/* begin::Title */}
               <div className='d-flex flex-column flex-grow-1 pe-3'>
-                <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
+                <a
+                  href='#'
+                  className='text-white fw-bolder text-hover-primary fs-6'
+                >
                   Hands & Yellow
                 </a>
                 <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -231,7 +273,10 @@ export function SidebarUser() {
 
               {/* begin::Title */}
               <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
+                <a
+                  href='#'
+                  className='text-white fw-bolder text-hover-primary fs-6'
+                >
                   Cup & Green
                 </a>
                 <span className='text-white opacity-25 fs-7 fw-bold my-1'>
@@ -256,7 +301,10 @@ export function SidebarUser() {
 
               {/* begin::Title */}
               <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
+                <a
+                  href='#'
+                  className='text-white fw-bolder text-hover-primary fs-6'
+                >
                   Bose QC 35 II
                 </a>
                 <span className='text-white opacity-25 fs-7 fw-bold my-1'>

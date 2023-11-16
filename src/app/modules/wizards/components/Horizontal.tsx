@@ -1,13 +1,17 @@
-import React, {FC, useEffect, useRef, useState} from 'react'
-import {Step1} from './steps/Step1'
-import {Step2} from './steps/Step2'
-import {Step3} from './steps/Step3'
-import {Step4} from './steps/Step4'
-import {Step5} from './steps/Step5'
-import {KTSVG} from '../../../../_metronic/helpers'
-import {StepperComponent} from '../../../../_metronic/assets/ts/components'
-import {Formik, Form, FormikValues} from 'formik'
-import {createAccountSchemas, ICreateAccount, inits} from './CreateAccountWizardHelper'
+import React, { FC, useEffect, useRef, useState } from 'react'
+import { Step1 } from './steps/Step1'
+import { Step2 } from './steps/Step2'
+import { Step3 } from './steps/Step3'
+import { Step4 } from './steps/Step4'
+import { Step5 } from './steps/Step5'
+import { KTSVG } from '../../../../_metronic/helpers'
+import { StepperComponent } from '../../../../_metronic/assets/ts/components'
+import { Formik, Form, FormikValues } from 'formik'
+import {
+  createAccountSchemas,
+  ICreateAccount,
+  inits,
+} from './CreateAccountWizardHelper'
 
 const Horizontal: FC = () => {
   const stepperRef = useRef<HTMLDivElement | null>(null)
@@ -17,7 +21,9 @@ const Horizontal: FC = () => {
   const [isSubmitButton, setSubmitButton] = useState(false)
 
   const loadStepper = () => {
-    stepper.current = StepperComponent.createInsance(stepperRef.current as HTMLDivElement)
+    stepper.current = StepperComponent.createInsance(
+      stepperRef.current as HTMLDivElement,
+    )
   }
 
   const prevStep = () => {
@@ -25,7 +31,10 @@ const Horizontal: FC = () => {
       return
     }
 
-    setSubmitButton(stepper.current.currentStepIndex === stepper.current.totatStepsNumber! - 1)
+    setSubmitButton(
+      stepper.current.currentStepIndex ===
+        stepper.current.totatStepsNumber! - 1,
+    )
 
     stepper.current.goPrev()
 
@@ -37,7 +46,10 @@ const Horizontal: FC = () => {
       return
     }
 
-    setSubmitButton(stepper.current.currentStepIndex === stepper.current.totatStepsNumber! - 1)
+    setSubmitButton(
+      stepper.current.currentStepIndex ===
+        stepper.current.totatStepsNumber! - 1,
+    )
 
     setCurrentSchema(createAccountSchemas[stepper.current.currentStepIndex])
 
@@ -87,9 +99,16 @@ const Horizontal: FC = () => {
             </div>
           </div>
 
-          <Formik validationSchema={currentSchema} initialValues={initValues} onSubmit={submitStep}>
+          <Formik
+            validationSchema={currentSchema}
+            initialValues={initValues}
+            onSubmit={submitStep}
+          >
             {() => (
-              <Form className='mx-auto mw-600px w-100 pt-15 pb-10' id='kt_create_account_form'>
+              <Form
+                className='mx-auto mw-600px w-100 pt-15 pb-10'
+                id='kt_create_account_form'
+              >
                 <div className='current' data-kt-stepper-element='content'>
                   <Step1 />
                 </div>
@@ -127,7 +146,10 @@ const Horizontal: FC = () => {
                   </div>
 
                   <div>
-                    <button type='submit' className='btn btn-lg btn-primary me-3'>
+                    <button
+                      type='submit'
+                      className='btn btn-lg btn-primary me-3'
+                    >
                       <span className='indicator-label'>
                         {!isSubmitButton && 'Continue'}
                         {isSubmitButton && 'Submit'}
@@ -148,4 +170,4 @@ const Horizontal: FC = () => {
   )
 }
 
-export {Horizontal}
+export { Horizontal }

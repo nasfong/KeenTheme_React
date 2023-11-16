@@ -13,7 +13,10 @@ import {
 export class DrawerStore {
   static store: Map<string, DrawerComponent> = new Map()
 
-  public static set(instanceId: string, drawerComponentObj: DrawerComponent): void {
+  public static set(
+    instanceId: string,
+    drawerComponentObj: DrawerComponent,
+  ): void {
     if (DrawerStore.has(instanceId)) {
       return
     }
@@ -113,8 +116,12 @@ class DrawerComponent {
     const direction = String(this._getOption('direction'))
 
     // Reset state
-    const hasBaseClass = this.element.classList.contains(`${this.options.baseClass}-on`)
-    const bodyCanvasAttr = String(document.body.getAttribute(`data-kt-drawer-${this.name}-`))
+    const hasBaseClass = this.element.classList.contains(
+      `${this.options.baseClass}-on`,
+    )
+    const bodyCanvasAttr = String(
+      document.body.getAttribute(`data-kt-drawer-${this.name}-`),
+    )
 
     if (hasBaseClass === true && bodyCanvasAttr === 'on') {
       this.shown = true
@@ -332,16 +339,21 @@ class DrawerComponent {
   // Dismiss instances
   public static handleDismiss = () => {
     // External drawer toggle handler
-    DOMEventHandlerUtil.on(document.body, '[data-kt-drawer-dismiss="true"]', 'click', () => {
-      /* @ts-ignore */
-      const element = this.closest('[data-kt-drawer="true"]')
-      if (element) {
-        const drawer = DrawerComponent.getInstance(element)
-        if (drawer && drawer.isShown()) {
-          drawer.hide()
+    DOMEventHandlerUtil.on(
+      document.body,
+      '[data-kt-drawer-dismiss="true"]',
+      'click',
+      () => {
+        /* @ts-ignore */
+        const element = this.closest('[data-kt-drawer="true"]')
+        if (element) {
+          const drawer = DrawerComponent.getInstance(element)
+          if (drawer && drawer.isShown()) {
+            drawer.hide()
+          }
         }
-      }
-    })
+      },
+    )
   }
 
   // Global Initialization
@@ -353,7 +365,9 @@ class DrawerComponent {
         timer,
         () => {
           // Locate and update Drawer instances on window resize
-          const elements = document.body.querySelectorAll('[data-kt-drawer="true"]')
+          const elements = document.body.querySelectorAll(
+            '[data-kt-drawer="true"]',
+          )
           elements.forEach((el) => {
             const item = el as HTMLElement
             const instance = DrawerComponent.getInstance(item.id)
@@ -363,7 +377,7 @@ class DrawerComponent {
             }
           })
         },
-        200
+        200,
       )
     })
   }
@@ -382,4 +396,4 @@ class DrawerComponent {
   }
 }
 
-export {DrawerComponent, defaultDrawerOptions}
+export { DrawerComponent, defaultDrawerOptions }

@@ -1,12 +1,12 @@
 import React from 'react'
-import {Redirect, Route, Switch} from 'react-router-dom'
-import {PageLink, PageTitle} from '../../../_metronic/layout/core'
-import {Overview} from './components/Overview'
-import {Projects} from './components/Projects'
-import {Campaigns} from './components/Campaigns'
-import {Documents} from './components/Documents'
-import {Connections} from './components/Connections'
-import {ProfileHeader} from './ProfileHeader'
+import { Redirect, Route, Switch } from 'react-router-dom'
+import { PageLink, PageTitle } from '../../../_metronic/layout/core'
+import { Overview } from './components/Overview'
+import { Projects } from './components/Projects'
+import { Campaigns } from './components/Campaigns'
+import { Documents } from './components/Documents'
+import { Connections } from './components/Connections'
+import { ProfileHeader } from './ProfileHeader'
 
 const profileBreadCrumbs: Array<PageLink> = [
   {
@@ -48,7 +48,11 @@ const ProfilePage: React.FC = () => {
           <PageTitle breadcrumbs={profileBreadCrumbs}>Connections</PageTitle>
           <Connections />
         </Route>
-        <Redirect from='/crafted/pages/profile' exact={true} to='/crafted/pages/profile/overview' />
+        <Redirect
+          from='/crafted/pages/profile'
+          exact={true}
+          to='/crafted/pages/profile/overview'
+        />
         <Redirect to='/crafted/pages/profile/overview' />
       </Switch>
     </>

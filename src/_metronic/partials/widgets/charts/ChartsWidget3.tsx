@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useEffect, useRef} from 'react'
-import ApexCharts, {ApexOptions} from 'apexcharts'
-import {getCSS, getCSSVariableValue} from '../../../assets/ts/_utils'
+import React, { useEffect, useRef } from 'react'
+import ApexCharts, { ApexOptions } from 'apexcharts'
+import { getCSS, getCSSVariableValue } from '../../../assets/ts/_utils'
 
 type Props = {
   className: string
 }
 
-const ChartsWidget3: React.FC<Props> = ({className}) => {
+const ChartsWidget3: React.FC<Props> = ({ className }) => {
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -34,9 +34,13 @@ const ChartsWidget3: React.FC<Props> = ({className}) => {
       {/* begin::Header */}
       <div className='card-header border-0 pt-5'>
         <h3 className='card-title align-items-start flex-column'>
-          <span className='card-label fw-bolder fs-3 mb-1'>Recent Transactions</span>
+          <span className='card-label fw-bolder fs-3 mb-1'>
+            Recent Transactions
+          </span>
 
-          <span className='text-muted fw-bold fs-7'>More than 1000 new records</span>
+          <span className='text-muted fw-bold fs-7'>
+            More than 1000 new records
+          </span>
         </h3>
 
         {/* begin::Toolbar */}
@@ -69,7 +73,11 @@ const ChartsWidget3: React.FC<Props> = ({className}) => {
       {/* begin::Body */}
       <div className='card-body'>
         {/* begin::Chart */}
-        <div ref={chartRef} id='kt_charts_widget_3_chart' style={{height: '350px'}}></div>
+        <div
+          ref={chartRef}
+          id='kt_charts_widget_3_chart'
+          style={{ height: '350px' }}
+        ></div>
         {/* end::Chart */}
       </div>
       {/* end::Body */}
@@ -77,7 +85,7 @@ const ChartsWidget3: React.FC<Props> = ({className}) => {
   )
 }
 
-export {ChartsWidget3}
+export { ChartsWidget3 }
 
 function getChartOptions(height: number): ApexOptions {
   const labelColor = getCSSVariableValue('--bs-gray-500')

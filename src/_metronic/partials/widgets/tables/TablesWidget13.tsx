@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import {KTSVG} from '../../../helpers'
+import { KTSVG } from '../../../helpers'
 
 type Props = {
   className: string
 }
 
-const TablesWidget13: React.FC<Props> = ({className}) => {
+const TablesWidget13: React.FC<Props> = ({ className }) => {
   return (
     <div className={`card ${className}`}>
       {/* begin::Header */}
@@ -24,7 +24,10 @@ const TablesWidget13: React.FC<Props> = ({className}) => {
             data-kt-menu-placement='bottom-end'
             data-kt-menu-flip='top-end'
           >
-            <KTSVG path='/media/icons/duotune/general/gen024.svg' className='svg-icon-2' />
+            <KTSVG
+              path='/media/icons/duotune/general/gen024.svg'
+              className='svg-icon-2'
+            />
           </button>
           {/* begin::Menu 2 */}
           <div
@@ -33,7 +36,9 @@ const TablesWidget13: React.FC<Props> = ({className}) => {
           >
             {/* begin::Menu item */}
             <div className='menu-item px-3'>
-              <div className='menu-content fs-6 text-dark fw-bolder px-3 py-4'>Quick Actions</div>
+              <div className='menu-content fs-6 text-dark fw-bolder px-3 py-4'>
+                Quick Actions
+              </div>
             </div>
             {/* end::Menu item */}
             {/* begin::Menu separator */}
@@ -153,35 +158,57 @@ const TablesWidget13: React.FC<Props> = ({className}) => {
               <tr>
                 <td>
                   <div className='form-check form-check-sm form-check-custom form-check-solid'>
-                    <input className='form-check-input widget-13-check' type='checkbox' value='1' />
+                    <input
+                      className='form-check-input widget-13-check'
+                      type='checkbox'
+                      value='1'
+                    />
                   </div>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary fs-6'
+                  >
                     56037-XDER
                   </a>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'
+                  >
                     Brasil
                   </a>
-                  <span className='text-muted fw-bold text-muted d-block fs-7'>Code: PH</span>
+                  <span className='text-muted fw-bold text-muted d-block fs-7'>
+                    Code: PH
+                  </span>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'
+                  >
                     05/28/2020
                   </a>
-                  <span className='text-muted fw-bold text-muted d-block fs-7'>Code: Paid</span>
+                  <span className='text-muted fw-bold text-muted d-block fs-7'>
+                    Code: Paid
+                  </span>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'
+                  >
                     Intertico
                   </a>
                   <span className='text-muted fw-bold text-muted d-block fs-7'>
                     Web, UI/UX Design
                   </span>
                 </td>
-                <td className='text-dark fw-bolder text-hover-primary fs-6'>$3560</td>
+                <td className='text-dark fw-bolder text-hover-primary fs-6'>
+                  $3560
+                </td>
                 <td>
                   <span className='badge badge-light-success'>Approved</span>
                 </td>
@@ -190,51 +217,85 @@ const TablesWidget13: React.FC<Props> = ({className}) => {
                     href='#'
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
                   >
-                    <KTSVG path='/media/icons/duotune/general/gen019.svg' className='svg-icon-3' />
+                    <KTSVG
+                      path='/media/icons/duotune/general/gen019.svg'
+                      className='svg-icon-3'
+                    />
                   </a>
                   <a
                     href='#'
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
                   >
-                    <KTSVG path='/media/icons/duotune/art/art005.svg' className='svg-icon-3' />
+                    <KTSVG
+                      path='/media/icons/duotune/art/art005.svg'
+                      className='svg-icon-3'
+                    />
                   </a>
-                  <a href='#' className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'>
-                    <KTSVG path='/media/icons/duotune/general/gen027.svg' className='svg-icon-3' />
+                  <a
+                    href='#'
+                    className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
+                  >
+                    <KTSVG
+                      path='/media/icons/duotune/general/gen027.svg'
+                      className='svg-icon-3'
+                    />
                   </a>
                 </td>
               </tr>
               <tr>
                 <td>
                   <div className='form-check form-check-sm form-check-custom form-check-solid'>
-                    <input className='form-check-input widget-13-check' type='checkbox' value='1' />
+                    <input
+                      className='form-check-input widget-13-check'
+                      type='checkbox'
+                      value='1'
+                    />
                   </div>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary fs-6'
+                  >
                     05822-FXSP
                   </a>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'
+                  >
                     Belarus
                   </a>
-                  <span className='text-muted fw-bold text-muted d-block fs-7'>Code: BY</span>
+                  <span className='text-muted fw-bold text-muted d-block fs-7'>
+                    Code: BY
+                  </span>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'
+                  >
                     04/18/2021
                   </a>
-                  <span className='text-muted fw-bold text-muted d-block fs-7'>Code: Paid</span>
+                  <span className='text-muted fw-bold text-muted d-block fs-7'>
+                    Code: Paid
+                  </span>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'
+                  >
                     Agoda
                   </a>
                   <span className='text-muted fw-bold text-muted d-block fs-7'>
                     Houses &amp; Hotels
                   </span>
                 </td>
-                <td className='text-dark fw-bolder text-hover-primary fs-6'>$4850</td>
+                <td className='text-dark fw-bolder text-hover-primary fs-6'>
+                  $4850
+                </td>
                 <td>
                   <span className='badge badge-light-warning'>In Progress</span>
                 </td>
@@ -243,49 +304,85 @@ const TablesWidget13: React.FC<Props> = ({className}) => {
                     href='#'
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
                   >
-                    <KTSVG path='/media/icons/duotune/general/gen019.svg' className='svg-icon-3' />
+                    <KTSVG
+                      path='/media/icons/duotune/general/gen019.svg'
+                      className='svg-icon-3'
+                    />
                   </a>
                   <a
                     href='#'
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
                   >
-                    <KTSVG path='/media/icons/duotune/art/art005.svg' className='svg-icon-3' />
+                    <KTSVG
+                      path='/media/icons/duotune/art/art005.svg'
+                      className='svg-icon-3'
+                    />
                   </a>
-                  <a href='#' className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'>
-                    <KTSVG path='/media/icons/duotune/general/gen027.svg' className='svg-icon-3' />
+                  <a
+                    href='#'
+                    className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
+                  >
+                    <KTSVG
+                      path='/media/icons/duotune/general/gen027.svg'
+                      className='svg-icon-3'
+                    />
                   </a>
                 </td>
               </tr>
               <tr>
                 <td>
                   <div className='form-check form-check-sm form-check-custom form-check-solid'>
-                    <input className='form-check-input widget-13-check' type='checkbox' value='1' />
+                    <input
+                      className='form-check-input widget-13-check'
+                      type='checkbox'
+                      value='1'
+                    />
                   </div>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary fs-6'
+                  >
                     4472-QREX
                   </a>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'
+                  >
                     Phillipines
                   </a>
-                  <span className='text-muted fw-bold text-muted d-block fs-7'>Code: BH</span>
+                  <span className='text-muted fw-bold text-muted d-block fs-7'>
+                    Code: BH
+                  </span>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'
+                  >
                     07/23/2019
                   </a>
-                  <span className='text-muted fw-bold text-muted d-block fs-7'>Code: Paid</span>
+                  <span className='text-muted fw-bold text-muted d-block fs-7'>
+                    Code: Paid
+                  </span>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'
+                  >
                     RoadGee
                   </a>
-                  <span className='text-muted fw-bold text-muted d-block fs-7'>Transportation</span>
+                  <span className='text-muted fw-bold text-muted d-block fs-7'>
+                    Transportation
+                  </span>
                 </td>
-                <td className='text-dark fw-bolder text-hover-primary fs-6'>$8376</td>
+                <td className='text-dark fw-bolder text-hover-primary fs-6'>
+                  $8376
+                </td>
                 <td>
                   <span className='badge badge-light-danger'>Success</span>
                 </td>
@@ -294,49 +391,85 @@ const TablesWidget13: React.FC<Props> = ({className}) => {
                     href='#'
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
                   >
-                    <KTSVG path='/media/icons/duotune/general/gen019.svg' className='svg-icon-3' />
+                    <KTSVG
+                      path='/media/icons/duotune/general/gen019.svg'
+                      className='svg-icon-3'
+                    />
                   </a>
                   <a
                     href='#'
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
                   >
-                    <KTSVG path='/media/icons/duotune/art/art005.svg' className='svg-icon-3' />
+                    <KTSVG
+                      path='/media/icons/duotune/art/art005.svg'
+                      className='svg-icon-3'
+                    />
                   </a>
-                  <a href='#' className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'>
-                    <KTSVG path='/media/icons/duotune/general/gen027.svg' className='svg-icon-3' />
+                  <a
+                    href='#'
+                    className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
+                  >
+                    <KTSVG
+                      path='/media/icons/duotune/general/gen027.svg'
+                      className='svg-icon-3'
+                    />
                   </a>
                 </td>
               </tr>
               <tr>
                 <td>
                   <div className='form-check form-check-sm form-check-custom form-check-solid'>
-                    <input className='form-check-input widget-13-check' type='checkbox' value='1' />
+                    <input
+                      className='form-check-input widget-13-check'
+                      type='checkbox'
+                      value='1'
+                    />
                   </div>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary fs-6'
+                  >
                     00347-BCLQ
                   </a>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'
+                  >
                     Argentina
                   </a>
-                  <span className='text-muted fw-bold text-muted d-block fs-7'>Code: BR</span>
+                  <span className='text-muted fw-bold text-muted d-block fs-7'>
+                    Code: BR
+                  </span>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'
+                  >
                     12/21/2021
                   </a>
-                  <span className='text-muted fw-bold text-muted d-block fs-7'>Code: Paid</span>
+                  <span className='text-muted fw-bold text-muted d-block fs-7'>
+                    Code: Paid
+                  </span>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'
+                  >
                     The Hill
                   </a>
-                  <span className='text-muted fw-bold text-muted d-block fs-7'>Insurance</span>
+                  <span className='text-muted fw-bold text-muted d-block fs-7'>
+                    Insurance
+                  </span>
                 </td>
-                <td className='text-dark fw-bolder text-hover-primary fs-6'>$9486</td>
+                <td className='text-dark fw-bolder text-hover-primary fs-6'>
+                  $9486
+                </td>
                 <td>
                   <span className='badge badge-light-info'>Rejected</span>
                 </td>
@@ -345,49 +478,85 @@ const TablesWidget13: React.FC<Props> = ({className}) => {
                     href='#'
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
                   >
-                    <KTSVG path='/media/icons/duotune/general/gen019.svg' className='svg-icon-3' />
+                    <KTSVG
+                      path='/media/icons/duotune/general/gen019.svg'
+                      className='svg-icon-3'
+                    />
                   </a>
                   <a
                     href='#'
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
                   >
-                    <KTSVG path='/media/icons/duotune/art/art005.svg' className='svg-icon-3' />
+                    <KTSVG
+                      path='/media/icons/duotune/art/art005.svg'
+                      className='svg-icon-3'
+                    />
                   </a>
-                  <a href='#' className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'>
-                    <KTSVG path='/media/icons/duotune/general/gen027.svg' className='svg-icon-3' />
+                  <a
+                    href='#'
+                    className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
+                  >
+                    <KTSVG
+                      path='/media/icons/duotune/general/gen027.svg'
+                      className='svg-icon-3'
+                    />
                   </a>
                 </td>
               </tr>
               <tr>
                 <td>
                   <div className='form-check form-check-sm form-check-custom form-check-solid'>
-                    <input className='form-check-input widget-13-check' type='checkbox' value='1' />
+                    <input
+                      className='form-check-input widget-13-check'
+                      type='checkbox'
+                      value='1'
+                    />
                   </div>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary fs-6'
+                  >
                     59486-XDER
                   </a>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'
+                  >
                     Agoda
                   </a>
-                  <span className='text-muted fw-bold text-muted d-block fs-7'>Code: BT</span>
+                  <span className='text-muted fw-bold text-muted d-block fs-7'>
+                    Code: BT
+                  </span>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'
+                  >
                     05/28/2020
                   </a>
-                  <span className='text-muted fw-bold text-muted d-block fs-7'>Code: Paid</span>
+                  <span className='text-muted fw-bold text-muted d-block fs-7'>
+                    Code: Paid
+                  </span>
                 </td>
                 <td>
-                  <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
+                  <a
+                    href='#'
+                    className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'
+                  >
                     Phillipines
                   </a>
-                  <span className='text-muted fw-bold text-muted d-block fs-7'>Transportation</span>
+                  <span className='text-muted fw-bold text-muted d-block fs-7'>
+                    Transportation
+                  </span>
                 </td>
-                <td className='text-dark fw-bolder text-hover-primary fs-6'>$8476</td>
+                <td className='text-dark fw-bolder text-hover-primary fs-6'>
+                  $8476
+                </td>
                 <td>
                   <span className='badge badge-light-primary'>Approved</span>
                 </td>
@@ -396,16 +565,28 @@ const TablesWidget13: React.FC<Props> = ({className}) => {
                     href='#'
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
                   >
-                    <KTSVG path='/media/icons/duotune/general/gen019.svg' className='svg-icon-3' />
+                    <KTSVG
+                      path='/media/icons/duotune/general/gen019.svg'
+                      className='svg-icon-3'
+                    />
                   </a>
                   <a
                     href='#'
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
                   >
-                    <KTSVG path='/media/icons/duotune/art/art005.svg' className='svg-icon-3' />
+                    <KTSVG
+                      path='/media/icons/duotune/art/art005.svg'
+                      className='svg-icon-3'
+                    />
                   </a>
-                  <a href='#' className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'>
-                    <KTSVG path='/media/icons/duotune/general/gen027.svg' className='svg-icon-3' />
+                  <a
+                    href='#'
+                    className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
+                  >
+                    <KTSVG
+                      path='/media/icons/duotune/general/gen027.svg'
+                      className='svg-icon-3'
+                    />
                   </a>
                 </td>
               </tr>
@@ -421,4 +602,4 @@ const TablesWidget13: React.FC<Props> = ({className}) => {
   )
 }
 
-export {TablesWidget13}
+export { TablesWidget13 }

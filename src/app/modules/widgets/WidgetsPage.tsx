@@ -1,12 +1,12 @@
 import React from 'react'
-import {Redirect, Route, Switch} from 'react-router-dom'
-import {PageLink, PageTitle} from '../../../_metronic/layout/core'
-import {Charts} from './components/Charts'
-import {Feeds} from './components/Feeds'
-import {Lists} from './components/Lists'
-import {Tables} from './components/Tables'
-import {Mixed} from './components/Mixed'
-import {Statistics} from './components/Statistics'
+import { Redirect, Route, Switch } from 'react-router-dom'
+import { PageLink, PageTitle } from '../../../_metronic/layout/core'
+import { Charts } from './components/Charts'
+import { Feeds } from './components/Feeds'
+import { Lists } from './components/Lists'
+import { Tables } from './components/Tables'
+import { Mixed } from './components/Mixed'
+import { Statistics } from './components/Statistics'
 
 const widgetsBreadCrumbs: Array<PageLink> = [
   {
@@ -50,7 +50,11 @@ const WidgetsPage: React.FC = () => {
         <PageTitle breadcrumbs={widgetsBreadCrumbs}>Statiscics</PageTitle>
         <Statistics />
       </Route>
-      <Redirect from='/crafted/widgets' exact={true} to='/crafted/widgets/lists' />
+      <Redirect
+        from='/crafted/widgets'
+        exact={true}
+        to='/crafted/widgets/lists'
+      />
       <Redirect to='/crafted/widgets/lists' />
     </Switch>
   )

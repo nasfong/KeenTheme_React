@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {FC} from 'react'
-import {KTSVG} from '../../../helpers'
-import {ChatInner} from '../../chat/ChatInner'
+import React, { FC } from 'react'
+import { KTSVG } from '../../../helpers'
+import { ChatInner } from '../../chat/ChatInner'
 
 const DrawerMessenger: FC = () => (
   <div
@@ -20,7 +20,10 @@ const DrawerMessenger: FC = () => (
       <div className='card-header pe-5' id='kt_drawer_chat_messenger_header'>
         <div className='card-title'>
           <div className='d-flex justify-content-center flex-column me-3'>
-            <a href='#' className='fs-4 fw-bolder text-gray-900 text-hover-primary me-1 mb-2 lh-1'>
+            <a
+              href='#'
+              className='fs-4 fw-bolder text-gray-900 text-hover-primary me-1 mb-2 lh-1'
+            >
               Brian Cox
             </a>
 
@@ -43,8 +46,14 @@ const DrawerMessenger: FC = () => (
             </button>
           </div>
 
-          <div className='btn btn-sm btn-icon btn-active-light-primary' id='kt_drawer_chat_close'>
-            <KTSVG path='/media/icons/duotune/arrows/arr061.svg' className='svg-icon-2' />
+          <div
+            className='btn btn-sm btn-icon btn-active-light-primary'
+            id='kt_drawer_chat_close'
+          >
+            <KTSVG
+              path='/media/icons/duotune/arrows/arr061.svg'
+              className='svg-icon-2'
+            />
           </div>
         </div>
       </div>
@@ -54,4 +63,4 @@ const DrawerMessenger: FC = () => (
   </div>
 )
 
-export {DrawerMessenger}
+export { DrawerMessenger }

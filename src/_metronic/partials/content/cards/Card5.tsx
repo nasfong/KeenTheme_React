@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {FC} from 'react'
-import {toAbsoluteUrl, KTSVG} from '../../../helpers'
-import {Dropdown1} from '../dropdown/Dropdown1'
+import { FC } from 'react'
+import { toAbsoluteUrl, KTSVG } from '../../../helpers'
+import { Dropdown1 } from '../dropdown/Dropdown1'
 
 type Props = {
   image: string
@@ -32,7 +32,10 @@ const Card5: FC<Props> = ({
             <img src={toAbsoluteUrl(image)} alt='Metronic' className='p-3' />
           </div>
 
-          <a href='#' className='fs-4 fw-bold text-hover-primary text-gray-600 m-0'>
+          <a
+            href='#'
+            className='fs-4 fw-bold text-hover-primary text-gray-600 m-0'
+          >
             {title}
           </a>
         </div>
@@ -73,7 +76,12 @@ const Card5: FC<Props> = ({
             />
           )}
 
-          <div className={`fw-bolder me-2 ` + (status === 'up' ? 'text-success' : 'text-danger')}>
+          <div
+            className={
+              `fw-bolder me-2 ` +
+              (status === 'up' ? 'text-success' : 'text-danger')
+            }
+          >
             {status === 'up' ? '+' : '-'}
             {statusValue}%
           </div>
@@ -82,7 +90,9 @@ const Card5: FC<Props> = ({
         </div>
 
         <div className='d-flex align-items-center fw-bold'>
-          <span className='badge bg-light text-gray-700 px-3 py-2 me-2'>{progress}%</span>
+          <span className='badge bg-light text-gray-700 px-3 py-2 me-2'>
+            {progress}%
+          </span>
           <span className='text-gray-400 fs-7'>{progressType}</span>
         </div>
       </div>
@@ -90,4 +100,4 @@ const Card5: FC<Props> = ({
   )
 }
 
-export {Card5}
+export { Card5 }

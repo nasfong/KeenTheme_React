@@ -1,6 +1,6 @@
-import {DOMEventHandlerUtil} from './_DOMEventHandlerUtil'
-import {ElementStyleUtil} from './_ElementStyleUtil'
-import {getElementOffset} from './DomHelpers'
+import { DOMEventHandlerUtil } from './_DOMEventHandlerUtil'
+import { ElementStyleUtil } from './_ElementStyleUtil'
+import { getElementOffset } from './DomHelpers'
 
 export class ElementAnimateUtil {
   public static animate(
@@ -8,7 +8,7 @@ export class ElementAnimateUtil {
     to: number,
     duration: number,
     update: Function,
-    complete?: Function
+    complete?: Function,
   ) {
     /**
      * TinyAnimate.easings
@@ -49,7 +49,9 @@ export class ElementAnimateUtil {
 
     // Start animation loop
     const start =
-      window.performance && window.performance.now ? window.performance.now() : +new Date()
+      window.performance && window.performance.now
+        ? window.performance.now()
+        : +new Date()
 
     window.requestAnimationFrame(loop)
   }
@@ -57,7 +59,7 @@ export class ElementAnimateUtil {
   public static animateClass(
     element: HTMLElement,
     animationName: string,
-    callBack?: Function
+    callBack?: Function,
   ): void {
     const animateClasses = animationName.split(' ')
     animateClasses.forEach((cssClass) => element.classList.add(cssClass))
@@ -86,10 +88,17 @@ export class ElementAnimateUtil {
     ElementStyleUtil.set(element, 'animation-duration', value)
   }
 
-  public static scrollTo(element: HTMLElement | null, offset: number, duration: number = 500) {
+  public static scrollTo(
+    element: HTMLElement | null,
+    offset: number,
+    duration: number = 500,
+  ) {
     let targetPos = element ? getElementOffset(element).top : 0
     let scrollPos =
-      window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0
 
     if (offset) {
       scrollPos += offset

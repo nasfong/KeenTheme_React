@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import {Toggle} from './Toggle'
-import {Demos} from './Demos'
-import {KTSVG} from '../../../helpers'
+import { Toggle } from './Toggle'
+import { Demos } from './Demos'
+import { KTSVG } from '../../../helpers'
 
 export function ExploreMain() {
   return (
@@ -36,7 +36,10 @@ export function ExploreMain() {
                 className='btn btn-sm btn-icon explore-btn-dismiss me-n5'
                 id='kt_explore_close'
               >
-                <KTSVG path='/media/icons/duotune/arrows/arr061.svg' className='svg-icon-2' />
+                <KTSVG
+                  path='/media/icons/duotune/arrows/arr061.svg'
+                  className='svg-icon-2'
+                />
               </button>
             </div>
           </div>
@@ -55,7 +58,9 @@ export function ExploreMain() {
             >
               <div className='mb-7'>
                 <div className='d-flex flex-stack'>
-                  <h3 className='mb-0'>{process.env.REACT_APP_THEME_NAME} Licenses</h3>
+                  <h3 className='mb-0'>
+                    {process.env.REACT_APP_THEME_NAME} Licenses
+                  </h3>
 
                   <a
                     href='https://themeforest.net/licenses/standard'
@@ -110,7 +115,9 @@ export function ExploreMain() {
                         data-bs-content='Use, by you or one client, in a single end product which end users can be charged for.'
                       ></i>
                     </div>
-                    <div className='fs-7 text-muted'>For single end product with paying users.</div>
+                    <div className='fs-7 text-muted'>
+                      For single end product with paying users.
+                    </div>
                   </div>
 
                   <div className='text-nowrap'>
@@ -128,7 +135,9 @@ export function ExploreMain() {
                         Custom License
                       </div>
                     </div>
-                    <div className='fs-7 text-muted'>Reach us for custom license offers.</div>
+                    <div className='fs-7 text-muted'>
+                      Reach us for custom license offers.
+                    </div>
                   </div>
 
                   <div className='text-nowrap'>
@@ -142,7 +151,10 @@ export function ExploreMain() {
                 </div>
               </div>
 
-              <a href={process.env.REACT_APP_PURCHASE_URL} className='btn btn-primary mb-15 w-100'>
+              <a
+                href={process.env.REACT_APP_PURCHASE_URL}
+                className='btn btn-primary mb-15 w-100'
+              >
                 Buy Now
               </a>
               <Demos />

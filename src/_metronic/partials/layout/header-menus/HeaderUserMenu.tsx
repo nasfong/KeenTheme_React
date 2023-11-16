@@ -11,18 +11,18 @@ import { Link, useHistory } from 'react-router-dom'
 // import { useDispatch } from 'react-redux'
 
 const HeaderUserMenu: FC = () => {
-  const history = useHistory();
+  const history = useHistory()
   // const user: UserModel = useSelector<RootState>(({ auth }) => auth.user, shallowEqual) as UserModel
 
   // const dispatch = useDispatch()
   const logout = () => {
     // logoutRequest().then((resp) => {
-      // if (resp.data.status === 'success') {
-        // dispatch(auth.actions.logout())
-        history.push("/auth/login");
-      // } else {
-      //   alert(resp.data.message)
-      // }
+    // if (resp.data.status === 'success') {
+    // dispatch(auth.actions.logout())
+    history.push('/auth/login')
+    // } else {
+    //   alert(resp.data.message)
+    // }
     // }).catch((err) => alert(err.message))
   }
 

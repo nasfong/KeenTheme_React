@@ -12,7 +12,10 @@ const Content: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   }, [])
 
   return (
-    <div id='kt_content_container' className={clsx(classes.footerContainer.join(' '))}>
+    <div
+      id='kt_content_container'
+      className={clsx(classes.footerContainer.join(' '))}
+    >
       {children}
     </div>
   )

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {FC} from 'react'
+import { FC } from 'react'
 
 const Dropdown3: FC = () => {
   return (
@@ -8,7 +8,9 @@ const Dropdown3: FC = () => {
       data-kt-menu='true'
     >
       <div className='menu-item px-3'>
-        <div className='menu-content text-muted pb-2 px-3 fs-7 text-uppercase'>Payments</div>
+        <div className='menu-content text-muted pb-2 px-3 fs-7 text-uppercase'>
+          Payments
+        </div>
       </div>
 
       <div className='menu-item px-3'>
@@ -77,7 +79,9 @@ const Dropdown3: FC = () => {
                   name='notifications'
                 />
 
-                <span className='form-check-label text-muted fs-6'>Recuring</span>
+                <span className='form-check-label text-muted fs-6'>
+                  Recuring
+                </span>
               </label>
             </div>
           </div>
@@ -93,4 +97,4 @@ const Dropdown3: FC = () => {
   )
 }
 
-export {Dropdown3}
+export { Dropdown3 }

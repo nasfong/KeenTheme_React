@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useEffect, useRef} from 'react'
-import ApexCharts, {ApexOptions} from 'apexcharts'
-import {KTSVG} from '../../../helpers'
-import {getCSSVariableValue} from '../../../assets/ts/_utils'
-import {Dropdown1} from '../../content/dropdown/Dropdown1'
+import React, { useEffect, useRef } from 'react'
+import ApexCharts, { ApexOptions } from 'apexcharts'
+import { KTSVG } from '../../../helpers'
+import { getCSSVariableValue } from '../../../assets/ts/_utils'
+import { Dropdown1 } from '../../content/dropdown/Dropdown1'
 import clsx from 'clsx'
 
 type Props = {
@@ -12,7 +12,11 @@ type Props = {
   chartHeight: string
 }
 
-const MixedWidget3: React.FC<Props> = ({className, chartColor, chartHeight}) => {
+const MixedWidget3: React.FC<Props> = ({
+  className,
+  chartColor,
+  chartHeight,
+}) => {
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -46,13 +50,16 @@ const MixedWidget3: React.FC<Props> = ({className, chartColor, chartHeight}) => 
             className={clsx(
               'btn btn-sm btn-icon btn-color-white btn-active-white',
               `btn-active-color-${chartColor}`,
-              'border-0 me-n3'
+              'border-0 me-n3',
             )}
             data-kt-menu-trigger='click'
             data-kt-menu-placement='bottom-end'
             data-kt-menu-flip='top-end'
           >
-            <KTSVG path='/media/icons/duotune/general/gen024.svg' className='svg-icon-2' />
+            <KTSVG
+              path='/media/icons/duotune/general/gen024.svg'
+              className='svg-icon-2'
+            />
           </button>
           <Dropdown1 />
           {/* end::Menu  */}
@@ -238,4 +245,4 @@ const chartOptions = (chartHeight: string): ApexOptions => {
   }
 }
 
-export {MixedWidget3}
+export { MixedWidget3 }

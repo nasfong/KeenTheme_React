@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import {Modal} from 'react-bootstrap-v5'
-import {KTSVG, toAbsoluteUrl} from '../../helpers'
+import { Modal } from 'react-bootstrap-v5'
+import { KTSVG, toAbsoluteUrl } from '../../helpers'
 // import {ListsWidget4, ListsWidget5} from '../widgets'
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
   handleClose: () => void
 }
 
-const SearchModal: React.FC<Props> = ({show, handleClose}) => {
+const SearchModal: React.FC<Props> = ({ show, handleClose }) => {
   return (
     <Modal
       className='bg-white'
@@ -22,8 +22,14 @@ const SearchModal: React.FC<Props> = ({show, handleClose}) => {
         <div className='container-xxl w-lg-800px'>
           <div className='modal-header d-flex justify-content-end border-0'>
             {/* begin::Close */}
-            <div className='btn btn-icon btn-sm btn-light-primary ms-2' onClick={handleClose}>
-              <KTSVG className='svg-icon-2' path='/media/icons/duotune/arrows/arr061.svg' />
+            <div
+              className='btn btn-icon btn-sm btn-light-primary ms-2'
+              onClick={handleClose}
+            >
+              <KTSVG
+                className='svg-icon-2'
+                path='/media/icons/duotune/arrows/arr061.svg'
+              />
             </div>
             {/* end::Close */}
           </div>
@@ -55,12 +61,15 @@ const SearchModal: React.FC<Props> = ({show, handleClose}) => {
                             className='overlay-wrapper flex-grow-1 bgi-no-repeat bgi-size-cover bgi-position-center card-rounded'
                             style={{
                               backgroundImage: `url('${toAbsoluteUrl(
-                                '/media/stock/600x400/img-17.jpg'
+                                '/media/stock/600x400/img-17.jpg',
                               )}')`,
                             }}
                           />
                           <div className='overlay-layer bg-white bg-opacity-50'>
-                            <a href='#' className='btn btn-sm fw-bold btn-primary'>
+                            <a
+                              href='#'
+                              className='btn btn-sm fw-bold btn-primary'
+                            >
                               Explore
                             </a>
                           </div>
@@ -72,12 +81,15 @@ const SearchModal: React.FC<Props> = ({show, handleClose}) => {
                             className='overlay-wrapper flex-grow-1 bgi-no-repeat bgi-size-cover bgi-position-center card-rounded'
                             style={{
                               backgroundImage: `url('${toAbsoluteUrl(
-                                '/media/stock/600x400/img-1.jpg'
+                                '/media/stock/600x400/img-1.jpg',
                               )}')`,
                             }}
                           />
                           <div className='overlay-layer bg-white bg-opacity-50'>
-                            <a href='#' className='btn btn-sm fw-bold btn-primary'>
+                            <a
+                              href='#'
+                              className='btn btn-sm fw-bold btn-primary'
+                            >
                               Explore
                             </a>
                           </div>
@@ -91,12 +103,15 @@ const SearchModal: React.FC<Props> = ({show, handleClose}) => {
                             className='overlay-wrapper flex-grow-1 bgi-no-repeat bgi-size-cover bgi-position-center card-rounded'
                             style={{
                               backgroundImage: `url('${toAbsoluteUrl(
-                                '/media/stock/600x400/img-23.jpg'
+                                '/media/stock/600x400/img-23.jpg',
                               )}')`,
                             }}
                           />
                           <div className='overlay-layer bg-white bg-opacity-50'>
-                            <a href='#' className='btn btn-sm fw-bold btn-primary'>
+                            <a
+                              href='#'
+                              className='btn btn-sm fw-bold btn-primary'
+                            >
                               Explore
                             </a>
                           </div>
@@ -112,7 +127,7 @@ const SearchModal: React.FC<Props> = ({show, handleClose}) => {
                         className='overlay-wrapper flex-grow-1 bgi-no-repeat bgi-size-cover bgi-position-center card-rounded'
                         style={{
                           backgroundImage: `url('${toAbsoluteUrl(
-                            '/media/stock/600x400/img-11.jpg'
+                            '/media/stock/600x400/img-11.jpg',
                           )}')`,
                         }}
                       ></div>
@@ -149,4 +164,4 @@ const SearchModal: React.FC<Props> = ({show, handleClose}) => {
   )
 }
 
-export {SearchModal}
+export { SearchModal }

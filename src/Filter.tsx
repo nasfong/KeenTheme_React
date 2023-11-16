@@ -1,4 +1,4 @@
-import { Col, Form, Row } from "react-bootstrap"
+import { Col, Form, Row } from 'react-bootstrap'
 
 function Filter({ filterApply, setFilterApply }) {
   const handleChangeInput = (e) => {
@@ -45,14 +45,15 @@ function Filter({ filterApply, setFilterApply }) {
           </div>
         </div>
         <div className='card-toolbar'>
-          <div className='d-flex justify-content-end'
-          // data-kt-customer-table-toolbar='base'
+          <div
+            className='d-flex justify-content-end'
+            // data-kt-customer-table-toolbar='base'
           >
             <button
               type='button'
               className='btn btn-light-primary'
-              data-kt-menu-trigger="click"
-              data-kt-menu-placement="left-start"
+              data-kt-menu-trigger='click'
+              data-kt-menu-placement='left-start'
             >
               <span className='svg-icon svg-icon-2'>
                 <svg
@@ -82,7 +83,11 @@ function Filter({ filterApply, setFilterApply }) {
               <div className='px-7 py-5'>
                 <div className='mb-10'>
                   <Form.Group as={Row} className='mb-6'>
-                    <Form.Label column lg='4' className='required form-label fw-bold fs-6'>
+                    <Form.Label
+                      column
+                      lg='4'
+                      className='required form-label fw-bold fs-6'
+                    >
                       Register Date
                     </Form.Label>
                     <Col lg='4' className='fv-row'>
@@ -106,7 +111,6 @@ function Filter({ filterApply, setFilterApply }) {
                       />
                     </Col>
                   </Form.Group>
-
                 </div>
               </div>
             </div>

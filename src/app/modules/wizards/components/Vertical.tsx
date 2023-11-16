@@ -1,13 +1,17 @@
-import React, {FC, useEffect, useRef, useState} from 'react'
-import {KTSVG} from '../../../../_metronic/helpers'
-import {Step1} from './steps/Step1'
-import {Step2} from './steps/Step2'
-import {Step3} from './steps/Step3'
-import {Step4} from './steps/Step4'
-import {Step5} from './steps/Step5'
-import {StepperComponent} from '../../../../_metronic/assets/ts/components'
-import {Formik, Form, FormikValues} from 'formik'
-import {ICreateAccount, createAccountSchemas, inits} from './CreateAccountWizardHelper'
+import React, { FC, useEffect, useRef, useState } from 'react'
+import { KTSVG } from '../../../../_metronic/helpers'
+import { Step1 } from './steps/Step1'
+import { Step2 } from './steps/Step2'
+import { Step3 } from './steps/Step3'
+import { Step4 } from './steps/Step4'
+import { Step5 } from './steps/Step5'
+import { StepperComponent } from '../../../../_metronic/assets/ts/components'
+import { Formik, Form, FormikValues } from 'formik'
+import {
+  ICreateAccount,
+  createAccountSchemas,
+  inits,
+} from './CreateAccountWizardHelper'
 
 const Vertical: FC = () => {
   const stepperRef = useRef<HTMLDivElement | null>(null)
@@ -16,7 +20,9 @@ const Vertical: FC = () => {
   const [initValues] = useState<ICreateAccount>(inits)
 
   const loadStepper = () => {
-    stepper.current = StepperComponent.createInsance(stepperRef.current as HTMLDivElement)
+    stepper.current = StepperComponent.createInsance(
+      stepperRef.current as HTMLDivElement,
+    )
   }
 
   const prevStep = () => {
@@ -72,7 +78,9 @@ const Vertical: FC = () => {
               <div className='stepper-label'>
                 <h3 className='stepper-title'>Account Type</h3>
 
-                <div className='stepper-desc fw-bold'>Setup Your Account Details</div>
+                <div className='stepper-desc fw-bold'>
+                  Setup Your Account Details
+                </div>
               </div>
             </div>
 
@@ -86,7 +94,9 @@ const Vertical: FC = () => {
 
               <div className='stepper-label'>
                 <h3 className='stepper-title'>Account Settings</h3>
-                <div className='stepper-desc fw-bold'>Setup Your Account Settings</div>
+                <div className='stepper-desc fw-bold'>
+                  Setup Your Account Settings
+                </div>
               </div>
             </div>
 
@@ -100,7 +110,9 @@ const Vertical: FC = () => {
 
               <div className='stepper-label'>
                 <h3 className='stepper-title'>Business Info</h3>
-                <div className='stepper-desc fw-bold'>Your Business Related Info</div>
+                <div className='stepper-desc fw-bold'>
+                  Your Business Related Info
+                </div>
               </div>
             </div>
 
@@ -114,7 +126,9 @@ const Vertical: FC = () => {
 
               <div className='stepper-label'>
                 <h3 className='stepper-title'>Billing Details</h3>
-                <div className='stepper-desc fw-bold'>Set Your Payment Methods</div>
+                <div className='stepper-desc fw-bold'>
+                  Set Your Payment Methods
+                </div>
               </div>
             </div>
 
@@ -136,9 +150,17 @@ const Vertical: FC = () => {
       </div>
 
       <div className='d-flex flex-row-fluid flex-center bg-white rounded'>
-        <Formik validationSchema={currentSchema} initialValues={initValues} onSubmit={submitStep}>
+        <Formik
+          validationSchema={currentSchema}
+          initialValues={initValues}
+          onSubmit={submitStep}
+        >
           {() => (
-            <Form className='py-20 w-100 w-xl-700px px-9' noValidate id='kt_create_account_form'>
+            <Form
+              className='py-20 w-100 w-xl-700px px-9'
+              noValidate
+              id='kt_create_account_form'
+            >
               <div className='current' data-kt-stepper-element='content'>
                 <Step1 />
               </div>
@@ -198,4 +220,4 @@ const Vertical: FC = () => {
   )
 }
 
-export {Vertical}
+export { Vertical }

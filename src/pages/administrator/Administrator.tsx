@@ -1,14 +1,13 @@
-import { useMutation } from "@apollo/client"
-import AdministratorModal from "./components/AdministratorModal"
-import { DELETE_USER } from "graphql/mutations/user.mutation"
-import { useCallback } from "react"
-import Swal from "sweetalert2"
-import { useState } from 'react';
-import { useUser } from "hook/useUser"
-import { KTSVG } from "_metronic/helpers"
+import { useMutation } from '@apollo/client'
+import AdministratorModal from './components/AdministratorModal'
+import { DELETE_USER } from 'graphql/mutations/user.mutation'
+import { useCallback } from 'react'
+import Swal from 'sweetalert2'
+import { useState } from 'react'
+import { useUser } from 'hook/useUser'
+import { KTSVG } from '_metronic/helpers'
 
 const Administrator = () => {
-
   const { data, loading, error, updateQuery } = useUser()
   const [deleteUser] = useMutation(DELETE_USER)
 
@@ -36,7 +35,7 @@ const Administrator = () => {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: 'Yes, delete it!',
     }).then(async (result) => {
       if (result.isConfirmed) {
         await deleteUser({ variables: { id } })
@@ -44,13 +43,9 @@ const Administrator = () => {
             if (res.data?.deleteUser) {
               // delete filter by [id]
               updateQuery(({ getAllUsers }) => ({
-                getAllUsers: getAllUsers.filter(user => user.id !== id)
+                getAllUsers: getAllUsers.filter((user) => user.id !== id),
               }))
-              Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-              )
+              Swal.fire('Deleted!', 'Your file has been deleted.', 'success')
             }
           })
           .catch((err) => console.log(err))
@@ -63,12 +58,14 @@ const Administrator = () => {
 
   return (
     <>
-      <button
-        className='btn btn-primary btn-sm'
-        onClick={handleOpenModal}
-      >Create</button>
+      <button className='btn btn-primary btn-sm' onClick={handleOpenModal}>
+        Create
+      </button>
       <div className='card card-body'>
-        <table id='kt_customers_table' className='table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4'>
+        <table
+          id='kt_customers_table'
+          className='table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4'
+        >
           <thead>
             <tr className='fw-bolder text-muted'>
               <th className=''>Name</th>
@@ -77,7 +74,7 @@ const Administrator = () => {
             </tr>
           </thead>
           <tbody className='fw-bold text-gray-600'>
-            {data?.getAllUsers.map(user => (
+            {data?.getAllUsers.map((user) => (
               <tr key={user.id}>
                 <td>{user.username}</td>
                 <td>
@@ -91,14 +88,20 @@ const Administrator = () => {
                     onClick={() => handleEdit(user)}
                     title='Edit'
                   >
-                    <KTSVG path='/media/icons/duotune/art/art005.svg' className='svg-icon-3' />
+                    <KTSVG
+                      path='/media/icons/duotune/art/art005.svg'
+                      className='svg-icon-3'
+                    />
                   </button>
                   <button
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
                     onClick={() => handleDelete(user.id)}
                     title='Delete'
                   >
-                    <KTSVG path='/media/icons/duotune/general/gen027.svg' className='svg-icon-3' />
+                    <KTSVG
+                      path='/media/icons/duotune/general/gen027.svg'
+                      className='svg-icon-3'
+                    />
                   </button>
                 </td>
               </tr>

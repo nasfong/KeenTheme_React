@@ -1,4 +1,4 @@
-import { gql } from "__generated__";
+import { gql } from '__generated__'
 
 export const CREATE_MENU = gql(`
   mutation createMenu($input: MenuInput) {
@@ -53,5 +53,11 @@ export const UPDATE_MENU_PARENT = gql(`
 export const DELETE_MENU_PARENT = gql(`
   mutation deleteMenuParent($id: ID!) {
     deleteMenuParent(id: $id) 
+  }
+`)
+
+export const DELETE_MENU = gql(`
+  mutation deleteMenu($id: ID!) {
+    deleteMenu(id: $id)
   }
 `)

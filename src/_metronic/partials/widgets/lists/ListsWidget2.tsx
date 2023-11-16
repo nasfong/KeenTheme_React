@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import {KTSVG, toAbsoluteUrl} from '../../../helpers'
-import {Dropdown1} from '../../content/dropdown/Dropdown1'
+import { KTSVG, toAbsoluteUrl } from '../../../helpers'
+import { Dropdown1 } from '../../content/dropdown/Dropdown1'
 
 type Props = {
   className: string
 }
 
-const ListsWidget2: React.FC<Props> = ({className}) => {
+const ListsWidget2: React.FC<Props> = ({ className }) => {
   return (
     <div className={`card ${className}`}>
       {/* begin::Header */}
@@ -22,7 +22,10 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
             data-kt-menu-placement='bottom-end'
             data-kt-menu-flip='top-end'
           >
-            <KTSVG path='/media/icons/duotune/general/gen024.svg' className='svg-icon-2' />
+            <KTSVG
+              path='/media/icons/duotune/general/gen024.svg'
+              className='svg-icon-2'
+            />
           </button>
           <Dropdown1 />
           {/* end::Menu */}
@@ -35,7 +38,11 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
         <div className='d-flex align-items-center mb-7'>
           {/* begin::Avatar */}
           <div className='symbol symbol-50px me-5'>
-            <img src={toAbsoluteUrl('/media/avatars/150-1.jpg')} className='' alt='' />
+            <img
+              src={toAbsoluteUrl('/media/avatars/150-1.jpg')}
+              className=''
+              alt=''
+            />
           </div>
           {/* end::Avatar */}
           {/* begin::Text */}
@@ -52,7 +59,11 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
         <div className='d-flex align-items-center mb-7'>
           {/* begin::Avatar */}
           <div className='symbol symbol-50px me-5'>
-            <img src={toAbsoluteUrl('/media/avatars/150-4.jpg')} className='' alt='' />
+            <img
+              src={toAbsoluteUrl('/media/avatars/150-4.jpg')}
+              className=''
+              alt=''
+            />
           </div>
           {/* end::Avatar */}
           {/* begin::Text */}
@@ -60,7 +71,9 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
             <a href='#' className='text-dark fw-bolder text-hover-primary fs-6'>
               Sean Bean
             </a>
-            <span className='text-muted d-block fw-bold'>PHP, SQLite, Artisan CLI</span>
+            <span className='text-muted d-block fw-bold'>
+              PHP, SQLite, Artisan CLI
+            </span>
           </div>
           {/* end::Text */}
         </div>
@@ -69,7 +82,11 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
         <div className='d-flex align-items-center mb-7'>
           {/* begin::Avatar */}
           <div className='symbol symbol-50px me-5'>
-            <img src={toAbsoluteUrl('/media/avatars/150-12.jpg')} className='' alt='' />
+            <img
+              src={toAbsoluteUrl('/media/avatars/150-12.jpg')}
+              className=''
+              alt=''
+            />
           </div>
           {/* end::Avatar */}
           {/* begin::Text */}
@@ -77,7 +94,9 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
             <a href='#' className='text-dark fw-bolder text-hover-primary fs-6'>
               Brian Cox
             </a>
-            <span className='text-muted d-block fw-bold'>PHP, SQLite, Artisan CLI</span>
+            <span className='text-muted d-block fw-bold'>
+              PHP, SQLite, Artisan CLI
+            </span>
           </div>
           {/* end::Text */}
         </div>
@@ -86,7 +105,11 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
         <div className='d-flex align-items-center mb-7'>
           {/* begin::Avatar */}
           <div className='symbol symbol-50px me-5'>
-            <img src={toAbsoluteUrl('/media/avatars/150-8.jpg')} className='' alt='' />
+            <img
+              src={toAbsoluteUrl('/media/avatars/150-8.jpg')}
+              className=''
+              alt=''
+            />
           </div>
           {/* end::Avatar */}
           {/* begin::Text */}
@@ -94,7 +117,9 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
             <a href='#' className='text-dark fw-bolder text-hover-primary fs-6'>
               Francis Mitcham
             </a>
-            <span className='text-muted d-block fw-bold'>PHP, SQLite, Artisan CLI</span>
+            <span className='text-muted d-block fw-bold'>
+              PHP, SQLite, Artisan CLI
+            </span>
           </div>
           {/* end::Text */}
         </div>
@@ -103,7 +128,11 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
         <div className='d-flex align-items-center'>
           {/* begin::Avatar */}
           <div className='symbol symbol-50px me-5'>
-            <img src={toAbsoluteUrl('/media/avatars/150-6.jpg')} className='' alt='' />
+            <img
+              src={toAbsoluteUrl('/media/avatars/150-6.jpg')}
+              className=''
+              alt=''
+            />
           </div>
           {/* end::Avatar */}
           {/* begin::Text */}
@@ -111,7 +140,9 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
             <a href='#' className='text-dark fw-bolder text-hover-primary fs-6'>
               Dan Wilson
             </a>
-            <span className='text-muted d-block fw-bold'>PHP, SQLite, Artisan CLI</span>
+            <span className='text-muted d-block fw-bold'>
+              PHP, SQLite, Artisan CLI
+            </span>
           </div>
           {/* end::Text */}
         </div>
@@ -122,4 +153,4 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
   )
 }
 
-export {ListsWidget2}
+export { ListsWidget2 }

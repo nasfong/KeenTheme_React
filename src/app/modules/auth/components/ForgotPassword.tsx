@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import * as Yup from 'yup'
 import clsx from 'clsx'
-import {Link} from 'react-router-dom'
-import {useFormik} from 'formik'
-import {requestPassword} from '../redux/AuthCRUD'
+import { Link } from 'react-router-dom'
+import { useFormik } from 'formik'
+import { requestPassword } from '../redux/AuthCRUD'
 
 const initialValues = {
   email: 'admin@demo.com',
@@ -23,12 +23,12 @@ export function ForgotPassword() {
   const formik = useFormik({
     initialValues,
     validationSchema: forgotPasswordSchema,
-    onSubmit: (values, {setStatus, setSubmitting}) => {
+    onSubmit: (values, { setStatus, setSubmitting }) => {
       setLoading(true)
       setHasErrors(undefined)
       setTimeout(() => {
         requestPassword(values.email)
-          .then(({data: {result}}) => {
+          .then(({ data: { result } }) => {
             setHasErrors(false)
             setLoading(false)
           })
@@ -56,7 +56,9 @@ export function ForgotPassword() {
           {/* end::Title */}
 
           {/* begin::Link */}
-          <div className='text-gray-400 fw-bold fs-4'>Enter your email to reset your password.</div>
+          <div className='text-gray-400 fw-bold fs-4'>
+            Enter your email to reset your password.
+          </div>
           {/* end::Link */}
         </div>
 
@@ -64,21 +66,26 @@ export function ForgotPassword() {
         {hasErrors === true && (
           <div className='mb-lg-15 alert alert-danger'>
             <div className='alert-text font-weight-bold'>
-              Sorry, looks like there are some errors detected, please try again.
+              Sorry, looks like there are some errors detected, please try
+              again.
             </div>
           </div>
         )}
 
         {hasErrors === false && (
           <div className='mb-10 bg-light-info p-8 rounded'>
-            <div className='text-info'>Sent password reset. Please check your email</div>
+            <div className='text-info'>
+              Sent password reset. Please check your email
+            </div>
           </div>
         )}
         {/* end::Title */}
 
         {/* begin::Form group */}
         <div className='fv-row mb-10'>
-          <label className='form-label fw-bolder text-gray-900 fs-6'>Email</label>
+          <label className='form-label fw-bolder text-gray-900 fs-6'>
+            Email
+          </label>
           <input
             type='email'
             placeholder=''
@@ -86,10 +93,10 @@ export function ForgotPassword() {
             {...formik.getFieldProps('email')}
             className={clsx(
               'form-control form-control-lg form-control-solid',
-              {'is-invalid': formik.touched.email && formik.errors.email},
+              { 'is-invalid': formik.touched.email && formik.errors.email },
               {
                 'is-valid': formik.touched.email && !formik.errors.email,
-              }
+              },
             )}
           />
           {formik.touched.email && formik.errors.email && (

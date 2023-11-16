@@ -170,8 +170,15 @@ class StickyComponent {
     const zindex = this.getOption('zindex')
 
     if (update !== true && this.getOption('animation') === true) {
-      ElementStyleUtil.set(this.element, 'animationDuration', this.getOption('animationSpeed'))
-      ElementAnimateUtil.animateClass(this.element, 'animation ' + this.getOption('animationClass'))
+      ElementStyleUtil.set(
+        this.element,
+        'animationDuration',
+        this.getOption('animationSpeed'),
+      )
+      ElementAnimateUtil.animateClass(
+        this.element,
+        'animation ' + this.getOption('animationClass'),
+      )
     }
 
     if (zindex !== null) {
@@ -256,7 +263,7 @@ class StickyComponent {
 
   public static createInsance = (
     selector: string,
-    options: StickyOptions = defaultStickyOptions
+    options: StickyOptions = defaultStickyOptions,
   ): StickyComponent | undefined => {
     const element = document.body.querySelector(selector)
     if (!element) {
@@ -279,4 +286,4 @@ class StickyComponent {
   }
 }
 
-export {StickyComponent, defaultStickyOptions}
+export { StickyComponent, defaultStickyOptions }

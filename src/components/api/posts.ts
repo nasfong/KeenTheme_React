@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from 'axios'
 export function getPosts() {
-  return axios 
+  return axios
     .get('/posts', { params: { _sort: 'title' } })
-    .then(res => res.data)
+    .then((res) => res.data)
 }

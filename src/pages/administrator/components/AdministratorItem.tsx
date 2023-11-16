@@ -1,5 +1,5 @@
-import { GetAllUsersQuery } from "__generated__/graphql"
-import { KTSVG } from "_metronic/helpers"
+import { GetAllUsersQuery } from '__generated__/graphql'
+import { KTSVG } from '_metronic/helpers'
 
 type Props = {
   data?: GetAllUsersQuery
@@ -9,21 +9,21 @@ type Props = {
 
 const color = ['primary', 'danger', 'info', 'warning', 'dark']
 
-const AdministratorItem = ({
-  data,
-  handleEdit,
-  handleDelete
-}: Props) => {
+const AdministratorItem = ({ data, handleEdit, handleDelete }: Props) => {
   return (
     <div className='grid'>
-      {data?.getAllUsers.map(user => (
+      {data?.getAllUsers.map((user) => (
         <div key={user.id} className='card'>
           <div className='card-body d-flex flex-column g-y-3'>
             <div className='fw-bold'>{user.username}</div>
             <div>{user.password}</div>
             <div>{user.email}</div>
             <div className='mt-auto'>
-              <span className={`badge badge-light-${color[Math.floor(Math.random() * 5)]} me-1`}>
+              <span
+                className={`badge badge-light-${
+                  color[Math.floor(Math.random() * 5)]
+                } me-1`}
+              >
                 {user.role.name}
               </span>
             </div>
@@ -33,14 +33,20 @@ const AdministratorItem = ({
                 onClick={() => handleEdit(user)}
                 title='Edit'
               >
-                <KTSVG path='/media/icons/duotune/art/art005.svg' className='svg-icon-3' />
+                <KTSVG
+                  path='/media/icons/duotune/art/art005.svg'
+                  className='svg-icon-3'
+                />
               </button>
               <button
                 className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
                 onClick={() => handleDelete(user.id)}
                 title='Delete'
               >
-                <KTSVG path='/media/icons/duotune/general/gen027.svg' className='svg-icon-3' />
+                <KTSVG
+                  path='/media/icons/duotune/general/gen027.svg'
+                  className='svg-icon-3'
+                />
               </button>
             </div>
           </div>

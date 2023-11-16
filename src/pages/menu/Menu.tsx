@@ -1,19 +1,18 @@
-import { useMutation } from "@apollo/client"
-import MenuModal from "./components/MenuModal"
-import { DELETE_USER } from "graphql/mutations/user.mutation"
-import { useCallback } from "react"
-import Swal from "sweetalert2"
-import { useState } from 'react';
-import { KTSVG } from "_metronic/helpers"
-import { useQueryMenu } from "hook/useMenu"
+import MenuModal from './components/MenuModal'
+import { useCallback } from 'react'
+import Swal from 'sweetalert2'
+import { useState } from 'react'
+import { KTSVG } from '_metronic/helpers'
+import { useDeleteMenu, useQueryMenu } from 'hook/useMenu'
+import { Menu as IMenu } from '__generated__/graphql'
 
 const Menu = () => {
-
   const { data, loading, error, updateQuery } = useQueryMenu()
-  const [deleteUser] = useMutation(DELETE_USER)
+
+  const [deleteMenu] = useDeleteMenu()
 
   const [modal, setModal] = useState(false)
-  const [dataInput, setDataInput] = useState(null)
+  const [dataInput, setDataInput] = useState<IMenu | null>(null)
 
   const handleOpenModal = () => setModal(true)
 
@@ -35,21 +34,17 @@ const Menu = () => {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: 'Yes, delete it!',
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await deleteUser({ variables: { id } })
+        await deleteMenu({ variables: { id } })
           .then((res) => {
-            if (res.data?.deleteUser) {
+            if (res.data?.deleteMenu) {
               // delete filter by [id]
               updateQuery(({ getAllMenus }) => ({
-                getAllMenus: getAllMenus.filter(data => data.id !== id)
+                getAllMenus: getAllMenus.filter((data) => data.id !== id),
               }))
-              Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-              )
+              Swal.fire('Deleted!', 'Your file has been deleted.', 'success')
             }
           })
           .catch((err) => console.log(err))
@@ -62,12 +57,14 @@ const Menu = () => {
 
   return (
     <>
-      <button
-        className='btn btn-primary btn-sm'
-        onClick={handleOpenModal}
-      >Create</button>
+      <button className='btn btn-primary btn-sm' onClick={handleOpenModal}>
+        Create
+      </button>
       <div className='card card-body'>
-        <table id='kt_customers_table' className='table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4'>
+        <table
+          id='kt_customers_table'
+          className='table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4'
+        >
           <thead>
             <tr className='fw-bolder text-muted'>
               <th className=''>Name</th>
@@ -76,7 +73,7 @@ const Menu = () => {
             </tr>
           </thead>
           <tbody className='fw-bold text-gray-600'>
-            {data?.getAllMenus.map(menu => (
+            {data?.getAllMenus.map((menu) => (
               <tr key={menu.id}>
                 <td>{menu.name}</td>
                 <td>
@@ -90,14 +87,20 @@ const Menu = () => {
                     onClick={() => handleEdit(menu)}
                     title='Edit'
                   >
-                    <KTSVG path='/media/icons/duotune/art/art005.svg' className='svg-icon-3' />
+                    <KTSVG
+                      path='/media/icons/duotune/art/art005.svg'
+                      className='svg-icon-3'
+                    />
                   </button>
                   <button
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
                     onClick={() => handleDelete(menu.id)}
                     title='Delete'
                   >
-                    <KTSVG path='/media/icons/duotune/general/gen027.svg' className='svg-icon-3' />
+                    <KTSVG
+                      path='/media/icons/duotune/general/gen027.svg'
+                      className='svg-icon-3'
+                    />
                   </button>
                 </td>
               </tr>
@@ -110,6 +113,14 @@ const Menu = () => {
         handleCloseModal={handleCloseModal}
         dataInput={dataInput}
         updateQuery={updateQuery}
+        duplicate={{
+          name: data?.getAllMenus
+            .map((menu) => menu.name)
+            .filter((value) => value !== dataInput?.name),
+          order: data?.getAllMenus
+            .map((menu) => menu.order)
+            .filter((value) => value !== dataInput?.order),
+        }}
       />
     </>
   )

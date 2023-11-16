@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useEffect, useRef} from 'react'
-import ApexCharts, {ApexOptions} from 'apexcharts'
-import {KTSVG} from '../../../helpers'
-import {getCSSVariableValue} from '../../../assets/ts/_utils'
-import {Dropdown1} from '../../content/dropdown/Dropdown1'
+import React, { useEffect, useRef } from 'react'
+import ApexCharts, { ApexOptions } from 'apexcharts'
+import { KTSVG } from '../../../helpers'
+import { getCSSVariableValue } from '../../../assets/ts/_utils'
+import { Dropdown1 } from '../../content/dropdown/Dropdown1'
 
 type Props = {
   className: string
@@ -12,7 +12,12 @@ type Props = {
   chartHeight: string
 }
 
-const MixedWidget2: React.FC<Props> = ({className, chartColor, chartHeight, strokeColor}) => {
+const MixedWidget2: React.FC<Props> = ({
+  className,
+  chartColor,
+  chartHeight,
+  strokeColor,
+}) => {
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -22,7 +27,7 @@ const MixedWidget2: React.FC<Props> = ({className, chartColor, chartHeight, stro
 
     const chart = new ApexCharts(
       chartRef.current,
-      chartOptions(chartHeight, chartColor, strokeColor)
+      chartOptions(chartHeight, chartColor, strokeColor),
     )
     if (chart) {
       chart.render()
@@ -50,7 +55,10 @@ const MixedWidget2: React.FC<Props> = ({className, chartColor, chartHeight, stro
             data-kt-menu-placement='bottom-end'
             data-kt-menu-flip='top-end'
           >
-            <KTSVG path='/media/icons/duotune/general/gen024.svg' className='svg-icon-2' />
+            <KTSVG
+              path='/media/icons/duotune/general/gen024.svg'
+              className='svg-icon-2'
+            />
           </button>
           <Dropdown1 />
           {/* end::Menu */}
@@ -130,7 +138,7 @@ const MixedWidget2: React.FC<Props> = ({className, chartColor, chartHeight, stro
 const chartOptions = (
   chartHeight: string,
   chartColor: string,
-  strokeColor: string
+  strokeColor: string,
 ): ApexOptions => {
   const labelColor = getCSSVariableValue('--bs-gray-500')
   const borderColor = getCSSVariableValue('--bs-gray-200')
@@ -262,4 +270,4 @@ const chartOptions = (
   }
 }
 
-export {MixedWidget2}
+export { MixedWidget2 }

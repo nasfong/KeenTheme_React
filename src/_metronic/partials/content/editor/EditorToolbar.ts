@@ -14,7 +14,14 @@ export const editorToolbarSettings = {
     dropdownClassName: undefined,
   },
   fontFamily: {
-    options: ['Arial', 'Georgia', 'Impact', 'Tahoma', 'Times New Roman', 'Verdana'],
+    options: [
+      'Arial',
+      'Georgia',
+      'Impact',
+      'Tahoma',
+      'Times New Roman',
+      'Verdana',
+    ],
     className: undefined,
     component: undefined,
     dropdownClassName: undefined,
@@ -29,8 +36,8 @@ export const editorToolbarSettings = {
     showOpenOptionOnHover: true,
     defaultTargetOption: '_self',
     options: ['link', 'unlink'],
-    link: {className: undefined},
-    unlink: {className: undefined},
+    link: { className: undefined },
+    unlink: { className: undefined },
     linkCallback: undefined,
   },
   image: {
@@ -43,7 +50,7 @@ export const editorToolbarSettings = {
     uploadCallback: undefined,
     previewImage: false,
     inputAccept: 'image/gif,image/jpeg,image/jpg,image/png,image/svg',
-    alt: {present: false, mandatory: false},
+    alt: { present: false, mandatory: false },
     defaultSize: {
       height: 'auto',
       width: 'auto',

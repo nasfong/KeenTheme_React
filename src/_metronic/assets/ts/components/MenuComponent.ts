@@ -1,4 +1,4 @@
-import {createPopper, VirtualElement} from '@popperjs/core'
+import { createPopper, VirtualElement } from '@popperjs/core'
 import {
   getElementChild,
   getElementParents,
@@ -75,20 +75,25 @@ class MenuComponent {
   // Set external trigger element
   private _setTriggerElement = () => {
     const target = document.querySelector(
-      `[data-kt-menu-target="#${this.element.getAttribute('id')}"`
+      `[data-kt-menu-target="#${this.element.getAttribute('id')}"`,
     )
 
     if (target) {
       this.triggerElement = target as HTMLElement
     } else if (this.element.closest('[data-kt-menu-trigger]')) {
-      this.triggerElement = this.element.closest('[data-kt-menu-trigger]') as HTMLElement
+      this.triggerElement = this.element.closest(
+        '[data-kt-menu-trigger]',
+      ) as HTMLElement
     } else if (
       this.element.parentNode &&
-      getElementChild(this.element.parentNode as HTMLElement, '[data-kt-menu-trigger]')
+      getElementChild(
+        this.element.parentNode as HTMLElement,
+        '[data-kt-menu-trigger]',
+      )
     ) {
       const child = getElementChild(
         this.element.parentNode as HTMLElement,
-        '[data-kt-menu-trigger]'
+        '[data-kt-menu-trigger]',
       )
       if (child) {
         this.triggerElement = child
@@ -329,7 +334,10 @@ class MenuComponent {
     let sub = this._getItemSubElement(item)
     if (sub) {
       if (this._getItemSubType(item) === 'dropdown') {
-        return sub.classList.contains('show') && sub.hasAttribute('data-popper-placement')
+        return (
+          sub.classList.contains('show') &&
+          sub.hasAttribute('data-popper-placement')
+        )
       } else {
         return item.classList.contains('show')
       }
@@ -355,7 +363,10 @@ class MenuComponent {
 
   // Test if item has sub
   private _hasItemSub = (item: HTMLElement) => {
-    return item.classList.contains('menu-item') && item.hasAttribute('data-kt-menu-trigger')
+    return (
+      item.classList.contains('menu-item') &&
+      item.hasAttribute('data-kt-menu-trigger')
+    )
   }
 
   // Get link element
@@ -374,7 +385,9 @@ class MenuComponent {
 
   // Show item dropdown
   private _showDropdown = (item: HTMLElement) => {
-    if (EventHandlerUtil.trigger(this.element, 'kt.menu.dropdown.show') === false) {
+    if (
+      EventHandlerUtil.trigger(this.element, 'kt.menu.dropdown.show') === false
+    ) {
       return
     }
 
@@ -444,7 +457,7 @@ class MenuComponent {
       const popper = createPopper(
         reference as Element | VirtualElement,
         sub,
-        this._getDropdownPopperConfig(item)
+        this._getDropdownPopperConfig(item),
       )
       DataUtil.set(item, 'popper', popper)
     }
@@ -452,7 +465,9 @@ class MenuComponent {
 
   // Hide item dropdown
   private _hideDropdown = (item: HTMLElement) => {
-    if (EventHandlerUtil.trigger(this.element, 'kt.menu.dropdown.hide') === false) {
+    if (
+      EventHandlerUtil.trigger(this.element, 'kt.menu.dropdown.hide') === false
+    ) {
       return
     }
 
@@ -498,7 +513,9 @@ class MenuComponent {
   }
 
   private _showAccordion = (item: HTMLElement) => {
-    if (EventHandlerUtil.trigger(this.element, 'kt.menu.accordion.show') === false) {
+    if (
+      EventHandlerUtil.trigger(this.element, 'kt.menu.accordion.show') === false
+    ) {
       return
     }
 
@@ -526,7 +543,9 @@ class MenuComponent {
   }
 
   private _hideAccordion = (item: HTMLElement) => {
-    if (EventHandlerUtil.trigger(this.element, 'kt.menu.accordion.hide') === false) {
+    if (
+      EventHandlerUtil.trigger(this.element, 'kt.menu.accordion.hide') === false
+    ) {
       return
     }
 
@@ -546,7 +565,9 @@ class MenuComponent {
 
   // Hide all shown accordions of item
   private _hideAccordions = (item: HTMLElement) => {
-    const itemsToHide = this.element.querySelectorAll('.show[data-kt-menu-trigger]')
+    const itemsToHide = this.element.querySelectorAll(
+      '.show[data-kt-menu-trigger]',
+    )
     if (itemsToHide && itemsToHide.length > 0) {
       for (var i = 0, len = itemsToHide.length; i < len; i++) {
         const itemToHide = itemsToHide[i] as HTMLElement
@@ -573,7 +594,10 @@ class MenuComponent {
     const sub = this._getItemSubElement(item)
 
     // Reset sub state if sub type is changed during the window resize
-    if (DataUtil.has(item, 'type') && DataUtil.get(item, 'type') !== this._getItemSubType(item)) {
+    if (
+      DataUtil.has(item, 'type') &&
+      DataUtil.get(item, 'type') !== this._getItemSubType(item)
+    ) {
       // updated
       item.classList.remove('hover')
       item.classList.remove('show')
@@ -589,7 +613,9 @@ class MenuComponent {
 
   // Update all item state classes if item sub type changed
   private _update = () => {
-    const items = this.element.querySelectorAll('.menu-item[data-kt-menu-trigger]')
+    const items = this.element.querySelectorAll(
+      '.menu-item[data-kt-menu-trigger]',
+    )
     items.forEach((el) => this._reset(el as HTMLElement))
   }
 
@@ -698,7 +724,10 @@ class MenuComponent {
       if (items.length > 0) {
         for (let i = 0, len = items.length; i < len; i++) {
           //if ( _getItemOption(item, 'trigger') === 'click' &&  _getItemSubType(item) === 'dropdown' ) {
-          if (items[i] !== null && this._getItemSubType(items[i] as HTMLElement) === 'dropdown') {
+          if (
+            items[i] !== null &&
+            this._getItemSubType(items[i] as HTMLElement) === 'dropdown'
+          ) {
             this._hide(items[i] as HTMLElement)
           }
         }
@@ -708,7 +737,9 @@ class MenuComponent {
 
   // Link handler
   private _link = (element: HTMLElement, e: Event) => {
-    if (EventHandlerUtil.trigger(this.element, 'kt.menu.link.click') === false) {
+    if (
+      EventHandlerUtil.trigger(this.element, 'kt.menu.link.click') === false
+    ) {
       return
     }
 
@@ -867,7 +898,9 @@ class MenuComponent {
 
   // Hide all dropdowns and skip one if provided
   public static hideDropdowns = (skip: HTMLElement | undefined) => {
-    const items = document.querySelectorAll('.show.menu-dropdown[data-kt-menu-trigger]')
+    const items = document.querySelectorAll(
+      '.show.menu-dropdown[data-kt-menu-trigger]',
+    )
 
     if (items && items.length > 0) {
       for (let i = 0, len = items.length; i < len; i++) {
@@ -892,7 +925,9 @@ class MenuComponent {
   }
 
   public static updateDropdowns = () => {
-    const items = document.querySelectorAll('.show.menu-dropdown[data-kt-menu-trigger]')
+    const items = document.querySelectorAll(
+      '.show.menu-dropdown[data-kt-menu-trigger]',
+    )
     if (items && items.length > 0) {
       for (var i = 0, len = items.length; i < len; i++) {
         var item = items[i]
@@ -919,7 +954,9 @@ class MenuComponent {
   public static initGlobalHandlers = () => {
     // Dropdown handler
     document.addEventListener('click', (e) => {
-      const menuItems = document.querySelectorAll('.show.menu-dropdown[data-kt-menu-trigger]')
+      const menuItems = document.querySelectorAll(
+        '.show.menu-dropdown[data-kt-menu-trigger]',
+      )
       if (menuItems && menuItems.length > 0) {
         for (let i = 0; i < menuItems.length; i++) {
           const item = menuItems[i] as HTMLElement
@@ -932,7 +969,10 @@ class MenuComponent {
               continue
             }
 
-            if (sub && (sub === e.target || sub.contains(e.target as HTMLElement))) {
+            if (
+              sub &&
+              (sub === e.target || sub.contains(e.target as HTMLElement))
+            ) {
               continue
             }
             menuObj.hide(item)
@@ -951,7 +991,7 @@ class MenuComponent {
         if (menu) {
           return menu.click(this, e)
         }
-      }
+      },
     )
 
     // // Link handler
@@ -965,7 +1005,7 @@ class MenuComponent {
         if (menu && menu.link) {
           return menu.link(this, e)
         }
-      }
+      },
     )
 
     // Dismiss handler
@@ -978,7 +1018,7 @@ class MenuComponent {
         if (menu) {
           return menu.dismiss(this, e)
         }
-      }
+      },
     )
 
     // Mouseover handler
@@ -991,7 +1031,7 @@ class MenuComponent {
         if (menu && menu.getItemSubType(this) === 'dropdown') {
           return menu.mouseover(this, e)
         }
-      }
+      },
     )
 
     // Mouseout handler
@@ -1004,7 +1044,7 @@ class MenuComponent {
         if (menu && menu.getItemSubType(this) === 'dropdown') {
           return menu.mouseout(this, e)
         }
-      }
+      },
     )
 
     // Resize handler
@@ -1022,7 +1062,7 @@ class MenuComponent {
             }
           })
         },
-        200
+        200,
       )
     })
   }
@@ -1038,7 +1078,7 @@ class MenuComponent {
 
   public static createInsance = (
     selector: string,
-    options: MenuOptions = defaultMenuOptions
+    options: MenuOptions = defaultMenuOptions,
   ): MenuComponent | undefined => {
     const element = document.body.querySelector(selector)
     if (!element) {
@@ -1053,4 +1093,4 @@ class MenuComponent {
   }
 }
 
-export {MenuComponent, defaultMenuOptions}
+export { MenuComponent, defaultMenuOptions }

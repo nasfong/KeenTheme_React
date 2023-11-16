@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
 const Toggle: FC = () => (
   <button
@@ -13,4 +13,4 @@ const Toggle: FC = () => (
   </button>
 )
 
-export {Toggle}
+export { Toggle }

@@ -1,4 +1,4 @@
-import {FC} from 'react'
+import { FC } from 'react'
 
 const Error500: FC = () => {
   return (
@@ -12,4 +12,4 @@ const Error500: FC = () => {
   )
 }
 
-export {Error500}
+export { Error500 }

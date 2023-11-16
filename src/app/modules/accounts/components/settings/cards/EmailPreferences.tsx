@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
-import {IEmailPreferences, emailPreferences} from '../SettingsModel'
+import React, { useState } from 'react'
+import { IEmailPreferences, emailPreferences } from '../SettingsModel'
 
 const EmailPreferences: React.FC = () => {
   const [data, setData] = useState<IEmailPreferences>(emailPreferences)
 
   const updateData = (fieldsToUpdate: Partial<IEmailPreferences>) => {
-    const updatedData = {...data, ...fieldsToUpdate}
+    const updatedData = { ...data, ...fieldsToUpdate }
     setData(updatedData)
   }
 
@@ -119,10 +119,12 @@ const EmailPreferences: React.FC = () => {
               />
 
               <span className='form-check-label d-flex flex-column align-items-start'>
-                <span className='fw-bolder fs-5 mb-0'>Customer Payment Dispute</span>
+                <span className='fw-bolder fs-5 mb-0'>
+                  Customer Payment Dispute
+                </span>
                 <span className='text-muted fs-6'>
-                  Receive a notification if a payment is disputed by a customer and for dispute
-                  purposes.
+                  Receive a notification if a payment is disputed by a customer
+                  and for dispute purposes.
                 </span>
               </span>
             </label>
@@ -145,7 +147,8 @@ const EmailPreferences: React.FC = () => {
               <span className='form-check-label d-flex flex-column align-items-start'>
                 <span className='fw-bolder fs-5 mb-0'>Refund Alerts</span>
                 <span className='text-muted fs-6'>
-                  Receive a notification if a payment is stated as risk by the Finance Department.
+                  Receive a notification if a payment is stated as risk by the
+                  Finance Department.
                 </span>
               </span>
             </label>
@@ -168,8 +171,8 @@ const EmailPreferences: React.FC = () => {
               <span className='form-check-label d-flex flex-column align-items-start'>
                 <span className='fw-bolder fs-5 mb-0'>Invoice Payments</span>
                 <span className='text-muted fs-6'>
-                  Receive a notification if a customer sends an incorrect amount to pay their
-                  invoice.
+                  Receive a notification if a customer sends an incorrect amount
+                  to pay their invoice.
                 </span>
               </span>
             </label>
@@ -190,20 +193,28 @@ const EmailPreferences: React.FC = () => {
               />
 
               <span className='form-check-label d-flex flex-column align-items-start'>
-                <span className='fw-bolder fs-5 mb-0'>Webhook API Endpoints</span>
+                <span className='fw-bolder fs-5 mb-0'>
+                  Webhook API Endpoints
+                </span>
                 <span className='text-muted fs-6'>
-                  Receive notifications for consistently failing webhook API endpoints.
+                  Receive notifications for consistently failing webhook API
+                  endpoints.
                 </span>
               </span>
             </label>
           </div>
 
           <div className='card-footer d-flex justify-content-end py-6 px-9'>
-            <button className='btn btn-white btn-active-light-primary me-2'>Discard</button>
+            <button className='btn btn-white btn-active-light-primary me-2'>
+              Discard
+            </button>
             <button type='button' onClick={click} className='btn btn-primary'>
               {!loading && 'Save Changes'}
               {loading && (
-                <span className='indicator-progress' style={{display: 'block'}}>
+                <span
+                  className='indicator-progress'
+                  style={{ display: 'block' }}
+                >
                   Please wait...{' '}
                   <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
                 </span>
@@ -216,4 +227,4 @@ const EmailPreferences: React.FC = () => {
   )
 }
 
-export {EmailPreferences}
+export { EmailPreferences }

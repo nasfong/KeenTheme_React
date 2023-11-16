@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {FC, useState} from 'react'
-import {KTSVG} from '../../../helpers'
+import React, { FC, useState } from 'react'
+import { KTSVG } from '../../../helpers'
 
 const plans = [
   {
@@ -141,8 +141,14 @@ const UpgradePlan: FC = () => {
       <div className='modal-dialog modal-xl'>
         <div className='modal-content rounded'>
           <div className='modal-header justify-content-end border-0 pb-0'>
-            <div className='btn btn-sm btn-icon btn-active-color-primary' data-bs-dismiss='modal'>
-              <KTSVG path='/media/icons/duotune/arrows/arr061.svg' className='svg-icon-1' />
+            <div
+              className='btn btn-sm btn-icon btn-active-color-primary'
+              data-bs-dismiss='modal'
+            >
+              <KTSVG
+                path='/media/icons/duotune/arrows/arr061.svg'
+                className='svg-icon-1'
+              />
             </div>
           </div>
 
@@ -160,7 +166,10 @@ const UpgradePlan: FC = () => {
             </div>
 
             <div className='d-flex flex-column'>
-              <div className='nav-group nav-group-outline mx-auto' data-kt-buttons='true'>
+              <div
+                className='nav-group nav-group-outline mx-auto'
+                data-kt-buttons='true'
+              >
                 <a
                   href='#'
                   className={
@@ -230,20 +239,26 @@ const UpgradePlan: FC = () => {
                                   </span>
                                 )}
                               </h2>
-                              <div className='fw-bold opacity-50'>{plan.subTitle}</div>
+                              <div className='fw-bold opacity-50'>
+                                {plan.subTitle}
+                              </div>
                             </div>
                           </div>
 
                           <div className='ms-5'>
                             {plan.custom && (
-                              <button className='btn btn-sm btn-primary'>Contact Us</button>
+                              <button className='btn btn-sm btn-primary'>
+                                Contact Us
+                              </button>
                             )}
                             {!plan.custom && (
                               <>
                                 <span className='mb-2'>$</span>
 
                                 <span className='fs-3x fw-bolder'>
-                                  {currentState === 'month' ? plan.priceMonth : plan.priceAnnual}
+                                  {currentState === 'month'
+                                    ? plan.priceMonth
+                                    : plan.priceAnnual}
                                 </span>
 
                                 <span className='fs-7 opacity-50'>
@@ -266,14 +281,21 @@ const UpgradePlan: FC = () => {
                           {!plan.custom && (
                             <>
                               <div
-                                className={`tab-pane fade` + (plan.default && 'show active')}
+                                className={
+                                  `tab-pane fade` +
+                                  (plan.default && 'show active')
+                                }
                                 id={`kt_upgrade_plan_${index}`}
                                 key={index}
                               >
                                 <div className='pb-5'>
-                                  <h2 className='fw-bolder text-dark'>What’s in Startup Plan?</h2>
+                                  <h2 className='fw-bolder text-dark'>
+                                    What’s in Startup Plan?
+                                  </h2>
 
-                                  <div className='text-gray-400 fw-bold'>{plan.description}</div>
+                                  <div className='text-gray-400 fw-bold'>
+                                    {plan.description}
+                                  </div>
                                 </div>
 
                                 <div className='pt-1'>
@@ -282,7 +304,8 @@ const UpgradePlan: FC = () => {
                                       <div
                                         className={
                                           `d-flex align-items-center` +
-                                          (i !== plan.features!.length - 1 && ' mb-7')
+                                          (i !== plan.features!.length - 1 &&
+                                            ' mb-7')
                                         }
                                         key={`${i}-${feature.title}`}
                                       >
@@ -325,7 +348,11 @@ const UpgradePlan: FC = () => {
             </div>
 
             <div className='d-flex flex-center flex-row-fluid pt-12'>
-              <button type='reset' className='btn btn-light me-3' data-bs-dismiss='modal'>
+              <button
+                type='reset'
+                className='btn btn-light me-3'
+                data-bs-dismiss='modal'
+              >
                 Cancel
               </button>
 
@@ -340,4 +367,4 @@ const UpgradePlan: FC = () => {
   )
 }
 
-export {UpgradePlan}
+export { UpgradePlan }

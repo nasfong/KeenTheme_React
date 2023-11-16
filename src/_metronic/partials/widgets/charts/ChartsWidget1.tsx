@@ -1,15 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useEffect, useRef} from 'react'
-import ApexCharts, {ApexOptions} from 'apexcharts'
-import {KTSVG} from '../../../helpers'
-import {Dropdown1} from '../../content/dropdown/Dropdown1'
-import {getCSS, getCSSVariableValue} from '../../../assets/ts/_utils'
+import React, { useEffect, useRef } from 'react'
+import ApexCharts, { ApexOptions } from 'apexcharts'
+import { KTSVG } from '../../../helpers'
+import { Dropdown1 } from '../../content/dropdown/Dropdown1'
+import { getCSS, getCSSVariableValue } from '../../../assets/ts/_utils'
 
 type Props = {
   className: string
 }
 
-const ChartsWidget1: React.FC<Props> = ({className}) => {
+const ChartsWidget1: React.FC<Props> = ({ className }) => {
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -37,9 +37,13 @@ const ChartsWidget1: React.FC<Props> = ({className}) => {
       <div className='card-header border-0 pt-5'>
         {/* begin::Title */}
         <h3 className='card-title align-items-start flex-column'>
-          <span className='card-label fw-bolder fs-3 mb-1'>Recent Statistics</span>
+          <span className='card-label fw-bolder fs-3 mb-1'>
+            Recent Statistics
+          </span>
 
-          <span className='text-muted fw-bold fs-7'>More than 400 new members</span>
+          <span className='text-muted fw-bold fs-7'>
+            More than 400 new members
+          </span>
         </h3>
         {/* end::Title */}
 
@@ -53,7 +57,10 @@ const ChartsWidget1: React.FC<Props> = ({className}) => {
             data-kt-menu-placement='bottom-end'
             data-kt-menu-flip='top-end'
           >
-            <KTSVG path='/media/icons/duotune/general/gen024.svg' className='svg-icon-2' />
+            <KTSVG
+              path='/media/icons/duotune/general/gen024.svg'
+              className='svg-icon-2'
+            />
           </button>
           <Dropdown1 />
           {/* end::Menu */}
@@ -65,7 +72,11 @@ const ChartsWidget1: React.FC<Props> = ({className}) => {
       {/* begin::Body */}
       <div className='card-body'>
         {/* begin::Chart */}
-        <div ref={chartRef} id='kt_charts_widget_1_chart' style={{height: '350px'}} />
+        <div
+          ref={chartRef}
+          id='kt_charts_widget_1_chart'
+          style={{ height: '350px' }}
+        />
         {/* end::Chart */}
       </div>
       {/* end::Body */}
@@ -73,7 +84,7 @@ const ChartsWidget1: React.FC<Props> = ({className}) => {
   )
 }
 
-export {ChartsWidget1}
+export { ChartsWidget1 }
 
 function getChartOptions(height: number): ApexOptions {
   const labelColor = getCSSVariableValue('--bs-gray-500')

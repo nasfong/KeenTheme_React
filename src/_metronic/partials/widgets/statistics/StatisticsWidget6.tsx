@@ -9,12 +9,21 @@ type Props = {
   progress: string
 }
 
-const StatisticsWidget6: React.FC<Props> = ({className, color, title, description, progress}) => {
+const StatisticsWidget6: React.FC<Props> = ({
+  className,
+  color,
+  title,
+  description,
+  progress,
+}) => {
   return (
     <div className={`card bg-light-${color} ${className}`}>
       {/* begin::Body */}
       <div className='card-body my-3'>
-        <a href='#' className={`card-title fw-bolder text-${color} fs-5 mb-3 d-block`}>
+        <a
+          href='#'
+          className={`card-title fw-bolder text-${color} fs-5 mb-3 d-block`}
+        >
           {description}
         </a>
 
@@ -28,7 +37,7 @@ const StatisticsWidget6: React.FC<Props> = ({className, color, title, descriptio
           <div
             className={`progress-bar bg-${color}`}
             role='progressbar'
-            style={{width: progress}}
+            style={{ width: progress }}
           />
         </div>
       </div>
@@ -37,4 +46,4 @@ const StatisticsWidget6: React.FC<Props> = ({className, color, title, descriptio
   )
 }
 
-export {StatisticsWidget6}
+export { StatisticsWidget6 }

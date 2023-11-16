@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useEffect, useRef} from 'react'
-import ApexCharts, {ApexOptions} from 'apexcharts'
-import {KTSVG, toAbsoluteUrl} from '../../../helpers'
-import {getCSSVariableValue} from '../../../assets/ts/_utils'
-import {Dropdown1} from '../../content/dropdown/Dropdown1'
+import React, { useEffect, useRef } from 'react'
+import ApexCharts, { ApexOptions } from 'apexcharts'
+import { KTSVG, toAbsoluteUrl } from '../../../helpers'
+import { getCSSVariableValue } from '../../../assets/ts/_utils'
+import { Dropdown1 } from '../../content/dropdown/Dropdown1'
 
 type Props = {
   className: string
@@ -11,7 +11,11 @@ type Props = {
   chartHeight: string
 }
 
-const MixedWidget8: React.FC<Props> = ({className, chartColor, chartHeight}) => {
+const MixedWidget8: React.FC<Props> = ({
+  className,
+  chartColor,
+  chartHeight,
+}) => {
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -19,7 +23,10 @@ const MixedWidget8: React.FC<Props> = ({className, chartColor, chartHeight}) => 
       return
     }
 
-    const chart1 = new ApexCharts(chartRef.current, chart1Options(chartColor, chartHeight))
+    const chart1 = new ApexCharts(
+      chartRef.current,
+      chart1Options(chartColor, chartHeight),
+    )
     if (chart1) {
       chart1.render()
     }
@@ -51,7 +58,10 @@ const MixedWidget8: React.FC<Props> = ({className, chartColor, chartHeight}) => 
             data-kt-menu-placement='bottom-end'
             data-kt-menu-flip='top-end'
           >
-            <KTSVG path='/media/icons/duotune/general/gen024.svg' className='svg-icon-2' />
+            <KTSVG
+              path='/media/icons/duotune/general/gen024.svg'
+              className='svg-icon-2'
+            />
           </button>
           <Dropdown1 />
           {/* end::Menu */}
@@ -62,7 +72,10 @@ const MixedWidget8: React.FC<Props> = ({className, chartColor, chartHeight}) => 
       {/* begin::Body */}
       <div className='card-body d-flex flex-column'>
         {/* begin::Chart */}
-        <div ref={chartRef} className='mixed-widget-5-chart card-rounded-top'></div>
+        <div
+          ref={chartRef}
+          className='mixed-widget-5-chart card-rounded-top'
+        ></div>
         {/* end::Chart */}
 
         {/* begin::Items */}
@@ -85,10 +98,15 @@ const MixedWidget8: React.FC<Props> = ({className, chartColor, chartHeight}) => 
 
               {/* begin::Title */}
               <div>
-                <a href='#' className='fs-6 text-gray-800 text-hover-primary fw-bolder'>
+                <a
+                  href='#'
+                  className='fs-6 text-gray-800 text-hover-primary fw-bolder'
+                >
                   Top Authors
                 </a>
-                <div className='fs-7 text-muted fw-bold mt-1'>Ricky Hunt, Sandra Trepp</div>
+                <div className='fs-7 text-muted fw-bold mt-1'>
+                  Ricky Hunt, Sandra Trepp
+                </div>
               </div>
               {/* end::Title */}
             </div>
@@ -118,10 +136,15 @@ const MixedWidget8: React.FC<Props> = ({className, chartColor, chartHeight}) => 
 
               {/* begin::Title */}
               <div>
-                <a href='#' className='fs-6 text-gray-800 text-hover-primary fw-bolder'>
+                <a
+                  href='#'
+                  className='fs-6 text-gray-800 text-hover-primary fw-bolder'
+                >
                   Top Sales
                 </a>
-                <div className='fs-7 text-muted fw-bold mt-1'>PitStop Emails</div>
+                <div className='fs-7 text-muted fw-bold mt-1'>
+                  PitStop Emails
+                </div>
               </div>
               {/* end::Title */}
             </div>
@@ -151,7 +174,10 @@ const MixedWidget8: React.FC<Props> = ({className, chartColor, chartHeight}) => 
 
               {/* begin::Title */}
               <div className='py-1'>
-                <a href='#' className='fs-6 text-gray-800 text-hover-primary fw-bolder'>
+                <a
+                  href='#'
+                  className='fs-6 text-gray-800 text-hover-primary fw-bolder'
+                >
                   Top Engagement
                 </a>
 
@@ -174,7 +200,10 @@ const MixedWidget8: React.FC<Props> = ({className, chartColor, chartHeight}) => 
   )
 }
 
-const chart1Options = (chartColor: string, chartHeight: string): ApexOptions => {
+const chart1Options = (
+  chartColor: string,
+  chartHeight: string,
+): ApexOptions => {
   const labelColor = getCSSVariableValue('--bs-gray-800')
   const strokeColor = getCSSVariableValue('--bs-gray-300')
   const baseColor = getCSSVariableValue('--bs-' + chartColor)
@@ -306,4 +335,4 @@ const chart1Options = (chartColor: string, chartHeight: string): ApexOptions => 
   }
 }
 
-export {MixedWidget8}
+export { MixedWidget8 }

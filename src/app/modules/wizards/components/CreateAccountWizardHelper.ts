@@ -58,4 +58,4 @@ const inits: ICreateAccount = {
   saveCard: '1',
 }
 
-export {createAccountSchemas, inits}
+export { createAccountSchemas, inits }

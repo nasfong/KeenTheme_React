@@ -10,7 +10,7 @@ export function AsideMenuMain() {
   // const { sidebarMenus } = state
   const sidebarMenus = []
   interface Props {
-    menus: any,
+    menus: any
     group: string
   }
 
@@ -22,7 +22,7 @@ export function AsideMenuMain() {
     id: number
     name: string
     parent_id: number
-    url: string,
+    url: string
     font_icon: string
   }
 
@@ -31,28 +31,33 @@ export function AsideMenuMain() {
       <>
         <div className='menu-item'>
           <div className='menu-content pt-8 pb-2'>
-            <span className='menu-section text-uppercase fs-8 ls-1 text-white'>{group}</span>
+            <span className='menu-section text-uppercase fs-8 ls-1 text-white'>
+              {group}
+            </span>
           </div>
         </div>
-        {menus && menus.map((menu: TMenu, index: number) => {
-          return (
-            <AsideMenuItem
-              key={index}
-              to={menu.url === null ? '#!' : menu.url}
-              icon={menu.icon}
-              title={menu.display_name}
-              fontIcon={menu.font_icon}
-            />
-          )
-        })}
+        {menus &&
+          menus.map((menu: TMenu, index: number) => {
+            return (
+              <AsideMenuItem
+                key={index}
+                to={menu.url === null ? '#!' : menu.url}
+                icon={menu.icon}
+                title={menu.display_name}
+                fontIcon={menu.font_icon}
+              />
+            )
+          })}
       </>
     )
   }
 
-
   return (
     <>
-      {sidebarMenus && Object.entries(sidebarMenus).map(([group, menus]) => <MenuItem menus={menus} group={group} key={group} />)}
+      {sidebarMenus &&
+        Object.entries(sidebarMenus).map(([group, menus]) => (
+          <MenuItem menus={menus} group={group} key={group} />
+        ))}
       {/* <AsideMenuItem
         to='/dashboard'
         icon='/media/icons/duotune/art/art002.svg'

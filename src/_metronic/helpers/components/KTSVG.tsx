@@ -7,7 +7,11 @@ type Props = {
   svgClassName?: string
 }
 
-export const KTSVG: React.FC<Props> = ({ className = '', path, svgClassName = 'mh-50px' }) => {
+export const KTSVG: React.FC<Props> = ({
+  className = '',
+  path,
+  svgClassName = 'mh-50px',
+}) => {
   return (
     <span className={`svg-icon ${className}`}>
       <SVG src={path} className={svgClassName} />

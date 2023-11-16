@@ -1,9 +1,9 @@
 import React from 'react'
-import {Redirect, Route, Switch} from 'react-router-dom'
-import {PageLink, PageTitle} from '../../../_metronic/layout/core'
-import {Overview} from './components/Overview'
-import {Settings} from './components/settings/Settings'
-import {AccountHeader} from './AccountHeader'
+import { Redirect, Route, Switch } from 'react-router-dom'
+import { PageLink, PageTitle } from '../../../_metronic/layout/core'
+import { Overview } from './components/Overview'
+import { Settings } from './components/settings/Settings'
+import { AccountHeader } from './AccountHeader'
 
 const accountBreadCrumbs: Array<PageLink> = [
   {
@@ -34,7 +34,11 @@ const AccountPage: React.FC = () => {
           <Settings />
         </Route>
 
-        <Redirect from='/crafted/account' exact={true} to='/crafted/account/overview' />
+        <Redirect
+          from='/crafted/account'
+          exact={true}
+          to='/crafted/account/overview'
+        />
         <Redirect to='/crafted/account/overview' />
       </Switch>
     </>

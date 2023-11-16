@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useEffect, useRef} from 'react'
-import ApexCharts, {ApexOptions} from 'apexcharts'
-import {getCSS, getCSSVariableValue} from '../../../assets/ts/_utils'
+import React, { useEffect, useRef } from 'react'
+import ApexCharts, { ApexOptions } from 'apexcharts'
+import { getCSS, getCSSVariableValue } from '../../../assets/ts/_utils'
 
 type Props = {
   className: string
 }
 
-const ChartsWidget8: React.FC<Props> = ({className}) => {
+const ChartsWidget8: React.FC<Props> = ({ className }) => {
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -36,7 +36,9 @@ const ChartsWidget8: React.FC<Props> = ({className}) => {
         <h3 className='card-title align-items-start flex-column'>
           <span className='card-label fw-bolder fs-3 mb-1'>Recent Orders</span>
 
-          <span className='text-muted fw-bold fs-7'>More than 500 new orders</span>
+          <span className='text-muted fw-bold fs-7'>
+            More than 500 new orders
+          </span>
         </h3>
 
         {/* begin::Toolbar */}
@@ -72,7 +74,7 @@ const ChartsWidget8: React.FC<Props> = ({className}) => {
         <div
           ref={chartRef}
           id='kt_charts_widget_8_chart'
-          style={{height: '350px'}}
+          style={{ height: '350px' }}
           className='card-rounded-bottom'
         ></div>
         {/* end::Chart */}
@@ -82,7 +84,7 @@ const ChartsWidget8: React.FC<Props> = ({className}) => {
   )
 }
 
-export {ChartsWidget8}
+export { ChartsWidget8 }
 
 function getChartOptions(height: number): ApexOptions {
   const labelColor = getCSSVariableValue('--bs-gray-500')

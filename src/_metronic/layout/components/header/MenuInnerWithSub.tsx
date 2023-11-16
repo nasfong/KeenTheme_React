@@ -1,7 +1,7 @@
-import React, {useRef, useEffect} from 'react'
-import {useLocation} from 'react-router'
+import React, { useRef, useEffect } from 'react'
+import { useLocation } from 'react-router'
 import clsx from 'clsx'
-import {checkIsActive, KTSVG} from '../../../helpers'
+import { checkIsActive, KTSVG } from '../../../helpers'
 
 type Props = {
   to: string
@@ -28,7 +28,7 @@ const MenuInnerWithSub: React.FC<Props> = ({
   isMega = false,
 }) => {
   const menuItemRef = useRef<HTMLDivElement>(null)
-  const {pathname} = useLocation()
+  const { pathname } = useLocation()
 
   useEffect(() => {
     if (menuItemRef.current && menuTrigger && menuPlacement) {
@@ -69,7 +69,9 @@ const MenuInnerWithSub: React.FC<Props> = ({
       <div
         className={clsx(
           'menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown',
-          isMega ? 'w-100 w-lg-600px p-5 p-lg-5' : 'menu-rounded-0 py-lg-4 w-lg-225px'
+          isMega
+            ? 'w-100 w-lg-600px p-5 p-lg-5'
+            : 'menu-rounded-0 py-lg-4 w-lg-225px',
         )}
         data-kt-menu-dismiss='true'
       >
@@ -79,4 +81,4 @@ const MenuInnerWithSub: React.FC<Props> = ({
   )
 }
 
-export {MenuInnerWithSub}
+export { MenuInnerWithSub }

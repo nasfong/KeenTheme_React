@@ -45,7 +45,9 @@ const Topbar: FC = () => {
   return (
     <div className='d-flex align-items-stretch flex-shrink-0'>
       {/* Search */}
-      <div className={clsx('d-flex align-items-stretch', toolbarButtonMarginClass)}>
+      <div
+        className={clsx('d-flex align-items-stretch', toolbarButtonMarginClass)}
+      >
         {/* <Search /> */}
       </div>
       {/* Activities */}
@@ -123,74 +125,84 @@ const Topbar: FC = () => {
         {/* end::Menu wrapper * /}
       </div> */}
       {/* {userCan.venderContract && ( */}
-        <Link
-          className={
-            clsx(
-              'd-flex align-items-center w-md-100px me-md-20',
-              toolbarButtonMarginClass,
-            )}
-          to='/vender-contract?search=1'>
-          <div
-            className={clsx(
-              'btn btn-icon btn-active-light-primary',
-              toolbarButtonHeightClass
-            )}
+      <Link
+        className={clsx(
+          'd-flex align-items-center w-md-100px me-md-20',
+          toolbarButtonMarginClass,
+        )}
+        to='/vender-contract?search=1'
+      >
+        <div
+          className={clsx(
+            'btn btn-icon btn-active-light-primary',
+            toolbarButtonHeightClass,
+          )}
+        >
+          <span
+            className={clsx('text-nowrap d-none d-md-inline', {
+              'text-primary': isActiveVender,
+            })}
           >
-            <span className={clsx('text-nowrap d-none d-md-inline', { 'text-primary': isActiveVender })}>Vender Monitor</span>
-            <div className='position-relative'>
-              <KTSVG
-                path='/media/icons/duotune/general/gen007.svg'
-                className={`${toolbarButtonIconSizeClass} svg-icon-1x ${isActiveVender && 'svg-icon-primary'}`}
-              />
-              {venContractCount ?
-                <span
-                  className="position-absolute translate-middle badge rounded-pill bg-danger border border-secondary"
-                  style={{ top: '10%', left: '80%' }}
-                >
-                  <span className='fs-9'>{venContractCount}</span>
-                </span>
-                :
-                null
-              }
-            </div>
-
+            Vender Monitor
+          </span>
+          <div className='position-relative'>
+            <KTSVG
+              path='/media/icons/duotune/general/gen007.svg'
+              className={`${toolbarButtonIconSizeClass} svg-icon-1x ${
+                isActiveVender && 'svg-icon-primary'
+              }`}
+            />
+            {venContractCount ? (
+              <span
+                className='position-absolute translate-middle badge rounded-pill bg-danger border border-secondary'
+                style={{ top: '10%', left: '80%' }}
+              >
+                <span className='fs-9'>{venContractCount}</span>
+              </span>
+            ) : null}
           </div>
-        </Link>
+        </div>
+      </Link>
       {/* )} */}
       {/* {userCan.aba && ( */}
-        <Link
-          className={
-            clsx(
-              'd-flex align-items-center w-md-100px',
-              toolbarButtonMarginClass,
-            )}
-          to='/aba-payment/114/Report/default'>
-          <div
-            className={clsx(
-              'btn btn-icon btn-active-light-primary position-relative',
-              toolbarButtonHeightClass
-            )}
+      <Link
+        className={clsx(
+          'd-flex align-items-center w-md-100px',
+          toolbarButtonMarginClass,
+        )}
+        to='/aba-payment/114/Report/default'
+      >
+        <div
+          className={clsx(
+            'btn btn-icon btn-active-light-primary position-relative',
+            toolbarButtonHeightClass,
+          )}
+        >
+          <span
+            className={clsx('text-nowrap d-none d-md-inline', {
+              'text-primary': isActiveABA,
+            })}
           >
-            <span className={clsx('text-nowrap d-none d-md-inline', { 'text-primary': isActiveABA })}>ABA Payment</span>
-            <div className='position-relative'>
-              <KTSVG
-                path='/media/icons/duotune/general/gen007.svg'
-                className={`${toolbarButtonIconSizeClass} svg-icon-1x ${isActiveABA && 'svg-icon-primary'}`}
-              />
-              {abaCount ?
-                <span
-                  className="position-absolute translate-middle badge rounded-pill bg-danger border border-secondary"
-                  style={{ top: '25%', left: '90%' }}
-                >
-                  <span className='fs-9'>{abaCount}</span>
-                </span>
-                :
-                null
-              }
-            </div>
-
+            ABA Payment
+          </span>
+          <div className='position-relative'>
+            <KTSVG
+              path='/media/icons/duotune/general/gen007.svg'
+              className={`${toolbarButtonIconSizeClass} svg-icon-1x ${
+                isActiveABA && 'svg-icon-primary'
+              }`}
+            />
+            {abaCount ? (
+              <span
+                className='position-absolute translate-middle badge rounded-pill bg-danger border border-secondary'
+                style={{ top: '25%', left: '90%' }}
+              >
+                <span className='fs-9'>{abaCount}</span>
+              </span>
+            ) : null}
           </div>
-        </Link>
+        </div>
+      </Link>
       {/* )} */}
       {/* begin::User */}
       <div
@@ -199,7 +211,10 @@ const Topbar: FC = () => {
       >
         {/* begin::Toggle */}
         <div
-          className={clsx('cursor-pointer symbol', toolbarUserAvatarHeightClass)}
+          className={clsx(
+            'cursor-pointer symbol',
+            toolbarUserAvatarHeightClass,
+          )}
           data-kt-menu-trigger='click'
           data-kt-menu-attach='parent'
           data-kt-menu-placement='bottom-end'
@@ -214,12 +229,18 @@ const Topbar: FC = () => {
 
       {/* begin::Aside Toggler */}
       {config.header.left === 'menu' && (
-        <div className='d-flex align-items-center d-lg-none ms-2 me-n3' title='Show header menu'>
+        <div
+          className='d-flex align-items-center d-lg-none ms-2 me-n3'
+          title='Show header menu'
+        >
           <div
             className='btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px'
             id='kt_header_menu_mobile_toggle'
           >
-            <KTSVG path='/media/icons/duotune/text/txt001.svg' className='svg-icon-1' />
+            <KTSVG
+              path='/media/icons/duotune/text/txt001.svg'
+              className='svg-icon-1'
+            />
           </div>
         </div>
       )}

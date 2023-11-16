@@ -1,12 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useState} from 'react'
-import {KTSVG} from '../../../../../../_metronic/helpers'
-import {IDeactivateAccount, deactivateAccount} from '../SettingsModel'
+import React, { useState } from 'react'
+import { KTSVG } from '../../../../../../_metronic/helpers'
+import { IDeactivateAccount, deactivateAccount } from '../SettingsModel'
 import * as Yup from 'yup'
-import {useFormik} from 'formik'
+import { useFormik } from 'formik'
 
 const deactivateAccountSchema = Yup.object().shape({
-  confirm: Yup.boolean().oneOf([true], 'Please check the box to deactivate your account'),
+  confirm: Yup.boolean().oneOf(
+    [true],
+    'Please check the box to deactivate your account',
+  ),
 })
 
 const DeactivateAccount: React.FC = () => {
@@ -41,7 +44,11 @@ const DeactivateAccount: React.FC = () => {
       </div>
 
       <div id='kt_account_deactivate' className='collapse show'>
-        <form onSubmit={formik.handleSubmit} id='kt_account_deactivate_form' className='form'>
+        <form
+          onSubmit={formik.handleSubmit}
+          id='kt_account_deactivate_form'
+          className='form'
+        >
           <div className='card-body border-top p-9'>
             <div className='notice d-flex bg-light-warning rounded border-warning border border-dashed mb-9 p-6'>
               <KTSVG
@@ -51,10 +58,12 @@ const DeactivateAccount: React.FC = () => {
 
               <div className='d-flex flex-stack flex-grow-1'>
                 <div className='fw-bold'>
-                  <h4 className='text-gray-800 fw-bolder'>You Are Deactivating Your Account</h4>
+                  <h4 className='text-gray-800 fw-bolder'>
+                    You Are Deactivating Your Account
+                  </h4>
                   <div className='fs-6 text-gray-600'>
-                    For extra security, this requires you to confirm your email or phone number when
-                    you reset yousignr password.
+                    For extra security, this requires you to confirm your email
+                    or phone number when you reset yousignr password.
                     <br />
                     <a className='fw-bolder' href='#'>
                       Learn more
@@ -70,7 +79,10 @@ const DeactivateAccount: React.FC = () => {
                 type='checkbox'
                 {...formik.getFieldProps('confirm')}
               />
-              <label className='form-check-label fw-bold ps-2 fs-6' htmlFor='deactivate'>
+              <label
+                className='form-check-label fw-bold ps-2 fs-6'
+                htmlFor='deactivate'
+              >
                 I confirm my account deactivation
               </label>
             </div>
@@ -89,7 +101,10 @@ const DeactivateAccount: React.FC = () => {
             >
               {!loading && 'Deactivate Account'}
               {loading && (
-                <span className='indicator-progress' style={{display: 'block'}}>
+                <span
+                  className='indicator-progress'
+                  style={{ display: 'block' }}
+                >
                   Please wait...{' '}
                   <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
                 </span>
@@ -102,4 +117,4 @@ const DeactivateAccount: React.FC = () => {
   )
 }
 
-export {DeactivateAccount}
+export { DeactivateAccount }

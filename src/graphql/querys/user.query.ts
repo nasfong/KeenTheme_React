@@ -1,6 +1,6 @@
-import { gql } from "__generated__";
+import { gql } from '__generated__'
 
-export const GET_ALL_USERS = gql(/* GraphQL */`
+export const GET_ALL_USERS = gql(/* GraphQL */ `
   query getAllUsers($amount: Int) {
     getAllUsers(amount: $amount) {
       id
@@ -15,7 +15,7 @@ export const GET_ALL_USERS = gql(/* GraphQL */`
   }
 `)
 
-export const GET_USER_BY_ID = gql(/* GraphQL */`
+export const GET_USER_BY_ID = gql(/* GraphQL */ `
   query getUser($id: ID!) {
     getUser(id: $id) {
       id
@@ -26,5 +26,5 @@ export const GET_USER_BY_ID = gql(/* GraphQL */`
         id
       }
     }
-}
+  }
 `)

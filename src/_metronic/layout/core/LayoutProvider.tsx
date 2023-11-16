@@ -26,7 +26,7 @@ const LayoutContext = createContext<LayoutContextModel>({
   classes: getEmptyCssClasses(),
   attributes: getEmptyHTMLAttributes(),
   cssVariables: getEmptyCSSVariables(),
-  setLayout: (config: LayoutSetup) => { },
+  setLayout: (config: LayoutSetup) => {},
 })
 
 const enableSplashScreen = () => {
@@ -43,7 +43,9 @@ const disableSplashScreen = () => {
   }
 }
 
-const LayoutProvider: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+const LayoutProvider: React.FC<{ children?: React.ReactNode }> = ({
+  children,
+}) => {
   const [config, setConfig] = useState(LayoutSetup.config)
   const [classes, setClasses] = useState(LayoutSetup.classes)
   const [attributes, setAttributes] = useState(LayoutSetup.attributes)
@@ -73,7 +75,9 @@ const LayoutProvider: React.FC<{ children?: React.ReactNode }> = ({ children }) 
     disableSplashScreen()
   }, [])
 
-  return <LayoutContext.Provider value={value}>{children}</LayoutContext.Provider>
+  return (
+    <LayoutContext.Provider value={value}>{children}</LayoutContext.Provider>
+  )
 }
 
 export { LayoutContext, LayoutProvider }

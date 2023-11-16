@@ -1,9 +1,9 @@
 import React from 'react'
-import {Redirect, Route, Switch} from 'react-router-dom'
-import {PageLink, PageTitle} from '../../../../_metronic/layout/core'
-import {Private} from './components/Private'
-import {Group} from './components/Group'
-import {Drawer} from './components/Drawer'
+import { Redirect, Route, Switch } from 'react-router-dom'
+import { PageLink, PageTitle } from '../../../../_metronic/layout/core'
+import { Private } from './components/Private'
+import { Group } from './components/Group'
+import { Drawer } from './components/Drawer'
 
 const chatBreadCrumbs: Array<PageLink> = [
   {

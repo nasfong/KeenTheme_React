@@ -1,9 +1,8 @@
-import { Form, Formik } from 'formik';
-import * as Yup from 'yup';
-import { Input } from './components/Input';
-import { CheckBox } from './components/CheckBox';
-import { Select } from './components/Select';
-
+import { Form, Formik } from 'formik'
+import * as Yup from 'yup'
+import { Input } from './components/Input'
+import { CheckBox } from './components/CheckBox'
+import { Select } from './components/Select'
 
 // const MyCheckbox = ({ children, ...props }) => {
 //   // React treats radios and checkbox inputs differently from other input types: select and textarea.
@@ -86,19 +85,25 @@ const Basic = () => {
           jobType: Yup.string()
             .oneOf(
               ['designer', 'development', 'product', 'other'],
-              'Invalid Job Type'
+              'Invalid Job Type',
             )
             .required('Required'),
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+            alert(JSON.stringify(values, null, 2))
+            setSubmitting(false)
+          }, 400)
         }}
       >
         <Form>
-          <Input inline label='Username' name='username' placeholder='username' required />
+          <Input
+            inline
+            label='Username'
+            name='username'
+            placeholder='username'
+            required
+          />
           <Input inline label='Password' name='password' type='password' />
           <Select inline label='Job Type' name='jobType' required>
             <option>Please Select</option>
@@ -108,12 +113,14 @@ const Basic = () => {
           </Select>
           <CheckBox label='Active' name='active' />
 
-          <button className='btn btn-primary btn-sm' type="submit">Submit</button>
+          <button className='btn btn-primary btn-sm' type='submit'>
+            Submit
+          </button>
         </Form>
       </Formik>
       {/* </form> */}
     </>
-  );
-};
+  )
+}
 
 export default Basic

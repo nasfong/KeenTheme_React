@@ -1,5 +1,5 @@
 export const dateFormat = (date: Date) => {
-  // const formatter = new Intl.DateTimeFormat('es') // 13/9/2023 
+  // const formatter = new Intl.DateTimeFormat('es') // 13/9/2023
   // const formatter = new Intl.DateTimeFormat(undefined, { dateStyle: 'full' }) // Wednesday, September 6, 2023
   const formatter = new Intl.DateTimeFormat(undefined, { dateStyle: 'short' }) // 3/13/2023
   return formatter.format(date)
@@ -29,7 +29,9 @@ export const numberFormat = () => {
   // const formatter = new Intl.NumberFormat(undefined, { maximumFractionDigits: 2 })
   // return formatter.format(4.345678) // 4.34
 
-  const formatter = new Intl.NumberFormat(undefined, { minimumFractionDigits: 2 })
+  const formatter = new Intl.NumberFormat(undefined, {
+    minimumFractionDigits: 2,
+  })
   return formatter.format(4.3) // 4.30
   // return formatter.format(4.345678) // 4.346
 }
@@ -38,6 +40,5 @@ export const ruleFormat = () => {
   // const formatter = new Intl.PluralRules(undefined)
   //? apple | apples
   // formatter.select(1) // one
-  // formatter.select(2) // other 
-
+  // formatter.select(2) // other
 }

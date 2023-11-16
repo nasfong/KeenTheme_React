@@ -9,7 +9,10 @@ import {
 export class SwapperStore {
   static store: Map<string, SwapperComponent> = new Map()
 
-  public static set(instanceId: string, drawerComponentObj: SwapperComponent): void {
+  public static set(
+    instanceId: string,
+    drawerComponentObj: SwapperComponent,
+  ): void {
     if (SwapperStore.has(instanceId)) {
       return
     }
@@ -66,7 +69,11 @@ class SwapperComponent {
   options: ISwapperOptions
   queries: ISwapperQueries
 
-  constructor(_element: HTMLElement, _options: ISwapperOptions, _queries: ISwapperQueries) {
+  constructor(
+    _element: HTMLElement,
+    _options: ISwapperOptions,
+    _queries: ISwapperQueries,
+  ) {
     this.element = _element
     this.options = Object.assign(defaultSwapperOptions, _options)
     this.queries = _queries
@@ -104,7 +111,9 @@ class SwapperComponent {
   public update = () => {
     const parentSelector = this.getOption('parent')?.toString()
     const mode = this.getOption('mode')
-    const parentElement = parentSelector ? document.querySelector(parentSelector) : null
+    const parentElement = parentSelector
+      ? document.querySelector(parentSelector)
+      : null
 
     if (parentElement && this.element.parentNode !== parentElement) {
       if (mode === 'prepend') {
@@ -135,7 +144,7 @@ class SwapperComponent {
   // Static methods
   public static getInstance = (
     el: HTMLElement,
-    componentName: string = defaultSwapperQueires.componentName
+    componentName: string = defaultSwapperQueires.componentName,
   ): SwapperComponent | null => {
     const place = SwapperStore.get(el.id)
     if (place) {
@@ -148,7 +157,7 @@ class SwapperComponent {
   public static createInstances = (
     selector: string = defaultSwapperQueires.instanseQuery,
     options: ISwapperOptions = defaultSwapperOptions,
-    queries: ISwapperQueries = defaultSwapperQueires
+    queries: ISwapperQueries = defaultSwapperQueires,
   ) => {
     const elements = document.body.querySelectorAll(selector)
     elements.forEach((el) => {
@@ -163,7 +172,7 @@ class SwapperComponent {
   public static createInsance = (
     selector: string = defaultSwapperQueires.instanseQuery,
     options: ISwapperOptions = defaultSwapperOptions,
-    queries: ISwapperQueries = defaultSwapperQueires
+    queries: ISwapperQueries = defaultSwapperQueires,
   ): SwapperComponent | undefined => {
     const element = document.body.querySelector(selector)
     if (!element) {
@@ -177,11 +186,15 @@ class SwapperComponent {
     return place
   }
 
-  public static bootstrap = (selector: string = defaultSwapperQueires.instanseQuery) => {
+  public static bootstrap = (
+    selector: string = defaultSwapperQueires.instanseQuery,
+  ) => {
     SwapperComponent.createInstances(selector)
   }
 
-  public static reinitialization = (selector: string = defaultSwapperQueires.instanseQuery) => {
+  public static reinitialization = (
+    selector: string = defaultSwapperQueires.instanseQuery,
+  ) => {
     SwapperComponent.createInstances(selector)
   }
 }
@@ -193,7 +206,9 @@ window.addEventListener('resize', function () {
     timer,
     () => {
       // Locate and update Offcanvas instances on window resize
-      const elements = document.querySelectorAll(defaultSwapperQueires.instanseQuery)
+      const elements = document.querySelectorAll(
+        defaultSwapperQueires.instanseQuery,
+      )
       elements.forEach((el) => {
         const place = SwapperComponent.getInstance(el as HTMLElement)
         if (place) {
@@ -201,8 +216,8 @@ window.addEventListener('resize', function () {
         }
       })
     },
-    200
+    200,
   )
 })
 
-export {SwapperComponent, defaultSwapperOptions, defaultSwapperQueires}
+export { SwapperComponent, defaultSwapperOptions, defaultSwapperQueires }

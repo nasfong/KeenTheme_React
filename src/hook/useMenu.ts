@@ -1,6 +1,17 @@
-import { useLazyQuery, useMutation, useQuery } from "@apollo/client"
-import { CREATE_MENU, CREATE_MENU_PARENT, DELETE_MENU_PARENT, UPDATE_MENU, UPDATE_MENU_PARENT } from "graphql/mutations/menu.mutation"
-import { GET_ALL_MENUS, GET_ALL_MENU_PARENTS, GET_ALL_SIDE_MENUS } from "graphql/querys/menu.query"
+import { useLazyQuery, useMutation, useQuery } from '@apollo/client'
+import {
+  CREATE_MENU,
+  CREATE_MENU_PARENT,
+  DELETE_MENU,
+  DELETE_MENU_PARENT,
+  UPDATE_MENU,
+  UPDATE_MENU_PARENT,
+} from 'graphql/mutations/menu.mutation'
+import {
+  GET_ALL_MENUS,
+  GET_ALL_MENU_PARENTS,
+  GET_ALL_SIDE_MENUS,
+} from 'graphql/querys/menu.query'
 
 // Query
 export const useQueryMenu = () => {
@@ -15,7 +26,11 @@ export const useQuerySideMenu = () => {
 }
 
 // Mutation
-export const useCreateMenu = () => {``
+export const useDeleteMenu = () => {
+  return useMutation(DELETE_MENU)
+}
+
+export const useCreateMenu = () => {
   return useMutation(CREATE_MENU)
 }
 

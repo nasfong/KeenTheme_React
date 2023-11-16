@@ -1,6 +1,6 @@
-import { FormEvent } from "react"
-import { Form, Modal } from "react-bootstrap"
-import { KTSVG } from "./_metronic/helpers"
+import { FormEvent } from 'react'
+import { Form, Modal } from 'react-bootstrap'
+import { KTSVG } from './_metronic/helpers'
 
 type props = {
   show: boolean
@@ -8,20 +8,23 @@ type props = {
 }
 
 const FormModal: React.FC<props> = ({ show, setShow }) => {
-
-
   const handleClose = () => setShow(!show)
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     // console.log(e.target['username'].value
-
   }
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header>
         <Modal.Title>Modal heading</Modal.Title>
-        <div className='btn btn-icon btn-sm btn-light-primary' onClick={handleClose}>
-          <KTSVG className='svg-icon-2' path='/media/icons/duotune/arrows/arr061.svg' />
+        <div
+          className='btn btn-icon btn-sm btn-light-primary'
+          onClick={handleClose}
+        >
+          <KTSVG
+            className='svg-icon-2'
+            path='/media/icons/duotune/arrows/arr061.svg'
+          />
         </div>
       </Modal.Header>
       <Form onSubmit={handleSubmit}>
@@ -51,14 +54,16 @@ const FormModal: React.FC<props> = ({ show, setShow }) => {
               disabled
               // readOnly
             />
-            <Form.Control.Feedback type='invalid'>phone is required</Form.Control.Feedback>
+            <Form.Control.Feedback type='invalid'>
+              phone is required
+            </Form.Control.Feedback>
           </Form.Group>
           <Form.Label className='form-label'>Date</Form.Label>
           <input
-            className="form-control form-control-solid   active"
-            placeholder="Select a date"
-            name="due_date"
-            type="date"
+            className='form-control form-control-solid   active'
+            placeholder='Select a date'
+            name='due_date'
+            type='date'
           />
         </Modal.Body>
         <Modal.Footer>

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useEffect, useRef} from 'react'
-import ApexCharts, {ApexOptions} from 'apexcharts'
-import {getCSSVariableValue} from '../../../assets/ts/_utils'
+import React, { useEffect, useRef } from 'react'
+import ApexCharts, { ApexOptions } from 'apexcharts'
+import { getCSSVariableValue } from '../../../assets/ts/_utils'
 
 type Props = {
   className: string
@@ -9,7 +9,11 @@ type Props = {
   chartHeight: string
 }
 
-const MixedWidget11: React.FC<Props> = ({className, chartColor, chartHeight}) => {
+const MixedWidget11: React.FC<Props> = ({
+  className,
+  chartColor,
+  chartHeight,
+}) => {
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -17,7 +21,10 @@ const MixedWidget11: React.FC<Props> = ({className, chartColor, chartHeight}) =>
       return
     }
 
-    const chart = new ApexCharts(chartRef.current, chartOptions(chartColor, chartHeight))
+    const chart = new ApexCharts(
+      chartRef.current,
+      chartOptions(chartColor, chartHeight),
+    )
     if (chart) {
       chart.render()
     }
@@ -169,4 +176,4 @@ const chartOptions = (chartColor: string, chartHeight: string): ApexOptions => {
   }
 }
 
-export {MixedWidget11}
+export { MixedWidget11 }

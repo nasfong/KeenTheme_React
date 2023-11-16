@@ -62,7 +62,9 @@ class FeedbackComponent {
   }
 
   private setPopupTopCenterPosition = () => {
-    const width = getAttributeValueByBreakpoint(this.options.width?.toString() || '0')
+    const width = getAttributeValueByBreakpoint(
+      this.options.width?.toString() || '0',
+    )
     const height = ElementStyleUtil.get(this.element, 'height')
     this.element.classList.add('feedback-top-center')
     ElementStyleUtil.set(this.element, 'width', width)
@@ -149,4 +151,4 @@ class FeedbackComponent {
   }
 }
 
-export {FeedbackComponent, defaultFeedbackOptions}
+export { FeedbackComponent, defaultFeedbackOptions }

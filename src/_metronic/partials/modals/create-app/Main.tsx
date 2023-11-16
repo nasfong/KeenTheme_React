@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {FC, useEffect, useRef, useState} from 'react'
-import {KTSVG, toAbsoluteUrl} from '../../../helpers'
-import {Formik, Form, FormikValues, Field, ErrorMessage} from 'formik'
+import React, { FC, useEffect, useRef, useState } from 'react'
+import { KTSVG, toAbsoluteUrl } from '../../../helpers'
+import { Formik, Form, FormikValues, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
-import {StepperComponent} from '../../../assets/ts/components'
+import { StepperComponent } from '../../../assets/ts/components'
 
 interface ICreateAccount {
   appName: string
@@ -61,7 +61,9 @@ const Main: FC = () => {
   const [initValues] = useState<ICreateAccount>(inits)
 
   const loadStepper = () => {
-    stepper.current = StepperComponent.createInsance(stepperRef.current as HTMLDivElement)
+    stepper.current = StepperComponent.createInsance(
+      stepperRef.current as HTMLDivElement,
+    )
   }
 
   const prevStep = () => {
@@ -104,8 +106,14 @@ const Main: FC = () => {
           <div className='modal-header'>
             <h2>Create App</h2>
 
-            <div className='btn btn-sm btn-icon btn-active-color-primary' data-bs-dismiss='modal'>
-              <KTSVG path='/media/icons/duotune/arrows/arr061.svg' className='svg-icon-1' />
+            <div
+              className='btn btn-sm btn-icon btn-active-color-primary'
+              data-bs-dismiss='modal'
+            >
+              <KTSVG
+                path='/media/icons/duotune/arrows/arr061.svg'
+                className='svg-icon-1'
+              />
             </div>
           </div>
 
@@ -117,7 +125,10 @@ const Main: FC = () => {
             >
               <div className='d-flex justify-content-center justify-content-xl-start flex-row-auto w-100 w-xl-300px'>
                 <div className='stepper-nav ps-lg-10'>
-                  <div className='stepper-item current' data-kt-stepper-element='nav'>
+                  <div
+                    className='stepper-item current'
+                    data-kt-stepper-element='nav'
+                  >
                     <div className='stepper-line w-40px'></div>
 
                     <div className='stepper-icon w-40px h-40px'>
@@ -143,7 +154,9 @@ const Main: FC = () => {
                     <div className='stepper-label'>
                       <h3 className='stepper-title'>Frameworks</h3>
 
-                      <div className='stepper-desc'>Define your app framework</div>
+                      <div className='stepper-desc'>
+                        Define your app framework
+                      </div>
                     </div>
                   </div>
 
@@ -158,7 +171,9 @@ const Main: FC = () => {
                     <div className='stepper-label'>
                       <h3 className='stepper-title'>Database</h3>
 
-                      <div className='stepper-desc'>Select the app database type</div>
+                      <div className='stepper-desc'>
+                        Select the app database type
+                      </div>
                     </div>
                   </div>
 
@@ -173,7 +188,9 @@ const Main: FC = () => {
                     <div className='stepper-label'>
                       <h3 className='stepper-title'>Billing</h3>
 
-                      <div className='stepper-desc'>Provide payment details</div>
+                      <div className='stepper-desc'>
+                        Provide payment details
+                      </div>
                     </div>
                   </div>
 
@@ -201,8 +218,15 @@ const Main: FC = () => {
                   onSubmit={submitStep}
                 >
                   {() => (
-                    <Form className='form' noValidate id='kt_modal_create_app_form'>
-                      <div className='current' data-kt-stepper-element='content'>
+                    <Form
+                      className='form'
+                      noValidate
+                      id='kt_modal_create_app_form'
+                    >
+                      <div
+                        className='current'
+                        data-kt-stepper-element='content'
+                      >
                         <div className='w-100'>
                           <div className='fv-row mb-10'>
                             <label className='d-flex align-items-center fs-5 fw-bold mb-2'>
@@ -249,10 +273,13 @@ const Main: FC = () => {
                                   </span>
 
                                   <span className='d-flex flex-column'>
-                                    <span className='fw-bolder fs-6'>Quick Online Courses</span>
+                                    <span className='fw-bolder fs-6'>
+                                      Quick Online Courses
+                                    </span>
 
                                     <span className='fs-7 text-muted'>
-                                      Creating a clear text structure is just one SEO
+                                      Creating a clear text structure is just
+                                      one SEO
                                     </span>
                                   </span>
                                 </span>
@@ -279,10 +306,13 @@ const Main: FC = () => {
                                   </span>
 
                                   <span className='d-flex flex-column'>
-                                    <span className='fw-bolder fs-6'>Face to Face Discussions</span>
+                                    <span className='fw-bolder fs-6'>
+                                      Face to Face Discussions
+                                    </span>
 
                                     <span className='fs-7 text-muted'>
-                                      Creating a clear text structure is just one aspect
+                                      Creating a clear text structure is just
+                                      one aspect
                                     </span>
                                   </span>
                                 </span>
@@ -309,10 +339,13 @@ const Main: FC = () => {
                                   </span>
 
                                   <span className='d-flex flex-column'>
-                                    <span className='fw-bolder fs-6'>Full Intro Training</span>
+                                    <span className='fw-bolder fs-6'>
+                                      Full Intro Training
+                                    </span>
 
                                     <span className='fs-7 text-muted'>
-                                      Creating a clear text structure copywriting
+                                      Creating a clear text structure
+                                      copywriting
                                     </span>
                                   </span>
                                 </span>
@@ -358,7 +391,9 @@ const Main: FC = () => {
                                 <span className='d-flex flex-column'>
                                   <span className='fw-bolder fs-6'>HTML5</span>
 
-                                  <span className='fs-7 text-muted'>Base Web Projec</span>
+                                  <span className='fs-7 text-muted'>
+                                    Base Web Projec
+                                  </span>
                                 </span>
                               </span>
 
@@ -381,7 +416,9 @@ const Main: FC = () => {
                                 </span>
 
                                 <span className='d-flex flex-column'>
-                                  <span className='fw-bolder fs-6'>ReactJS</span>
+                                  <span className='fw-bolder fs-6'>
+                                    ReactJS
+                                  </span>
                                   <span className='fs-7 text-muted'>
                                     Robust and flexible app framework
                                   </span>
@@ -407,8 +444,12 @@ const Main: FC = () => {
                                 </span>
 
                                 <span className='d-flex flex-column'>
-                                  <span className='fw-bolder fs-6'>Angular</span>
-                                  <span className='fs-7 text-muted'>Powerful data mangement</span>
+                                  <span className='fw-bolder fs-6'>
+                                    Angular
+                                  </span>
+                                  <span className='fs-7 text-muted'>
+                                    Powerful data mangement
+                                  </span>
                                 </span>
                               </span>
 
@@ -457,7 +498,9 @@ const Main: FC = () => {
                       <div data-kt-stepper-element='content'>
                         <div className='w-100'>
                           <div className='fv-row mb-10'>
-                            <label className='required fs-5 fw-bold mb-2'>Database Name</label>
+                            <label className='required fs-5 fw-bold mb-2'>
+                              Database Name
+                            </label>
 
                             <Field
                               type='text'
@@ -472,7 +515,9 @@ const Main: FC = () => {
 
                           <div className='fv-row'>
                             <label className='d-flex align-items-center fs-5 fw-bold mb-4'>
-                              <span className='required'>Select Database Engine</span>
+                              <span className='required'>
+                                Select Database Engine
+                              </span>
 
                               <i
                                 className='fas fa-exclamation-circle ms-2 fs-7'
@@ -492,7 +537,9 @@ const Main: FC = () => {
                                 <span className='d-flex flex-column'>
                                   <span className='fw-bolder fs-6'>MySQL</span>
 
-                                  <span className='fs-7 text-muted'>Basic MySQL database</span>
+                                  <span className='fs-7 text-muted'>
+                                    Basic MySQL database
+                                  </span>
                                 </span>
                               </span>
 
@@ -515,7 +562,9 @@ const Main: FC = () => {
                                 </span>
 
                                 <span className='d-flex flex-column'>
-                                  <span className='fw-bolder fs-6'>Firebase</span>
+                                  <span className='fw-bolder fs-6'>
+                                    Firebase
+                                  </span>
 
                                   <span className='fs-7 text-muted'>
                                     Google based app data management
@@ -542,7 +591,9 @@ const Main: FC = () => {
                                 </span>
 
                                 <span className='d-flex flex-column'>
-                                  <span className='fw-bolder fs-6'>DynamoDB</span>
+                                  <span className='fw-bolder fs-6'>
+                                    DynamoDB
+                                  </span>
 
                                   <span className='fs-7 text-muted'>
                                     Amazon Fast NoSQL Database
@@ -570,7 +621,9 @@ const Main: FC = () => {
                       <div data-kt-stepper-element='content'>
                         <div className='w-100'>
                           <div className='pb-10 pb-lg-15'>
-                            <h2 className='fw-bolder text-dark'>Billing Details</h2>
+                            <h2 className='fw-bolder text-dark'>
+                              Billing Details
+                            </h2>
 
                             <div className='text-gray-400 fw-bold fs-6'>
                               If you need more info, please check out
@@ -618,17 +671,23 @@ const Main: FC = () => {
 
                               <div className='position-absolute translate-middle-y top-50 end-0 me-5'>
                                 <img
-                                  src={toAbsoluteUrl('/media/svg/card-logos/visa.svg')}
+                                  src={toAbsoluteUrl(
+                                    '/media/svg/card-logos/visa.svg',
+                                  )}
                                   alt=''
                                   className='h-25px'
                                 />
                                 <img
-                                  src={toAbsoluteUrl('/media/svg/card-logos/mastercard.svg')}
+                                  src={toAbsoluteUrl(
+                                    '/media/svg/card-logos/mastercard.svg',
+                                  )}
                                   alt=''
                                   className='h-25px'
                                 />
                                 <img
-                                  src={toAbsoluteUrl('/media/svg/card-logos/american-express.svg')}
+                                  src={toAbsoluteUrl(
+                                    '/media/svg/card-logos/american-express.svg',
+                                  )}
                                   alt=''
                                   className='h-25px'
                                 />
@@ -729,12 +788,16 @@ const Main: FC = () => {
                                 Save Card for further billing?
                               </label>
                               <div className='fs-7 fw-bold text-gray-400'>
-                                If you need more info, please check budget planning
+                                If you need more info, please check budget
+                                planning
                               </div>
                             </div>
 
                             <label className='form-check form-switch form-check-custom form-check-solid'>
-                              <Field className='form-check-input' type='checkbox' />
+                              <Field
+                                className='form-check-input'
+                                type='checkbox'
+                              />
                               <span className='form-check-label fw-bold text-gray-400'>
                                 Save Card
                               </span>
@@ -753,7 +816,9 @@ const Main: FC = () => {
 
                           <div className='text-center px-4 py-15'>
                             <img
-                              src={toAbsoluteUrl('/media/illustrations/sketchy-1/9.png')}
+                              src={toAbsoluteUrl(
+                                '/media/illustrations/sketchy-1/9.png',
+                              )}
                               alt=''
                               className='w-100 mh-300px'
                             />
@@ -778,12 +843,17 @@ const Main: FC = () => {
                         </div>
 
                         <div>
-                          <button type='submit' className='btn btn-lg btn-primary me-3'>
+                          <button
+                            type='submit'
+                            className='btn btn-lg btn-primary me-3'
+                          >
                             <span className='indicator-label'>
                               {stepper.current?.currentStepIndex !==
-                                stepper.current?.totatStepsNumber! - 1 && 'Continue'}
+                                stepper.current?.totatStepsNumber! - 1 &&
+                                'Continue'}
                               {stepper.current?.currentStepIndex ===
-                                stepper.current?.totatStepsNumber! - 1 && 'Submit'}
+                                stepper.current?.totatStepsNumber! - 1 &&
+                                'Submit'}
                               <KTSVG
                                 path='/media/icons/duotune/arrows/arr064.svg'
                                 className='svg-icon-3 ms-2 me-0'
@@ -804,4 +874,4 @@ const Main: FC = () => {
   )
 }
 
-export {Main}
+export { Main }

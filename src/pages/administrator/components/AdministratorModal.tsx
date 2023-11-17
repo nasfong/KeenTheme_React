@@ -69,7 +69,7 @@ const AdministratorModal: React.FC<Props> = ({ modal, handleCloseModal, user, up
                 users: getAllUsers.users.map((data) =>
                   data.id === res.data?.updateUser?.id ? res.data?.updateUser : data,
                 ),
-                totalPages: getAllUsers.totalPages
+                totalPages: getAllUsers.totalPages,
               },
             }))
             handleClose()
@@ -83,8 +83,10 @@ const AdministratorModal: React.FC<Props> = ({ modal, handleCloseModal, user, up
         .then((res) => {
           updateQuery(({ getAllUsers }) => ({
             getAllUsers: {
-              users: res.data?.createUser ? [...getAllUsers.users, res.data.createUser] : getAllUsers.users,
-              totalPages: getAllUsers.totalPages
+              users: res.data?.createUser
+                ? [...getAllUsers.users, res.data.createUser]
+                : getAllUsers.users,
+              totalPages: getAllUsers.totalPages,
             },
           }))
           handleClose()
@@ -136,10 +138,10 @@ const AdministratorModal: React.FC<Props> = ({ modal, handleCloseModal, user, up
                 <option value=''>Please choose</option>
                 {roleDropdown?.getRoleDropdown
                   ? Object.keys(roleDropdown?.getRoleDropdown).map((key) => (
-                    <option key={key} value={key}>
-                      {roleDropdown?.getRoleDropdown[key]}
-                    </option>
-                  ))
+                      <option key={key} value={key}>
+                        {roleDropdown?.getRoleDropdown[key]}
+                      </option>
+                    ))
                   : null}
               </Select>
             </Form.Group>

@@ -29,11 +29,7 @@ export const PermissionProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     }),
     [handlePermission, handleSetPermission],
   )
-  return (
-    <PermissionsContext.Provider value={contextValue}>
-      {children}
-    </PermissionsContext.Provider>
-  )
+  return <PermissionsContext.Provider value={contextValue}>{children}</PermissionsContext.Provider>
 }
 
 export function usePermissions() {

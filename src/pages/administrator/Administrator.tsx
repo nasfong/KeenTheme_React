@@ -8,40 +8,39 @@ import { useUser } from 'hook/useUser'
 import { KTSVG } from '_metronic/helpers'
 import { Input } from 'components/Input'
 import { MyPagination } from 'components/MyPagination'
-
-const debounce = (fn: Function, delay: number) => {
-  let timer: NodeJS.Timeout;
-
-  return function (this: Function, ...args: any[]) {
-    clearTimeout(timer);
-    timer = setTimeout(() => fn(...args), delay);
-  };
-};
+import { debounce } from 'helpers/debounce'
+import { alerts } from 'helpers/alerts'
 
 const Administrator = () => {
-  const { data, loading, error, updateQuery, refetch } = useUser()
+  const { data, loading, error, updateQuery, refetch, fetchMore } = useUser({ limit: 2 })
   const [deleteUser] = useMutation(DELETE_USER)
 
   const [modal, setModal] = useState(false)
   const [user, setUser] = useState(null)
   const [page, setPage] = useState(1)
+
   const handlePage = (updatePage: number) => {
-    refetch({
-      page: updatePage
-    })
+    // refetch({
+    //   page: updatePage,
+    // })
+    fetchMore({
+      variables: { page: updatePage },
+      updateQuery: (_, { fetchMoreResult }) => {
+        // Update the data with the new results
+        return fetchMoreResult;
+      },
+    });
     setPage(updatePage)
   }
 
   const handleSearch = useCallback(
-    debounce(
-      async (e: ChangeEvent<HTMLInputElement>) => {
-        await refetch({
-          search: e.target.value,
-        });
-      }
-      , 500)
-    , [refetch]
-  );
+    debounce(async (e: ChangeEvent<HTMLInputElement>) => {
+      await refetch({
+        search: e.target.value,
+      })
+    }, 500),
+    [refetch],
+  )
 
   const handleOpenModal = () => setModal(true)
 
@@ -57,32 +56,20 @@ const Administrator = () => {
   }
 
   const handleDelete = useCallback(async (id: string) => {
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!',
-    }).then(async (result) => {
-      if (result.isConfirmed) {
-        await deleteUser({ variables: { id } })
-          .then((res) => {
-            if (res.data?.deleteUser) {
-              // delete filter by [id]
-
-              updateQuery(({ getAllUsers }) => ({
-                getAllUsers: {
-                  users: getAllUsers.users.filter((user) => user.id !== id),
-                  totalPages: getAllUsers.totalPages
-                }
-              }))
-              Swal.fire('Deleted!', 'Your file has been deleted.', 'success')
-            }
-          })
-          .catch((err) => console.log(err))
-      }
+    alerts(async () => {
+      await deleteUser({ variables: { id } })
+        .then((res) => {
+          if (res.data?.deleteUser) {
+            updateQuery(({ getAllUsers }) => ({
+              getAllUsers: {
+                users: getAllUsers.users.filter((user) => user.id !== id),
+                totalPages: getAllUsers.totalPages,
+              },
+            }))
+            Swal.fire('Deleted!', 'Your file has been deleted.', 'success')
+          }
+        })
+        .catch((err) => console.log(err))
     })
   }, [])
 
@@ -95,11 +82,7 @@ const Administrator = () => {
         Create
       </button>
       <div className='card card-body'>
-        <Input
-          label='HELLO'
-          name=''
-          onChange={handleSearch}
-        />
+        <Input label='HELLO' name='' onChange={handleSearch} />
         <table
           id='kt_customers_table'
           className='table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4'

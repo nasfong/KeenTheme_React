@@ -83,10 +83,10 @@ const Advance = () => {
   // console.log(formik)
   return (
     <form onSubmit={formik.handleSubmit}>
-      <button type="button" className='btn btn-danger btn-sm' onClick={() => changeLanguage('en')}>
+      <button type='button' className='btn btn-danger btn-sm' onClick={() => changeLanguage('en')}>
         en
       </button>
-      <button type="button" className='btn btn-dark btn-sm' onClick={() => changeLanguage('kh')}>
+      <button type='button' className='btn btn-dark btn-sm' onClick={() => changeLanguage('kh')}>
         kh
       </button>
 

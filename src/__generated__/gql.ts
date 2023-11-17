@@ -36,7 +36,7 @@ const documents = {
     "\n  query Recipes($amount: Int) {\n    recipes(amount: $amount) {\n      id\n      name\n      description\n      thumbsUp\n      thumbsDown\n    }\n  }\n": types.RecipesDocument,
     "\n  query getRoleDropdown {\n    getRoleDropdown \n  }\n": types.GetRoleDropdownDocument,
     "\n  query getAllRoles {\n    getAllRoles {\n      id\n      name\n      permission {\n        id\n        name\n      }\n    }\n  }\n": types.GetAllRolesDocument,
-    "\n  query getAllUsers($search: String,$page: Int, $pageSize: Int) {\n    getAllUsers(search: $search, page: $page, pageSize: $pageSize) {\n      users {\n        id\n        username\n        password\n        email\n        role {\n          id\n          name\n        }\n      }\n      totalPages\n    }\n  }\n": types.GetAllUsersDocument,
+    "\n  query getAllUsers($search: String, $page: Int, $limit: Int) {\n    getAllUsers(search: $search, page: $page, limit: $limit) {\n      users {\n        id\n        username\n        password\n        email\n        role {\n          id\n          name\n        }\n      }\n      totalPages\n    }\n  }\n": types.GetAllUsersDocument,
     "\n  query getUser($id: ID!) {\n    getUser(id: $id) {\n      id\n      password\n      username\n      email\n      role {\n        id\n      }\n    }\n  }\n": types.GetUserDocument,
 };
 
@@ -149,7 +149,7 @@ export function gql(source: "\n  query getAllRoles {\n    getAllRoles {\n      i
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  query getAllUsers($search: String,$page: Int, $pageSize: Int) {\n    getAllUsers(search: $search, page: $page, pageSize: $pageSize) {\n      users {\n        id\n        username\n        password\n        email\n        role {\n          id\n          name\n        }\n      }\n      totalPages\n    }\n  }\n"): (typeof documents)["\n  query getAllUsers($search: String,$page: Int, $pageSize: Int) {\n    getAllUsers(search: $search, page: $page, pageSize: $pageSize) {\n      users {\n        id\n        username\n        password\n        email\n        role {\n          id\n          name\n        }\n      }\n      totalPages\n    }\n  }\n"];
+export function gql(source: "\n  query getAllUsers($search: String, $page: Int, $limit: Int) {\n    getAllUsers(search: $search, page: $page, limit: $limit) {\n      users {\n        id\n        username\n        password\n        email\n        role {\n          id\n          name\n        }\n      }\n      totalPages\n    }\n  }\n"): (typeof documents)["\n  query getAllUsers($search: String, $page: Int, $limit: Int) {\n    getAllUsers(search: $search, page: $page, limit: $limit) {\n      users {\n        id\n        username\n        password\n        email\n        role {\n          id\n          name\n        }\n      }\n      totalPages\n    }\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

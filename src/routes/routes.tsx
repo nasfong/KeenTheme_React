@@ -21,9 +21,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: 'administrator',
-        element: (
-          <PrivateRoute component={Administrator} requiredPermissions={['admin']} />
-        ),
+        element: <PrivateRoute component={Administrator} requiredPermissions={['admin']} />,
       },
       {
         path: 'role',

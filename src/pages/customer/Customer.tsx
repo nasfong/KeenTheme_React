@@ -183,19 +183,19 @@ const Customer = () => {
             color: 'primary.light',
             backgroundColor: (theme) => theme.palette.primary.lightest,
           }}
-          // ref={inputRef}
+        // ref={inputRef}
         />
         <InputM2
           label='Email'
           name='email'
           methods={methods}
-          // rules={{
-          //   required: 'Email is required',
-          //   pattern: {
-          //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-          //     message: 'Invalid email address',
-          //   },
-          // }}
+        // rules={{
+        //   required: 'Email is required',
+        //   pattern: {
+        //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+        //     message: 'Invalid email address',
+        //   },
+        // }}
         />
         <InputM2 label='Age' name='age' methods={methods} />
         <InputM2 label='Birth' name='birth' methods={methods} />
@@ -204,9 +204,10 @@ const Customer = () => {
           name='gender'
           methods={methods}
           items={dropdown_user?.getAllMenuParents}
+          keyValue='id'
           displayName='name'
-          // keyValue="id"
-          // rules={{ required: 'Gender is required' }}
+        // keyValue="id"
+        // rules={{ required: 'Gender is required' }}
         />
         <CheckBoxes
           methods={methods}
@@ -218,7 +219,7 @@ const Customer = () => {
           label='Activate User'
           methods={methods}
           name='active'
-          // rules={{ required: 'You must accept the terms and conditions' }}
+        // rules={{ required: 'You must accept the terms and conditions' }}
         />
         <br />
         <Button type='submit'>Submit</Button>

@@ -1,8 +1,8 @@
 import { gql } from '__generated__'
 
 export const GET_ALL_USERS = gql(/* GraphQL */ `
-  query getAllUsers($search: String,$page: Int, $pageSize: Int) {
-    getAllUsers(search: $search, page: $page, pageSize: $pageSize) {
+  query getAllUsers($search: String, $page: Int, $limit: Int) {
+    getAllUsers(search: $search, page: $page, limit: $limit) {
       users {
         id
         username

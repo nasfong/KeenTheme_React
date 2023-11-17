@@ -13,7 +13,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@apollo/client": "^3.8.4",
+    "@apollo/client": "^3.8.7",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fortawesome/fontawesome-free": "^5.15.3",
@@ -72,6 +72,7 @@
     "typescript": "^5.2.2",
     "vite": "^4.4.5",
     "vite-tsconfig-paths": "^4.2.0",
+    "vitest": "^0.34.6",
     "webpack-cli": "^4.8.0"
   }
 }

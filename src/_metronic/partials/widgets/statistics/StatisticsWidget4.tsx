@@ -13,13 +13,7 @@ type Props = {
   description: string
 }
 
-const StatisticsWidget4: React.FC<Props> = ({
-  className,
-  svgIcon,
-  color,
-  change,
-  description,
-}) => {
+const StatisticsWidget4: React.FC<Props> = ({ className, svgIcon, color, change, description }) => {
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -52,18 +46,9 @@ const StatisticsWidget4: React.FC<Props> = ({
       {/* begin::Body */}
       <div className='card-body p-0'>
         <div className='d-flex flex-stack card-p flex-grow-1'>
-          <span
-            className={clsx(
-              'symbol symbol-50px',
-              `symbol-light-${color}`,
-              'me-2',
-            )}
-          >
+          <span className={clsx('symbol symbol-50px', `symbol-light-${color}`, 'me-2')}>
             <span className='symbol-label'>
-              <KTSVG
-                path={svgIcon}
-                className={`svg-icon-2x svg-icon-${color}`}
-              />
+              <KTSVG path={svgIcon} className={`svg-icon-2x svg-icon-${color}`} />
             </span>
           </span>
 

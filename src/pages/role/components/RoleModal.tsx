@@ -59,9 +59,7 @@ const RoleModal = ({ modal, handleCloseModal, role, updateQuery }: Props) => {
           .then((res) => {
             updateQuery(({ getAllRoles }) => ({
               getAllRoles: getAllRoles.map((data) =>
-                data.id === res.data?.updateRole?.id
-                  ? res.data?.updateRole
-                  : data,
+                data.id === res.data?.updateRole?.id ? res.data?.updateRole : data,
               ),
             }))
             handleClose()
@@ -74,9 +72,7 @@ const RoleModal = ({ modal, handleCloseModal, role, updateQuery }: Props) => {
       addRole({ variables: { input: values } })
         .then((res) => {
           updateQuery(({ getAllRoles }) => ({
-            getAllRoles: res.data?.createRole
-              ? [...getAllRoles, res.data.createRole]
-              : getAllRoles,
+            getAllRoles: res.data?.createRole ? [...getAllRoles, res.data.createRole] : getAllRoles,
           }))
           handleClose()
         })
@@ -105,44 +101,34 @@ const RoleModal = ({ modal, handleCloseModal, role, updateQuery }: Props) => {
     <Modal show={modal} onHide={handleClose} size='xl'>
       <Modal.Header>
         <Modal.Title>Modal heading</Modal.Title>
-        <div
-          className='btn btn-icon btn-sm btn-light-primary'
-          onClick={handleClose}
-        >
-          <KTSVG
-            className='svg-icon-2'
-            path='/media/icons/duotune/arrows/arr061.svg'
-          />
+        <div className='btn btn-icon btn-sm btn-light-primary' onClick={handleClose}>
+          <KTSVG className='svg-icon-2' path='/media/icons/duotune/arrows/arr061.svg' />
         </div>
       </Modal.Header>
       <Form onSubmit={formik.handleSubmit}>
         <Modal.Body>
           <Form.Group className='mb-5'>
-            <Form.Label className='form-label text-nowrap required'>
-              Name
-            </Form.Label>
+            <Form.Label className='form-label text-nowrap required'>Name</Form.Label>
             <InputV name='name' formik={formik} />
           </Form.Group>
 
           <div className='grid'>
             {permissionDropdown?.getPermissionDropdown
-              ? Object.keys(permissionDropdown?.getPermissionDropdown).map(
-                  (key) => (
-                    <div key={key} className='card shadow-sm'>
-                      <div className='card-body p-3'>
-                        <CheckBox
-                          name={`permission`}
-                          formik={formik}
-                          defaultValue={key}
-                          checked={values.permission.includes(key)}
-                        />
-                        <span className='form-check-label text-gray-800 fw-bold'>
-                          {permissionDropdown?.getPermissionDropdown[key]}
-                        </span>
-                      </div>
+              ? Object.keys(permissionDropdown?.getPermissionDropdown).map((key) => (
+                  <div key={key} className='card shadow-sm'>
+                    <div className='card-body p-3'>
+                      <CheckBox
+                        name={`permission`}
+                        formik={formik}
+                        defaultValue={key}
+                        checked={values.permission.includes(key)}
+                      />
+                      <span className='form-check-label text-gray-800 fw-bold'>
+                        {permissionDropdown?.getPermissionDropdown[key]}
+                      </span>
                     </div>
-                  ),
-                )
+                  </div>
+                ))
               : null}
           </div>
         </Modal.Body>

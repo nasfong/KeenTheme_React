@@ -29,9 +29,7 @@ export default function ReactQuery() {
 
   const newPostMutation = useMutation({
     mutationFn: async (title: string) => {
-      return await wait(1000, { page }).then(() =>
-        POSTS.push({ id: crypto.randomUUID(), title }),
-      )
+      return await wait(1000, { page }).then(() => POSTS.push({ id: crypto.randomUUID(), title }))
     },
     onSuccess: (data, variables, context) => {
       console.log(context) // { hi: 'bye' }

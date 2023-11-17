@@ -15,14 +15,8 @@ const FormikModal: React.FC<props> = ({ show, setShow }) => {
     <Modal show={show} onHide={handleClose} size='xl'>
       <Modal.Header>
         <Modal.Title>Modal heading</Modal.Title>
-        <div
-          className='btn btn-icon btn-sm btn-light-primary'
-          onClick={handleClose}
-        >
-          <KTSVG
-            className='svg-icon-2'
-            path='/media/icons/duotune/arrows/arr061.svg'
-          />
+        <div className='btn btn-icon btn-sm btn-light-primary' onClick={handleClose}>
+          <KTSVG className='svg-icon-2' path='/media/icons/duotune/arrows/arr061.svg' />
         </div>
       </Modal.Header>
       <Modal.Body>

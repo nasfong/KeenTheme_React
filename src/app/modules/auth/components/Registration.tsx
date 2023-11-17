@@ -40,10 +40,7 @@ const registrationSchema = Yup.object().shape({
     .required('Password confirmation is required')
     .when('password', {
       is: (val: string) => (val && val.length > 0 ? true : false),
-      then: Yup.string().oneOf(
-        [Yup.ref('password')],
-        "Password and Confirm Password didn't match",
-      ),
+      then: Yup.string().oneOf([Yup.ref('password')], "Password and Confirm Password didn't match"),
     }),
   acceptTerms: Yup.bool().required('You must accept the terms and conditions'),
 })
@@ -57,12 +54,7 @@ export function Registration() {
     onSubmit: (values, { setStatus, setSubmitting }) => {
       setLoading(true)
       setTimeout(() => {
-        register(
-          values.email,
-          values.firstname,
-          values.lastname,
-          values.password,
-        )
+        register(values.email, values.firstname, values.lastname, values.password)
           .then(({ data: { accessToken } }) => {
             setLoading(false)
             dispatch(auth.actions.login(accessToken))
@@ -92,11 +84,7 @@ export function Registration() {
         {/* begin::Link */}
         <div className='text-gray-400 fw-bold fs-4'>
           Already have an account?
-          <Link
-            to='/auth/login'
-            className='link-primary fw-bolder'
-            style={{ marginLeft: '5px' }}
-          >
+          <Link to='/auth/login' className='link-primary fw-bolder' style={{ marginLeft: '5px' }}>
             Forgot Password ?
           </Link>
         </div>
@@ -105,10 +93,7 @@ export function Registration() {
       {/* end::Heading */}
 
       {/* begin::Action */}
-      <button
-        type='button'
-        className='btn btn-light-primary fw-bolder w-100 mb-10'
-      >
+      <button type='button' className='btn btn-light-primary fw-bolder w-100 mb-10'>
         <img
           alt='Logo'
           src={toAbsoluteUrl('/media/svg/brand-logos/google-icon.svg')}
@@ -133,9 +118,7 @@ export function Registration() {
       {/* begin::Form group Firstname */}
       <div className='row fv-row mb-7'>
         <div className='col-xl-6'>
-          <label className='class="form-label fw-bolder text-dark fs-6'>
-            First name
-          </label>
+          <label className='class="form-label fw-bolder text-dark fs-6'>First name</label>
           <input
             placeholder='First name'
             type='text'
@@ -144,12 +127,10 @@ export function Registration() {
             className={clsx(
               'form-control form-control-lg form-control-solid',
               {
-                'is-invalid':
-                  formik.touched.firstname && formik.errors.firstname,
+                'is-invalid': formik.touched.firstname && formik.errors.firstname,
               },
               {
-                'is-valid':
-                  formik.touched.firstname && !formik.errors.firstname,
+                'is-valid': formik.touched.firstname && !formik.errors.firstname,
               },
             )}
           />
@@ -164,9 +145,7 @@ export function Registration() {
         <div className='col-xl-6'>
           {/* begin::Form group Lastname */}
           <div className='fv-row mb-5'>
-            <label className='form-label fw-bolder text-dark fs-6'>
-              Last name
-            </label>
+            <label className='form-label fw-bolder text-dark fs-6'>Last name</label>
             <input
               placeholder='Last name'
               type='text'
@@ -175,12 +154,10 @@ export function Registration() {
               className={clsx(
                 'form-control form-control-lg form-control-solid',
                 {
-                  'is-invalid':
-                    formik.touched.lastname && formik.errors.lastname,
+                  'is-invalid': formik.touched.lastname && formik.errors.lastname,
                 },
                 {
-                  'is-valid':
-                    formik.touched.lastname && !formik.errors.lastname,
+                  'is-valid': formik.touched.lastname && !formik.errors.lastname,
                 },
               )}
             />
@@ -226,9 +203,7 @@ export function Registration() {
       {/* begin::Form group Password */}
       <div className='mb-10 fv-row' data-kt-password-meter='true'>
         <div className='mb-1'>
-          <label className='form-label fw-bolder text-dark fs-6'>
-            Password
-          </label>
+          <label className='form-label fw-bolder text-dark fs-6'>Password</label>
           <div className='position-relative mb-3'>
             <input
               type='password'
@@ -238,12 +213,10 @@ export function Registration() {
               className={clsx(
                 'form-control form-control-lg form-control-solid',
                 {
-                  'is-invalid':
-                    formik.touched.password && formik.errors.password,
+                  'is-invalid': formik.touched.password && formik.errors.password,
                 },
                 {
-                  'is-valid':
-                    formik.touched.password && !formik.errors.password,
+                  'is-valid': formik.touched.password && !formik.errors.password,
                 },
               )}
             />
@@ -261,9 +234,7 @@ export function Registration() {
 
       {/* begin::Form group Confirm password */}
       <div className='fv-row mb-5'>
-        <label className='form-label fw-bolder text-dark fs-6'>
-          Confirm Password
-        </label>
+        <label className='form-label fw-bolder text-dark fs-6'>Confirm Password</label>
         <input
           type='password'
           placeholder='Password confirmation'
@@ -272,12 +243,10 @@ export function Registration() {
           className={clsx(
             'form-control form-control-lg form-control-solid',
             {
-              'is-invalid':
-                formik.touched.changepassword && formik.errors.changepassword,
+              'is-invalid': formik.touched.changepassword && formik.errors.changepassword,
             },
             {
-              'is-valid':
-                formik.touched.changepassword && !formik.errors.changepassword,
+              'is-valid': formik.touched.changepassword && !formik.errors.changepassword,
             },
           )}
         />
@@ -327,9 +296,7 @@ export function Registration() {
           type='submit'
           id='kt_sign_up_submit'
           className='btn btn-lg btn-primary w-100 mb-5'
-          disabled={
-            formik.isSubmitting || !formik.isValid || !formik.values.acceptTerms
-          }
+          disabled={formik.isSubmitting || !formik.isValid || !formik.values.acceptTerms}
         >
           {!loading && <span className='indicator-label'>Submit</span>}
           {loading && (

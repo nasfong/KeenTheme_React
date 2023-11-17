@@ -6,12 +6,10 @@ import backend from 'i18next-http-backend'
 import * as Yup from 'yup'
 Yup.setLocale({
   mixed: {
-    required: ({ path, label }) =>
-      t('VALIDATION.IS_REQUIRED', { label: path || label }), //path == label if label have value
+    required: ({ path, label }) => t('VALIDATION.IS_REQUIRED', { label: path || label }), //path == label if label have value
   },
   string: {
-    length: ({ path, length }) =>
-      t('VALIDATION.LENGTH', { label: path, length }),
+    length: ({ path, length }) => t('VALIDATION.LENGTH', { label: path, length }),
     min: ({ min }) => t('VALIDATION.MUST_BE_CHARACTER_OR_MORE', { min }),
     max: ({ max }) => t('VALIDATION.MUST_BE_CHARACTER_OR_LESS', { max }),
     email: () => t('VALIDATION.EMAIL'),

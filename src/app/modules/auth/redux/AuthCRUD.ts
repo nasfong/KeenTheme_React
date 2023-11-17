@@ -28,12 +28,7 @@ export async function requestChangePassword(
 }
 
 // Server should return AuthModel
-export function register(
-  email: string,
-  firstname: string,
-  lastname: string,
-  password: string,
-) {
+export function register(email: string, firstname: string, lastname: string, password: string) {
   return axios.post<AuthModel>(REGISTER_URL, {
     email,
     firstname,

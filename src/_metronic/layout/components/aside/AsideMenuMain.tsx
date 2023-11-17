@@ -31,9 +31,7 @@ export function AsideMenuMain() {
       <>
         <div className='menu-item'>
           <div className='menu-content pt-8 pb-2'>
-            <span className='menu-section text-uppercase fs-8 ls-1 text-white'>
-              {group}
-            </span>
+            <span className='menu-section text-uppercase fs-8 ls-1 text-white'>{group}</span>
           </div>
         </div>
         {menus &&

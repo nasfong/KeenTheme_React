@@ -27,9 +27,7 @@ export function ScrollTop() {
   }
 
   const updateHeaderSticky = () => {
-    const stickyHeader = document.body.querySelectorAll(
-      `[data-kt-sticky-name="header"]`,
-    )
+    const stickyHeader = document.body.querySelectorAll(`[data-kt-sticky-name="header"]`)
     if (stickyHeader && stickyHeader.length > 0) {
       const sticky = StickyComponent.getInstance(stickyHeader[0] as HTMLElement)
       if (sticky) {

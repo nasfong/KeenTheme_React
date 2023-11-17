@@ -1,9 +1,5 @@
 import { common } from '@mui/material/colors'
-import {
-  PaletteColorOptions,
-  PaletteOptions,
-  alpha,
-} from '@mui/material/styles'
+import { PaletteColorOptions, PaletteOptions, alpha } from '@mui/material/styles'
 import { error, indigo, info, neutral, success, warning } from './colors'
 
 declare module '@mui/material/styles' {

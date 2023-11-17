@@ -12,9 +12,7 @@ type Props = {
 
 const StatsWidget1: React.FC<Props> = ({ className, innerPadding = '' }) => {
   useEffect(() => {
-    const element = document.getElementById(
-      'kt_stats_widget_1_chart',
-    ) as HTMLCanvasElement
+    const element = document.getElementById('kt_stats_widget_1_chart') as HTMLCanvasElement
     if (!element) {
       return
     }
@@ -35,9 +33,7 @@ const StatsWidget1: React.FC<Props> = ({ className, innerPadding = '' }) => {
   return (
     <div className={`card ${className}`}>
       {/* begin::Header */}
-      <div
-        className={`card-header align-items-center border-0 mt-5 ${innerPadding}`}
-      >
+      <div className={`card-header align-items-center border-0 mt-5 ${innerPadding}`}>
         <h3 className='card-title align-items-start flex-column'>
           <span className='fw-bolder text-dark fs-3'>Sales Share</span>
           <span className='text-muted mt-2 fw-bold fs-6'>890,344 Sales</span>
@@ -51,10 +47,7 @@ const StatsWidget1: React.FC<Props> = ({ className, innerPadding = '' }) => {
             data-kt-menu-placement='bottom-end'
             data-kt-menu-flip='top-end'
           >
-            <KTSVG
-              path='/media/icons/duotune/general/gen024.svg'
-              className='svg-icon-1'
-            />
+            <KTSVG path='/media/icons/duotune/general/gen024.svg' className='svg-icon-1' />
           </button>
           <Dropdown1 />
           {/* end::Dropdown */}
@@ -68,14 +61,10 @@ const StatsWidget1: React.FC<Props> = ({ className, innerPadding = '' }) => {
         <div
           className='d-flex flex-center position-relative bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-center h-175px'
           style={{
-            backgroundImage: `url('${toAbsoluteUrl(
-              '/media/svg/illustrations/bg-1.svg',
-            )}')`,
+            backgroundImage: `url('${toAbsoluteUrl('/media/svg/illustrations/bg-1.svg')}')`,
           }}
         >
-          <div className='fw-bolder fs-1 text-gray-800 position-absolute'>
-            8,345
-          </div>
+          <div className='fw-bolder fs-1 text-gray-800 position-absolute'>8,345</div>
           <canvas id='kt_stats_widget_1_chart'></canvas>
         </div>
         {/* end::Chart */}

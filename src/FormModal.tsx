@@ -17,14 +17,8 @@ const FormModal: React.FC<props> = ({ show, setShow }) => {
     <Modal show={show} onHide={handleClose}>
       <Modal.Header>
         <Modal.Title>Modal heading</Modal.Title>
-        <div
-          className='btn btn-icon btn-sm btn-light-primary'
-          onClick={handleClose}
-        >
-          <KTSVG
-            className='svg-icon-2'
-            path='/media/icons/duotune/arrows/arr061.svg'
-          />
+        <div className='btn btn-icon btn-sm btn-light-primary' onClick={handleClose}>
+          <KTSVG className='svg-icon-2' path='/media/icons/duotune/arrows/arr061.svg' />
         </div>
       </Modal.Header>
       <Form onSubmit={handleSubmit}>
@@ -54,9 +48,7 @@ const FormModal: React.FC<props> = ({ show, setShow }) => {
               disabled
               // readOnly
             />
-            <Form.Control.Feedback type='invalid'>
-              phone is required
-            </Form.Control.Feedback>
+            <Form.Control.Feedback type='invalid'>phone is required</Form.Control.Feedback>
           </Form.Group>
           <Form.Label className='form-label'>Date</Form.Label>
           <input

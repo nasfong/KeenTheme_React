@@ -14,14 +14,8 @@ const ToastComponent = ({ msg, handleShow, bgColor, count }: any) => {
         <Toast.Header closeButton={false}>
           <strong className='me-auto'>{msg.title}</strong>
 
-          <div
-            className={`btn btn-icon btn-sm btn-light-${bgColor}`}
-            onClick={handleShow}
-          >
-            <KTSVG
-              className='svg-icon-2'
-              path='/media/icons/duotune/arrows/arr061.svg'
-            />
+          <div className={`btn btn-icon btn-sm btn-light-${bgColor}`} onClick={handleShow}>
+            <KTSVG className='svg-icon-2' path='/media/icons/duotune/arrows/arr061.svg' />
           </div>
         </Toast.Header>
         <Toast.Body className='text-white'>

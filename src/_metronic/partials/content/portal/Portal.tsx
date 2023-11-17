@@ -8,10 +8,7 @@ import { createPortal } from 'react-dom'
  * @param className CSS classname
  * @param el HTML element to create.  default: div
  */
-const Portal: React.FC<{ className?: string }> = ({
-  children,
-  className = '',
-}) => {
+const Portal: React.FC<{ className?: string }> = ({ children, className = '' }) => {
   const [container] = useState(document.createElement('div'))
 
   if (className) container.classList.add(className)

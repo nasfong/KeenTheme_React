@@ -56,9 +56,7 @@ export function ForgotPassword() {
           {/* end::Title */}
 
           {/* begin::Link */}
-          <div className='text-gray-400 fw-bold fs-4'>
-            Enter your email to reset your password.
-          </div>
+          <div className='text-gray-400 fw-bold fs-4'>Enter your email to reset your password.</div>
           {/* end::Link */}
         </div>
 
@@ -66,26 +64,21 @@ export function ForgotPassword() {
         {hasErrors === true && (
           <div className='mb-lg-15 alert alert-danger'>
             <div className='alert-text font-weight-bold'>
-              Sorry, looks like there are some errors detected, please try
-              again.
+              Sorry, looks like there are some errors detected, please try again.
             </div>
           </div>
         )}
 
         {hasErrors === false && (
           <div className='mb-10 bg-light-info p-8 rounded'>
-            <div className='text-info'>
-              Sent password reset. Please check your email
-            </div>
+            <div className='text-info'>Sent password reset. Please check your email</div>
           </div>
         )}
         {/* end::Title */}
 
         {/* begin::Form group */}
         <div className='fv-row mb-10'>
-          <label className='form-label fw-bolder text-gray-900 fs-6'>
-            Email
-          </label>
+          <label className='form-label fw-bolder text-gray-900 fs-6'>Email</label>
           <input
             type='email'
             placeholder=''

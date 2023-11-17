@@ -135,10 +135,7 @@ export function Account() {
                 defaultValue={data.timeZone}
                 onChange={(e) => updateData({ timeZone: e.target.value })}
               >
-                <option
-                  data-offset='-39600'
-                  value='International Date Line West'
-                >
+                <option data-offset='-39600' value='International Date Line West'>
                   (GMT-11:00) International Date Line West
                 </option>
                 <option data-offset='-39600' value='Midway Island'>
@@ -153,10 +150,7 @@ export function Account() {
                 <option data-offset='-28800' value='Alaska'>
                   (GMT-08:00) Alaska
                 </option>
-                <option
-                  data-offset='-25200'
-                  value='Pacific Time (US &amp; Canada)'
-                >
+                <option data-offset='-25200' value='Pacific Time (US &amp; Canada)'>
                   (GMT-07:00) Pacific Time (US &amp; Canada)
                 </option>
                 <option data-offset='-25200' value='Tijuana'>
@@ -165,10 +159,7 @@ export function Account() {
                 <option data-offset='-25200' value='Arizona'>
                   (GMT-07:00) Arizona
                 </option>
-                <option
-                  data-offset='-21600'
-                  value='Mountain Time (US &amp; Canada)'
-                >
+                <option data-offset='-21600' value='Mountain Time (US &amp; Canada)'>
                   (GMT-06:00) Mountain Time (US &amp; Canada)
                 </option>
                 <option data-offset='-21600' value='Chihuahua'>
@@ -183,10 +174,7 @@ export function Account() {
                 <option data-offset='-21600' value='Central America'>
                   (GMT-06:00) Central America
                 </option>
-                <option
-                  data-offset='-18000'
-                  value='Central Time (US &amp; Canada)'
-                >
+                <option data-offset='-18000' value='Central Time (US &amp; Canada)'>
                   (GMT-05:00) Central Time (US &amp; Canada)
                 </option>
                 <option data-offset='-18000' value='Guadalajara'>
@@ -207,10 +195,7 @@ export function Account() {
                 <option data-offset='-18000' value='Quito'>
                   (GMT-05:00) Quito
                 </option>
-                <option
-                  data-offset='-14400'
-                  value='Eastern Time (US &amp; Canada)'
-                >
+                <option data-offset='-14400' value='Eastern Time (US &amp; Canada)'>
                   (GMT-04:00) Eastern Time (US &amp; Canada)
                 </option>
                 <option data-offset='-14400' value='Indiana (East)'>
@@ -604,10 +589,7 @@ export function Account() {
                       })
                     }
                   />
-                  <label
-                    className='form-check-label fw-bold'
-                    htmlFor='inlineCheckbox1'
-                  >
+                  <label className='form-check-label fw-bold' htmlFor='inlineCheckbox1'>
                     Email
                   </label>
                 </div>
@@ -626,10 +608,7 @@ export function Account() {
                       })
                     }
                   />
-                  <label
-                    className='form-check-label fw-bold'
-                    htmlFor='inlineCheckbox2'
-                  >
+                  <label className='form-check-label fw-bold' htmlFor='inlineCheckbox2'>
                     SMS
                   </label>
                 </div>
@@ -648,10 +627,7 @@ export function Account() {
                       })
                     }
                   />
-                  <label
-                    className='form-check-label fw-bold'
-                    htmlFor='inlineCheckbox3'
-                  >
+                  <label className='form-check-label fw-bold' htmlFor='inlineCheckbox3'>
                     Phone
                   </label>
                 </div>
@@ -664,20 +640,14 @@ export function Account() {
 
           {/* begin::Form row */}
           <div className='row mb-8'>
-            <label className='col-lg-3 col-form-label'>
-              Login verification
-            </label>
+            <label className='col-lg-3 col-form-label'>Login verification</label>
             <div className='col-lg-9'>
-              <button
-                type='button'
-                className='btn btn-light-primary fw-bold btn-sm'
-              >
+              <button type='button' className='btn btn-light-primary fw-bold btn-sm'>
                 Setup login verification
               </button>
               <div className='form-text'>
-                After you log in, you will be asked for additional information
-                to confirm your identity and protect your account from being
-                compromised.
+                After you log in, you will be asked for additional information to confirm your
+                identity and protect your account from being compromised.
                 <a href='#' className='fw-bold'>
                   Learn more
                 </a>
@@ -689,9 +659,7 @@ export function Account() {
 
           {/* begin::Form row */}
           <div className='row mb-13'>
-            <label className='col-lg-3 col-form-label'>
-              Password reset verification
-            </label>
+            <label className='col-lg-3 col-form-label'>Password reset verification</label>
             <div className='col-lg-9'>
               <div className='form-check form-check-custom form-check-solid me-5'>
                 <input
@@ -699,31 +667,23 @@ export function Account() {
                   type='checkbox'
                   id='customCheck5'
                   checked={data.requireInfo}
-                  onChange={() =>
-                    updateData({ requireInfo: !data.requireInfo })
-                  }
+                  onChange={() => updateData({ requireInfo: !data.requireInfo })}
                 />
-                <label
-                  className='form-check-label fw-bold'
-                  htmlFor='customCheck5'
-                >
+                <label className='form-check-label fw-bold' htmlFor='customCheck5'>
                   Require personal information to reset your password.
                 </label>
               </div>
 
               <div className='form-text py-2'>
-                For extra security, this requires you to confirm your email or
-                phone number when you reset your password.
+                For extra security, this requires you to confirm your email or phone number when you
+                reset your password.
                 <a href='#' className='fw-boldk'>
                   Learn more
                 </a>
                 .
               </div>
 
-              <button
-                type='button'
-                className='btn btn-light-danger fw-bold btn-sm'
-              >
+              <button type='button' className='btn btn-light-danger fw-bold btn-sm'>
                 Deactivate your account ?
               </button>
             </div>
@@ -734,10 +694,7 @@ export function Account() {
           <div className='row'>
             <label className='col-lg-3 col-form-label'></label>
             <div className='col-lg-9'>
-              <button
-                type='reset'
-                className='btn btn-primary fw-bolder px-6 py-3 me-3'
-              >
+              <button type='reset' className='btn btn-primary fw-bolder px-6 py-3 me-3'>
                 Save Changes
               </button>
               <button

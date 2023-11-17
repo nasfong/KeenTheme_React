@@ -34,11 +34,7 @@ const AccountPage: React.FC = () => {
           <Settings />
         </Route>
 
-        <Redirect
-          from='/crafted/account'
-          exact={true}
-          to='/crafted/account/overview'
-        />
+        <Redirect from='/crafted/account' exact={true} to='/crafted/account/overview' />
         <Redirect to='/crafted/account/overview' />
       </Switch>
     </>

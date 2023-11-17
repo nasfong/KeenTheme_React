@@ -8,9 +8,9 @@ import React, {
   Dispatch,
 } from 'react'
 
-const MetronicSplashScreenContext = createContext<
-  Dispatch<SetStateAction<number>> | undefined
->(undefined)
+const MetronicSplashScreenContext = createContext<Dispatch<SetStateAction<number>> | undefined>(
+  undefined,
+)
 
 const MetronicSplashScreenProvider: FC = ({ children }) => {
   const [count, setCount] = useState(0)

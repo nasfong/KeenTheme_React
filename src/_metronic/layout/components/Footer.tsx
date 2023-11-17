@@ -13,9 +13,7 @@ const Footer: FC = () => {
       >
         {/* begin::Copyright */}
         <div className='text-dark order-2 order-md-1'>
-          <span className='text-muted fw-bold me-2'>
-            {new Date().getFullYear()} &copy;
-          </span>
+          <span className='text-muted fw-bold me-2'>{new Date().getFullYear()} &copy;</span>
           {/* <a href='#' className='text-gray-800 text-hover-primary'> */}
           <span className='text-muted fw-bold'>{REACT_APP_APP_NAME}</span>
           {/* </a> */}

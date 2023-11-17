@@ -10,11 +10,7 @@ type Props = {
   chartHeight: string
 }
 
-const MixedWidget10: React.FC<Props> = ({
-  className,
-  chartColor,
-  chartHeight,
-}) => {
+const MixedWidget10: React.FC<Props> = ({ className, chartColor, chartHeight }) => {
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -22,10 +18,7 @@ const MixedWidget10: React.FC<Props> = ({
       return
     }
 
-    const chart = new ApexCharts(
-      chartRef.current,
-      chartOptions(chartColor, chartHeight),
-    )
+    const chart = new ApexCharts(chartRef.current, chartOptions(chartColor, chartHeight))
     if (chart) {
       chart.render()
     }
@@ -46,16 +39,11 @@ const MixedWidget10: React.FC<Props> = ({
         <div className='flex-grow-1 card-p pb-0'>
           <div className='d-flex flex-stack flex-wrap'>
             <div className='me-2'>
-              <a
-                href='#'
-                className='text-dark text-hover-primary fw-bolder fs-3'
-              >
+              <a href='#' className='text-dark text-hover-primary fw-bolder fs-3'>
                 Generate Reports
               </a>
 
-              <div className='text-muted fs-7 fw-bold'>
-                Finance and accounting reports
-              </div>
+              <div className='text-muted fs-7 fw-bold'>Finance and accounting reports</div>
             </div>
 
             <div className={`fw-bolder fs-3 text-${chartColor}`}>$24,500</div>
@@ -64,10 +52,7 @@ const MixedWidget10: React.FC<Props> = ({
         {/* end::Stats */}
 
         {/* begin::Chart */}
-        <div
-          ref={chartRef}
-          className='mixed-widget-7-chart card-rounded-bottom'
-        ></div>
+        <div ref={chartRef} className='mixed-widget-7-chart card-rounded-bottom'></div>
         {/* end::Chart */}
       </div>
       {/* end::Body */}

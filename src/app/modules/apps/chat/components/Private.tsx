@@ -43,15 +43,10 @@ const Private: FC = () => {
                   </div>
 
                   <div className='ms-5'>
-                    <a
-                      href='#'
-                      className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'
-                    >
+                    <a href='#' className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'>
                       Melody Macy
                     </a>
-                    <div className='fw-bold text-gray-400'>
-                      melody@altbox.com
-                    </div>
+                    <div className='fw-bold text-gray-400'>melody@altbox.com</div>
                   </div>
                 </div>
 
@@ -65,17 +60,11 @@ const Private: FC = () => {
               <div className='d-flex flex-stack py-4'>
                 <div className='d-flex align-items-center'>
                   <div className='symbol symbol-45px symbol-circle'>
-                    <img
-                      alt='Pic'
-                      src={toAbsoluteUrl('/media/avatars/150-2.jpg')}
-                    />
+                    <img alt='Pic' src={toAbsoluteUrl('/media/avatars/150-2.jpg')} />
                   </div>
 
                   <div className='ms-5'>
-                    <a
-                      href='#'
-                      className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'
-                    >
+                    <a href='#' className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'>
                       Max Smith
                     </a>
                     <div className='fw-bold text-gray-400'>max@kt.com</div>
@@ -92,30 +81,20 @@ const Private: FC = () => {
               <div className='d-flex flex-stack py-4'>
                 <div className='d-flex align-items-center'>
                   <div className='symbol symbol-45px symbol-circle'>
-                    <img
-                      alt='Pic'
-                      src={toAbsoluteUrl('/media/avatars/150-4.jpg')}
-                    />
+                    <img alt='Pic' src={toAbsoluteUrl('/media/avatars/150-4.jpg')} />
                   </div>
 
                   <div className='ms-5'>
-                    <a
-                      href='#'
-                      className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'
-                    >
+                    <a href='#' className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'>
                       Sean Bean
                     </a>
-                    <div className='fw-bold text-gray-400'>
-                      sean@dellito.com
-                    </div>
+                    <div className='fw-bold text-gray-400'>sean@dellito.com</div>
                   </div>
                 </div>
 
                 <div className='d-flex flex-column align-items-end ms-2'>
                   <span className='text-muted fs-7 mb-1'>20 hrs</span>
-                  <span className='badge badge-sm badge-circle badge-light-success'>
-                    6
-                  </span>
+                  <span className='badge badge-sm badge-circle badge-light-success'>6</span>
                 </div>
               </div>
 
@@ -124,22 +103,14 @@ const Private: FC = () => {
               <div className='d-flex flex-stack py-4'>
                 <div className='d-flex align-items-center'>
                   <div className='symbol symbol-45px symbol-circle'>
-                    <img
-                      alt='Pic'
-                      src={toAbsoluteUrl('/media/avatars/150-15.jpg')}
-                    />
+                    <img alt='Pic' src={toAbsoluteUrl('/media/avatars/150-15.jpg')} />
                   </div>
 
                   <div className='ms-5'>
-                    <a
-                      href='#'
-                      className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'
-                    >
+                    <a href='#' className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'>
                       Brian Cox
                     </a>
-                    <div className='fw-bold text-gray-400'>
-                      brian@exchange.com
-                    </div>
+                    <div className='fw-bold text-gray-400'>brian@exchange.com</div>
                   </div>
                 </div>
 
@@ -159,15 +130,10 @@ const Private: FC = () => {
                   </div>
 
                   <div className='ms-5'>
-                    <a
-                      href='#'
-                      className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'
-                    >
+                    <a href='#' className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'>
                       Mikaela Collins
                     </a>
-                    <div className='fw-bold text-gray-400'>
-                      mikaela@pexcom.com
-                    </div>
+                    <div className='fw-bold text-gray-400'>mikaela@pexcom.com</div>
                   </div>
                 </div>
 
@@ -181,30 +147,20 @@ const Private: FC = () => {
               <div className='d-flex flex-stack py-4'>
                 <div className='d-flex align-items-center'>
                   <div className='symbol symbol-45px symbol-circle'>
-                    <img
-                      alt='Pic'
-                      src={toAbsoluteUrl('/media/avatars/150-8.jpg')}
-                    />
+                    <img alt='Pic' src={toAbsoluteUrl('/media/avatars/150-8.jpg')} />
                   </div>
 
                   <div className='ms-5'>
-                    <a
-                      href='#'
-                      className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'
-                    >
+                    <a href='#' className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'>
                       Francis Mitcham
                     </a>
-                    <div className='fw-bold text-gray-400'>
-                      f.mitcham@kpmg.com.au
-                    </div>
+                    <div className='fw-bold text-gray-400'>f.mitcham@kpmg.com.au</div>
                   </div>
                 </div>
 
                 <div className='d-flex flex-column align-items-end ms-2'>
                   <span className='text-muted fs-7 mb-1'>5 hrs</span>
-                  <span className='badge badge-sm badge-circle badge-light-success'>
-                    6
-                  </span>
+                  <span className='badge badge-sm badge-circle badge-light-success'>6</span>
                 </div>
               </div>
 
@@ -220,15 +176,10 @@ const Private: FC = () => {
                   </div>
 
                   <div className='ms-5'>
-                    <a
-                      href='#'
-                      className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'
-                    >
+                    <a href='#' className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'>
                       Olivia Wild
                     </a>
-                    <div className='fw-bold text-gray-400'>
-                      olivia@corpmail.com
-                    </div>
+                    <div className='fw-bold text-gray-400'>olivia@corpmail.com</div>
                   </div>
                 </div>
 
@@ -248,23 +199,16 @@ const Private: FC = () => {
                   </div>
 
                   <div className='ms-5'>
-                    <a
-                      href='#'
-                      className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'
-                    >
+                    <a href='#' className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'>
                       Neil Owen
                     </a>
-                    <div className='fw-bold text-gray-400'>
-                      owen.neil@gmail.com
-                    </div>
+                    <div className='fw-bold text-gray-400'>owen.neil@gmail.com</div>
                   </div>
                 </div>
 
                 <div className='d-flex flex-column align-items-end ms-2'>
                   <span className='text-muted fs-7 mb-1'>20 hrs</span>
-                  <span className='badge badge-sm badge-circle badge-light-success'>
-                    6
-                  </span>
+                  <span className='badge badge-sm badge-circle badge-light-success'>6</span>
                 </div>
               </div>
 
@@ -273,30 +217,20 @@ const Private: FC = () => {
               <div className='d-flex flex-stack py-4'>
                 <div className='d-flex align-items-center'>
                   <div className='symbol symbol-45px symbol-circle'>
-                    <img
-                      alt='Pic'
-                      src={toAbsoluteUrl('/media/avatars/150-6.jpg')}
-                    />
+                    <img alt='Pic' src={toAbsoluteUrl('/media/avatars/150-6.jpg')} />
                   </div>
 
                   <div className='ms-5'>
-                    <a
-                      href='#'
-                      className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'
-                    >
+                    <a href='#' className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'>
                       Dan Wilson
                     </a>
-                    <div className='fw-bold text-gray-400'>
-                      dam@consilting.com
-                    </div>
+                    <div className='fw-bold text-gray-400'>dam@consilting.com</div>
                   </div>
                 </div>
 
                 <div className='d-flex flex-column align-items-end ms-2'>
                   <span className='text-muted fs-7 mb-1'>2 weeks</span>
-                  <span className='badge badge-sm badge-circle badge-light-warning'>
-                    9
-                  </span>
+                  <span className='badge badge-sm badge-circle badge-light-warning'>9</span>
                 </div>
               </div>
 
@@ -312,15 +246,10 @@ const Private: FC = () => {
                   </div>
 
                   <div className='ms-5'>
-                    <a
-                      href='#'
-                      className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'
-                    >
+                    <a href='#' className='fs-5 fw-bolder text-gray-900 text-hover-primary mb-2'>
                       Emma Bold
                     </a>
-                    <div className='fw-bold text-gray-400'>
-                      emma@intenso.com
-                    </div>
+                    <div className='fw-bold text-gray-400'>emma@intenso.com</div>
                   </div>
                 </div>
 

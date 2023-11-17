@@ -13,9 +13,7 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
       <div className='card-header border-0 pt-5'>
         <h3 className='card-title align-items-start flex-column'>
           <span className='card-label fw-bolder fs-3 mb-1'>Latest Orders</span>
-          <span className='text-muted mt-1 fw-bold fs-7'>
-            More than 100 new orders
-          </span>
+          <span className='text-muted mt-1 fw-bold fs-7'>More than 100 new orders</span>
         </h3>
         <div className='card-toolbar'>
           <ul className='nav'>
@@ -54,10 +52,7 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
       <div className='card-body py-3'>
         <div className='tab-content'>
           {/* begin::Tap pane */}
-          <div
-            className='tab-pane fade show active'
-            id='kt_table_widget_7_tab_1'
-          >
+          <div className='tab-pane fade show active' id='kt_table_widget_7_tab_1'>
             {/* begin::Table container */}
             <div className='table-responsive'>
               {/* begin::Table */}
@@ -86,10 +81,7 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
                       </div>
                     </td>
                     <td>
-                      <a
-                        href='#'
-                        className='text-dark fw-bolder text-hover-primary mb-1 fs-6'
-                      >
+                      <a href='#' className='text-dark fw-bolder text-hover-primary mb-1 fs-6'>
                         Media Device
                       </a>
                       <span className='text-muted fw-bold d-block fs-7'>
@@ -97,17 +89,11 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
                       </span>
                     </td>
                     <td className='text-end'>
-                      <span className='text-muted fw-bold d-block fs-8'>
-                        Ordered
-                      </span>
-                      <span className='text-dark fw-bolder d-block fs-7'>
-                        5 day ago
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-8'>Ordered</span>
+                      <span className='text-dark fw-bolder d-block fs-7'>5 day ago</span>
                     </td>
                     <td className='text-end'>
-                      <span className='badge badge-light-success fs-7 fw-bolder'>
-                        Delivered
-                      </span>
+                      <span className='badge badge-light-success fs-7 fw-bolder'>Delivered</span>
                     </td>
                     <td className='text-end'>
                       <a
@@ -130,28 +116,17 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
                       </div>
                     </td>
                     <td>
-                      <a
-                        href='#'
-                        className='text-dark fw-bolder text-hover-primary mb-1 fs-6'
-                      >
+                      <a href='#' className='text-dark fw-bolder text-hover-primary mb-1 fs-6'>
                         Special Meal
                       </a>
-                      <span className='text-muted fw-bold d-block fs-7'>
-                        Quona Rice
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-7'>Quona Rice</span>
                     </td>
                     <td className='text-end'>
-                      <span className='text-muted fw-bold d-block fs-8'>
-                        Ordered
-                      </span>
-                      <span className='text-dark fw-bolder d-block fs-7'>
-                        2 day ago
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-8'>Ordered</span>
+                      <span className='text-dark fw-bolder d-block fs-7'>2 day ago</span>
                     </td>
                     <td className='text-end'>
-                      <span className='badge badge-light-danger fs-7 fw-bolder'>
-                        Delivered
-                      </span>
+                      <span className='badge badge-light-danger fs-7 fw-bolder'>Delivered</span>
                     </td>
                     <td className='text-end'>
                       <a
@@ -174,28 +149,17 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
                       </div>
                     </td>
                     <td>
-                      <a
-                        href='#'
-                        className='text-dark fw-bolder text-hover-primary mb-1 fs-6'
-                      >
+                      <a href='#' className='text-dark fw-bolder text-hover-primary mb-1 fs-6'>
                         New Users
                       </a>
-                      <span className='text-muted fw-bold d-block fs-7'>
-                        Awesome Users
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-7'>Awesome Users</span>
                     </td>
                     <td className='text-end'>
-                      <span className='text-muted fw-bold d-block fs-8'>
-                        Ordered
-                      </span>
-                      <span className='text-dark fw-bolder d-block fs-7'>
-                        4 day ago
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-8'>Ordered</span>
+                      <span className='text-dark fw-bolder d-block fs-7'>4 day ago</span>
                     </td>
                     <td className='text-end'>
-                      <span className='badge badge-light-primary fs-7 fw-bolder'>
-                        Delivered
-                      </span>
+                      <span className='badge badge-light-primary fs-7 fw-bolder'>Delivered</span>
                     </td>
                     <td className='text-end'>
                       <a
@@ -218,28 +182,17 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
                       </div>
                     </td>
                     <td>
-                      <a
-                        href='#'
-                        className='text-dark fw-bolder text-hover-primary mb-1 fs-6'
-                      >
+                      <a href='#' className='text-dark fw-bolder text-hover-primary mb-1 fs-6'>
                         Active Customers
                       </a>
-                      <span className='text-muted fw-bold d-block fs-7'>
-                        Best Customers
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-7'>Best Customers</span>
                     </td>
                     <td className='text-end'>
-                      <span className='text-muted fw-bold d-block fs-8'>
-                        Ordered
-                      </span>
-                      <span className='text-dark fw-bolder d-block fs-7'>
-                        1 day ago
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-8'>Ordered</span>
+                      <span className='text-dark fw-bolder d-block fs-7'>1 day ago</span>
                     </td>
                     <td className='text-end'>
-                      <span className='badge badge-light-warning fs-7 fw-bolder'>
-                        Delivered
-                      </span>
+                      <span className='badge badge-light-warning fs-7 fw-bolder'>Delivered</span>
                     </td>
                     <td className='text-end'>
                       <a
@@ -262,28 +215,17 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
                       </div>
                     </td>
                     <td>
-                      <a
-                        href='#'
-                        className='text-dark fw-bolder text-hover-primary mb-1 fs-6'
-                      >
+                      <a href='#' className='text-dark fw-bolder text-hover-primary mb-1 fs-6'>
                         Strawberry Boxes
                       </a>
-                      <span className='text-muted fw-bold d-block fs-7'>
-                        From Spain
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-7'>From Spain</span>
                     </td>
                     <td className='text-end'>
-                      <span className='text-muted fw-bold d-block fs-8'>
-                        Ordered
-                      </span>
-                      <span className='text-dark fw-bolder d-block fs-7'>
-                        7 day ago
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-8'>Ordered</span>
+                      <span className='text-dark fw-bolder d-block fs-7'>7 day ago</span>
                     </td>
                     <td className='text-end'>
-                      <span className='badge badge-light-info fs-7 fw-bolder'>
-                        Delivered
-                      </span>
+                      <span className='badge badge-light-info fs-7 fw-bolder'>Delivered</span>
                     </td>
                     <td className='text-end'>
                       <a
@@ -331,28 +273,17 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
                       </div>
                     </td>
                     <td>
-                      <a
-                        href='#'
-                        className='text-dark fw-bolder text-hover-primary mb-1 fs-6'
-                      >
+                      <a href='#' className='text-dark fw-bolder text-hover-primary mb-1 fs-6'>
                         Strawberry Boxes
                       </a>
-                      <span className='text-muted fw-bold d-block fs-7'>
-                        From Spain
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-7'>From Spain</span>
                     </td>
                     <td className='text-end'>
-                      <span className='text-muted fw-bold d-block fs-8'>
-                        Ordered
-                      </span>
-                      <span className='text-dark fw-bolder d-block fs-7'>
-                        4 week ago
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-8'>Ordered</span>
+                      <span className='text-dark fw-bolder d-block fs-7'>4 week ago</span>
                     </td>
                     <td className='text-end'>
-                      <span className='badge badge-light-info fs-7 fw-bolder'>
-                        Delivered
-                      </span>
+                      <span className='badge badge-light-info fs-7 fw-bolder'>Delivered</span>
                     </td>
                     <td className='text-end'>
                       <a
@@ -375,28 +306,17 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
                       </div>
                     </td>
                     <td>
-                      <a
-                        href='#'
-                        className='text-dark fw-bolder text-hover-primary mb-1 fs-6'
-                      >
+                      <a href='#' className='text-dark fw-bolder text-hover-primary mb-1 fs-6'>
                         Special Meal
                       </a>
-                      <span className='text-muted fw-bold d-block fs-7'>
-                        Quona Rice
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-7'>Quona Rice</span>
                     </td>
                     <td className='text-end'>
-                      <span className='text-muted fw-bold d-block fs-8'>
-                        Ordered
-                      </span>
-                      <span className='text-dark fw-bolder d-block fs-7'>
-                        2 week ago
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-8'>Ordered</span>
+                      <span className='text-dark fw-bolder d-block fs-7'>2 week ago</span>
                     </td>
                     <td className='text-end'>
-                      <span className='badge badge-light-danger fs-7 fw-bolder'>
-                        Delivered
-                      </span>
+                      <span className='badge badge-light-danger fs-7 fw-bolder'>Delivered</span>
                     </td>
                     <td className='text-end'>
                       <a
@@ -419,28 +339,17 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
                       </div>
                     </td>
                     <td>
-                      <a
-                        href='#'
-                        className='text-dark fw-bolder text-hover-primary mb-1 fs-6'
-                      >
+                      <a href='#' className='text-dark fw-bolder text-hover-primary mb-1 fs-6'>
                         Active Customers
                       </a>
-                      <span className='text-muted fw-bold d-block fs-7'>
-                        Best Customers
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-7'>Best Customers</span>
                     </td>
                     <td className='text-end'>
-                      <span className='text-muted fw-bold d-block fs-8'>
-                        Ordered
-                      </span>
-                      <span className='text-dark fw-bolder d-block fs-7'>
-                        5 week ago
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-8'>Ordered</span>
+                      <span className='text-dark fw-bolder d-block fs-7'>5 week ago</span>
                     </td>
                     <td className='text-end'>
-                      <span className='badge badge-light-warning fs-7 fw-bolder'>
-                        Delivered
-                      </span>
+                      <span className='badge badge-light-warning fs-7 fw-bolder'>Delivered</span>
                     </td>
                     <td className='text-end'>
                       <a
@@ -488,10 +397,7 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
                       </div>
                     </td>
                     <td>
-                      <a
-                        href='#'
-                        className='text-dark fw-bolder text-hover-primary mb-1 fs-6'
-                      >
+                      <a href='#' className='text-dark fw-bolder text-hover-primary mb-1 fs-6'>
                         Media Device
                       </a>
                       <span className='text-muted fw-bold d-block fs-7'>
@@ -499,17 +405,11 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
                       </span>
                     </td>
                     <td className='text-end'>
-                      <span className='text-muted fw-bold d-block fs-8'>
-                        Ordered
-                      </span>
-                      <span className='text-dark fw-bolder d-block fs-7'>
-                        3 month ago
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-8'>Ordered</span>
+                      <span className='text-dark fw-bolder d-block fs-7'>3 month ago</span>
                     </td>
                     <td className='text-end'>
-                      <span className='badge badge-light-success fs-7 fw-bolder'>
-                        Delivered
-                      </span>
+                      <span className='badge badge-light-success fs-7 fw-bolder'>Delivered</span>
                     </td>
                     <td className='text-end'>
                       <a
@@ -532,28 +432,17 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
                       </div>
                     </td>
                     <td>
-                      <a
-                        href='#'
-                        className='text-dark fw-bolder text-hover-primary mb-1 fs-6'
-                      >
+                      <a href='#' className='text-dark fw-bolder text-hover-primary mb-1 fs-6'>
                         Special Meal
                       </a>
-                      <span className='text-muted fw-bold d-block fs-7'>
-                        Quona Rice
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-7'>Quona Rice</span>
                     </td>
                     <td className='text-end'>
-                      <span className='text-muted fw-bold d-block fs-8'>
-                        Ordered
-                      </span>
-                      <span className='text-dark fw-bolder d-block fs-7'>
-                        5 month ago
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-8'>Ordered</span>
+                      <span className='text-dark fw-bolder d-block fs-7'>5 month ago</span>
                     </td>
                     <td className='text-end'>
-                      <span className='badge badge-light-danger fs-7 fw-bolder'>
-                        Delivered
-                      </span>
+                      <span className='badge badge-light-danger fs-7 fw-bolder'>Delivered</span>
                     </td>
                     <td className='text-end'>
                       <a
@@ -576,28 +465,17 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
                       </div>
                     </td>
                     <td>
-                      <a
-                        href='#'
-                        className='text-dark fw-bolder text-hover-primary mb-1 fs-6'
-                      >
+                      <a href='#' className='text-dark fw-bolder text-hover-primary mb-1 fs-6'>
                         Active Customers
                       </a>
-                      <span className='text-muted fw-bold d-block fs-7'>
-                        Best Customers
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-7'>Best Customers</span>
                     </td>
                     <td className='text-end'>
-                      <span className='text-muted fw-bold d-block fs-8'>
-                        Ordered
-                      </span>
-                      <span className='text-dark fw-bolder d-block fs-7'>
-                        6 month ago
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-8'>Ordered</span>
+                      <span className='text-dark fw-bolder d-block fs-7'>6 month ago</span>
                     </td>
                     <td className='text-end'>
-                      <span className='badge badge-light-warning fs-7 fw-bolder'>
-                        Delivered
-                      </span>
+                      <span className='badge badge-light-warning fs-7 fw-bolder'>Delivered</span>
                     </td>
                     <td className='text-end'>
                       <a
@@ -620,28 +498,17 @@ const TablesWidget7: React.FC<Props> = ({ className }) => {
                       </div>
                     </td>
                     <td>
-                      <a
-                        href='#'
-                        className='text-dark fw-bolder text-hover-primary mb-1 fs-6'
-                      >
+                      <a href='#' className='text-dark fw-bolder text-hover-primary mb-1 fs-6'>
                         Strawberry Boxes
                       </a>
-                      <span className='text-muted fw-bold d-block fs-7'>
-                        From Spain
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-7'>From Spain</span>
                     </td>
                     <td className='text-end'>
-                      <span className='text-muted fw-bold d-block fs-8'>
-                        Ordered
-                      </span>
-                      <span className='text-dark fw-bolder d-block fs-7'>
-                        4 month ago
-                      </span>
+                      <span className='text-muted fw-bold d-block fs-8'>Ordered</span>
+                      <span className='text-dark fw-bolder d-block fs-7'>4 month ago</span>
                     </td>
                     <td className='text-end'>
-                      <span className='badge badge-light-info fs-7 fw-bolder'>
-                        Delivered
-                      </span>
+                      <span className='badge badge-light-info fs-7 fw-bolder'>Delivered</span>
                     </td>
                     <td className='text-end'>
                       <a

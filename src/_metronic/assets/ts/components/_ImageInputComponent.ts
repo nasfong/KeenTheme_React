@@ -1,9 +1,4 @@
-import {
-  EventHandlerUtil,
-  DataUtil,
-  getUniqueIdWithPrefix,
-  getCSS,
-} from '../_utils/index'
+import { EventHandlerUtil, DataUtil, getUniqueIdWithPrefix, getCSS } from '../_utils/index'
 
 export interface IImageInputOptions {}
 
@@ -42,11 +37,7 @@ class ImageInputComponent {
   uid: string
   value: string = ''
 
-  constructor(
-    _element: HTMLElement,
-    _options: IImageInputOptions,
-    _queries: IImageInputQueries,
-  ) {
+  constructor(_element: HTMLElement, _options: IImageInputOptions, _queries: IImageInputQueries) {
     // Variables
     this.options = Object.assign(defaultImageInputOptions, _options)
     this.queries = _queries
@@ -84,16 +75,9 @@ class ImageInputComponent {
   private _change = (e: Event) => {
     e.preventDefault()
 
-    if (
-      this.inputElement !== null &&
-      this.inputElement.files &&
-      this.inputElement.files[0]
-    ) {
+    if (this.inputElement !== null && this.inputElement.files && this.inputElement.files[0]) {
       // Fire change event
-      if (
-        EventHandlerUtil.trigger(this.element, 'kt.imageinput.change', e) ===
-        false
-      ) {
+      if (EventHandlerUtil.trigger(this.element, 'kt.imageinput.change', e) === false) {
         return
       }
 
@@ -101,10 +85,7 @@ class ImageInputComponent {
 
       reader.onload = (e: ProgressEvent<FileReader>) => {
         if (this.wrapperElement && e.target) {
-          this.wrapperElement.style.setProperty(
-            'background-image',
-            `url('${e.target.result}')`,
-          )
+          this.wrapperElement.style.setProperty('background-image', `url('${e.target.result}')`)
         }
       }
 
@@ -121,10 +102,7 @@ class ImageInputComponent {
     e.preventDefault()
 
     // Fire cancel event
-    if (
-      EventHandlerUtil.trigger(this.element, 'kt.imageinput.cancel', e) ===
-      false
-    ) {
+    if (EventHandlerUtil.trigger(this.element, 'kt.imageinput.cancel', e) === false) {
       return
     }
 
@@ -147,10 +125,7 @@ class ImageInputComponent {
     e.preventDefault()
 
     // Fire remove event
-    if (
-      EventHandlerUtil.trigger(this.element, 'kt.imageinput.remove', e) ===
-      false
-    ) {
+    if (EventHandlerUtil.trigger(this.element, 'kt.imageinput.remove', e) === false) {
       return
     }
 
@@ -245,20 +220,12 @@ class ImageInputComponent {
     return ImageInput
   }
 
-  public static bootstrap = (
-    selector: string = defaultImageInputQueires.instanseQuery,
-  ) => {
+  public static bootstrap = (selector: string = defaultImageInputQueires.instanseQuery) => {
     ImageInputComponent.createInstances(selector)
   }
 
-  public static reinitialization = (
-    selector: string = defaultImageInputQueires.instanseQuery,
-  ) => {
+  public static reinitialization = (selector: string = defaultImageInputQueires.instanseQuery) => {
     ImageInputComponent.createInstances(selector)
   }
 }
-export {
-  ImageInputComponent,
-  defaultImageInputOptions,
-  defaultImageInputQueires,
-}
+export { ImageInputComponent, defaultImageInputOptions, defaultImageInputQueires }

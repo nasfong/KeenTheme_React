@@ -25,9 +25,7 @@ export default function PostList2() {
 
   const newPostMutation = useMutation({
     mutationFn: async (title: string) => {
-      return await wait(1000).then(() =>
-        POSTS.push({ id: crypto.randomUUID(), title }),
-      )
+      return await wait(1000).then(() => POSTS.push({ id: crypto.randomUUID(), title }))
     },
     onSuccess: () => {
       queryClient.invalidateQueries(['posts'])

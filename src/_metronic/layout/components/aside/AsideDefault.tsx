@@ -24,18 +24,11 @@ const AsideDefault: FC = () => {
       data-kt-drawer-toggle='#kt_aside_mobile_toggle'
     >
       {/* begin::Brand */}
-      <div
-        className='aside-logo flex-column-auto bg-secondary'
-        id='kt_aside_logo'
-      >
+      <div className='aside-logo flex-column-auto bg-secondary' id='kt_aside_logo'>
         {/* begin::Logo */}
         {aside.theme === 'dark' && (
           <Link to='/dashboard'>
-            <img
-              alt='Logo'
-              className='h-25px logo'
-              src={toAbsoluteUrl('/MaxBIT-light.png')}
-            />
+            <img alt='Logo' className='h-25px logo' src={toAbsoluteUrl('/MaxBIT-light.png')} />
           </Link>
         )}
         {aside.theme === 'light' && (

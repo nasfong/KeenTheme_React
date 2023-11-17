@@ -38,16 +38,10 @@ function App() {
         <ReactHookForm />
       </div>
 
-      <button
-        className='btn btn-danger btn-sm'
-        onClick={() => changeLanguage('en')}
-      >
+      <button className='btn btn-danger btn-sm' onClick={() => changeLanguage('en')}>
         en
       </button>
-      <button
-        className='btn btn-dark btn-sm'
-        onClick={() => changeLanguage('kh')}
-      >
+      <button className='btn btn-dark btn-sm' onClick={() => changeLanguage('kh')}>
         kh
       </button>
 
@@ -71,10 +65,7 @@ function App() {
             <label>Invoice balance</label>
           </div>
         </div>
-        <button
-          className='btn btn-info'
-          onClick={() => setCount((count) => count + 1)}
-        >
+        <button className='btn btn-info' onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
         <p>
@@ -82,26 +73,13 @@ function App() {
         </p>
         <Filter filterApply={{}} setFilterApply={{}} />
         <Table />
-        <MyPagination
-          page={page}
-          totalPages={10}
-          handlePagination={handlePage}
-          perPage={10}
-        />
+        <MyPagination page={page} totalPages={10} handlePagination={handlePage} perPage={10} />
       </div>
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
-      </p>
-      <button
-        className='btn btn-primary btn-lg me-2'
-        onClick={() => setShow(true)}
-      >
+      <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
+      <button className='btn btn-primary btn-lg me-2' onClick={() => setShow(true)}>
         button
       </button>
-      <button
-        className='btn btn-success btn-lg me-2'
-        onClick={() => setShow1(true)}
-      >
+      <button className='btn btn-success btn-lg me-2' onClick={() => setShow1(true)}>
         Formik
       </button>
       <button className='btn btn-warning btn-lg' onClick={() => setShow2(true)}>
@@ -115,10 +93,7 @@ function App() {
           data-kt-menu-placement='bottom-end'
           data-kt-menu-flip='top-end'
         >
-          <KTSVG
-            path='/media/icons/duotune/general/gen014.svg'
-            className='svg-icon-2'
-          />
+          <KTSVG path='/media/icons/duotune/general/gen014.svg' className='svg-icon-2' />
         </button>
         <CalenderDropdown
           formInput={[]}
@@ -132,14 +107,8 @@ function App() {
       <FormModal show={show} setShow={setShow} />
       <FormikModal show={show1} setShow={setShow1} />
       <ReactHookFormModal show={show2} setShow={setShow2} />
-      <a
-        href='#'
-        className='btn btn-icon btn-light pulse pulse-primary me-10 mb-10'
-      >
-        <KTSVG
-          path='/media/icons/duotune/general/gen025.svg'
-          className='svg-icon svg-icon-1'
-        />
+      <a href='#' className='btn btn-icon btn-light pulse pulse-primary me-10 mb-10'>
+        <KTSVG path='/media/icons/duotune/general/gen025.svg' className='svg-icon svg-icon-1' />
         <span className='pulse-ring'></span>
       </a>
       <div className='card card-bordered'>

@@ -176,9 +176,7 @@ export function Projects() {
       </div>
 
       <div className='d-flex flex-stack flex-wrap pt-10'>
-        <div className='fs-6 fw-bold text-gray-700'>
-          Showing 1 to 10 of 50 entries
-        </div>
+        <div className='fs-6 fw-bold text-gray-700'>Showing 1 to 10 of 50 entries</div>
 
         <ul className='pagination'>
           <li className='page-item previous'>

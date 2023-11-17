@@ -1,11 +1,4 @@
-import {
-  Button,
-  Card,
-  CardContent,
-  Container,
-  TextField,
-  styled,
-} from '@mui/material'
+import { Button, Card, CardContent, Container, TextField, styled } from '@mui/material'
 import { InputM2 } from 'components/InputM'
 import { Controller, useForm } from 'react-hook-form'
 import { alpha, useTheme } from '@mui/material/styles'
@@ -38,10 +31,7 @@ const useChartOptions = () => {
         show: false,
       },
     },
-    colors: [
-      theme.palette.primary.main,
-      alpha(theme.palette.primary.main, 0.25),
-    ],
+    colors: [theme.palette.primary.main, alpha(theme.palette.primary.main, 0.25)],
     dataLabels: {
       enabled: false,
     },

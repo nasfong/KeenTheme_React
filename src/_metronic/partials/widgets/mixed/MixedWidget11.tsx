@@ -9,11 +9,7 @@ type Props = {
   chartHeight: string
 }
 
-const MixedWidget11: React.FC<Props> = ({
-  className,
-  chartColor,
-  chartHeight,
-}) => {
+const MixedWidget11: React.FC<Props> = ({ className, chartColor, chartHeight }) => {
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -21,10 +17,7 @@ const MixedWidget11: React.FC<Props> = ({
       return
     }
 
-    const chart = new ApexCharts(
-      chartRef.current,
-      chartOptions(chartColor, chartHeight),
-    )
+    const chart = new ApexCharts(chartRef.current, chartOptions(chartColor, chartHeight))
     if (chart) {
       chart.render()
     }

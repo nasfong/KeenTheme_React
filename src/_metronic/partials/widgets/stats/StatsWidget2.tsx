@@ -29,9 +29,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
       activeChart.destroy()
     }
 
-    const element = document.querySelector(
-      `#tab${tabNumber}_chart`,
-    ) as HTMLElement
+    const element = document.querySelector(`#tab${tabNumber}_chart`) as HTMLElement
     if (!element) {
       return
     }
@@ -59,10 +57,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
             data-kt-menu-placement='bottom-end'
             data-kt-menu-flip='top-end'
           >
-            <KTSVG
-              className='svg-icon-1'
-              path='/media/icons/duotune/general/gen024.svg'
-            />
+            <KTSVG className='svg-icon-1' path='/media/icons/duotune/general/gen024.svg' />
           </button>
           <Dropdown2 />
           {/* end::Dropdown */}
@@ -98,12 +93,8 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
                     />
                   </div>
                   <div className='ps-1'>
-                    <span className='nav-text text-gray-600 fw-bolder fs-6'>
-                      Man&Flower SaaS
-                    </span>
-                    <span className='text-muted fw-bold d-block pt-1'>
-                      HR Solutions
-                    </span>
+                    <span className='nav-text text-gray-600 fw-bolder fs-6'>Man&Flower SaaS</span>
+                    <span className='text-muted fw-bold d-block pt-1'>HR Solutions</span>
                   </div>
                 </a>
               </li>
@@ -129,12 +120,8 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
                     />
                   </div>
                   <div className='ps-1'>
-                    <span className='nav-text text-gray-600 fw-bolder fs-6'>
-                      Building Studio
-                    </span>
-                    <span className='text-muted fw-bold d-block pt-1'>
-                      HR Solutions
-                    </span>
+                    <span className='nav-text text-gray-600 fw-bolder fs-6'>Building Studio</span>
+                    <span className='text-muted fw-bold d-block pt-1'>HR Solutions</span>
                   </div>
                 </a>
               </li>
@@ -155,19 +142,13 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
                     />
                     <img
                       alt=''
-                      src={toAbsoluteUrl(
-                        '/media/svg/logo/colored/fox-hub-2.svg',
-                      )}
+                      src={toAbsoluteUrl('/media/svg/logo/colored/fox-hub-2.svg')}
                       className='active'
                     />
                   </div>
                   <div className='ps-1'>
-                    <span className='nav-text text-gray-600 fw-bolder fs-6'>
-                      Foxy Solutions
-                    </span>
-                    <span className='text-muted fw-bold d-block pt-1'>
-                      HR Solutions
-                    </span>
+                    <span className='nav-text text-gray-600 fw-bolder fs-6'>Foxy Solutions</span>
+                    <span className='text-muted fw-bold d-block pt-1'>HR Solutions</span>
                   </div>
                 </a>
               </li>
@@ -193,12 +174,8 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
                     />
                   </div>
                   <div className='ps-1'>
-                    <span className='nav-text text-gray-600 fw-bolder fs-6'>
-                      MyStreams
-                    </span>
-                    <span className='text-muted fw-bold d-block pt-1'>
-                      HR Solutions
-                    </span>
+                    <span className='nav-text text-gray-600 fw-bolder fs-6'>MyStreams</span>
+                    <span className='text-muted fw-bold d-block pt-1'>HR Solutions</span>
                   </div>
                 </a>
               </li>
@@ -212,9 +189,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
           >
             {/* begin::Tab Pane 1 */}
             <div
-              className={`tab-pane fade ${
-                activeTab === '#tab1' ? 'show active' : ''
-              }`}
+              className={`tab-pane fade ${activeTab === '#tab1' ? 'show active' : ''}`}
               id='tab1_content'
             >
               {/* begin::Content */}
@@ -222,27 +197,21 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
                 {/* begin::Item */}
                 <div className='px-10'>
                   <span className='text-muted fw-bold fs-7'>Sale</span>
-                  <span className='text-gray-800 fw-bolder fs-3 d-block'>
-                    $650
-                  </span>
+                  <span className='text-gray-800 fw-bolder fs-3 d-block'>$650</span>
                 </div>
                 {/* end::Item */}
 
                 {/* begin::Item */}
                 <div className='px-10'>
                   <span className='text-muted fw-bold fs-7'>Commission</span>
-                  <span className='text-gray-800 fw-bolder fs-3 d-block'>
-                    $2,040
-                  </span>
+                  <span className='text-gray-800 fw-bolder fs-3 d-block'>$2,040</span>
                 </div>
                 {/* end::Item */}
 
                 {/* begin::Item */}
                 <div className='px-10'>
                   <span className='text-muted fw-bold fs-7'>Refers</span>
-                  <span className='text-gray-800 fw-bolder fs-3 d-block'>
-                    8,926
-                  </span>
+                  <span className='text-gray-800 fw-bolder fs-3 d-block'>8,926</span>
                 </div>
                 {/* end::Item */}
               </div>
@@ -256,9 +225,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
 
             {/* begin::Tab Pane 2 */}
             <div
-              className={`tab-pane fade ${
-                activeTab === '#tab2' ? 'show active' : ''
-              }`}
+              className={`tab-pane fade ${activeTab === '#tab2' ? 'show active' : ''}`}
               id='tab2_content'
             >
               {/* begin::Content */}
@@ -266,27 +233,21 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
                 {/* begin::Item */}
                 <div className='px-10'>
                   <span className='text-muted fw-bold fs-7'>Sale</span>
-                  <span className='text-gray-800 fw-bolder fs-3 d-block'>
-                    $1250
-                  </span>
+                  <span className='text-gray-800 fw-bolder fs-3 d-block'>$1250</span>
                 </div>
                 {/* end::Item */}
 
                 {/* begin::Item */}
                 <div className='px-10'>
                   <span className='text-muted fw-bold fs-7'>Commission</span>
-                  <span className='text-gray-800 fw-bolder fs-3 d-block'>
-                    $5,000
-                  </span>
+                  <span className='text-gray-800 fw-bolder fs-3 d-block'>$5,000</span>
                 </div>
                 {/* end::Item */}
 
                 {/* begin::Item */}
                 <div className='px-10'>
                   <span className='text-muted fw-bold fs-7'>Refers</span>
-                  <span className='text-gray-800 fw-bolder fs-3 d-block'>
-                    4,926
-                  </span>
+                  <span className='text-gray-800 fw-bolder fs-3 d-block'>4,926</span>
                 </div>
                 {/* end::Item */}
               </div>
@@ -300,9 +261,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
 
             {/* begin::Tab Pane 3 */}
             <div
-              className={`tab-pane fade ${
-                activeTab === '#tab3' ? 'show active' : ''
-              }`}
+              className={`tab-pane fade ${activeTab === '#tab3' ? 'show active' : ''}`}
               id='tab3_content'
             >
               {/* begin::Content */}
@@ -310,27 +269,21 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
                 {/* begin::Item */}
                 <div className='px-10'>
                   <span className='text-muted fw-bold fs-7'>Sale</span>
-                  <span className='text-gray-800 fw-bolder fs-3 d-block'>
-                    $350
-                  </span>
+                  <span className='text-gray-800 fw-bolder fs-3 d-block'>$350</span>
                 </div>
                 {/* end::Item */}
 
                 {/* begin::Item */}
                 <div className='px-10'>
                   <span className='text-muted fw-bold fs-7'>Comission</span>
-                  <span className='text-gray-800 fw-bolder fs-3 d-block'>
-                    $1,200
-                  </span>
+                  <span className='text-gray-800 fw-bolder fs-3 d-block'>$1,200</span>
                 </div>
                 {/* end::Item */}
 
                 {/* begin::Item */}
                 <div className='px-10'>
                   <span className='text-muted fw-bold fs-7'>Refers</span>
-                  <span className='text-gray-800 fw-bolder fs-3 d-block'>
-                    5,500
-                  </span>
+                  <span className='text-gray-800 fw-bolder fs-3 d-block'>5,500</span>
                 </div>
                 {/* end::Item */}
               </div>
@@ -344,9 +297,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
 
             {/* begin::Tab Pane 4 */}
             <div
-              className={`tab-pane fade ${
-                activeTab === '#tab4' ? 'show active' : ''
-              }`}
+              className={`tab-pane fade ${activeTab === '#tab4' ? 'show active' : ''}`}
               id='tab4_content'
             >
               {/* begin::Content */}
@@ -354,27 +305,21 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
                 {/* begin::Item */}
                 <div className='px-10'>
                   <span className='text-muted fw-bold fs-7'>Sale</span>
-                  <span className='text-gray-800 fw-bolder fs-3 d-block'>
-                    $450
-                  </span>
+                  <span className='text-gray-800 fw-bolder fs-3 d-block'>$450</span>
                 </div>
                 {/* end::Item */}
 
                 {/* begin::Item */}
                 <div className='px-10'>
                   <span className='text-muted fw-bold fs-7'>Comission</span>
-                  <span className='text-gray-800 fw-bolder fs-3 d-block'>
-                    $6,500
-                  </span>
+                  <span className='text-gray-800 fw-bolder fs-3 d-block'>$6,500</span>
                 </div>
                 {/* end::Item */}
 
                 {/* begin::Item */}
                 <div className='px-10'>
                   <span className='text-muted fw-bold fs-7'>Refers</span>
-                  <span className='text-gray-800 fw-bolder fs-3 d-block'>
-                    500
-                  </span>
+                  <span className='text-gray-800 fw-bolder fs-3 d-block'>500</span>
                 </div>
                 {/* end::Item */}
               </div>
@@ -396,10 +341,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
 
 export { StatsWidget2 }
 
-function getChartOptions(
-  tabNumber: number,
-  height: string | number | undefined,
-): ApexOptions {
+function getChartOptions(tabNumber: number, height: string | number | undefined): ApexOptions {
   return {
     series: [
       {
@@ -495,10 +437,7 @@ function getChartOptions(
         },
       },
     },
-    colors: [
-      getCSSVariableValue('--bs-primary'),
-      getCSSVariableValue('--bs-light-primary'),
-    ],
+    colors: [getCSSVariableValue('--bs-primary'), getCSSVariableValue('--bs-light-primary')],
     grid: {
       borderColor: getCSSVariableValue('--bs-gray-200'),
       strokeDashArray: 4,

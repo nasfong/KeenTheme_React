@@ -77,9 +77,7 @@ const Menu = () => {
               <tr key={menu.id}>
                 <td>{menu.name}</td>
                 <td>
-                  <span className={`badge badge-light-primary`}>
-                    {menu.url}
-                  </span>
+                  <span className={`badge badge-light-primary`}>{menu.url}</span>
                 </td>
                 <td className='text-end'>
                   <button
@@ -87,20 +85,14 @@ const Menu = () => {
                     onClick={() => handleEdit(menu)}
                     title='Edit'
                   >
-                    <KTSVG
-                      path='/media/icons/duotune/art/art005.svg'
-                      className='svg-icon-3'
-                    />
+                    <KTSVG path='/media/icons/duotune/art/art005.svg' className='svg-icon-3' />
                   </button>
                   <button
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
                     onClick={() => handleDelete(menu.id)}
                     title='Delete'
                   >
-                    <KTSVG
-                      path='/media/icons/duotune/general/gen027.svg'
-                      className='svg-icon-3'
-                    />
+                    <KTSVG path='/media/icons/duotune/general/gen027.svg' className='svg-icon-3' />
                   </button>
                 </td>
               </tr>

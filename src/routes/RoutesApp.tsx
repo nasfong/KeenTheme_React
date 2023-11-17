@@ -22,21 +22,11 @@ const RoutesApp = () => {
         <Route path='management' element={<Layout />}>
           <Route
             path='administrator'
-            element={
-              <PrivateRoute
-                component={Administrator}
-                requiredPermissions={['admin']}
-              />
-            }
+            element={<PrivateRoute component={Administrator} requiredPermissions={['admin']} />}
           />
           <Route
             path='permission'
-            element={
-              <PrivateRoute
-                component={Permission}
-                requiredPermissions={['permission']}
-              />
-            }
+            element={<PrivateRoute component={Permission} requiredPermissions={['permission']} />}
           />
           {/* <Route path='administrator' element={<Administrator />} /> */}
           {/* <Route path='permission' element={<Permission />} /> */}

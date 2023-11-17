@@ -30,11 +30,7 @@ const WizardsPage: React.FC = () => {
         <PageTitle breadcrumbs={wizardsBreadCrumbs}>Vertical</PageTitle>
         <Vertical />
       </Route>
-      <Redirect
-        from='/crafted/pages/wizards'
-        exact={true}
-        to='/crafted/pages/wizards/horizontal'
-      />
+      <Redirect from='/crafted/pages/wizards' exact={true} to='/crafted/pages/wizards/horizontal' />
       <Redirect to='/crafted/pages/wizards/horizontal' />
     </Switch>
   )

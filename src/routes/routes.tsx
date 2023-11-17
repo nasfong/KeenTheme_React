@@ -22,10 +22,7 @@ export const router = createBrowserRouter([
       {
         path: 'administrator',
         element: (
-          <PrivateRoute
-            component={Administrator}
-            requiredPermissions={['admin', 'permission']}
-          />
+          <PrivateRoute component={Administrator} requiredPermissions={['admin']} />
         ),
       },
       {

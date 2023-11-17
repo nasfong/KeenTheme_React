@@ -43,9 +43,7 @@ const disableSplashScreen = () => {
   }
 }
 
-const LayoutProvider: React.FC<{ children?: React.ReactNode }> = ({
-  children,
-}) => {
+const LayoutProvider: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const [config, setConfig] = useState(LayoutSetup.config)
   const [classes, setClasses] = useState(LayoutSetup.classes)
   const [attributes, setAttributes] = useState(LayoutSetup.attributes)
@@ -75,9 +73,7 @@ const LayoutProvider: React.FC<{ children?: React.ReactNode }> = ({
     disableSplashScreen()
   }, [])
 
-  return (
-    <LayoutContext.Provider value={value}>{children}</LayoutContext.Provider>
-  )
+  return <LayoutContext.Provider value={value}>{children}</LayoutContext.Provider>
 }
 
 export { LayoutContext, LayoutProvider }

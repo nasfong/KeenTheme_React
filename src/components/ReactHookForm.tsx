@@ -34,13 +34,9 @@ const ReactHookForm = () => {
       <p>{errors.age?.message}</p>
 
       <Form.Group>
-        <Form.Label className='form-label text-nowrap required'>
-          React Hook Form
-        </Form.Label>
+        <Form.Label className='form-label text-nowrap required'>React Hook Form</Form.Label>
         <InputH {...register('name')} errors={errors.name?.message} />
-        <Form.Control.Feedback type='invalid'>
-          {errors.name?.message}
-        </Form.Control.Feedback>
+        <Form.Control.Feedback type='invalid'>{errors.name?.message}</Form.Control.Feedback>
       </Form.Group>
 
       <button className='btn btn-primary btn-sm float-end' type='submit'>

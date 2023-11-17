@@ -1,7 +1,4 @@
-export const normalizeInput = (
-  value: string,
-  previousValue: string,
-): string => {
+export const normalizeInput = (value: string, previousValue: string): string => {
   // return nothing if no value
   if (!value) return value
 
@@ -14,14 +11,10 @@ export const normalizeInput = (
     if (cvLength < 4) return currentValue
 
     // returns: "(xxx)", "(xxx) x", "(xxx) xx", "(xxx) xxx",
-    if (cvLength < 7)
-      return `(${currentValue.slice(0, 3)}) ${currentValue.slice(3)}`
+    if (cvLength < 7) return `(${currentValue.slice(0, 3)}) ${currentValue.slice(3)}`
 
     // returns: "(xxx) xxx-", (xxx) xxx-x", "(xxx) xxx-xx", "(xxx) xxx-xxx", "(xxx) xxx-xxxx"
-    return `(${currentValue.slice(0, 3)}) ${currentValue.slice(
-      3,
-      6,
-    )}-${currentValue.slice(6, 10)}`
+    return `(${currentValue.slice(0, 3)}) ${currentValue.slice(3, 6)}-${currentValue.slice(6, 10)}`
   }
   // return ''
 }

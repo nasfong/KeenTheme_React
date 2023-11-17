@@ -67,9 +67,7 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
             : '#kt_header, #kt_toolbar, #kt_footer, #kt_chat_messenger_header, #kt_chat_messenger_footer'
         }
         data-kt-scroll-wrappers={
-          isDrawer
-            ? '#kt_drawer_chat_messenger_body'
-            : '#kt_content, #kt_chat_messenger_body'
+          isDrawer ? '#kt_drawer_chat_messenger_body' : '#kt_content, #kt_chat_messenger_body'
         }
         data-kt-scroll-offset={isDrawer ? '0px' : '-2px'}
       >
@@ -103,10 +101,7 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
                   {message.type === 'in' ? (
                     <>
                       <div className='symbol  symbol-35px symbol-circle '>
-                        <img
-                          alt='Pic'
-                          src={toAbsoluteUrl(`/media/${userInfo.avatar}`)}
-                        />
+                        <img alt='Pic' src={toAbsoluteUrl(`/media/${userInfo.avatar}`)} />
                       </div>
                       <div className='ms-3'>
                         <a
@@ -115,17 +110,13 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
                         >
                           {userInfo.name}
                         </a>
-                        <span className='text-muted fs-7 mb-1'>
-                          {message.time}
-                        </span>
+                        <span className='text-muted fs-7 mb-1'>{message.time}</span>
                       </div>
                     </>
                   ) : (
                     <>
                       <div className='me-3'>
-                        <span className='text-muted fs-7 mb-1'>
-                          {message.time}
-                        </span>
+                        <span className='text-muted fs-7 mb-1'>{message.time}</span>
                         <a
                           href='#'
                           className='fs-5 fw-bolder text-gray-900 text-hover-primary ms-1'
@@ -134,10 +125,7 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
                         </a>
                       </div>
                       <div className='symbol  symbol-35px symbol-circle '>
-                        <img
-                          alt='Pic'
-                          src={toAbsoluteUrl(`/media/${userInfo.avatar}`)}
-                        />
+                        <img alt='Pic' src={toAbsoluteUrl(`/media/${userInfo.avatar}`)} />
                       </div>
                     </>
                   )}
@@ -161,11 +149,7 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
 
       <div
         className='card-footer pt-4'
-        id={
-          isDrawer
-            ? 'kt_drawer_chat_messenger_footer'
-            : 'kt_chat_messenger_footer'
-        }
+        id={isDrawer ? 'kt_drawer_chat_messenger_footer' : 'kt_chat_messenger_footer'}
       >
         <textarea
           className='form-control form-control-flush mb-3'

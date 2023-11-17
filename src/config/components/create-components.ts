@@ -12,9 +12,7 @@ import {
 // Used only to create transitions
 const muiTheme = createTheme()
 
-export function createComponents(
-  config: any,
-): Components<Omit<Theme, 'components'>> {
+export function createComponents(config: any): Components<Omit<Theme, 'components'>> {
   const { palette } = config
 
   return {
@@ -58,8 +56,7 @@ export function createComponents(
         root: {
           borderRadius: 20,
           [`&.${paperClasses.elevation1}`]: {
-            boxShadow:
-              '0px 5px 22px rgba(0, 0, 0, 0.04), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.03)',
+            boxShadow: '0px 5px 22px rgba(0, 0, 0, 0.04), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.03)',
           },
         },
       },
@@ -160,10 +157,7 @@ export function createComponents(
           borderWidth: 1,
           overflow: 'hidden',
           borderColor: palette.neutral[200],
-          transition: muiTheme.transitions.create([
-            'border-color',
-            'box-shadow',
-          ]),
+          transition: muiTheme.transitions.create(['border-color', 'box-shadow']),
           '&:hover': {
             backgroundColor: palette.action.hover,
           },
@@ -223,10 +217,7 @@ export function createComponents(
         },
         notchedOutline: {
           borderColor: palette.neutral[200],
-          transition: muiTheme.transitions.create([
-            'border-color',
-            'box-shadow',
-          ]),
+          transition: muiTheme.transitions.create(['border-color', 'box-shadow']),
         },
       },
     },

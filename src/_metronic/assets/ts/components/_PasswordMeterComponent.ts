@@ -59,12 +59,8 @@ class PasswordMeterComponent {
 
     // Elements
     this.inputElement = this.element.querySelector(this.queries.inputQuery)
-    this.visibilityElement = this.element.querySelector(
-      this.queries.visibilityQuery,
-    )
-    this.highlightElement = this.element.querySelector(
-      this.queries.highlightQuery,
-    )
+    this.visibilityElement = this.element.querySelector(this.queries.visibilityQuery)
+    this.highlightElement = this.element.querySelector(this.queries.highlightQuery)
 
     // Event Handlers
     this.handlers()
@@ -92,9 +88,7 @@ class PasswordMeterComponent {
         'i:not(.d-none), .svg-icon:not(.d-none)',
       )
 
-      const hiddenIcon = this.visibilityElement.querySelector(
-        'i.d-none, .svg-icon.d-none',
-      )
+      const hiddenIcon = this.visibilityElement.querySelector('i.d-none, .svg-icon.d-none')
 
       const typeAttr = this.inputElement.getAttribute('type') || ''
 
@@ -268,9 +262,7 @@ class PasswordMeterComponent {
     return passwordMeter
   }
 
-  public static bootstrap = (
-    selector: string = defaultPasswordMeterQueires.instanseQuery,
-  ) => {
+  public static bootstrap = (selector: string = defaultPasswordMeterQueires.instanseQuery) => {
     PasswordMeterComponent.createInstances(selector)
   }
 
@@ -280,8 +272,4 @@ class PasswordMeterComponent {
     PasswordMeterComponent.createInstances(selector)
   }
 }
-export {
-  PasswordMeterComponent,
-  defaultPasswordMeterOptions,
-  defaultPasswordMeterQueires,
-}
+export { PasswordMeterComponent, defaultPasswordMeterOptions, defaultPasswordMeterQueires }

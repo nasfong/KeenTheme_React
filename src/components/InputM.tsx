@@ -1,11 +1,5 @@
 import { TextField, TextFieldProps } from '@mui/material'
-import {
-  Controller,
-  FieldValues,
-  Path,
-  RegisterOptions,
-  UseFormReturn,
-} from 'react-hook-form'
+import { Controller, FieldValues, Path, RegisterOptions, UseFormReturn } from 'react-hook-form'
 
 type Props<T extends FieldValues> = TextFieldProps & {
   rules?:
@@ -18,10 +12,7 @@ type Props<T extends FieldValues> = TextFieldProps & {
   name: Path<T>
 }
 
-export function InputM2<T extends FieldValues>({
-  methods,
-  ...props
-}: Props<T>) {
+export function InputM2<T extends FieldValues>({ methods, ...props }: Props<T>) {
   const {
     control,
     formState: { errors },

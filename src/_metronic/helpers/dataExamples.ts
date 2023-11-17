@@ -326,10 +326,4 @@ const defaultLogs: Array<LogModel> = [
   { code: '500 ERR', state: 'danger', message: 'Mail tasks', time: 'Dec 10' },
 ]
 
-export {
-  defaultMessages,
-  defaultUserInfos,
-  defaultAlerts,
-  defaultLogs,
-  messageFromClient,
-}
+export { defaultMessages, defaultUserInfos, defaultAlerts, defaultLogs, messageFromClient }

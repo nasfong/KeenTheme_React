@@ -27,10 +27,7 @@ const MixedWidget1: React.FC<Props> = ({ className, color }) => {
                 data-kt-menu-placement='bottom-end'
                 data-kt-menu-flip='top-end'
               >
-                <KTSVG
-                  path='/media/icons/duotune/general/gen024.svg'
-                  className='svg-icon-2'
-                />
+                <KTSVG path='/media/icons/duotune/general/gen024.svg' className='svg-icon-2' />
               </button>
               <Dropdown1 />
               {/* end::Menu */}
@@ -55,10 +52,7 @@ const MixedWidget1: React.FC<Props> = ({ className, color }) => {
             {/* begin::Symbol */}
             <div className='symbol symbol-45px w-40px me-5'>
               <span className='symbol-label bg-lighten'>
-                <KTSVG
-                  path='/media/icons/duotune/maps/map004.svg'
-                  className='svg-icon-1'
-                />
+                <KTSVG path='/media/icons/duotune/maps/map004.svg' className='svg-icon-1' />
               </span>
             </div>
             {/* end::Symbol */}
@@ -66,10 +60,7 @@ const MixedWidget1: React.FC<Props> = ({ className, color }) => {
             <div className='d-flex align-items-center flex-wrap w-100'>
               {/* begin::Title */}
               <div className='mb-1 pe-3 flex-grow-1'>
-                <a
-                  href='#'
-                  className='fs-5 text-gray-800 text-hover-primary fw-bolder'
-                >
+                <a href='#' className='fs-5 text-gray-800 text-hover-primary fw-bolder'>
                   Sales
                 </a>
                 <div className='text-gray-400 fw-bold fs-7'>100 Regions</div>
@@ -93,10 +84,7 @@ const MixedWidget1: React.FC<Props> = ({ className, color }) => {
             {/* begin::Symbol */}
             <div className='symbol symbol-45px w-40px me-5'>
               <span className='symbol-label bg-lighten'>
-                <KTSVG
-                  path='/media/icons/duotune/general/gen024.svg'
-                  className='svg-icon-1'
-                />
+                <KTSVG path='/media/icons/duotune/general/gen024.svg' className='svg-icon-1' />
               </span>
             </div>
             {/* end::Symbol */}
@@ -104,10 +92,7 @@ const MixedWidget1: React.FC<Props> = ({ className, color }) => {
             <div className='d-flex align-items-center flex-wrap w-100'>
               {/* begin::Title */}
               <div className='mb-1 pe-3 flex-grow-1'>
-                <a
-                  href='#'
-                  className='fs-5 text-gray-800 text-hover-primary fw-bolder'
-                >
+                <a href='#' className='fs-5 text-gray-800 text-hover-primary fw-bolder'>
                   Revenue
                 </a>
                 <div className='text-gray-400 fw-bold fs-7'>Quarter 2/3</div>
@@ -131,10 +116,7 @@ const MixedWidget1: React.FC<Props> = ({ className, color }) => {
             {/* begin::Symbol */}
             <div className='symbol symbol-45px w-40px me-5'>
               <span className='symbol-label bg-lighten'>
-                <KTSVG
-                  path='/media/icons/duotune/electronics/elc005.svg'
-                  className='svg-icon-1'
-                />
+                <KTSVG path='/media/icons/duotune/electronics/elc005.svg' className='svg-icon-1' />
               </span>
             </div>
             {/* end::Symbol */}
@@ -142,10 +124,7 @@ const MixedWidget1: React.FC<Props> = ({ className, color }) => {
             <div className='d-flex align-items-center flex-wrap w-100'>
               {/* begin::Title */}
               <div className='mb-1 pe-3 flex-grow-1'>
-                <a
-                  href='#'
-                  className='fs-5 text-gray-800 text-hover-primary fw-bolder'
-                >
+                <a href='#' className='fs-5 text-gray-800 text-hover-primary fw-bolder'>
                   Growth
                 </a>
                 <div className='text-gray-400 fw-bold fs-7'>80% Rate</div>
@@ -169,10 +148,7 @@ const MixedWidget1: React.FC<Props> = ({ className, color }) => {
             {/* begin::Symbol */}
             <div className='symbol symbol-45px w-40px me-5'>
               <span className='symbol-label bg-lighten'>
-                <KTSVG
-                  path='/media/icons/duotune/general/gen005.svg'
-                  className='svg-icon-1'
-                />
+                <KTSVG path='/media/icons/duotune/general/gen005.svg' className='svg-icon-1' />
               </span>
             </div>
             {/* end::Symbol */}
@@ -180,10 +156,7 @@ const MixedWidget1: React.FC<Props> = ({ className, color }) => {
             <div className='d-flex align-items-center flex-wrap w-100'>
               {/* begin::Title */}
               <div className='mb-1 pe-3 flex-grow-1'>
-                <a
-                  href='#'
-                  className='fs-5 text-gray-800 text-hover-primary fw-bolder'
-                >
+                <a href='#' className='fs-5 text-gray-800 text-hover-primary fw-bolder'>
                   Dispute
                 </a>
                 <div className='text-gray-400 fw-bold fs-7'>3090 Refunds</div>

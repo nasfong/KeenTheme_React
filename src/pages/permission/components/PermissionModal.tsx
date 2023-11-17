@@ -1,18 +1,11 @@
 import { useLazyQuery, useMutation } from '@apollo/client'
-import {
-  GetAllPermissionsQuery,
-  Permission,
-  PermissionInput,
-} from '__generated__/graphql'
+import { GetAllPermissionsQuery, Permission, PermissionInput } from '__generated__/graphql'
 import { KTSVG } from '_metronic/helpers'
 import useOnceCall from 'app/utils/useOneCall'
 import { InputV } from 'components/InputV'
 import { Select } from 'components/Select'
 import { useFormik } from 'formik'
-import {
-  CREATE_PERMISSION,
-  UPDATE_PERMISSION,
-} from 'graphql/mutations/permission.mutation'
+import { CREATE_PERMISSION, UPDATE_PERMISSION } from 'graphql/mutations/permission.mutation'
 import { GET_ROLE_DROPDOWN } from 'graphql/querys/role.query'
 import { Dispatch, SetStateAction, useEffect } from 'react'
 import { Form, Modal } from 'react-bootstrap'
@@ -26,18 +19,12 @@ type Props = {
   updateQuery: UpdateQuerys<GetAllPermissionsQuery>
 }
 
-const PermissionModal = ({
-  modal,
-  setModal,
-  permission,
-  updateQuery,
-}: Props) => {
+const PermissionModal = ({ modal, setModal, permission, updateQuery }: Props) => {
   const [addPermission] = useMutation(CREATE_PERMISSION)
   const [updatePermission] = useMutation(UPDATE_PERMISSION)
 
   // Dropdown
-  const [getRoleDropdown, { data: roleDropdown }] =
-    useLazyQuery(GET_ROLE_DROPDOWN)
+  const [getRoleDropdown, { data: roleDropdown }] = useLazyQuery(GET_ROLE_DROPDOWN)
 
   const handleClose = () => {
     resetForm()
@@ -69,9 +56,7 @@ const PermissionModal = ({
           .then((res) => {
             updateQuery(({ getAllPermissions }) => ({
               getAllPermissions: getAllPermissions.map((data) =>
-                data.id === res.data?.updatePermission?.id
-                  ? res.data?.updatePermission
-                  : data,
+                data.id === res.data?.updatePermission?.id ? res.data?.updatePermission : data,
               ),
             }))
             handleClose()
@@ -112,22 +97,14 @@ const PermissionModal = ({
     <Modal show={modal} onHide={handleClose}>
       <Modal.Header>
         <Modal.Title>Modal heading</Modal.Title>
-        <div
-          className='btn btn-icon btn-sm btn-light-primary'
-          onClick={handleClose}
-        >
-          <KTSVG
-            className='svg-icon-2'
-            path='/media/icons/duotune/arrows/arr061.svg'
-          />
+        <div className='btn btn-icon btn-sm btn-light-primary' onClick={handleClose}>
+          <KTSVG className='svg-icon-2' path='/media/icons/duotune/arrows/arr061.svg' />
         </div>
       </Modal.Header>
       <Form onSubmit={formik.handleSubmit}>
         <Modal.Body>
           <Form.Group className='mb-5'>
-            <Form.Label className='form-label text-nowrap required'>
-              Name
-            </Form.Label>
+            <Form.Label className='form-label text-nowrap required'>Name</Form.Label>
             <InputV name='name' formik={formik} />
           </Form.Group>
           <Form.Group className='mb-5'>

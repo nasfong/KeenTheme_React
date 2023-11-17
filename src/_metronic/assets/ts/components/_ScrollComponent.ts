@@ -224,11 +224,7 @@ class ScrollComponent {
     const height = this.getOption(heightType || '')
     if (height instanceof Function) {
       return height.call(height)
-    } else if (
-      height !== null &&
-      typeof height === 'string' &&
-      height.toLowerCase() === 'auto'
-    ) {
+    } else if (height !== null && typeof height === 'string' && height.toLowerCase() === 'auto') {
       return this.getAutoHeight()
     } else {
       return height

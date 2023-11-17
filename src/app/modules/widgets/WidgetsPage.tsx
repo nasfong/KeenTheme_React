@@ -50,11 +50,7 @@ const WidgetsPage: React.FC = () => {
         <PageTitle breadcrumbs={widgetsBreadCrumbs}>Statiscics</PageTitle>
         <Statistics />
       </Route>
-      <Redirect
-        from='/crafted/widgets'
-        exact={true}
-        to='/crafted/widgets/lists'
-      />
+      <Redirect from='/crafted/widgets' exact={true} to='/crafted/widgets/lists' />
       <Redirect to='/crafted/widgets/lists' />
     </Switch>
   )

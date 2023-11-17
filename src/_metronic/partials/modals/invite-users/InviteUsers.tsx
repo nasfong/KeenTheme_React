@@ -113,14 +113,8 @@ const InviteUsers: FC = () => {
       <div className='modal-dialog mw-650px'>
         <div className='modal-content'>
           <div className='modal-header pb-0 border-0 justify-content-end'>
-            <div
-              className='btn btn-sm btn-icon btn-active-color-primary'
-              data-bs-dismiss='modal'
-            >
-              <KTSVG
-                path='/media/icons/duotune/arrows/arr061.svg'
-                className='svg-icon-1'
-              />
+            <div className='btn btn-sm btn-icon btn-active-color-primary' data-bs-dismiss='modal'>
+              <KTSVG path='/media/icons/duotune/arrows/arr061.svg' className='svg-icon-1' />
             </div>
           </div>
 
@@ -148,9 +142,7 @@ const InviteUsers: FC = () => {
             </div>
 
             <div className='separator d-flex flex-center mb-8'>
-              <span className='text-uppercase bg-body fs-7 fw-bold text-muted px-3'>
-                or
-              </span>
+              <span className='text-uppercase bg-body fs-7 fw-bold text-muted px-3'>or</span>
             </div>
 
             <textarea
@@ -171,9 +163,7 @@ const InviteUsers: FC = () => {
                     >
                       <div className='d-flex align-items-center'>
                         <div className='symbol symbol-35px symbol-circle'>
-                          {user.avatar && (
-                            <img alt='Pic' src={toAbsoluteUrl(user.avatar)} />
-                          )}
+                          {user.avatar && <img alt='Pic' src={toAbsoluteUrl(user.avatar)} />}
                           {user.state && (
                             <div className='symbol symbol-35px symbol-circle'>
                               <span
@@ -202,10 +192,7 @@ const InviteUsers: FC = () => {
                           className='form-select form-select-solid form-select-sm select2-hidden-accessible'
                         >
                           <option value='1'>Guest</option>
-                          <option
-                            value='2'
-                            data-select2-id='select2-data-12-vz6w'
-                          >
+                          <option value='2' data-select2-id='select2-data-12-vz6w'>
                             Owner
                           </option>
                           <option value='3'>Can Edit</option>
@@ -228,9 +215,7 @@ const InviteUsers: FC = () => {
               <label className='form-check form-switch form-check-custom form-check-solid'>
                 <input className='form-check-input' type='checkbox' value='1' />
 
-                <span className='form-check-label fw-bold text-muted'>
-                  Allowed
-                </span>
+                <span className='form-check-label fw-bold text-muted'>Allowed</span>
               </label>
             </div>
           </div>

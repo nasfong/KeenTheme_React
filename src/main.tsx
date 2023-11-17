@@ -14,12 +14,7 @@ import i18n from './_metronic/i18n/i18n'
 import './_metronic/assets/sass/style.scss'
 // import './_metronic/assets/sass/style.dark.scss'
 import './_metronic/assets/sass/style.react.scss'
-import {
-  ApolloProvider,
-  ApolloClient,
-  InMemoryCache,
-  createHttpLink,
-} from '@apollo/client'
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
 import { RouterProvider } from 'react-router-dom'
 import { router } from 'routes/Routes'
 // import './_metronic/assets/sass/plugins.scss'

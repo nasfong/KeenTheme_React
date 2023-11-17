@@ -7,11 +7,7 @@ type Props = {
   innerPadding?: string
 }
 
-const EngageWidget5: React.FC<Props> = ({
-  className,
-  innerPadding = '',
-  children,
-}) => {
+const EngageWidget5: React.FC<Props> = ({ className, innerPadding = '', children }) => {
   return (
     <div className={`card ${className}`}>
       {/* begin::Body */}

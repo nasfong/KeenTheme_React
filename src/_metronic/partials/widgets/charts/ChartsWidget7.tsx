@@ -36,9 +36,7 @@ const ChartsWidget7: React.FC<Props> = ({ className }) => {
         <h3 className='card-title align-items-start flex-column'>
           <span className='card-label fw-bolder fs-3 mb-1'>Recent Users</span>
 
-          <span className='text-muted fw-bold fs-7'>
-            More than 500 new users
-          </span>
+          <span className='text-muted fw-bold fs-7'>More than 500 new users</span>
         </h3>
 
         {/* begin::Toolbar */}

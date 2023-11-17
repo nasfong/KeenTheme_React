@@ -28,15 +28,10 @@ const StatsWidget3: React.FC<Props> = ({ className, innerPadding = '' }) => {
 
           {/* begin::Title */}
           <div>
-            <a
-              href='#'
-              className='fs-4 text-white text-hover-primary fw-bolder'
-            >
+            <a href='#' className='fs-4 text-white text-hover-primary fw-bolder'>
               Chat Application
             </a>
-            <div className='fs-7 text-white opacity-75 fw-bold mt-1'>
-              HTML, Django
-            </div>
+            <div className='fs-7 text-white opacity-75 fw-bold mt-1'>HTML, Django</div>
           </div>
           {/* end::Title */}
         </div>

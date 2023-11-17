@@ -8,9 +8,7 @@ const Dropdown2: FC = () => {
       data-kt-menu='true'
     >
       <div className='menu-item px-3'>
-        <div className='menu-content fs-6 text-dark fw-bolder px-3 py-4'>
-          Quick Actions
-        </div>
+        <div className='menu-content fs-6 text-dark fw-bolder px-3 py-4'>Quick Actions</div>
       </div>
 
       <div className='separator mb-3 opacity-75'></div>

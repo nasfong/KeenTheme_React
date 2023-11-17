@@ -3,9 +3,7 @@ import { SearchComponent } from '../../../assets/ts/components'
 import { KTSVG, toAbsoluteUrl } from '../../../helpers'
 
 const Search: FC = () => {
-  const [menuState, setMenuState] = useState<
-    'main' | 'advanced' | 'preferences'
-  >('main')
+  const [menuState, setMenuState] = useState<'main' | 'advanced' | 'preferences'>('main')
   const element = useRef<HTMLDivElement | null>(null)
   const wrapperElement = useRef<HTMLDivElement | null>(null)
   const resultsElement = useRef<HTMLDivElement | null>(null)
@@ -77,10 +75,7 @@ const Search: FC = () => {
           id='kt_header_search_toggle'
         >
           <div className='btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px'>
-            <KTSVG
-              path='/media/icons/duotune/general/gen021.svg'
-              className='svg-icon-1'
-            />
+            <KTSVG path='/media/icons/duotune/general/gen021.svg' className='svg-icon-1' />
           </div>
         </div>
 
@@ -141,10 +136,7 @@ const Search: FC = () => {
                   }}
                   title='Show search preferences'
                 >
-                  <KTSVG
-                    path='/media/icons/duotune/coding/cod001.svg'
-                    className='svg-icon-1'
-                  />
+                  <KTSVG path='/media/icons/duotune/coding/cod001.svg' className='svg-icon-1' />
                 </div>
 
                 <div
@@ -156,24 +148,14 @@ const Search: FC = () => {
                   }}
                   title='Show more search options'
                 >
-                  <KTSVG
-                    path='/media/icons/duotune/arrows/arr072.svg'
-                    className='svg-icon-2'
-                  />
+                  <KTSVG path='/media/icons/duotune/arrows/arr072.svg' className='svg-icon-2' />
                 </div>
               </div>
             </form>
 
-            <div
-              ref={resultsElement}
-              data-kt-search-element='results'
-              className='d-none'
-            >
+            <div ref={resultsElement} data-kt-search-element='results' className='d-none'>
               <div className='scroll-y mh-200px mh-lg-350px'>
-                <h3
-                  className='fs-5 text-muted m-0 pb-5'
-                  data-kt-search-element='category-title'
-                >
+                <h3 className='fs-5 text-muted m-0 pb-5' data-kt-search-element='category-title'>
                   Users
                 </h3>
 
@@ -182,17 +164,12 @@ const Search: FC = () => {
                   className='d-flex text-dark text-hover-primary align-items-center mb-5'
                 >
                   <div className='symbol symbol-40px me-4'>
-                    <img
-                      src={toAbsoluteUrl('/media/avatars/150-1.jpg')}
-                      alt=''
-                    />
+                    <img src={toAbsoluteUrl('/media/avatars/150-1.jpg')} alt='' />
                   </div>
 
                   <div className='d-flex flex-column justify-content-start fw-bold'>
                     <span className='fs-6 fw-bold'>Karina Clark</span>
-                    <span className='fs-7 fw-bold text-muted'>
-                      Marketing Manager
-                    </span>
+                    <span className='fs-7 fw-bold text-muted'>Marketing Manager</span>
                   </div>
                 </a>
 
@@ -201,17 +178,12 @@ const Search: FC = () => {
                   className='d-flex text-dark text-hover-primary align-items-center mb-5'
                 >
                   <div className='symbol symbol-40px me-4'>
-                    <img
-                      src={toAbsoluteUrl('/media/avatars/150-3.jpg')}
-                      alt=''
-                    />
+                    <img src={toAbsoluteUrl('/media/avatars/150-3.jpg')} alt='' />
                   </div>
 
                   <div className='d-flex flex-column justify-content-start fw-bold'>
                     <span className='fs-6 fw-bold'>Olivia Bold</span>
-                    <span className='fs-7 fw-bold text-muted'>
-                      Software Engineer
-                    </span>
+                    <span className='fs-7 fw-bold text-muted'>Software Engineer</span>
                   </div>
                 </a>
 
@@ -220,17 +192,12 @@ const Search: FC = () => {
                   className='d-flex text-dark text-hover-primary align-items-center mb-5'
                 >
                   <div className='symbol symbol-40px me-4'>
-                    <img
-                      src={toAbsoluteUrl('/media/avatars/150-8.jpg')}
-                      alt=''
-                    />
+                    <img src={toAbsoluteUrl('/media/avatars/150-8.jpg')} alt='' />
                   </div>
 
                   <div className='d-flex flex-column justify-content-start fw-bold'>
                     <span className='fs-6 fw-bold'>Ana Clark</span>
-                    <span className='fs-7 fw-bold text-muted'>
-                      UI/UX Designer
-                    </span>
+                    <span className='fs-7 fw-bold text-muted'>UI/UX Designer</span>
                   </div>
                 </a>
 
@@ -239,17 +206,12 @@ const Search: FC = () => {
                   className='d-flex text-dark text-hover-primary align-items-center mb-5'
                 >
                   <div className='symbol symbol-40px me-4'>
-                    <img
-                      src={toAbsoluteUrl('/media/avatars/150-11.jpg')}
-                      alt=''
-                    />
+                    <img src={toAbsoluteUrl('/media/avatars/150-11.jpg')} alt='' />
                   </div>
 
                   <div className='d-flex flex-column justify-content-start fw-bold'>
                     <span className='fs-6 fw-bold'>Nick Pitola</span>
-                    <span className='fs-7 fw-bold text-muted'>
-                      Art Director
-                    </span>
+                    <span className='fs-7 fw-bold text-muted'>Art Director</span>
                   </div>
                 </a>
 
@@ -258,17 +220,12 @@ const Search: FC = () => {
                   className='d-flex text-dark text-hover-primary align-items-center mb-5'
                 >
                   <div className='symbol symbol-40px me-4'>
-                    <img
-                      src={toAbsoluteUrl('/media/avatars/150-12.jpg')}
-                      alt=''
-                    />
+                    <img src={toAbsoluteUrl('/media/avatars/150-12.jpg')} alt='' />
                   </div>
 
                   <div className='d-flex flex-column justify-content-start fw-bold'>
                     <span className='fs-6 fw-bold'>Edward Kulnic</span>
-                    <span className='fs-7 fw-bold text-muted'>
-                      System Administrator
-                    </span>
+                    <span className='fs-7 fw-bold text-muted'>System Administrator</span>
                   </div>
                 </a>
 
@@ -287,9 +244,7 @@ const Search: FC = () => {
                     <span className='symbol-label bg-light'>
                       <img
                         className='w-20px h-20px'
-                        src={toAbsoluteUrl(
-                          '/media/svg/brand-logos/volicity-9.svg',
-                        )}
+                        src={toAbsoluteUrl('/media/svg/brand-logos/volicity-9.svg')}
                         alt=''
                       />
                     </span>
@@ -317,9 +272,7 @@ const Search: FC = () => {
 
                   <div className='d-flex flex-column justify-content-start fw-bold'>
                     <span className='fs-6 fw-bold'>Company Re-branding</span>
-                    <span className='fs-7 fw-bold text-muted'>
-                      Web Development
-                    </span>
+                    <span className='fs-7 fw-bold text-muted'>Web Development</span>
                   </div>
                 </a>
 
@@ -339,9 +292,7 @@ const Search: FC = () => {
 
                   <div className='d-flex flex-column justify-content-start fw-bold'>
                     <span className='fs-6 fw-bold'>Business Analytics App</span>
-                    <span className='fs-7 fw-bold text-muted'>
-                      Administration
-                    </span>
+                    <span className='fs-7 fw-bold text-muted'>Administration</span>
                   </div>
                 </a>
 
@@ -381,9 +332,7 @@ const Search: FC = () => {
 
                   <div className='d-flex flex-column justify-content-start fw-bold'>
                     <span className='fs-6 fw-bold'>Tower Group Website</span>
-                    <span className='fs-7 fw-bold text-muted'>
-                      Google Adwords
-                    </span>
+                    <span className='fs-7 fw-bold text-muted'>Google Adwords</span>
                   </div>
                 </a>
 
@@ -408,9 +357,7 @@ const Search: FC = () => {
                   </div>
 
                   <div className='d-flex flex-column'>
-                    <span className='fs-6 fw-bold'>
-                      Si-Fi Project by AU Themes
-                    </span>
+                    <span className='fs-6 fw-bold'>Si-Fi Project by AU Themes</span>
                     <span className='fs-7 fw-bold text-muted'>#45670</span>
                   </div>
                 </a>
@@ -429,9 +376,7 @@ const Search: FC = () => {
                   </div>
 
                   <div className='d-flex flex-column'>
-                    <span className='fs-6 fw-bold'>
-                      Shopix Mobile App Planning
-                    </span>
+                    <span className='fs-6 fw-bold'>Shopix Mobile App Planning</span>
                     <span className='fs-7 fw-bold text-muted'>#45690</span>
                   </div>
                 </a>
@@ -450,9 +395,7 @@ const Search: FC = () => {
                   </div>
 
                   <div className='d-flex flex-column'>
-                    <span className='fs-6 fw-bold'>
-                      Finance Monitoring SAAS Discussion
-                    </span>
+                    <span className='fs-6 fw-bold'>Finance Monitoring SAAS Discussion</span>
                     <span className='fs-7 fw-bold text-muted'>#21090</span>
                   </div>
                 </a>
@@ -471,20 +414,14 @@ const Search: FC = () => {
                   </div>
 
                   <div className='d-flex flex-column'>
-                    <span className='fs-6 fw-bold'>
-                      Dashboard Analitics Launch
-                    </span>
+                    <span className='fs-6 fw-bold'>Dashboard Analitics Launch</span>
                     <span className='fs-7 fw-bold text-muted'>#34560</span>
                   </div>
                 </a>
               </div>
             </div>
 
-            <div
-              ref={suggestionsElement}
-              className='mb-4'
-              data-kt-search-element='main'
-            >
+            <div ref={suggestionsElement} className='mb-4' data-kt-search-element='main'>
               <div className='d-flex flex-stack fw-bold mb-4'>
                 <span className='text-muted fs-6 me-2'>Recently Searched:</span>
               </div>
@@ -501,10 +438,7 @@ const Search: FC = () => {
                   </div>
 
                   <div className='d-flex flex-column'>
-                    <a
-                      href='/#'
-                      className='fs-6 text-gray-800 text-hover-primary fw-bold'
-                    >
+                    <a href='/#' className='fs-6 text-gray-800 text-hover-primary fw-bold'>
                       BoomApp by Keenthemes
                     </a>
                     <span className='fs-7 text-muted fw-bold'>#45789</span>
@@ -522,10 +456,7 @@ const Search: FC = () => {
                   </div>
 
                   <div className='d-flex flex-column'>
-                    <a
-                      href='/#'
-                      className='fs-6 text-gray-800 text-hover-primary fw-bold'
-                    >
+                    <a href='/#' className='fs-6 text-gray-800 text-hover-primary fw-bold'>
                       "Kept API Project Meeting
                     </a>
                     <span className='fs-7 text-muted fw-bold'>#84050</span>
@@ -543,10 +474,7 @@ const Search: FC = () => {
                   </div>
 
                   <div className='d-flex flex-column'>
-                    <a
-                      href='/#'
-                      className='fs-6 text-gray-800 text-hover-primary fw-bold'
-                    >
+                    <a href='/#' className='fs-6 text-gray-800 text-hover-primary fw-bold'>
                       "KPI Monitoring App Launch
                     </a>
                     <span className='fs-7 text-muted fw-bold'>#84250</span>
@@ -564,10 +492,7 @@ const Search: FC = () => {
                   </div>
 
                   <div className='d-flex flex-column'>
-                    <a
-                      href='/#'
-                      className='fs-6 text-gray-800 text-hover-primary fw-bold'
-                    >
+                    <a href='/#' className='fs-6 text-gray-800 text-hover-primary fw-bold'>
                       Project Reference FAQ
                     </a>
                     <span className='fs-7 text-muted fw-bold'>#67945</span>
@@ -585,10 +510,7 @@ const Search: FC = () => {
                   </div>
 
                   <div className='d-flex flex-column'>
-                    <a
-                      href='/#'
-                      className='fs-6 text-gray-800 text-hover-primary fw-bold'
-                    >
+                    <a href='/#' className='fs-6 text-gray-800 text-hover-primary fw-bold'>
                       "FitPro App Development
                     </a>
                     <span className='fs-7 text-muted fw-bold'>#84250</span>
@@ -606,10 +528,7 @@ const Search: FC = () => {
                   </div>
 
                   <div className='d-flex flex-column'>
-                    <a
-                      href='/#'
-                      className='fs-6 text-gray-800 text-hover-primary fw-bold'
-                    >
+                    <a href='/#' className='fs-6 text-gray-800 text-hover-primary fw-bold'>
                       Shopix Mobile App
                     </a>
                     <span className='fs-7 text-muted fw-bold'>#45690</span>
@@ -627,10 +546,7 @@ const Search: FC = () => {
                   </div>
 
                   <div className='d-flex flex-column'>
-                    <a
-                      href='/#'
-                      className='fs-6 text-gray-800 text-hover-primary fw-bold'
-                    >
+                    <a href='/#' className='fs-6 text-gray-800 text-hover-primary fw-bold'>
                       "Landing UI Design" Launch
                     </a>
                     <span className='fs-7 text-muted fw-bold'>#24005</span>
@@ -639,11 +555,7 @@ const Search: FC = () => {
               </div>
             </div>
 
-            <div
-              ref={emptyElement}
-              data-kt-search-element='empty'
-              className='text-center d-none'
-            >
+            <div ref={emptyElement} data-kt-search-element='empty' className='text-center d-none'>
               <div className='pt-10 pb-10'>
                 <KTSVG
                   path='/media/icons/duotune/files/fil024.svg'
@@ -653,9 +565,7 @@ const Search: FC = () => {
 
               <div className='pb-15 fw-bold'>
                 <h3 className='text-gray-600 fs-5 mb-2'>No result found</h3>
-                <div className='text-muted fs-7'>
-                  Please try again with a different query
-                </div>
+                <div className='text-muted fs-7'>Please try again with a different query</div>
               </div>
             </div>
           </div>
@@ -688,36 +598,21 @@ const Search: FC = () => {
                 </label>
 
                 <label>
-                  <input
-                    type='radio'
-                    className='btn-check'
-                    name='type'
-                    value='users'
-                  />
+                  <input type='radio' className='btn-check' name='type' value='users' />
                   <span className='btn btn-sm btn-color-muted btn-active btn-active-primary px-4'>
                     Users
                   </span>
                 </label>
 
                 <label>
-                  <input
-                    type='radio'
-                    className='btn-check'
-                    name='type'
-                    value='orders'
-                  />
+                  <input type='radio' className='btn-check' name='type' value='orders' />
                   <span className='btn btn-sm btn-color-muted btn-active btn-active-primary px-4'>
                     Orders
                   </span>
                 </label>
 
                 <label>
-                  <input
-                    type='radio'
-                    className='btn-check'
-                    name='type'
-                    value='projects'
-                  />
+                  <input type='radio' className='btn-check' name='type' value='projects' />
                   <span className='btn btn-sm btn-color-muted btn-active btn-active-primary px-4'>
                     Projects
                   </span>
@@ -759,12 +654,7 @@ const Search: FC = () => {
                 </label>
 
                 <label>
-                  <input
-                    type='radio'
-                    className='btn-check'
-                    name='attachment'
-                    value='any'
-                  />
+                  <input type='radio' className='btn-check' name='attachment' value='any' />
                   <span className='btn btn-sm btn-color-muted btn-active btn-active-primary px-4'>
                     Any
                   </span>
@@ -834,9 +724,7 @@ const Search: FC = () => {
             </div>
           </form>
 
-          <form
-            className={`pt-1 ${menuState === 'preferences' ? '' : 'd-none'}`}
-          >
+          <form className={`pt-1 ${menuState === 'preferences' ? '' : 'd-none'}`}>
             <h3 className='fw-bold text-dark mb-7'>Search Preferences</h3>
 
             <div className='pb-4 border-bottom'>
@@ -845,12 +733,7 @@ const Search: FC = () => {
                   Projects
                 </span>
 
-                <input
-                  className='form-check-input'
-                  type='checkbox'
-                  value='1'
-                  defaultChecked
-                />
+                <input className='form-check-input' type='checkbox' value='1' defaultChecked />
               </label>
             </div>
 
@@ -859,12 +742,7 @@ const Search: FC = () => {
                 <span className='form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2'>
                   Targets
                 </span>
-                <input
-                  className='form-check-input'
-                  type='checkbox'
-                  value='1'
-                  defaultChecked
-                />
+                <input className='form-check-input' type='checkbox' value='1' defaultChecked />
               </label>
             </div>
 
@@ -882,20 +760,13 @@ const Search: FC = () => {
                 <span className='form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2'>
                   Referrals
                 </span>
-                <input
-                  className='form-check-input'
-                  type='checkbox'
-                  value='1'
-                  defaultChecked
-                />
+                <input className='form-check-input' type='checkbox' value='1' defaultChecked />
               </label>
             </div>
 
             <div className='py-4 border-bottom'>
               <label className='form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack'>
-                <span className='form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2'>
-                  Users
-                </span>
+                <span className='form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2'>Users</span>
                 <input className='form-check-input' type='checkbox' />
               </label>
             </div>
@@ -910,9 +781,7 @@ const Search: FC = () => {
               >
                 Cancel
               </button>
-              <button className='btn btn-sm fw-bolder btn-primary'>
-                Save Changes
-              </button>
+              <button className='btn btn-sm fw-bolder btn-primary'>Save Changes</button>
             </div>
           </form>
         </div>

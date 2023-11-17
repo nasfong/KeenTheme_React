@@ -46,14 +46,8 @@ const MenuModal: React.FC<Props> = ({ show, handleClose, children }) => {
           </div>
 
           {/* begin::Close */}
-          <div
-            className='btn btn-icon btn-sm btn-light-primary ms-2'
-            onClick={handleClose}
-          >
-            <KTSVG
-              path='/media/icons/duotune/arrows/arr061.svg'
-              className='svg-icon-2'
-            />
+          <div className='btn btn-icon btn-sm btn-light-primary ms-2' onClick={handleClose}>
+            <KTSVG path='/media/icons/duotune/arrows/arr061.svg' className='svg-icon-2' />
           </div>
           {/* end::Close */}
         </div>
@@ -76,9 +70,7 @@ const MenuModal: React.FC<Props> = ({ show, handleClose, children }) => {
                     className='card card-custom bg-light-success hoverable min-h-125px shadow-none mb-5'
                   >
                     <div className='card-body d-flex flex-column flex-center'>
-                      <h3 className='fs-3 mb-2 text-dark fw-bolder'>
-                        Security
-                      </h3>
+                      <h3 className='fs-3 mb-2 text-dark fw-bolder'>Security</h3>
                       <p className='mb-0 text-gray-600'>$2.99/month</p>
                     </div>
                   </a>
@@ -100,9 +92,7 @@ const MenuModal: React.FC<Props> = ({ show, handleClose, children }) => {
                     className='card card-custom bg-light-warning hoverable min-h-125px shadow-none mb-5'
                   >
                     <div className='card-body d-flex flex-column flex-center text-center'>
-                      <h3 className='fs-3 mb-2 text-dark text-hover-primary fw-bolder'>
-                        Try Now
-                      </h3>
+                      <h3 className='fs-3 mb-2 text-dark text-hover-primary fw-bolder'>Try Now</h3>
                       <p className='mb-0 text-gray-600'>Pro Version</p>
                     </div>
                   </a>
@@ -118,9 +108,7 @@ const MenuModal: React.FC<Props> = ({ show, handleClose, children }) => {
                     className='card card-custom bg-light-primary hoverable min-h-125px shadow-none mb-5'
                   >
                     <div className='card-body d-flex flex-column flex-center text-center'>
-                      <h3 className='fs-3 mb-2 text-dark fw-bolder'>
-                        Payment Methods
-                      </h3>
+                      <h3 className='fs-3 mb-2 text-dark fw-bolder'>Payment Methods</h3>
                       <p className='mb-0 text-gray-600'>
                         Credit Cards/Debit Cards, Paypal,
                         <br /> Transferwise & Others
@@ -133,9 +121,7 @@ const MenuModal: React.FC<Props> = ({ show, handleClose, children }) => {
                     <div className='col-sm-6'>
                       <a className='card card-custom bg-light-warning hoverable shadow-none min-h-125px mb-5'>
                         <div className='card-body d-flex flex-column flex-center text-center'>
-                          <h3 className='fs-3 mb-2 text-dark fw-bolder'>
-                            Support
-                          </h3>
+                          <h3 className='fs-3 mb-2 text-dark fw-bolder'>Support</h3>
                           <p className='mb-0 text-gray-600'>6 Month Free</p>
                         </div>
                       </a>
@@ -146,12 +132,8 @@ const MenuModal: React.FC<Props> = ({ show, handleClose, children }) => {
                         className='card card-custom bg-light-success hoverable shadow-none min-h-125px mb-5'
                       >
                         <div className='card-body d-flex flex-column flex-center text-center'>
-                          <h3 className='fs-3 mb-2 text-dark fw-bolder'>
-                            Installation
-                          </h3>
-                          <p className='mb-0 text-gray-600'>
-                            $0.99 Per Machine
-                          </p>
+                          <h3 className='fs-3 mb-2 text-dark fw-bolder'>Installation</h3>
+                          <p className='mb-0 text-gray-600'>$0.99 Per Machine</p>
                         </div>
                       </a>
                     </div>
@@ -165,12 +147,8 @@ const MenuModal: React.FC<Props> = ({ show, handleClose, children }) => {
                   >
                     <div className='card-body d-flex flex-column p-0'>
                       <div className='d-flex flex-column flex-center text-center px-5 pt-10'>
-                        <h3 className='fs-3 mb-2 text-dark fw-bolder'>
-                          Quick Start
-                        </h3>
-                        <p className='mb-0 text-gray-600'>
-                          Single Click Import
-                        </p>
+                        <h3 className='fs-3 mb-2 text-dark fw-bolder'>Quick Start</h3>
+                        <p className='mb-0 text-gray-600'>Single Click Import</p>
                       </div>
                       <div
                         className='flex-grow-1 bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom card-rounded-bottom'

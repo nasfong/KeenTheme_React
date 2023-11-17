@@ -46,10 +46,7 @@ const StatsWidget7: React.FC<Props> = ({ className, innerPadding = '' }) => {
               }`}
               htmlFor='kt_form_options_1'
             >
-              <KTSVG
-                path='/media/icons/duotune/general/gen002.svg'
-                className='svg-icon-2x me-1'
-              />
+              <KTSVG path='/media/icons/duotune/general/gen002.svg' className='svg-icon-2x me-1' />
               <span className='text-gray-800 fw-bold'>Movie Creator</span>
             </label>
 
@@ -112,10 +109,7 @@ const StatsWidget7: React.FC<Props> = ({ className, innerPadding = '' }) => {
               }`}
               htmlFor='kt_form_options_4'
             >
-              <KTSVG
-                path='/media/icons/duotune/general/gen032.svg'
-                className='svg-icon-2x me-1'
-              />
+              <KTSVG path='/media/icons/duotune/general/gen032.svg' className='svg-icon-2x me-1' />
               <span className='text-gray-800 fw-bold'>Data Analysis</span>
             </label>
           </div>
@@ -150,9 +144,7 @@ const StatsWidget7: React.FC<Props> = ({ className, innerPadding = '' }) => {
 
         {/* begin::Section */}
         <div className='mb-10'>
-          <h3 className='fw-bold fs-3 text-dark  mb-5'>
-            How Big Is Your Fleet?
-          </h3>
+          <h3 className='fw-bold fs-3 text-dark  mb-5'>How Big Is Your Fleet?</h3>
 
           {/* begin::Row */}
           <div className='row' data-kt-control='toggle-buttons'>

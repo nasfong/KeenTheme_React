@@ -24,9 +24,7 @@ const EngageWidget2: React.FC<Props> = ({
               Nike Sneakers
             </a>
           </h3>
-          <div className={clsx('fs-3', `text-${color}`)}>
-            Get Amazing Nike Sneakers
-          </div>
+          <div className={clsx('fs-3', `text-${color}`)}>Get Amazing Nike Sneakers</div>
         </div>
         {imagePath && (
           <div

@@ -28,10 +28,7 @@ const chagePasswordSchema = Yup.object().shape({
     .required('Password confirmation is required')
     .when('password', {
       is: (val: string) => (val && val.length > 0 ? true : false),
-      then: Yup.string().oneOf(
-        [Yup.ref('password')],
-        "Password and Confirm Password didn't match",
-      ),
+      then: Yup.string().oneOf([Yup.ref('password')], "Password and Confirm Password didn't match"),
     }),
 })
 
@@ -58,10 +55,7 @@ export function Login() {
         login(values.email, values.password)
           .then(({ data }) => {
             if (data.status === 'success') {
-              if (
-                typeof data.data.first_login !== 'undefined' &&
-                data.data.first_login !== ''
-              ) {
+              if (typeof data.data.first_login !== 'undefined' && data.data.first_login !== '') {
                 setFirstLogin(data.data.first_login)
               } else {
                 dispatch1(auth.actions.login(data.data.token))
@@ -100,11 +94,7 @@ export function Login() {
       setLoading2(true)
       setErrors([])
       setTimeout(() => {
-        requestChangePassword(
-          values.password,
-          values.changepassword,
-          firstLogin,
-        )
+        requestChangePassword(values.password, values.changepassword, firstLogin)
           .then(({ data }) => {
             if (data.status === 'success') {
               setFirstLogin('')
@@ -143,9 +133,7 @@ export function Login() {
 
           {formik2.status ? (
             <div className='mb-lg-5 alert alert-danger'>
-              <div className='alert-text font-weight-bold'>
-                {formik2.status}
-              </div>
+              <div className='alert-text font-weight-bold'>{formik2.status}</div>
             </div>
           ) : (
             ''
@@ -154,9 +142,7 @@ export function Login() {
           {/* begin::Form group Password */}
           <div className='mb-10 fv-row' data-kt-password-meter='true'>
             <div className='mb-1'>
-              <label className='form-label fw-bolder text-dark fs-6'>
-                Password
-              </label>
+              <label className='form-label fw-bolder text-dark fs-6'>Password</label>
               <div className='position-relative mb-3'>
                 <input
                   type='password'
@@ -166,12 +152,10 @@ export function Login() {
                   className={clsx(
                     'form-control form-control-lg form-control-solid',
                     {
-                      'is-invalid':
-                        formik2.touched.password && formik2.errors.password,
+                      'is-invalid': formik2.touched.password && formik2.errors.password,
                     },
                     {
-                      'is-valid':
-                        formik2.touched.password && !formik2.errors.password,
+                      'is-valid': formik2.touched.password && !formik2.errors.password,
                     },
                     {
                       'is-invalid': !!errors2.password,
@@ -198,9 +182,7 @@ export function Login() {
 
           {/* begin::Form group Confirm password */}
           <div className='fv-row mb-5'>
-            <label className='form-label fw-bolder text-dark fs-6'>
-              Confirm Password
-            </label>
+            <label className='form-label fw-bolder text-dark fs-6'>Confirm Password</label>
             <input
               type='password'
               placeholder='Password confirmation'
@@ -209,25 +191,20 @@ export function Login() {
               className={clsx(
                 'form-control form-control-lg form-control-solid',
                 {
-                  'is-invalid':
-                    formik2.touched.changepassword &&
-                    formik2.errors.changepassword,
+                  'is-invalid': formik2.touched.changepassword && formik2.errors.changepassword,
                 },
                 {
-                  'is-valid':
-                    formik2.touched.changepassword &&
-                    !formik2.errors.changepassword,
+                  'is-valid': formik2.touched.changepassword && !formik2.errors.changepassword,
                 },
               )}
             />
-            {formik2.touched.changepassword &&
-              formik2.errors.changepassword && (
-                <div className='fv-plugins-message-container'>
-                  <div className='fv-help-block'>
-                    <span role='alert'>{formik2.errors.changepassword}</span>
-                  </div>
+            {formik2.touched.changepassword && formik2.errors.changepassword && (
+              <div className='fv-plugins-message-container'>
+                <div className='fv-help-block'>
+                  <span role='alert'>{formik2.errors.changepassword}</span>
                 </div>
-              )}
+              </div>
+            )}
           </div>
           {/* end::Form group */}
 
@@ -240,10 +217,7 @@ export function Login() {
             >
               {!loading2 && <span className='indicator-label'>Continue</span>}
               {loading2 && (
-                <span
-                  className='indicator-progress'
-                  style={{ display: 'block' }}
-                >
+                <span className='indicator-progress' style={{ display: 'block' }}>
                   Please wait...
                   <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
                 </span>
@@ -308,9 +282,7 @@ export function Login() {
       <div className='fv-row mb-10'>
         <div className='d-flex justify-content-between mt-n5'>
           <div className='d-flex flex-stack mb-2'>
-            <label className='form-label fw-bolder text-dark fs-6 mb-0'>
-              Password
-            </label>
+            <label className='form-label fw-bolder text-dark fs-6 mb-0'>Password</label>
             {/* <Link
               to='/auth/forgot-password'
               className='link-primary fs-6 fw-bolder'

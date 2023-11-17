@@ -189,11 +189,7 @@ export function SidebarGeneral() {
   return (
     <>
       {/* begin::Sidebar Nav */}
-      <ul
-        className='sidebar-nav nav nav-tabs pt-15 pb-5 px-5'
-        id='kt_sidebar_tabs'
-        role='tablist'
-      >
+      <ul className='sidebar-nav nav nav-tabs pt-15 pb-5 px-5' id='kt_sidebar_tabs' role='tablist'>
         <li className='nav-item'>
           <a
             onClick={() => {
@@ -327,9 +323,7 @@ export function SidebarGeneral() {
               <div className='card card-custom bg-transparent'>
                 {/* begin::Header */}
                 <div className='card-header align-items-center border-0'>
-                  <h3 className='card-title fw-bolder text-white fs-3'>
-                    Aven Sales
-                  </h3>
+                  <h3 className='card-title fw-bolder text-white fs-3'>Aven Sales</h3>
                   <div className='card-toolbar'>
                     <button
                       type='button'
@@ -367,9 +361,7 @@ export function SidebarGeneral() {
               <div className='card card-custom bg-transparent'>
                 {/* begin::Header */}
                 <div className='card-header align-items-center border-0'>
-                  <h3 className='card-title fw-bolder text-white fs-3'>
-                    Tasks Overview
-                  </h3>
+                  <h3 className='card-title fw-bolder text-white fs-3'>Tasks Overview</h3>
                   <div className='card-toolbar'>
                     <button
                       type='button'
@@ -405,10 +397,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Sunspots
                       </a>
                       <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -433,10 +422,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Ocean Drive
                       </a>
                       <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -461,10 +447,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Soar, Eco
                       </a>
                       <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -489,10 +472,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Cup & Green
                       </a>
                       <span className='text-white opacity-25 fs-7 fw-bold my-1'>
@@ -517,10 +497,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Bose QC 35 II
                       </a>
                       <span className='text-white opacity-25 fs-7 fw-bold my-1'>
@@ -545,9 +522,7 @@ export function SidebarGeneral() {
               <div className='card card-custom bg-transparent'>
                 {/* begin::Header */}
                 <div className='card-header align-items-center border-0'>
-                  <h3 className='card-title fw-bolder text-white fs-3'>
-                    Kanba Sales
-                  </h3>
+                  <h3 className='card-title fw-bolder text-white fs-3'>Kanba Sales</h3>
                   <div className='card-toolbar'>
                     <button
                       type='button'
@@ -585,9 +560,7 @@ export function SidebarGeneral() {
               <div className='card card-custom bg-transparent'>
                 {/* begin::Header */}
                 <div className='card-header align-items-center border-0'>
-                  <h3 className='card-title fw-bolder text-white fs-3'>
-                    Kanba Products
-                  </h3>
+                  <h3 className='card-title fw-bolder text-white fs-3'>Kanba Products</h3>
                   <div className='card-toolbar'>
                     <button
                       type='button'
@@ -623,10 +596,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         BP Industries
                       </a>
                       <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -651,10 +621,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Automatica
                       </a>
                       <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -679,10 +646,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Python Inc.
                       </a>
                       <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -707,10 +671,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Cup & Green
                       </a>
                       <span className='text-white opacity-25 fs-7 fw-bold my-1'>
@@ -735,10 +696,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Active Customers
                       </a>
                       <span className='text-white opacity-25 fs-7 fw-bold my-1'>
@@ -763,9 +721,7 @@ export function SidebarGeneral() {
               <div className='card card-custom bg-transparent'>
                 {/* begin::Header */}
                 <div className='card-header align-items-center border-0'>
-                  <h3 className='card-title fw-bolder text-white fs-3'>
-                    Fox Sales
-                  </h3>
+                  <h3 className='card-title fw-bolder text-white fs-3'>Fox Sales</h3>
                   <div className='card-toolbar'>
                     <button
                       type='button'
@@ -803,9 +759,7 @@ export function SidebarGeneral() {
               <div className='card card-custom bg-transparent'>
                 {/* begin::Header */}
                 <div className='card-header align-items-center border-0'>
-                  <h3 className='card-title fw-bolder text-white fs-3'>
-                    Fox Bestsellers
-                  </h3>
+                  <h3 className='card-title fw-bolder text-white fs-3'>Fox Bestsellers</h3>
                   <div className='card-toolbar'>
                     <button
                       type='button'
@@ -841,10 +795,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Blue Donut
                       </a>
                       <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -869,10 +820,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Lovely Hearts
                       </a>
                       <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -897,10 +845,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Hands & Yellow
                       </a>
                       <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -925,10 +870,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Cup & Green
                       </a>
                       <span className='text-white opacity-25 fs-7 fw-bold my-1'>
@@ -953,10 +895,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Bose QC 35 II
                       </a>
                       <span className='text-white opacity-25 fs-7 fw-bold my-1'>
@@ -981,9 +920,7 @@ export function SidebarGeneral() {
               <div className='card card-custom bg-transparent'>
                 {/* begin::Header */}
                 <div className='card-header align-items-center border-0'>
-                  <h3 className='card-title fw-bolder text-white fs-3'>
-                    Tower Sales
-                  </h3>
+                  <h3 className='card-title fw-bolder text-white fs-3'>Tower Sales</h3>
                   <div className='card-toolbar'>
                     <button
                       type='button'
@@ -1021,9 +958,7 @@ export function SidebarGeneral() {
               <div className='card card-custom bg-transparent'>
                 {/* begin::Header */}
                 <div className='card-header align-items-center border-0'>
-                  <h3 className='card-title fw-bolder text-white fs-3'>
-                    Tower Latest Products
-                  </h3>
+                  <h3 className='card-title fw-bolder text-white fs-3'>Tower Latest Products</h3>
                   <div className='card-toolbar'>
                     <button
                       type='button'
@@ -1059,10 +994,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Automatica
                       </a>
                       <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -1087,10 +1019,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         BP Industries
                       </a>
                       <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -1115,10 +1044,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Cup & Green
                       </a>
                       <span className='text-white opacity-25 fs-7 fw-bold my-1'>
@@ -1143,10 +1069,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Python Inc.
                       </a>
                       <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -1171,10 +1094,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Active Customers
                       </a>
                       <span className='text-white opacity-25 fs-7 fw-bold my-1'>
@@ -1199,9 +1119,7 @@ export function SidebarGeneral() {
               <div className='card card-custom bg-transparent'>
                 {/* begin::Header */}
                 <div className='card-header align-items-center border-0'>
-                  <h3 className='card-title fw-bolder text-white fs-3'>
-                    Treva Sales
-                  </h3>
+                  <h3 className='card-title fw-bolder text-white fs-3'>Treva Sales</h3>
                   <div className='card-toolbar'>
                     <button
                       type='button'
@@ -1239,9 +1157,7 @@ export function SidebarGeneral() {
               <div className='card card-custom bg-transparent'>
                 {/* begin::Header */}
                 <div className='card-header align-items-center border-0'>
-                  <h3 className='card-title fw-bolder text-white fs-3'>
-                    Treva's Products
-                  </h3>
+                  <h3 className='card-title fw-bolder text-white fs-3'>Treva's Products</h3>
                   <div className='card-toolbar'>
                     <button
                       type='button'
@@ -1277,10 +1193,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Top Authors
                       </a>
                       <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -1305,10 +1218,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Popular Authors
                       </a>
                       <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -1333,10 +1243,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         New Users
                       </a>
                       <span className='text-white opacity-25 fw-bold fs-7 my-1'>
@@ -1361,15 +1268,10 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Active Customers
                       </a>
-                      <span className='text-white opacity-25 fs-7 fw-bold my-1'>
-                        Awesome Users
-                      </span>
+                      <span className='text-white opacity-25 fs-7 fw-bold my-1'>Awesome Users</span>
                     </div>
                     {/* end::Title */}
                   </div>
@@ -1389,10 +1291,7 @@ export function SidebarGeneral() {
 
                     {/* begin::Title */}
                     <div className='d-flex flex-column flex-grow-1 my-lg-0 my-2 pe-3'>
-                      <a
-                        href='#'
-                        className='text-white fw-bolder text-hover-primary fs-6'
-                      >
+                      <a href='#' className='text-white fw-bolder text-hover-primary fs-6'>
                         Bose QC 35 II
                       </a>
                       <span className='text-white opacity-25 fs-7 fw-bold my-1'>

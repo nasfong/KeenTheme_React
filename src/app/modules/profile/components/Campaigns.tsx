@@ -26,11 +26,7 @@ export function Campaigns() {
               <option value='4'>1 Year</option>
             </select>
           </div>
-          <button
-            className='btn btn-primary btn-sm'
-            data-bs-toggle='tooltip'
-            title='Coming soon'
-          >
+          <button className='btn btn-primary btn-sm' data-bs-toggle='tooltip' title='Coming soon'>
             Add Campaign
           </button>
         </div>
@@ -136,9 +132,7 @@ export function Campaigns() {
       </div>
 
       <div className='d-flex flex-stack flex-wrap pt-10'>
-        <div className='fs-6 fw-bold text-gray-700'>
-          Showing 1 to 10 of 50 entries
-        </div>
+        <div className='fs-6 fw-bold text-gray-700'>Showing 1 to 10 of 50 entries</div>
 
         <ul className='pagination'>
           <li className='page-item previous'>

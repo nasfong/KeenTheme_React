@@ -8,11 +8,7 @@ type Props = {
   innerPadding?: string
 }
 
-const StatsWidget9: React.FC<Props> = ({
-  className,
-  innerPadding = '',
-  children,
-}) => {
+const StatsWidget9: React.FC<Props> = ({ className, innerPadding = '', children }) => {
   const carouselRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
     const element = carouselRef.current
@@ -73,9 +69,7 @@ const StatsWidget9: React.FC<Props> = ({
                   UI/UX Design Updates
                 </h3>
 
-                <p className='text-primary fs-1 fw-bolder pt-3 mb-0'>
-                  11:15AM - 12:30PM
-                </p>
+                <p className='text-primary fs-1 fw-bolder pt-3 mb-0'>11:15AM - 12:30PM</p>
               </div>
             </div>
 
@@ -85,9 +79,7 @@ const StatsWidget9: React.FC<Props> = ({
                   UI/UX Design Updates
                 </h3>
 
-                <p className='text-primary fs-1 fw-bolder pt-3 mb-0'>
-                  16:15AM - 11:20PM
-                </p>
+                <p className='text-primary fs-1 fw-bolder pt-3 mb-0'>16:15AM - 11:20PM</p>
               </div>
             </div>
 
@@ -97,9 +89,7 @@ const StatsWidget9: React.FC<Props> = ({
                   UI/UX Design Updates
                 </h3>
 
-                <p className='text-primary fs-1 fw-bolder pt-3 mb-0'>
-                  13:15AM - 14:30PM
-                </p>
+                <p className='text-primary fs-1 fw-bolder pt-3 mb-0'>13:15AM - 14:30PM</p>
               </div>
             </div>
           </div>

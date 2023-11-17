@@ -2,11 +2,7 @@ import { GetAllMenuParentsQuery, MenuParentInput } from '__generated__/graphql'
 import { KTSVG } from '_metronic/helpers'
 import { InputV } from 'components/InputV'
 import { useFormik } from 'formik'
-import {
-  useCreateMenuParent,
-  useDeleteMenuParent,
-  useUpdateMenuParent,
-} from 'hook/useMenu'
+import { useCreateMenuParent, useDeleteMenuParent, useUpdateMenuParent } from 'hook/useMenu'
 import { useCallback, useState } from 'react'
 import { Col, Form, Modal, Row } from 'react-bootstrap'
 import Swal from 'sweetalert2'
@@ -20,12 +16,7 @@ type Props = {
   updateQuery: UpdateQuerys<GetAllMenuParentsQuery>
 }
 
-const MenuParentModal: React.FC<Props> = ({
-  modal,
-  handleCloseModal,
-  data,
-  updateQuery,
-}) => {
+const MenuParentModal: React.FC<Props> = ({ modal, handleCloseModal, data, updateQuery }) => {
   const [addMenuParent] = useCreateMenuParent()
   const [updateMenuParent] = useUpdateMenuParent()
   const [deleteMenuParent] = useDeleteMenuParent()
@@ -60,9 +51,7 @@ const MenuParentModal: React.FC<Props> = ({
           .then((res) => {
             updateQuery(({ getAllMenuParents }) => ({
               getAllMenuParents: getAllMenuParents.map((data) =>
-                data.id === res.data?.updateMenuParent?.id
-                  ? res.data?.updateMenuParent
-                  : data,
+                data.id === res.data?.updateMenuParent?.id ? res.data?.updateMenuParent : data,
               ),
             }))
             // handleClose()
@@ -109,9 +98,7 @@ const MenuParentModal: React.FC<Props> = ({
             if (res.data?.deleteMenuParent) {
               // delete filter by [id]
               updateQuery(({ getAllMenuParents }) => ({
-                getAllMenuParents: getAllMenuParents.filter(
-                  (data) => data.id !== id,
-                ),
+                getAllMenuParents: getAllMenuParents.filter((data) => data.id !== id),
               }))
               Swal.fire('Deleted!', 'Your file has been deleted.', 'success')
             }
@@ -139,24 +126,14 @@ const MenuParentModal: React.FC<Props> = ({
       >
         <Modal.Header>
           <Modal.Title>Modal heading</Modal.Title>
-          <div
-            className='btn btn-icon btn-sm btn-light-primary'
-            onClick={handleClose}
-          >
-            <KTSVG
-              className='svg-icon-2'
-              path='/media/icons/duotune/arrows/arr061.svg'
-            />
+          <div className='btn btn-icon btn-sm btn-light-primary' onClick={handleClose}>
+            <KTSVG className='svg-icon-2' path='/media/icons/duotune/arrows/arr061.svg' />
           </div>
         </Modal.Header>
         <Form onSubmit={formik.handleSubmit}>
           <Modal.Body>
             <Form.Group as={Row} className='mb-5'>
-              <Form.Label
-                column
-                sm='3'
-                className='form-label text-nowrap required'
-              >
+              <Form.Label column sm='3' className='form-label text-nowrap required'>
                 Name
               </Form.Label>
               <Col sm>
@@ -186,10 +163,7 @@ const MenuParentModal: React.FC<Props> = ({
                         type='button'
                         title='Edit'
                       >
-                        <KTSVG
-                          path='/media/icons/duotune/art/art005.svg'
-                          className='svg-icon-3'
-                        />
+                        <KTSVG path='/media/icons/duotune/art/art005.svg' className='svg-icon-3' />
                       </button>
                       <button
                         className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
@@ -214,10 +188,7 @@ const MenuParentModal: React.FC<Props> = ({
             </button>
             <button className='btn btn-primary' type='submit'>
               {isSubmitting ? (
-                <span
-                  className='indicator-progress'
-                  style={{ display: 'block' }}
-                >
+                <span className='indicator-progress' style={{ display: 'block' }}>
                   Please wait...{' '}
                   <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
                 </span>

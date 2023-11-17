@@ -1,10 +1,7 @@
 import { Checkbox, FormControlLabel, CheckboxProps } from '@mui/material'
 import { Controller, FieldValues, Path, UseFormReturn } from 'react-hook-form'
 
-type Props<
-  T extends FieldValues,
-  P extends { [id: string]: any },
-> = CheckboxProps & {
+type Props<T extends FieldValues, P extends { [id: string]: any }> = CheckboxProps & {
   methods: UseFormReturn<T, any, undefined>
   name: Path<T>
   items?: P[]
@@ -12,10 +9,13 @@ type Props<
   label: keyof P
 }
 
-export function CheckBoxes<
-  T extends FieldValues,
-  P extends { [id: string]: any },
->({ methods, items, keyValue = 'id', label, ...props }: Props<T, P>) {
+export function CheckBoxes<T extends FieldValues, P extends { [id: string]: any }>({
+  methods,
+  items,
+  keyValue = 'id',
+  label,
+  ...props
+}: Props<T, P>) {
   const { control } = methods
   return (
     <Controller

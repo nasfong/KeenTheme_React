@@ -14,10 +14,7 @@ const ProfileHeader: React.FC = () => {
         <div className='d-flex flex-wrap flex-sm-nowrap mb-3'>
           <div className='me-7 mb-4'>
             <div className='symbol symbol-100px symbol-lg-160px symbol-fixed position-relative'>
-              <img
-                src={toAbsoluteUrl('/media/avatars/150-2.jpg')}
-                alt='Metornic'
-              />
+              <img src={toAbsoluteUrl('/media/avatars/150-2.jpg')} alt='Metornic' />
               <div className='position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px'></div>
             </div>
           </div>
@@ -26,10 +23,7 @@ const ProfileHeader: React.FC = () => {
             <div className='d-flex justify-content-between align-items-start flex-wrap mb-2'>
               <div className='d-flex flex-column'>
                 <div className='d-flex align-items-center mb-2'>
-                  <a
-                    href='#'
-                    className='text-gray-800 text-hover-primary fs-2 fw-bolder me-1'
-                  >
+                  <a href='#' className='text-gray-800 text-hover-primary fs-2 fw-bolder me-1'>
                     Max Smith
                   </a>
                   <a href='#'>
@@ -75,11 +69,7 @@ const ProfileHeader: React.FC = () => {
               </div>
 
               <div className='d-flex my-4'>
-                <a
-                  href='#'
-                  className='btn btn-sm btn-light me-2'
-                  id='kt_user_follow_button'
-                >
+                <a href='#' className='btn btn-sm btn-light me-2' id='kt_user_follow_button'>
                   <KTSVG
                     path='/media/icons/duotune/arrows/arr012.svg'
                     className='svg-icon-3 d-none'
@@ -149,18 +139,14 @@ const ProfileHeader: React.FC = () => {
                       <div className='fs-2 fw-bolder'>60%</div>
                     </div>
 
-                    <div className='fw-bold fs-6 text-gray-400'>
-                      Success Rate
-                    </div>
+                    <div className='fw-bold fs-6 text-gray-400'>Success Rate</div>
                   </div>
                 </div>
               </div>
 
               <div className='d-flex align-items-center w-200px w-sm-300px flex-column mt-3'>
                 <div className='d-flex justify-content-between w-100 mt-auto mb-2'>
-                  <span className='fw-bold fs-6 text-gray-400'>
-                    Profile Compleation
-                  </span>
+                  <span className='fw-bold fs-6 text-gray-400'>Profile Compleation</span>
                   <span className='fw-bolder fs-6'>50%</span>
                 </div>
                 <div className='h-5px mx-3 w-100 bg-light mb-3'>
@@ -181,8 +167,7 @@ const ProfileHeader: React.FC = () => {
               <Link
                 className={
                   `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/crafted/pages/profile/overview' &&
-                    'active')
+                  (location.pathname === '/crafted/pages/profile/overview' && 'active')
                 }
                 to='/crafted/pages/profile/overview'
               >
@@ -193,8 +178,7 @@ const ProfileHeader: React.FC = () => {
               <Link
                 className={
                   `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/crafted/pages/profile/projects' &&
-                    'active')
+                  (location.pathname === '/crafted/pages/profile/projects' && 'active')
                 }
                 to='/crafted/pages/profile/projects'
               >
@@ -205,8 +189,7 @@ const ProfileHeader: React.FC = () => {
               <Link
                 className={
                   `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/crafted/pages/profile/campaigns' &&
-                    'active')
+                  (location.pathname === '/crafted/pages/profile/campaigns' && 'active')
                 }
                 to='/crafted/pages/profile/campaigns'
               >
@@ -217,8 +200,7 @@ const ProfileHeader: React.FC = () => {
               <Link
                 className={
                   `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/crafted/pages/profile/documents' &&
-                    'active')
+                  (location.pathname === '/crafted/pages/profile/documents' && 'active')
                 }
                 to='/crafted/pages/profile/documents'
               >
@@ -229,8 +211,7 @@ const ProfileHeader: React.FC = () => {
               <Link
                 className={
                   `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/crafted/pages/profile/connections' &&
-                    'active')
+                  (location.pathname === '/crafted/pages/profile/connections' && 'active')
                 }
                 to='/crafted/pages/profile/connections'
               >

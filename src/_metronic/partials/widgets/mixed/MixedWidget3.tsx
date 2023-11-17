@@ -12,11 +12,7 @@ type Props = {
   chartHeight: string
 }
 
-const MixedWidget3: React.FC<Props> = ({
-  className,
-  chartColor,
-  chartHeight,
-}) => {
+const MixedWidget3: React.FC<Props> = ({ className, chartColor, chartHeight }) => {
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -56,10 +52,7 @@ const MixedWidget3: React.FC<Props> = ({
             data-kt-menu-placement='bottom-end'
             data-kt-menu-flip='top-end'
           >
-            <KTSVG
-              path='/media/icons/duotune/general/gen024.svg'
-              className='svg-icon-2'
-            />
+            <KTSVG path='/media/icons/duotune/general/gen024.svg' className='svg-icon-2' />
           </button>
           <Dropdown1 />
           {/* end::Menu  */}

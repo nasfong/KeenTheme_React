@@ -29,10 +29,8 @@ const MenuModal: React.FC<Props> = ({
   const [addRole] = useCreateMenu()
   const [updateRole] = useUpdateMenu()
 
-  const [
-    getAllMenuParents,
-    { data: menuParentDropdown, updateQuery: updateQueryMenuParent },
-  ] = useQueryMenuParent()
+  const [getAllMenuParents, { data: menuParentDropdown, updateQuery: updateQueryMenuParent }] =
+    useQueryMenuParent()
 
   const handleClose = () => {
     handleCloseModal()
@@ -44,10 +42,7 @@ const MenuModal: React.FC<Props> = ({
     return { isUnique: !exitingNames?.includes(name) }
   }
 
-  const checkNumberUniqueness = async (
-    name: number,
-    exitingNames?: number[],
-  ) => {
+  const checkNumberUniqueness = async (name: number, exitingNames?: number[]) => {
     return { isUnique: !exitingNames?.includes(name) }
   }
   // Formik
@@ -87,10 +82,7 @@ const MenuModal: React.FC<Props> = ({
           message: 'Order already in used',
           async test(value) {
             try {
-              const response = await checkNumberUniqueness(
-                value,
-                duplicate?.order,
-              )
+              const response = await checkNumberUniqueness(value, duplicate?.order)
               return response.isUnique
             } catch (error) {
               return false
@@ -114,9 +106,7 @@ const MenuModal: React.FC<Props> = ({
           .then((res) => {
             updateQuery(({ getAllMenus }) => ({
               getAllMenus: getAllMenus.map((data) =>
-                data.id === res.data?.updateMenu?.id
-                  ? res.data?.updateMenu
-                  : data,
+                data.id === res.data?.updateMenu?.id ? res.data?.updateMenu : data,
               ),
             }))
             handleClose()
@@ -129,9 +119,7 @@ const MenuModal: React.FC<Props> = ({
       addRole({ variables: { input: values } })
         .then((res) => {
           updateQuery(({ getAllMenus }) => ({
-            getAllMenus: res.data?.createMenu
-              ? [...getAllMenus, res.data.createMenu]
-              : getAllMenus,
+            getAllMenus: res.data?.createMenu ? [...getAllMenus, res.data.createMenu] : getAllMenus,
           }))
           handleClose()
         })
@@ -160,23 +148,15 @@ const MenuModal: React.FC<Props> = ({
       <Modal show={modal} onHide={handleClose} size='xl'>
         <Modal.Header>
           <Modal.Title>Modal heading</Modal.Title>
-          <div
-            className='btn btn-icon btn-sm btn-light-primary'
-            onClick={handleClose}
-          >
-            <KTSVG
-              className='svg-icon-2'
-              path='/media/icons/duotune/arrows/arr061.svg'
-            />
+          <div className='btn btn-icon btn-sm btn-light-primary' onClick={handleClose}>
+            <KTSVG className='svg-icon-2' path='/media/icons/duotune/arrows/arr061.svg' />
           </div>
         </Modal.Header>
         <Form onSubmit={formik.handleSubmit}>
           <Modal.Body>
             <Form.Group as={Row} className='mb-5'>
               <Col lg={6}>
-                <Form.Label className='form-label text-nowrap required'>
-                  Name
-                </Form.Label>
+                <Form.Label className='form-label text-nowrap required'>Name</Form.Label>
                 <InputV name='name' formik={formik} />
               </Col>
               <Col lg={6}>
@@ -224,9 +204,7 @@ const MenuModal: React.FC<Props> = ({
                 <InputV name='icon' formik={formik} disabled />
               </Col>
               <Col lg={6}>
-                <Form.Label className='form-label text-nowrap'>
-                  Color
-                </Form.Label>
+                <Form.Label className='form-label text-nowrap'>Color</Form.Label>
                 <InputV name='color' formik={formik} />
               </Col>
             </Form.Group>
@@ -243,9 +221,7 @@ const MenuModal: React.FC<Props> = ({
               <Select
                 name='status'
                 formik={formik}
-                onChange={(e) =>
-                  formik.setFieldValue('status', Number(e.target.value))
-                }
+                onChange={(e) => formik.setFieldValue('status', Number(e.target.value))}
               >
                 <option value={0}>Show</option>
                 <option value={1}>Hide</option>
@@ -258,10 +234,7 @@ const MenuModal: React.FC<Props> = ({
             </button>
             <button className='btn btn-primary' type='submit'>
               {isSubmitting ? (
-                <span
-                  className='indicator-progress'
-                  style={{ display: 'block' }}
-                >
+                <span className='indicator-progress' style={{ display: 'block' }}>
                   Please wait...{' '}
                   <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
                 </span>

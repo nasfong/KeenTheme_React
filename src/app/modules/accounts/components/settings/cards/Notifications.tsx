@@ -40,9 +40,7 @@ const Notifications: React.FC = () => {
               <table className='table table-row-dashed border-gray-300 align-middle gy-6'>
                 <tbody className='fs-6 fw-bold'>
                   <tr>
-                    <td className='min-w-250px fs-4 fw-bolder'>
-                      Notifications
-                    </td>
+                    <td className='min-w-250px fs-4 fw-bolder'>Notifications</td>
                     <td className='w-125px'>
                       <div className='form-check form-check-solid'>
                         <input
@@ -114,10 +112,7 @@ const Notifications: React.FC = () => {
                             })
                           }
                         />
-                        <label
-                          className='form-check-label ps-2'
-                          htmlFor='billing1'
-                        ></label>
+                        <label className='form-check-label ps-2' htmlFor='billing1'></label>
                       </div>
                     </td>
                     <td>
@@ -137,10 +132,7 @@ const Notifications: React.FC = () => {
                             })
                           }
                         />
-                        <label
-                          className='form-check-label ps-2'
-                          htmlFor='billing2'
-                        ></label>
+                        <label className='form-check-label ps-2' htmlFor='billing2'></label>
                       </div>
                     </td>
                   </tr>
@@ -164,10 +156,7 @@ const Notifications: React.FC = () => {
                             })
                           }
                         />
-                        <label
-                          className='form-check-label ps-2'
-                          htmlFor='team1'
-                        ></label>
+                        <label className='form-check-label ps-2' htmlFor='team1'></label>
                       </div>
                     </td>
                     <td>
@@ -187,10 +176,7 @@ const Notifications: React.FC = () => {
                             })
                           }
                         />
-                        <label
-                          className='form-check-label ps-2'
-                          htmlFor='team2'
-                        ></label>
+                        <label className='form-check-label ps-2' htmlFor='team2'></label>
                       </div>
                     </td>
                   </tr>
@@ -214,10 +200,7 @@ const Notifications: React.FC = () => {
                             })
                           }
                         />
-                        <label
-                          className='form-check-label ps-2'
-                          htmlFor='project1'
-                        ></label>
+                        <label className='form-check-label ps-2' htmlFor='project1'></label>
                       </div>
                     </td>
                     <td>
@@ -237,10 +220,7 @@ const Notifications: React.FC = () => {
                             })
                           }
                         />
-                        <label
-                          className='form-check-label ps-2'
-                          htmlFor='project2'
-                        ></label>
+                        <label className='form-check-label ps-2' htmlFor='project2'></label>
                       </div>
                     </td>
                   </tr>
@@ -264,10 +244,7 @@ const Notifications: React.FC = () => {
                             })
                           }
                         />
-                        <label
-                          className='form-check-label ps-2'
-                          htmlFor='newsletter1'
-                        ></label>
+                        <label className='form-check-label ps-2' htmlFor='newsletter1'></label>
                       </div>
                     </td>
                     <td className='border-bottom-0'>
@@ -287,10 +264,7 @@ const Notifications: React.FC = () => {
                             })
                           }
                         />
-                        <label
-                          className='form-check-label ps-2'
-                          htmlFor='newsletter2'
-                        ></label>
+                        <label className='form-check-label ps-2' htmlFor='newsletter2'></label>
                       </div>
                     </td>
                   </tr>
@@ -300,16 +274,11 @@ const Notifications: React.FC = () => {
           </div>
 
           <div className='card-footer d-flex justify-content-end py-6 px-9'>
-            <button className='btn btn-white btn-active-light-primary me-2'>
-              Discard
-            </button>
+            <button className='btn btn-white btn-active-light-primary me-2'>Discard</button>
             <button type='button' onClick={click} className='btn btn-primary'>
               {!loading && 'Save Changes'}
               {loading && (
-                <span
-                  className='indicator-progress'
-                  style={{ display: 'block' }}
-                >
+                <span className='indicator-progress' style={{ display: 'block' }}>
                   Please wait...{' '}
                   <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
                 </span>

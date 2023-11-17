@@ -19,16 +19,12 @@ const DefaultTitle: FC = () => {
       {pageTitle && (
         <h1 className='d-flex align-items-center text-dark fw-bolder my-1 fs-3'>
           {pageTitle}
-          {pageDescription &&
-            config.pageTitle &&
-            config.pageTitle.description && (
-              <>
-                <span className='h-20px border-gray-200 border-start ms-3 mx-2'></span>
-                <small className='text-muted fs-7 fw-bold my-1 ms-1'>
-                  {pageDescription}
-                </small>
-              </>
-            )}
+          {pageDescription && config.pageTitle && config.pageTitle.description && (
+            <>
+              <span className='h-20px border-gray-200 border-start ms-3 mx-2'></span>
+              <small className='text-muted fs-7 fw-bold my-1 ms-1'>{pageDescription}</small>
+            </>
+          )}
         </h1>
       )}
       {/* end::Title */}
@@ -51,10 +47,7 @@ const DefaultTitle: FC = () => {
                   key={`${item.path}${index}`}
                 >
                   {!item.isSeparator ? (
-                    <Link
-                      className='text-muted text-hover-primary'
-                      to={item.path}
-                    >
+                    <Link className='text-muted text-hover-primary' to={item.path}>
                       {item.title}
                     </Link>
                   ) : (

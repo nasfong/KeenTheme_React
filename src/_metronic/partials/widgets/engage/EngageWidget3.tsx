@@ -41,9 +41,8 @@ const EngageWidget3: React.FC<Props> = ({
             </h3>
             <div className='text-primary fs-3 mb-9'>$ 399.99</div>
             <div className='fs-7 mb-8'>
-              Outlines keep you honest. They stop you from indulging in poorly
-              ought out metaphorsy about driving and keep you focused one the
-              overall structure of your post
+              Outlines keep you honest. They stop you from indulging in poorly ought out metaphorsy
+              about driving and keep you focused one the overall structure of your post
             </div>
             {/*begin::Info*/}
             <table className='table table-borderless align-middle fw-bold'>

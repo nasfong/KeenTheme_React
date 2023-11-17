@@ -75,10 +75,7 @@ const Role = () => {
                 <div className='d-flex flex-column text-gray-600'>
                   {role.permission instanceof Array
                     ? role.permission.map((permission, pIndex) => (
-                        <div
-                          className='d-flex align-items-center py-2'
-                          key={pIndex}
-                        >
+                        <div className='d-flex align-items-center py-2' key={pIndex}>
                           <span className='bullet bg-primary me-3'></span>
                           {permission?.name}
                         </div>

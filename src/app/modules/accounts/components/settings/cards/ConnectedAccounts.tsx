@@ -45,9 +45,8 @@ const ConnectedAccounts: React.FC = () => {
             <div className='d-flex flex-stack flex-grow-1'>
               <div className='fw-bold'>
                 <div className='fs-6 text-gray-600'>
-                  Two-factor authentication adds an extra layer of security to
-                  your account. To log in, in you'll need to provide a 4 digit
-                  amazing code.
+                  Two-factor authentication adds an extra layer of security to your account. To log
+                  in, in you'll need to provide a 4 digit amazing code.
                   <a href='#' className='fw-bolder'>
                     Learn More
                   </a>
@@ -66,15 +65,10 @@ const ConnectedAccounts: React.FC = () => {
                 />
 
                 <div className='d-flex flex-column'>
-                  <a
-                    href='#'
-                    className='fs-5 text-dark text-hover-primary fw-bolder'
-                  >
+                  <a href='#' className='fs-5 text-dark text-hover-primary fw-bolder'>
                     Google
                   </a>
-                  <div className='fs-6 fw-bold text-gray-400'>
-                    Plan properly your workflow
-                  </div>
+                  <div className='fs-6 fw-bold text-gray-400'>Plan properly your workflow</div>
                 </div>
               </div>
               <div className='d-flex justify-content-end'>
@@ -90,10 +84,7 @@ const ConnectedAccounts: React.FC = () => {
                       })
                     }
                   />
-                  <label
-                    className='form-check-label'
-                    htmlFor='googleswitch'
-                  ></label>
+                  <label className='form-check-label' htmlFor='googleswitch'></label>
                 </div>
               </div>
             </div>
@@ -109,15 +100,10 @@ const ConnectedAccounts: React.FC = () => {
                 />
 
                 <div className='d-flex flex-column'>
-                  <a
-                    href='#'
-                    className='fs-5 text-dark text-hover-primary fw-bolder'
-                  >
+                  <a href='#' className='fs-5 text-dark text-hover-primary fw-bolder'>
                     Github
                   </a>
-                  <div className='fs-6 fw-bold text-gray-400'>
-                    Keep eye on on your Repositories
-                  </div>
+                  <div className='fs-6 fw-bold text-gray-400'>Keep eye on on your Repositories</div>
                 </div>
               </div>
               <div className='d-flex justify-content-end'>
@@ -133,10 +119,7 @@ const ConnectedAccounts: React.FC = () => {
                       })
                     }
                   />
-                  <label
-                    className='form-check-label'
-                    htmlFor='githubswitch'
-                  ></label>
+                  <label className='form-check-label' htmlFor='githubswitch'></label>
                 </div>
               </div>
             </div>
@@ -152,15 +135,10 @@ const ConnectedAccounts: React.FC = () => {
                 />
 
                 <div className='d-flex flex-column'>
-                  <a
-                    href='#'
-                    className='fs-5 text-dark text-hover-primary fw-bolder'
-                  >
+                  <a href='#' className='fs-5 text-dark text-hover-primary fw-bolder'>
                     Slack
                   </a>
-                  <div className='fs-6 fw-bold text-gray-400'>
-                    Integrate Projects Discussions
-                  </div>
+                  <div className='fs-6 fw-bold text-gray-400'>Integrate Projects Discussions</div>
                 </div>
               </div>
               <div className='d-flex justify-content-end'>
@@ -175,10 +153,7 @@ const ConnectedAccounts: React.FC = () => {
                       })
                     }
                   />
-                  <label
-                    className='form-check-label'
-                    htmlFor='slackswitch'
-                  ></label>
+                  <label className='form-check-label' htmlFor='slackswitch'></label>
                 </div>
               </div>
             </div>
@@ -186,9 +161,7 @@ const ConnectedAccounts: React.FC = () => {
         </div>
 
         <div className='card-footer d-flex justify-content-end py-6 px-9'>
-          <button className='btn btn-white btn-active-light-primary me-2'>
-            Discard
-          </button>
+          <button className='btn btn-white btn-active-light-primary me-2'>Discard</button>
           <button onClick={click} className='btn btn-primary'>
             {!loading && 'Save Changes'}
             {loading && (

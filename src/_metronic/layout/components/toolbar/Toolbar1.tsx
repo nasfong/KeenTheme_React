@@ -12,10 +12,7 @@ const Toolbar1: React.FC = ({ children }) => {
       {/* begin::Container */}
       <div
         id='kt_toolbar_container'
-        className={clsx(
-          classes.toolbarContainer.join(' '),
-          'd-flex flex-stack',
-        )}
+        className={clsx(classes.toolbarContainer.join(' '), 'd-flex flex-stack')}
       >
         <DefaultTitle />
 

@@ -1,18 +1,47 @@
 import { useMutation } from '@apollo/client'
 import AdministratorModal from './components/AdministratorModal'
 import { DELETE_USER } from 'graphql/mutations/user.mutation'
-import { useCallback } from 'react'
+import { ChangeEvent, useCallback } from 'react'
 import Swal from 'sweetalert2'
 import { useState } from 'react'
 import { useUser } from 'hook/useUser'
 import { KTSVG } from '_metronic/helpers'
+import { Input } from 'components/Input'
+import { MyPagination } from 'components/MyPagination'
+
+const debounce = (fn: Function, delay: number) => {
+  let timer: NodeJS.Timeout;
+
+  return function (this: Function, ...args: any[]) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), delay);
+  };
+};
 
 const Administrator = () => {
-  const { data, loading, error, updateQuery } = useUser()
+  const { data, loading, error, updateQuery, refetch } = useUser()
   const [deleteUser] = useMutation(DELETE_USER)
 
   const [modal, setModal] = useState(false)
   const [user, setUser] = useState(null)
+  const [page, setPage] = useState(1)
+  const handlePage = (updatePage: number) => {
+    refetch({
+      page: updatePage
+    })
+    setPage(updatePage)
+  }
+
+  const handleSearch = useCallback(
+    debounce(
+      async (e: ChangeEvent<HTMLInputElement>) => {
+        await refetch({
+          search: e.target.value,
+        });
+      }
+      , 500)
+    , [refetch]
+  );
 
   const handleOpenModal = () => setModal(true)
 
@@ -42,8 +71,12 @@ const Administrator = () => {
           .then((res) => {
             if (res.data?.deleteUser) {
               // delete filter by [id]
+
               updateQuery(({ getAllUsers }) => ({
-                getAllUsers: getAllUsers.filter((user) => user.id !== id),
+                getAllUsers: {
+                  users: getAllUsers.users.filter((user) => user.id !== id),
+                  totalPages: getAllUsers.totalPages
+                }
               }))
               Swal.fire('Deleted!', 'Your file has been deleted.', 'success')
             }
@@ -62,6 +95,11 @@ const Administrator = () => {
         Create
       </button>
       <div className='card card-body'>
+        <Input
+          label='HELLO'
+          name=''
+          onChange={handleSearch}
+        />
         <table
           id='kt_customers_table'
           className='table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4'
@@ -74,13 +112,11 @@ const Administrator = () => {
             </tr>
           </thead>
           <tbody className='fw-bold text-gray-600'>
-            {data?.getAllUsers.map((user) => (
+            {data?.getAllUsers?.users.map((user) => (
               <tr key={user.id}>
                 <td>{user.username}</td>
                 <td>
-                  <span className={`badge badge-light-primary`}>
-                    {user.role.name}
-                  </span>
+                  <span className={`badge badge-light-primary`}>{user.role.name}</span>
                 </td>
                 <td className='text-end'>
                   <button
@@ -88,26 +124,28 @@ const Administrator = () => {
                     onClick={() => handleEdit(user)}
                     title='Edit'
                   >
-                    <KTSVG
-                      path='/media/icons/duotune/art/art005.svg'
-                      className='svg-icon-3'
-                    />
+                    <KTSVG path='/media/icons/duotune/art/art005.svg' className='svg-icon-3' />
                   </button>
                   <button
                     className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
                     onClick={() => handleDelete(user.id)}
                     title='Delete'
                   >
-                    <KTSVG
-                      path='/media/icons/duotune/general/gen027.svg'
-                      className='svg-icon-3'
-                    />
+                    <KTSVG path='/media/icons/duotune/general/gen027.svg' className='svg-icon-3' />
                   </button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+        {data?.getAllUsers.totalPages && data.getAllUsers.totalPages > 1 ? (
+          <MyPagination
+            page={page}
+            totalPages={data.getAllUsers.totalPages}
+            handlePagination={handlePage}
+            perPage={1}
+          />
+        ) : null}
       </div>
       <AdministratorModal
         modal={modal}

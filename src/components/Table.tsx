@@ -8,10 +8,7 @@ const Table = () => {
   if (loading) return <div>Loading</div>
   return (
     <div className='table-responsive'>
-      <table
-        id='kt_customers_table'
-        className='table align-middle table-row-dashed fs-6 gy-5'
-      >
+      <table id='kt_customers_table' className='table align-middle table-row-dashed fs-6 gy-5'>
         <thead>
           <tr className='text-gray-400 fw-bolder fs-7 gs-0'>
             <th className=''>ID</th>

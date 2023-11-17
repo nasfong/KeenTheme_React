@@ -29,11 +29,7 @@ const Layout = () => {
                         }
                       }}
                       className={({ isActive, isPending }) => {
-                        return isActive
-                          ? 'btn active'
-                          : isPending
-                            ? 'pending'
-                            : 'btn'
+                        return isActive ? 'btn active' : isPending ? 'pending' : 'btn'
                       }}
                       to={menu.url}
                     >

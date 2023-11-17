@@ -43,9 +43,7 @@ const Card2: FC<Props> = ({
         </div>
 
         <div className='card-toolbar'>
-          <span
-            className={`badge badge-light-${badgeColor} fw-bolder me-auto px-4 py-3`}
-          >
+          <span className={`badge badge-light-${badgeColor} fw-bolder me-auto px-4 py-3`}>
             {status}
           </span>
         </div>

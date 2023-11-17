@@ -28,10 +28,7 @@ const StatsWidget5: React.FC<Props> = ({ className, innerPadding = '' }) => {
 
           {/* begin::Title */}
           <div>
-            <a
-              href='#'
-              className='fs-4 text-gray-800 text-hover-primary fw-bolder'
-            >
+            <a href='#' className='fs-4 text-gray-800 text-hover-primary fw-bolder'>
               Chat Application
             </a>
             <div className='fs-7 text-muted fw-bold mt-1'>RractJS, .NET</div>

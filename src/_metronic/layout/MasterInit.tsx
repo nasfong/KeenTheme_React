@@ -11,9 +11,7 @@ import {
 
 import { useLayout } from './core'
 
-export const MasterInit: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+export const MasterInit: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { config } = useLayout()
   const isFirstRun = useRef(true)
   const pluginsInitialization = () => {

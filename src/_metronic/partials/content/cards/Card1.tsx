@@ -27,9 +27,7 @@ const Card1: FC<Props> = ({
         <div className='mb-5'>
           <div className='symbol symbol-75px symbol-circle'>
             {color ? (
-              <span
-                className={`symbol-label bg-light-${color} text-${color} fs-5 fw-bolder`}
-              >
+              <span className={`symbol-label bg-light-${color} text-${color} fs-5 fw-bolder`}>
                 {name.charAt(0)}
               </span>
             ) : (
@@ -41,10 +39,7 @@ const Card1: FC<Props> = ({
           </div>
         </div>
 
-        <a
-          href='#'
-          className='fs-4 text-gray-800 text-hover-primary fw-bolder mb-0'
-        >
+        <a href='#' className='fs-4 text-gray-800 text-hover-primary fw-bolder mb-0'>
           {name}
         </a>
 
@@ -62,10 +57,7 @@ const Card1: FC<Props> = ({
           </div>
         </div>
 
-        <button
-          className='btn btn-sm btn-light-primary fw-bolder'
-          id='kt_drawer_chat_toggle'
-        >
+        <button className='btn btn-sm btn-light-primary fw-bolder' id='kt_drawer_chat_toggle'>
           Send Message
         </button>
       </div>

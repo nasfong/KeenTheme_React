@@ -17,18 +17,12 @@ const ErrorsPage: React.FC = () => {
       <div
         className='d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed'
         style={{
-          backgroundImage: `url('${toAbsoluteUrl(
-            '/media/illustrations/progress-hd.png',
-          )}')`,
+          backgroundImage: `url('${toAbsoluteUrl('/media/illustrations/progress-hd.png')}')`,
         }}
       >
         <div className='d-flex flex-column flex-column-fluid text-center p-10 py-lg-20'>
           <a href='/dashboard' className='mb-10 pt-lg-20'>
-            <img
-              alt='Logo'
-              src={toAbsoluteUrl('/MaxBIT.png')}
-              className='h-50px mb-5'
-            />
+            <img alt='Logo' src={toAbsoluteUrl('/MaxBIT.png')} className='h-50px mb-5' />
           </a>
           <div className='pt-lg-10 mb-10'>
             <Switch>
@@ -47,10 +41,7 @@ const ErrorsPage: React.FC = () => {
             </Switch>
 
             <div className='text-center'>
-              <a
-                onClick={redirectToDashboard}
-                className='btn btn-lg btn-primary fw-bolder'
-              >
+              <a onClick={redirectToDashboard} className='btn btn-lg btn-primary fw-bolder'>
                 Go to homepage
               </a>
             </div>
@@ -66,31 +57,20 @@ const ErrorsPage: React.FC = () => {
           min-h-100px min-h-lg-350px
         '
             style={{
-              backgroundImage: `url('${toAbsoluteUrl(
-                '/media/illustrations/sketchy-1/17.png',
-              )}')`,
+              backgroundImage: `url('${toAbsoluteUrl('/media/illustrations/sketchy-1/17.png')}')`,
             }}
           ></div>
         </div>
 
         <div className='d-flex flex-center flex-column-auto p-10 d-none'>
           <div className='d-flex align-items-center fw-bold fs-6'>
-            <a
-              href='https://keenthemes.com'
-              className='text-muted text-hover-primary px-2'
-            >
+            <a href='https://keenthemes.com' className='text-muted text-hover-primary px-2'>
               About
             </a>
-            <a
-              href='mailto:support@keenthemes.com'
-              className='text-muted text-hover-primary px-2'
-            >
+            <a href='mailto:support@keenthemes.com' className='text-muted text-hover-primary px-2'>
               Contact
             </a>
-            <a
-              href='https://1.envato.market/EA4JP'
-              className='text-muted text-hover-primary px-2'
-            >
+            <a href='https://1.envato.market/EA4JP' className='text-muted text-hover-primary px-2'>
               Contact Us
             </a>
           </div>

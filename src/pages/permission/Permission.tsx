@@ -38,9 +38,7 @@ const Permission = () => {
             if (res.data?.deletePermission) {
               // delete filter by [id]
               updateQuery(({ getAllPermissions }) => ({
-                getAllPermissions: getAllPermissions.filter(
-                  (permission) => permission.id !== id,
-                ),
+                getAllPermissions: getAllPermissions.filter((permission) => permission.id !== id),
               }))
               Swal.fire('Deleted!', 'Your file has been deleted.', 'success')
             }
@@ -78,10 +76,7 @@ const Permission = () => {
                   <td>{permission.name}</td>
                   <td>
                     {permission.role.map((role) => (
-                      <span
-                        key={role.id}
-                        className={`badge badge-light-primary me-1`}
-                      >
+                      <span key={role.id} className={`badge badge-light-primary me-1`}>
                         {role.name}
                       </span>
                     ))}
@@ -92,10 +87,7 @@ const Permission = () => {
                       onClick={() => handleEdit(permission)}
                       title='Edit'
                     >
-                      <KTSVG
-                        path='/media/icons/duotune/art/art005.svg'
-                        className='svg-icon-3'
-                      />
+                      <KTSVG path='/media/icons/duotune/art/art005.svg' className='svg-icon-3' />
                     </button>
                     <button
                       className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'

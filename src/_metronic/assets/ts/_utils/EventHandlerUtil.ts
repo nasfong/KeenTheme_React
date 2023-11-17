@@ -11,16 +11,11 @@ export interface EventMeta {
 export class EventHandlerUtil {
   static store: Map<string, Map<string, EventMeta>> = new Map()
 
-  private static setEventMetasByName(
-    name: string,
-    metas: Map<string, EventMeta>,
-  ): void {
+  private static setEventMetasByName(name: string, metas: Map<string, EventMeta>): void {
     EventHandlerUtil.store.set(name, metas)
   }
 
-  private static getEventMetasByName(
-    name: string,
-  ): Map<string, EventMeta> | undefined {
+  private static getEventMetasByName(name: string): Map<string, EventMeta> | undefined {
     return EventHandlerUtil.store.get(name)
   }
 
@@ -38,10 +33,7 @@ export class EventHandlerUtil {
     EventHandlerUtil.setEventMetasByName(name, metas)
   }
 
-  private static getEventsMetaByHandlerId(
-    name: string,
-    handlerId: string,
-  ): EventMeta | undefined {
+  private static getEventsMetaByHandlerId(name: string, handlerId: string): EventMeta | undefined {
     const metas = EventHandlerUtil.store.get(name)
     if (!metas) {
       return
@@ -50,11 +42,7 @@ export class EventHandlerUtil {
     return metas.get(handlerId)
   }
 
-  private static setFiredByNameAndHandlerId(
-    name: string,
-    handerId: string,
-    fired: boolean,
-  ): void {
+  private static setFiredByNameAndHandlerId(name: string, handerId: string, fired: boolean): void {
     const meta = EventHandlerUtil.getEventsMetaByHandlerId(name, handerId)
     if (!meta) {
       return
@@ -97,12 +85,7 @@ export class EventHandlerUtil {
     EventHandlerUtil.setEventMetasByName(name, metas)
   }
 
-  public static trigger(
-    element: HTMLElement,
-    name: string,
-    target?: any,
-    e?: Event,
-  ) {
+  public static trigger(element: HTMLElement, name: string, target?: any, e?: Event) {
     if (DataUtil.has(element, name)) {
       const handlerId = DataUtil.get(element, name)
       if (!handlerId) {
@@ -127,19 +110,11 @@ export class EventHandlerUtil {
     return null
   }
 
-  public static on = function (
-    element: HTMLElement,
-    name: string,
-    callBack: Function,
-  ): void {
+  public static on = function (element: HTMLElement, name: string, callBack: Function): void {
     EventHandlerUtil.addEvent(element, name, callBack, false)
   }
 
-  public static one(
-    element: HTMLElement,
-    name: string,
-    callBack: Function,
-  ): void {
+  public static one(element: HTMLElement, name: string, callBack: Function): void {
     EventHandlerUtil.addEvent(element, name, callBack, true)
   }
 

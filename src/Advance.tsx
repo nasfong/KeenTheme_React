@@ -83,41 +83,27 @@ const Advance = () => {
   // console.log(formik)
   return (
     <form onSubmit={formik.handleSubmit}>
-      <button
-        className='btn btn-danger btn-sm'
-        onClick={() => changeLanguage('en')}
-      >
+      <button type="button" className='btn btn-danger btn-sm' onClick={() => changeLanguage('en')}>
         en
       </button>
-      <button
-        className='btn btn-dark btn-sm'
-        onClick={() => changeLanguage('kh')}
-      >
+      <button type="button" className='btn btn-dark btn-sm' onClick={() => changeLanguage('kh')}>
         kh
       </button>
 
       <Form.Group className='mb-5'>
-        <Form.Label className='form-label text-nowrap required'>
-          {t('FORM.FIRST_NAME')}
-        </Form.Label>
+        <Form.Label className='form-label text-nowrap required'>{t('FORM.FIRST_NAME')}</Form.Label>
         <InputV name='firstName' formik={formik} />
       </Form.Group>
       <Form.Group className='mb-5'>
-        <Form.Label className='form-label text-nowrap required'>
-          {t('FORM.LAST_NAME')}
-        </Form.Label>
+        <Form.Label className='form-label text-nowrap required'>{t('FORM.LAST_NAME')}</Form.Label>
         <InputV name='lastName' formik={formik} />
       </Form.Group>
       <Form.Group className='mb-5'>
-        <Form.Label className='form-label text-nowrap required'>
-          Birth
-        </Form.Label>
+        <Form.Label className='form-label text-nowrap required'>Birth</Form.Label>
         <InputV name='dob' type='date' formik={formik} />
       </Form.Group>
       <Form.Group className='mb-5'>
-        <Form.Label className='form-label text-nowrap required'>
-          Price
-        </Form.Label>
+        <Form.Label className='form-label text-nowrap required'>Price</Form.Label>
         <InputV name='price' type='number' formik={formik} />
       </Form.Group>
       <Input

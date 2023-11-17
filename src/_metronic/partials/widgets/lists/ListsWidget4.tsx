@@ -15,9 +15,7 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6 }) => {
       <div className='card-header border-0 pt-5'>
         <h3 className='card-title align-items-start flex-column'>
           <span className='card-label fw-bolder text-dark'>Trends</span>
-          <span className='text-muted mt-1 fw-bold fs-7'>
-            Latest tech trends
-          </span>
+          <span className='text-muted mt-1 fw-bold fs-7'>Latest tech trends</span>
         </h3>
         <div className='card-toolbar'>
           {/* begin::Menu */}
@@ -28,10 +26,7 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6 }) => {
             data-kt-menu-placement='bottom-end'
             data-kt-menu-flip='top-end'
           >
-            <KTSVG
-              path='/media/icons/duotune/general/gen024.svg'
-              className='svg-icon-2'
-            />
+            <KTSVG path='/media/icons/duotune/general/gen024.svg' className='svg-icon-2' />
           </button>
           <Dropdown1 />
           {/* end::Menu */}
@@ -56,15 +51,10 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6 }) => {
           {/* begin::Section */}
           <div className='d-flex align-items-center flex-row-fluid flex-wrap'>
             <div className='flex-grow-1 me-2'>
-              <a
-                href='#'
-                className='text-gray-800 text-hover-primary fs-6 fw-bolder'
-              >
+              <a href='#' className='text-gray-800 text-hover-primary fs-6 fw-bolder'>
                 Top Authors
               </a>
-              <span className='text-muted fw-bold d-block fs-7'>
-                Mark, Rowling, Esther
-              </span>
+              <span className='text-muted fw-bold d-block fs-7'>Mark, Rowling, Esther</span>
             </div>
             <span className='badge badge-light fw-bolder my-2'>+82$</span>
           </div>
@@ -87,15 +77,10 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6 }) => {
           {/* begin::Section */}
           <div className='d-flex align-items-center flex-row-fluid flex-wrap'>
             <div className='flex-grow-1 me-2'>
-              <a
-                href='#'
-                className='text-gray-800 text-hover-primary fs-6 fw-bolder'
-              >
+              <a href='#' className='text-gray-800 text-hover-primary fs-6 fw-bolder'>
                 Popular Authors
               </a>
-              <span className='text-muted fw-bold d-block fs-7'>
-                Randy, Steve, Mike
-              </span>
+              <span className='text-muted fw-bold d-block fs-7'>Randy, Steve, Mike</span>
             </div>
             <span className='badge badge-light fw-bolder my-2'>+280$</span>
           </div>
@@ -118,15 +103,10 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6 }) => {
           {/* begin::Section */}
           <div className='d-flex align-items-center flex-row-fluid flex-wrap'>
             <div className='flex-grow-1 me-2'>
-              <a
-                href='#'
-                className='text-gray-800 text-hover-primary fs-6 fw-bolder'
-              >
+              <a href='#' className='text-gray-800 text-hover-primary fs-6 fw-bolder'>
                 New Users
               </a>
-              <span className='text-muted fw-bold d-block fs-7'>
-                John, Pat, Jimmy
-              </span>
+              <span className='text-muted fw-bold d-block fs-7'>John, Pat, Jimmy</span>
             </div>
             <span className='badge badge-light fw-bolder my-2'>+4500$</span>
           </div>
@@ -149,15 +129,10 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6 }) => {
           {/* begin::Section */}
           <div className='d-flex align-items-center flex-row-fluid flex-wrap'>
             <div className='flex-grow-1 me-2'>
-              <a
-                href='#'
-                className='text-gray-800 text-hover-primary fs-6 fw-bolder'
-              >
+              <a href='#' className='text-gray-800 text-hover-primary fs-6 fw-bolder'>
                 Active Customers
               </a>
-              <span className='text-muted fw-bold d-block fs-7'>
-                Mark, Rowling, Esther
-              </span>
+              <span className='text-muted fw-bold d-block fs-7'>Mark, Rowling, Esther</span>
             </div>
             <span className='badge badge-light fw-bolder my-2'>+4500$</span>
           </div>
@@ -181,15 +156,10 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6 }) => {
             {/* begin::Section */}
             <div className='d-flex align-items-center flex-row-fluid flex-wrap'>
               <div className='flex-grow-1 me-2'>
-                <a
-                  href='#'
-                  className='text-gray-800 text-hover-primary fs-6 fw-bolder'
-                >
+                <a href='#' className='text-gray-800 text-hover-primary fs-6 fw-bolder'>
                   Bestseller Theme
                 </a>
-                <span className='text-muted fw-bold d-block fs-7'>
-                  Disco, Retro, Sports
-                </span>
+                <span className='text-muted fw-bold d-block fs-7'>Disco, Retro, Sports</span>
               </div>
               <span className='badge badge-light fw-bolder my-2'>+4500$</span>
             </div>
@@ -213,15 +183,10 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6 }) => {
             {/* begin::Section */}
             <div className='d-flex align-items-center flex-row-fluid flex-wrap'>
               <div className='flex-grow-1 me-2'>
-                <a
-                  href='#'
-                  className='text-gray-800 text-hover-primary fs-6 fw-bolder'
-                >
+                <a href='#' className='text-gray-800 text-hover-primary fs-6 fw-bolder'>
                   Fox Broker App
                 </a>
-                <span className='text-muted fw-bold d-block fs-7'>
-                  Finance, Corporate, Apps
-                </span>
+                <span className='text-muted fw-bold d-block fs-7'>Finance, Corporate, Apps</span>
               </div>
               <span className='badge badge-light fw-bolder my-2'>+4500$</span>
             </div>

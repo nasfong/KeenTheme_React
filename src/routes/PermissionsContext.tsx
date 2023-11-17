@@ -1,28 +1,15 @@
-import React, {
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-} from 'react'
+import React, { createContext, useCallback, useContext, useMemo, useState } from 'react'
 
 interface PermissionContextProps {
   handlePermission: (permission: Permission[]) => boolean
   setPermissions: (permission: Permission[]) => void
 }
 
-const PermissionsContext = createContext<PermissionContextProps | undefined>(
-  undefined,
-)
+const PermissionsContext = createContext<PermissionContextProps | undefined>(undefined)
 
-export const PermissionProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
-  const initialState: Permission[] = JSON.parse(
-    localStorage.getItem('accessControl') || '[]',
-  )
-  const [userPermissions, setUserPermissions] =
-    useState<Permission[]>(initialState)
+export const PermissionProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const initialState: Permission[] = JSON.parse(localStorage.getItem('accessControl') || '[]')
+  const [userPermissions, setUserPermissions] = useState<Permission[]>(initialState)
 
   const handlePermission = useCallback(
     (value: Permission[] = []) =>
@@ -49,7 +36,7 @@ export const PermissionProvider: React.FC<{ children: React.ReactNode }> = ({
   )
 }
 
-export const usePermissions = () => {
+export function usePermissions() {
   const context = useContext(PermissionsContext)
   if (context === undefined) {
     throw new Error('usePermissions must be used within a PermissionsProvider')

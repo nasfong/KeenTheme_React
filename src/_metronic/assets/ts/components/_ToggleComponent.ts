@@ -1,8 +1,4 @@
-import {
-  DataUtil,
-  getUniqueIdWithPrefix,
-  EventHandlerUtil,
-} from '../_utils/index'
+import { DataUtil, getUniqueIdWithPrefix, EventHandlerUtil } from '../_utils/index'
 // Helpers
 import { CookieComponent } from './_CookieComponent'
 
@@ -36,8 +32,7 @@ class ToggleComponent {
     }
     const elementToggleAttr = this.element.getAttribute('data-kt-toggle-state')
     this.state = elementToggleAttr || ''
-    this.attribute =
-      'data-kt-' + this.element.getAttribute('data-kt-toggle-name')
+    this.attribute = 'data-kt-' + this.element.getAttribute('data-kt-toggle-name')
 
     // Event Handlers
     this._handlers()
@@ -114,9 +109,7 @@ class ToggleComponent {
       return false
     }
 
-    return (
-      String(this.target.getAttribute(this.attribute)).toLowerCase() === 'on'
-    )
+    return String(this.target.getAttribute(this.attribute)).toLowerCase() === 'on'
   }
 
   ///////////////////////

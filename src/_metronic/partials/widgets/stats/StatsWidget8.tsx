@@ -38,21 +38,9 @@ const StatsWidget8: React.FC<Props> = ({ className, innerPadding = '' }) => {
             {/* end::Label */}
             {/* begin::Carousel Indicators */}
             <ol className='p-0 m-0 carousel-indicators carousel-indicators-dots'>
-              <li
-                className='ms-1 active'
-                data-bs-target='#widget8_carousel'
-                data-bs-slide-to='0'
-              />
-              <li
-                className='ms-1'
-                data-bs-target='#widget8_carousel'
-                data-bs-slide-to='1'
-              />
-              <li
-                className='ms-1'
-                data-bs-target='#widget8_carousel'
-                data-bs-slide-to='2'
-              />
+              <li className='ms-1 active' data-bs-target='#widget8_carousel' data-bs-slide-to='0' />
+              <li className='ms-1' data-bs-target='#widget8_carousel' data-bs-slide-to='1' />
+              <li className='ms-1' data-bs-target='#widget8_carousel' data-bs-slide-to='2' />
             </ol>
             {/* end::Carousel Indicators */}
           </div>
@@ -65,8 +53,7 @@ const StatsWidget8: React.FC<Props> = ({ className, innerPadding = '' }) => {
                   Admin Launch Day
                 </h3>
                 <p className='text-gray-600 fw-bold pt-3 mb-0'>
-                  To start a blog, think of a topic about and first brainstorm
-                  ways to write details
+                  To start a blog, think of a topic about and first brainstorm ways to write details
                 </p>
               </div>
             </div>
@@ -81,8 +68,7 @@ const StatsWidget8: React.FC<Props> = ({ className, innerPadding = '' }) => {
 
                 {/* begin::Text */}
                 <p className='text-gray-600 fw-bold pt-3 mb-0'>
-                  To start a blog, think of a topic about and first brainstorm
-                  ways to write details
+                  To start a blog, think of a topic about and first brainstorm ways to write details
                 </p>
                 {/* end::Text */}
               </div>

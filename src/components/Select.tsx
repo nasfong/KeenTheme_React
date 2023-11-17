@@ -10,34 +10,26 @@ export const Select = forwardRef<
       name: string
       formik?: FormikProps<any>
     }
->(
-  (
-    { formik, className, name, onChange, value, required, children, ...props },
-    ref,
-  ) => {
-    const { handleChange, handleBlur, values, touched, errors } = formik || {}
-    const isInvalid = touched && errors && touched[name] && errors[name]
+>(({ formik, className, name, onChange, value, required, children, ...props }, ref) => {
+  const { handleChange, handleBlur, values, touched, errors } = formik || {}
+  const isInvalid = touched && errors && touched[name] && errors[name]
 
-    return (
-      <>
-        <Form.Select
-          ref={ref}
-          id={props.id || name}
-          className={clsx({ 'form-select-solid': !isInvalid }, className)}
-          isInvalid={!!isInvalid}
-          name={name}
-          onChange={onChange || handleChange}
-          onBlur={handleBlur}
-          value={values ? values[name] : value}
-          {...props}
-        >
-          {children}
-        </Form.Select>
-        <Form.Control.Feedback type='invalid'>
-          {' '}
-          {isInvalid as string}
-        </Form.Control.Feedback>
-      </>
-    )
-  },
-)
+  return (
+    <>
+      <Form.Select
+        ref={ref}
+        id={props.id || name}
+        className={clsx({ 'form-select-solid': !isInvalid }, className)}
+        isInvalid={!!isInvalid}
+        name={name}
+        onChange={onChange || handleChange}
+        onBlur={handleBlur}
+        value={values ? values[name] : value}
+        {...props}
+      >
+        {children}
+      </Form.Select>
+      <Form.Control.Feedback type='invalid'> {isInvalid as string}</Form.Control.Feedback>
+    </>
+  )
+})

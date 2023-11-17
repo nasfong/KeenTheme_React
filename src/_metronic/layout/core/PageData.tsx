@@ -1,11 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, {
-  FC,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from 'react'
+import React, { FC, createContext, useContext, useEffect, useState } from 'react'
 
 export interface PageLink {
   title: string
@@ -29,9 +23,7 @@ const PageDataContext = createContext<PageDataContextModel>({
   setPageDescription: (_description: string) => {},
 })
 
-const PageDataProvider: React.FC<{ children?: React.ReactNode }> = ({
-  children,
-}) => {
+const PageDataProvider: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const [pageTitle, setPageTitle] = useState<string>('')
   const [pageDescription, setPageDescription] = useState<string>('')
   const [pageBreadcrumbs, setPageBreadcrumbs] = useState<Array<PageLink>>([])
@@ -43,11 +35,7 @@ const PageDataProvider: React.FC<{ children?: React.ReactNode }> = ({
     pageBreadcrumbs,
     setPageBreadcrumbs,
   }
-  return (
-    <PageDataContext.Provider value={value}>
-      {children}
-    </PageDataContext.Provider>
-  )
+  return <PageDataContext.Provider value={value}>{children}</PageDataContext.Provider>
 }
 
 function usePageData() {
@@ -92,9 +80,7 @@ const PageTitle: FC<Props> = ({ children, description, breadcrumbs }) => {
   return <></>
 }
 
-const PageDescription: React.FC<{ children?: React.ReactNode }> = ({
-  children,
-}) => {
+const PageDescription: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const { setPageDescription } = usePageData()
   useEffect(() => {
     if (children) {

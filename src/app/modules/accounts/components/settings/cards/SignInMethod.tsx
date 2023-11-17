@@ -3,12 +3,7 @@ import React, { useState } from 'react'
 import { KTSVG } from '../../../../../../_metronic/helpers'
 import * as Yup from 'yup'
 import { useFormik } from 'formik'
-import {
-  IUpdatePassword,
-  IUpdateEmail,
-  updatePassword,
-  updateEmail,
-} from '../SettingsModel'
+import { IUpdatePassword, IUpdateEmail, updatePassword, updateEmail } from '../SettingsModel'
 
 const emailFormValidationSchema = Yup.object().shape({
   newEmail: Yup.string()
@@ -39,10 +34,8 @@ const passwordFormValidationSchema = Yup.object().shape({
 })
 
 const SignInMethod: React.FC = () => {
-  const [emailUpdateData, setEmailUpdateData] =
-    useState<IUpdateEmail>(updateEmail)
-  const [passwordUpdateData, setPasswordUpdateData] =
-    useState<IUpdatePassword>(updatePassword)
+  const [emailUpdateData, setEmailUpdateData] = useState<IUpdateEmail>(updateEmail)
+  const [passwordUpdateData, setPasswordUpdateData] = useState<IUpdatePassword>(updatePassword)
 
   const [showEmailForm, setShowEmailForm] = useState<boolean>(false)
   const [showPasswordForm, setPasswordForm] = useState<boolean>(false)
@@ -97,14 +90,9 @@ const SignInMethod: React.FC = () => {
       <div id='kt_account_signin_method' className='collapse show'>
         <div className='card-body border-top p-9'>
           <div className='d-flex flex-wrap align-items-center'>
-            <div
-              id='kt_signin_email'
-              className={' ' + (showEmailForm && 'd-none')}
-            >
+            <div id='kt_signin_email' className={' ' + (showEmailForm && 'd-none')}>
               <div className='fs-6 fw-bolder mb-1'>Email Address</div>
-              <div className='fw-bold text-gray-600'>
-                support@keenthemes.com
-              </div>
+              <div className='fw-bold text-gray-600'>support@keenthemes.com</div>
             </div>
 
             <div
@@ -120,10 +108,7 @@ const SignInMethod: React.FC = () => {
                 <div className='row mb-6'>
                   <div className='col-lg-6 mb-4 mb-lg-0'>
                     <div className='fv-row mb-0'>
-                      <label
-                        htmlFor='emailaddress'
-                        className='form-label fs-6 fw-bolder mb-3'
-                      >
+                      <label htmlFor='emailaddress' className='form-label fs-6 fw-bolder mb-3'>
                         Enter New Email Address
                       </label>
                       <input
@@ -135,9 +120,7 @@ const SignInMethod: React.FC = () => {
                       />
                       {formik1.touched.newEmail && formik1.errors.newEmail && (
                         <div className='fv-plugins-message-container'>
-                          <div className='fv-help-block'>
-                            {formik1.errors.newEmail}
-                          </div>
+                          <div className='fv-help-block'>{formik1.errors.newEmail}</div>
                         </div>
                       )}
                     </div>
@@ -156,14 +139,11 @@ const SignInMethod: React.FC = () => {
                         id='confirmemailpassword'
                         {...formik1.getFieldProps('confirmPassword')}
                       />
-                      {formik1.touched.confirmPassword &&
-                        formik1.errors.confirmPassword && (
-                          <div className='fv-plugins-message-container'>
-                            <div className='fv-help-block'>
-                              {formik1.errors.confirmPassword}
-                            </div>
-                          </div>
-                        )}
+                      {formik1.touched.confirmPassword && formik1.errors.confirmPassword && (
+                        <div className='fv-plugins-message-container'>
+                          <div className='fv-help-block'>{formik1.errors.confirmPassword}</div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -175,10 +155,7 @@ const SignInMethod: React.FC = () => {
                   >
                     {!loading1 && 'Update Email'}
                     {loading1 && (
-                      <span
-                        className='indicator-progress'
-                        style={{ display: 'block' }}
-                      >
+                      <span className='indicator-progress' style={{ display: 'block' }}>
                         Please wait...{' '}
                         <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
                       </span>
@@ -198,10 +175,7 @@ const SignInMethod: React.FC = () => {
               </form>
             </div>
 
-            <div
-              id='kt_signin_email_button'
-              className={'ms-auto ' + (showEmailForm && 'd-none')}
-            >
+            <div id='kt_signin_email_button' className={'ms-auto ' + (showEmailForm && 'd-none')}>
               <button
                 onClick={() => {
                   setShowEmailForm(true)
@@ -216,10 +190,7 @@ const SignInMethod: React.FC = () => {
           <div className='separator separator-dashed my-6'></div>
 
           <div className='d-flex flex-wrap align-items-center mb-10'>
-            <div
-              id='kt_signin_password'
-              className={' ' + (showPasswordForm && 'd-none')}
-            >
+            <div id='kt_signin_password' className={' ' + (showPasswordForm && 'd-none')}>
               <div className='fs-6 fw-bolder mb-1'>Password</div>
               <div className='fw-bold text-gray-600'>************</div>
             </div>
@@ -237,10 +208,7 @@ const SignInMethod: React.FC = () => {
                 <div className='row mb-1'>
                   <div className='col-lg-4'>
                     <div className='fv-row mb-0'>
-                      <label
-                        htmlFor='currentpassword'
-                        className='form-label fs-6 fw-bolder mb-3'
-                      >
+                      <label htmlFor='currentpassword' className='form-label fs-6 fw-bolder mb-3'>
                         Current Password
                       </label>
                       <input
@@ -249,23 +217,17 @@ const SignInMethod: React.FC = () => {
                         id='currentpassword'
                         {...formik2.getFieldProps('currentPassword')}
                       />
-                      {formik2.touched.currentPassword &&
-                        formik2.errors.currentPassword && (
-                          <div className='fv-plugins-message-container'>
-                            <div className='fv-help-block'>
-                              {formik2.errors.currentPassword}
-                            </div>
-                          </div>
-                        )}
+                      {formik2.touched.currentPassword && formik2.errors.currentPassword && (
+                        <div className='fv-plugins-message-container'>
+                          <div className='fv-help-block'>{formik2.errors.currentPassword}</div>
+                        </div>
+                      )}
                     </div>
                   </div>
 
                   <div className='col-lg-4'>
                     <div className='fv-row mb-0'>
-                      <label
-                        htmlFor='newpassword'
-                        className='form-label fs-6 fw-bolder mb-3'
-                      >
+                      <label htmlFor='newpassword' className='form-label fs-6 fw-bolder mb-3'>
                         New Password
                       </label>
                       <input
@@ -274,23 +236,17 @@ const SignInMethod: React.FC = () => {
                         id='newpassword'
                         {...formik2.getFieldProps('newPassword')}
                       />
-                      {formik2.touched.newPassword &&
-                        formik2.errors.newPassword && (
-                          <div className='fv-plugins-message-container'>
-                            <div className='fv-help-block'>
-                              {formik2.errors.newPassword}
-                            </div>
-                          </div>
-                        )}
+                      {formik2.touched.newPassword && formik2.errors.newPassword && (
+                        <div className='fv-plugins-message-container'>
+                          <div className='fv-help-block'>{formik2.errors.newPassword}</div>
+                        </div>
+                      )}
                     </div>
                   </div>
 
                   <div className='col-lg-4'>
                     <div className='fv-row mb-0'>
-                      <label
-                        htmlFor='confirmpassword'
-                        className='form-label fs-6 fw-bolder mb-3'
-                      >
+                      <label htmlFor='confirmpassword' className='form-label fs-6 fw-bolder mb-3'>
                         Confirm New Password
                       </label>
                       <input
@@ -323,10 +279,7 @@ const SignInMethod: React.FC = () => {
                   >
                     {!loading2 && 'Update Password'}
                     {loading2 && (
-                      <span
-                        className='indicator-progress'
-                        style={{ display: 'block' }}
-                      >
+                      <span className='indicator-progress' style={{ display: 'block' }}>
                         Please wait...{' '}
                         <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
                       </span>
@@ -370,9 +323,8 @@ const SignInMethod: React.FC = () => {
               <div className='mb-3 mb-md-0 fw-bold'>
                 <h4 className='text-gray-800 fw-bolder'>Secure Your Account</h4>
                 <div className='fs-6 text-gray-600 pe-7'>
-                  Two-factor authentication adds an extra layer of security to
-                  your account. To log in, in addition you'll need to provide a
-                  6 digit code
+                  Two-factor authentication adds an extra layer of security to your account. To log
+                  in, in addition you'll need to provide a 6 digit code
                 </div>
               </div>
               <a

@@ -83,11 +83,7 @@ function Filter({ filterApply, setFilterApply }) {
               <div className='px-7 py-5'>
                 <div className='mb-10'>
                   <Form.Group as={Row} className='mb-6'>
-                    <Form.Label
-                      column
-                      lg='4'
-                      className='required form-label fw-bold fs-6'
-                    >
+                    <Form.Label column lg='4' className='required form-label fw-bold fs-6'>
                       Register Date
                     </Form.Label>
                     <Col lg='4' className='fv-row'>

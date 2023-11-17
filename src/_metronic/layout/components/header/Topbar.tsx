@@ -45,9 +45,7 @@ const Topbar: FC = () => {
   return (
     <div className='d-flex align-items-stretch flex-shrink-0'>
       {/* Search */}
-      <div
-        className={clsx('d-flex align-items-stretch', toolbarButtonMarginClass)}
-      >
+      <div className={clsx('d-flex align-items-stretch', toolbarButtonMarginClass)}>
         {/* <Search /> */}
       </div>
       {/* Activities */}
@@ -126,18 +124,10 @@ const Topbar: FC = () => {
       </div> */}
       {/* {userCan.venderContract && ( */}
       <Link
-        className={clsx(
-          'd-flex align-items-center w-md-100px me-md-20',
-          toolbarButtonMarginClass,
-        )}
+        className={clsx('d-flex align-items-center w-md-100px me-md-20', toolbarButtonMarginClass)}
         to='/vender-contract?search=1'
       >
-        <div
-          className={clsx(
-            'btn btn-icon btn-active-light-primary',
-            toolbarButtonHeightClass,
-          )}
-        >
+        <div className={clsx('btn btn-icon btn-active-light-primary', toolbarButtonHeightClass)}>
           <span
             className={clsx('text-nowrap d-none d-md-inline', {
               'text-primary': isActiveVender,
@@ -166,10 +156,7 @@ const Topbar: FC = () => {
       {/* )} */}
       {/* {userCan.aba && ( */}
       <Link
-        className={clsx(
-          'd-flex align-items-center w-md-100px',
-          toolbarButtonMarginClass,
-        )}
+        className={clsx('d-flex align-items-center w-md-100px', toolbarButtonMarginClass)}
         to='/aba-payment/114/Report/default'
       >
         <div
@@ -211,10 +198,7 @@ const Topbar: FC = () => {
       >
         {/* begin::Toggle */}
         <div
-          className={clsx(
-            'cursor-pointer symbol',
-            toolbarUserAvatarHeightClass,
-          )}
+          className={clsx('cursor-pointer symbol', toolbarUserAvatarHeightClass)}
           data-kt-menu-trigger='click'
           data-kt-menu-attach='parent'
           data-kt-menu-placement='bottom-end'
@@ -229,18 +213,12 @@ const Topbar: FC = () => {
 
       {/* begin::Aside Toggler */}
       {config.header.left === 'menu' && (
-        <div
-          className='d-flex align-items-center d-lg-none ms-2 me-n3'
-          title='Show header menu'
-        >
+        <div className='d-flex align-items-center d-lg-none ms-2 me-n3' title='Show header menu'>
           <div
             className='btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px'
             id='kt_header_menu_mobile_toggle'
           >
-            <KTSVG
-              path='/media/icons/duotune/text/txt001.svg'
-              className='svg-icon-1'
-            />
+            <KTSVG path='/media/icons/duotune/text/txt001.svg' className='svg-icon-1' />
           </div>
         </div>
       )}

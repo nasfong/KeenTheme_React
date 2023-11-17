@@ -76,17 +76,12 @@ const Basic = () => {
           password: Yup.string()
             .max(20, 'Must be 20 characters or less')
             .required('Password is required'),
-          email: Yup.string()
-            .email('Invalid email address')
-            .required('Required'),
+          email: Yup.string().email('Invalid email address').required('Required'),
           active: Yup.boolean()
             .required('Required')
             .oneOf([true], 'You must accept the terms and conditions.'),
           jobType: Yup.string()
-            .oneOf(
-              ['designer', 'development', 'product', 'other'],
-              'Invalid Job Type',
-            )
+            .oneOf(['designer', 'development', 'product', 'other'], 'Invalid Job Type')
             .required('Required'),
         })}
         onSubmit={(values, { setSubmitting }) => {
@@ -97,13 +92,7 @@ const Basic = () => {
         }}
       >
         <Form>
-          <Input
-            inline
-            label='Username'
-            name='username'
-            placeholder='username'
-            required
-          />
+          <Input inline label='Username' name='username' placeholder='username' required />
           <Input inline label='Password' name='password' type='password' />
           <Select inline label='Job Type' name='jobType' required>
             <option>Please Select</option>

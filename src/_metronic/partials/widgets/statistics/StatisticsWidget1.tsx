@@ -10,13 +10,7 @@ type Props = {
   description: string
 }
 
-const StatisticsWidget1: React.FC<Props> = ({
-  className,
-  image,
-  title,
-  time,
-  description,
-}) => {
+const StatisticsWidget1: React.FC<Props> = ({ className, image, title, time, description }) => {
   return (
     <div
       className={`card bgi-no-repeat ${className}`}
@@ -28,10 +22,7 @@ const StatisticsWidget1: React.FC<Props> = ({
     >
       {/* begin::Body */}
       <div className='card-body'>
-        <a
-          href='#'
-          className='card-title fw-bolder text-muted text-hover-primary fs-4'
-        >
+        <a href='#' className='card-title fw-bolder text-muted text-hover-primary fs-4'>
           {title}
         </a>
 

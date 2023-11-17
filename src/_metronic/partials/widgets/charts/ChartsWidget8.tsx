@@ -36,9 +36,7 @@ const ChartsWidget8: React.FC<Props> = ({ className }) => {
         <h3 className='card-title align-items-start flex-column'>
           <span className='card-label fw-bolder fs-3 mb-1'>Recent Orders</span>
 
-          <span className='text-muted fw-bold fs-7'>
-            More than 500 new orders
-          </span>
+          <span className='text-muted fw-bold fs-7'>More than 500 new orders</span>
         </h3>
 
         {/* begin::Toolbar */}

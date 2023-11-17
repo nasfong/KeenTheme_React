@@ -18,8 +18,5 @@ export type DotNestedKeys<T> = (
   : never
 
 export type UpdateQuerys<T> = <TVars extends OperationVariables>(
-  mapFn: (
-    previousQueryResult: T,
-    options: Pick<WatchQueryOptions<TVars, T>, 'variables'>,
-  ) => T,
+  mapFn: (previousQueryResult: T, options: Pick<WatchQueryOptions<TVars, T>, 'variables'>) => T,
 ) => void

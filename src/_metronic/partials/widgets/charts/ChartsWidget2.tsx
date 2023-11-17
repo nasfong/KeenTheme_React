@@ -36,9 +36,7 @@ const ChartsWidget2: React.FC<Props> = ({ className }) => {
         <h3 className='card-title align-items-start flex-column'>
           <span className='card-label fw-bolder fs-3 mb-1'>Recent Orders</span>
 
-          <span className='text-muted fw-bold fs-7'>
-            More than 500 new orders
-          </span>
+          <span className='text-muted fw-bold fs-7'>More than 500 new orders</span>
         </h3>
 
         {/* begin::Toolbar */}
@@ -71,11 +69,7 @@ const ChartsWidget2: React.FC<Props> = ({ className }) => {
       {/* begin::Body */}
       <div className='card-body'>
         {/* begin::Chart */}
-        <div
-          ref={chartRef}
-          id='kt_charts_widget_2_chart'
-          style={{ height: '350px' }}
-        ></div>
+        <div ref={chartRef} id='kt_charts_widget_2_chart' style={{ height: '350px' }}></div>
         {/* end::Chart */}
       </div>
       {/* end::Body */}

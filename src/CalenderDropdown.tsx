@@ -14,11 +14,7 @@ type props = {
 
 const s_month = new Date()
 const e_month = new Date()
-const this_month_end = new Date(
-  e_month.getFullYear(),
-  e_month.getMonth() + 1,
-  0,
-)
+const this_month_end = new Date(e_month.getFullYear(), e_month.getMonth() + 1, 0)
 const this_month_start = new Date(s_month.setDate(1))
 
 export const CalenderDropdown: React.FC<props> = ({
@@ -30,11 +26,7 @@ export const CalenderDropdown: React.FC<props> = ({
 }) => {
   const baseColor = getCSSVariableValue('--bs-' + color)
   const initState = {
-    DateStart: this_month_start
-      .toLocaleDateString('pt-br')
-      .split('/')
-      .reverse()
-      .join('-'),
+    DateStart: this_month_start.toLocaleDateString('pt-br').split('/').reverse().join('-'),
     DateEnd: '',
   }
   const handleSelect = ({ data }: any) => {
@@ -45,9 +37,7 @@ export const CalenderDropdown: React.FC<props> = ({
         ? data.startDate.getMonth() + 1
         : '0' + (data.startDate.getMonth() + 1)) +
       '-' +
-      (data.startDate.getDate() > 10
-        ? data.startDate.getDate()
-        : '0' + data.startDate.getDate())
+      (data.startDate.getDate() > 10 ? data.startDate.getDate() : '0' + data.startDate.getDate())
     const d_end =
       data.endDate.getFullYear() +
       '-' +
@@ -55,9 +45,7 @@ export const CalenderDropdown: React.FC<props> = ({
         ? data.endDate.getMonth() + 1
         : '0' + (data.endDate.getMonth() + 1)) +
       '-' +
-      (data.endDate.getDate() > 10
-        ? data.endDate.getDate()
-        : '0' + data.endDate.getDate())
+      (data.endDate.getDate() > 10 ? data.endDate.getDate() : '0' + data.endDate.getDate())
 
     setDateRange({
       ...dateRange,

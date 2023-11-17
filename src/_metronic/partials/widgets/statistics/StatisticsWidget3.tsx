@@ -11,13 +11,7 @@ type Props = {
   color: string
 }
 
-const StatisticsWidget3: React.FC<Props> = ({
-  className,
-  title,
-  description,
-  change,
-  color,
-}) => {
+const StatisticsWidget3: React.FC<Props> = ({ className, title, description, change, color }) => {
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -63,9 +57,7 @@ const StatisticsWidget3: React.FC<Props> = ({
           </div>
 
           <span className='symbol symbol-50px'>
-            <span
-              className={`symbol-label fs-5 fw-bolder bg-light-${color} text-${color}`}
-            >
+            <span className={`symbol-label fs-5 fw-bolder bg-light-${color} text-${color}`}>
               {change}
             </span>
           </span>

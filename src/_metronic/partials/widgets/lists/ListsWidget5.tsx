@@ -25,10 +25,7 @@ const ListsWidget5: React.FC<Props> = ({ className }) => {
             data-kt-menu-placement='bottom-end'
             data-kt-menu-flip='top-end'
           >
-            <KTSVG
-              path='/media/icons/duotune/general/gen024.svg'
-              className='svg-icon-2'
-            />
+            <KTSVG path='/media/icons/duotune/general/gen024.svg' className='svg-icon-2' />
           </button>
           <Dropdown1 />
           {/* end::Menu */}
@@ -42,9 +39,7 @@ const ListsWidget5: React.FC<Props> = ({ className }) => {
           {/* begin::Item */}
           <div className='timeline-item'>
             {/* begin::Label */}
-            <div className='timeline-label fw-bolder text-gray-800 fs-6'>
-              08:42
-            </div>
+            <div className='timeline-label fw-bolder text-gray-800 fs-6'>08:42</div>
             {/* end::Label */}
             {/* begin::Badge */}
             <div className='timeline-badge'>
@@ -61,9 +56,7 @@ const ListsWidget5: React.FC<Props> = ({ className }) => {
           {/* begin::Item */}
           <div className='timeline-item'>
             {/* begin::Label */}
-            <div className='timeline-label fw-bolder text-gray-800 fs-6'>
-              10:00
-            </div>
+            <div className='timeline-label fw-bolder text-gray-800 fs-6'>10:00</div>
             {/* end::Label */}
             {/* begin::Badge */}
             <div className='timeline-badge'>
@@ -80,9 +73,7 @@ const ListsWidget5: React.FC<Props> = ({ className }) => {
           {/* begin::Item */}
           <div className='timeline-item'>
             {/* begin::Label */}
-            <div className='timeline-label fw-bolder text-gray-800 fs-6'>
-              14:37
-            </div>
+            <div className='timeline-label fw-bolder text-gray-800 fs-6'>14:37</div>
             {/* end::Label */}
             {/* begin::Badge */}
             <div className='timeline-badge'>
@@ -103,9 +94,7 @@ const ListsWidget5: React.FC<Props> = ({ className }) => {
           {/* begin::Item */}
           <div className='timeline-item'>
             {/* begin::Label */}
-            <div className='timeline-label fw-bolder text-gray-800 fs-6'>
-              16:50
-            </div>
+            <div className='timeline-label fw-bolder text-gray-800 fs-6'>16:50</div>
             {/* end::Label */}
             {/* begin::Badge */}
             <div className='timeline-badge'>
@@ -122,9 +111,7 @@ const ListsWidget5: React.FC<Props> = ({ className }) => {
           {/* begin::Item */}
           <div className='timeline-item'>
             {/* begin::Label */}
-            <div className='timeline-label fw-bolder text-gray-800 fs-6'>
-              21:03
-            </div>
+            <div className='timeline-label fw-bolder text-gray-800 fs-6'>21:03</div>
             {/* end::Label */}
             {/* begin::Badge */}
             <div className='timeline-badge'>
@@ -145,9 +132,7 @@ const ListsWidget5: React.FC<Props> = ({ className }) => {
           {/* begin::Item */}
           <div className='timeline-item'>
             {/* begin::Label */}
-            <div className='timeline-label fw-bolder text-gray-800 fs-6'>
-              16:50
-            </div>
+            <div className='timeline-label fw-bolder text-gray-800 fs-6'>16:50</div>
             {/* end::Label */}
             {/* begin::Badge */}
             <div className='timeline-badge'>
@@ -164,9 +149,7 @@ const ListsWidget5: React.FC<Props> = ({ className }) => {
           {/* begin::Item */}
           <div className='timeline-item'>
             {/* begin::Label */}
-            <div className='timeline-label fw-bolder text-gray-800 fs-6'>
-              21:03
-            </div>
+            <div className='timeline-label fw-bolder text-gray-800 fs-6'>21:03</div>
             {/* end::Label */}
             {/* begin::Badge */}
             <div className='timeline-badge'>
@@ -187,9 +170,7 @@ const ListsWidget5: React.FC<Props> = ({ className }) => {
           {/* begin::Item */}
           <div className='timeline-item'>
             {/* begin::Label */}
-            <div className='timeline-label fw-bolder text-gray-800 fs-6'>
-              10:30
-            </div>
+            <div className='timeline-label fw-bolder text-gray-800 fs-6'>10:30</div>
             {/* end::Label */}
             {/* begin::Badge */}
             <div className='timeline-badge'>

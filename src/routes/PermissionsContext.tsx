@@ -32,10 +32,10 @@ export const PermissionProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   return <PermissionsContext.Provider value={contextValue}>{children}</PermissionsContext.Provider>
 }
 
-export function usePermissions() {
-  const context = useContext(PermissionsContext)
-  if (context === undefined) {
-    throw new Error('usePermissions must be used within a PermissionsProvider')
-  }
-  return context
-}
+// export function usePermissions() {
+//   const context = useContext(PermissionsContext)
+//   if (context === undefined) {
+//     throw new Error('usePermissions must be used within a PermissionsProvider')
+//   }
+//   return context
+// }

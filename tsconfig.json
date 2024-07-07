@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": [
@@ -14,7 +20,6 @@
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": "src",
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": false,
@@ -28,10 +33,25 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     // "typeRoots": ["node_modules/@types", "src/shared/*"]
+    "types": [
+      "jest"
+    ],
+    // "baseUrl": "src",
+    // "paths": {
+    //   "src/*": [
+    //     "*"
+    //   ]
+    // }
   },
   "include": [
-    "src",
-    "global.d.ts"
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
   ],
   "references": [
     {

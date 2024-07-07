@@ -8,7 +8,7 @@ import FormikModal from './FormikModal'
 import { useTranslation } from 'react-i18next'
 import ReactHookFormModal from './ReactHookFormModal'
 import ReactHookForm from './components/ReactHookForm'
-import Table from 'components/Table'
+import Table from './components/Table'
 import { Link } from 'react-router-dom'
 // import ReactQuery from './components/ReactQuery'
 
@@ -133,7 +133,7 @@ function App() {
         />
       </button>
       <div className='symbol symbol-50px me-10 mb-10'>
-        <img src={'/media/avatars/300-6.jpg'} alt='' />
+        {/* <img src={'/media/avatars/300-6.jpg'} alt='' /> */}
       </div>
     </div>
   )

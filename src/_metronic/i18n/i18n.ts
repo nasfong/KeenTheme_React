@@ -19,7 +19,7 @@ Yup.setLocale({
     max: ({ max }) => t('VALIDATION.MUST_BE_VALUE_OR_LESS', { max }),
   },
   date: {
-    min: ({ min }) => min.toString(),
+    min: ({ min }) => t('VALIDATION.MUST_BE_VALUE_OR_MORE', { min }),
     max: ({ max }) => t('VALIDATION.MUST_BE_VALUE_OR_LESS', { max }),
   },
 })

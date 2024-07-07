@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client'
-import { GET_RECIPE } from 'graphql/querys/recipe.query'
+import { GET_RECIPE } from '@/graphql/querys/recipe.query'
 
 const Table = () => {
   const { loading, error, data } = useQuery(GET_RECIPE)

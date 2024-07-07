@@ -2,9 +2,9 @@ import MenuModal from './components/MenuModal'
 import { useCallback } from 'react'
 import Swal from 'sweetalert2'
 import { useState } from 'react'
-import { KTSVG } from '_metronic/helpers'
-import { useDeleteMenu, useQueryMenu } from 'hook/useMenu'
-import { Menu as IMenu } from '__generated__/graphql'
+import { KTSVG } from '@/_metronic/helpers'
+import { useDeleteMenu, useQueryMenu } from '@/hook/useMenu'
+import { Menu as IMenu } from '@/__generated__/graphql'
 
 const Menu = () => {
   const { data, loading, error, updateQuery } = useQueryMenu()
@@ -25,7 +25,7 @@ const Menu = () => {
     handleOpenModal()
     setDataInput(data)
   }
-
+  console.log(data?.getAllMenus)
   const handleDelete = useCallback(async (id: string) => {
     Swal.fire({
       title: 'Are you sure?',

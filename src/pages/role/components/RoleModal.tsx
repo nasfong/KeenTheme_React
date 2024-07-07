@@ -112,24 +112,60 @@ const RoleModal = ({ modal, handleCloseModal, role, updateQuery }: Props) => {
             <InputV name='name' formik={formik} />
           </Form.Group>
 
-          <div className='grid'>
-            {permissionDropdown?.getPermissionDropdown
-              ? Object.keys(permissionDropdown?.getPermissionDropdown).map((key) => (
-                  <div key={key} className='card shadow-sm'>
-                    <div className='card-body p-3'>
-                      <CheckBox
-                        name={`permission`}
-                        formik={formik}
-                        defaultValue={key}
-                        checked={values.permission.includes(key)}
-                      />
-                      <span className='form-check-label text-gray-800 fw-bold'>
-                        {permissionDropdown?.getPermissionDropdown[key]}
-                      </span>
-                    </div>
+          <div
+            className='row'
+          >
+            <div className='col-2'>
+              {permissionDropdown?.getAllMenus.map(item => (
+                <span
+                  key={item.id}
+                  className='form-check form-check-sm form-check-custom form-check-solid mb-5'
+                >
+                  <CheckBox
+                    name={`permission`}
+                    formik={formik}
+                    defaultValue={item.id}
+                    checked={values.permission.includes(item.id)}
+                    id={item.name}
+                  />
+                  <label
+                    className='form-check-label text-gray-800 fw-bold'
+                    htmlFor={item.name}
+                  >
+                    {item.name}
+                  </label>
+                </span>
+              ))}
+            </div>
+            <div className='col'>
+              <div className='card shadow-sm'>
+                <div className='card-body'>
+                  <div className='row'>
+                    {permissionDropdown?.getPermissionDropdown
+                      ? Object.keys(permissionDropdown?.getPermissionDropdown).map((key) => (
+                        <span
+                          key={key}
+                          className='form-check form-check-sm form-check-custom form-check-solid col-2'
+                        >
+                          <CheckBox
+                            name={`permission`}
+                            formik={formik}
+                            defaultValue={key}
+                            checked={values.permission.includes(key)}
+                            id={permissionDropdown?.getPermissionDropdown[key]}
+                          />
+                          <label
+                            className='form-check-label text-gray-800 fw-bold'
+                            htmlFor={permissionDropdown?.getPermissionDropdown[key]}
+                          >
+                            {permissionDropdown?.getPermissionDropdown[key]}
+                          </label>
+                        </span>
+                      )) : null}
                   </div>
-                ))
-              : null}
+                </div>
+              </div>
+            </div>
           </div>
         </Modal.Body>
         <Modal.Footer>

@@ -1,4 +1,4 @@
-import { gql } from '__generated__'
+import { gql } from "@/__generated__"
 
 export const CREATE_MENU = gql(`
   mutation createMenu($input: MenuInput) {

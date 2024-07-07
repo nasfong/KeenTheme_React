@@ -76,67 +76,69 @@ const Advance = () => {
       }, 500)
     },
   })
-
+  console.log(Yup)
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng)
   }
   // console.log(formik)
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <button type='button' className='btn btn-danger btn-sm' onClick={() => changeLanguage('en')}>
+    <>
+      <button className='btn btn-danger btn-sm' onClick={() => changeLanguage('en')}>
         en
       </button>
-      <button type='button' className='btn btn-dark btn-sm' onClick={() => changeLanguage('kh')}>
+      <button className='btn btn-dark btn-sm' onClick={() => changeLanguage('kh')}>
         kh
       </button>
+      <form onSubmit={formik.handleSubmit}>
 
-      <Form.Group className='mb-5'>
-        <Form.Label className='form-label text-nowrap required'>{t('FORM.FIRST_NAME')}</Form.Label>
-        <InputV name='firstName' formik={formik} />
-      </Form.Group>
-      <Form.Group className='mb-5'>
-        <Form.Label className='form-label text-nowrap required'>{t('FORM.LAST_NAME')}</Form.Label>
-        <InputV name='lastName' formik={formik} />
-      </Form.Group>
-      <Form.Group className='mb-5'>
-        <Form.Label className='form-label text-nowrap required'>Birth</Form.Label>
-        <InputV name='dob' type='date' formik={formik} />
-      </Form.Group>
-      <Form.Group className='mb-5'>
-        <Form.Label className='form-label text-nowrap required'>Price</Form.Label>
-        <InputV name='price' type='number' formik={formik} />
-      </Form.Group>
-      <Input
-        name='phone'
-        onChange={(e) => {
-          setPhone(normalizeInput(e.target.value, phone))
-        }}
-        value={phone}
-      />
-      <CheckBox name='isRequired' formik={formik} />
+        <Form.Group className='mb-5'>
+          <Form.Label className='form-label text-nowrap required'>{t('FORM.FIRST_NAME')}</Form.Label>
+          <InputV name='firstName' formik={formik} />
+        </Form.Group>
+        <Form.Group className='mb-5'>
+          <Form.Label className='form-label text-nowrap required'>{t('FORM.LAST_NAME')}</Form.Label>
+          <InputV name='lastName' formik={formik} />
+        </Form.Group>
+        <Form.Group className='mb-5'>
+          <Form.Label className='form-label text-nowrap required'>Birth</Form.Label>
+          <InputV name='dob' type='date' formik={formik} />
+        </Form.Group>
+        <Form.Group className='mb-5'>
+          <Form.Label className='form-label text-nowrap required'>Price</Form.Label>
+          <InputV name='price' type='number' formik={formik} />
+        </Form.Group>
+        <Input
+          name='phone'
+          onChange={(e) => {
+            setPhone(normalizeInput(e.target.value, phone))
+          }}
+          value={phone}
+        />
+        <CheckBox name='isRequired' formik={formik} />
 
-      <Input inline label='FORM.EMAIL' name='email' formik={formik} />
-      <Input
-        inline
-        label='FORM.PASSWORD'
-        type='password'
-        name='password'
-        formik={formik}
-        autoComplete='on'
-      />
-      <Input
-        inline
-        label='FORM.CONFIRM_PASSWORD'
-        type='password'
-        name='confirmPassword'
-        formik={formik}
-        autoComplete='on'
-      />
+        <Input inline label='FORM.EMAIL' name='email' formik={formik} />
+        <Input
+          inline
+          label='FORM.PASSWORD'
+          type='password'
+          name='password'
+          formik={formik}
+          autoComplete='on'
+        />
+        <Input
+          inline
+          label='FORM.CONFIRM_PASSWORD'
+          type='password'
+          name='confirmPassword'
+          formik={formik}
+          autoComplete='on'
+        />
 
-      <button className='btn btn-primary btn-sm float-end' type='submit'>
-        Submit
-      </button>
-    </form>
+        <button className='btn btn-primary btn-sm float-end' type='submit'>
+          Submit
+        </button>
+      </form>
+    </>
   )
 }
 

@@ -9,20 +9,20 @@ import { FormikProps } from 'formik'
 export const CheckBox = forwardRef<
   HTMLInputElement,
   InputHTMLAttributes<HTMLInputElement> &
-    FormCheckProps & {
-      label?: DotNestedKeys<ILanguage>
-      inline?: boolean
-      name: string
-      formik?: FormikProps<any>
-      required?: boolean
-    }
+  FormCheckProps & {
+    label?: DotNestedKeys<ILanguage>
+    inline?: boolean
+    name: string
+    formik?: FormikProps<any>
+    required?: boolean
+  }
 >(({ formik, label, inline, className, name, onChange, value, required, ...props }, ref) => {
   const { t } = useTranslation()
   const { handleChange, handleBlur, values, touched, errors } = formik || {}
   const isInvalid = touched && errors && touched[name] && errors[name]
 
   return (
-    <Form.Group as={Row} className={clsx(className, { 'mb-5': !isInvalid })}>
+    <Form.Group as={Row} className={clsx(className, { '': !isInvalid })}>
       {label ? (
         <Form.Label
           column={inline}

@@ -12,7 +12,7 @@ const FormikModal: React.FC<props> = ({ show, setShow }) => {
   const handleClose = () => setShow(!show)
 
   return (
-    <Modal show={show} onHide={handleClose} size='xl'>
+    <Modal show={show} onHide={handleClose} size='xl' backdrop='static' >
       <Modal.Header>
         <Modal.Title>Modal heading</Modal.Title>
         <div className='btn btn-icon btn-sm btn-light-primary' onClick={handleClose}>

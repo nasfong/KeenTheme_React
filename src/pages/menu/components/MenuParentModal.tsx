@@ -1,12 +1,12 @@
-import { GetAllMenuParentsQuery, MenuParentInput } from '__generated__/graphql'
-import { KTSVG } from '_metronic/helpers'
-import { InputV } from 'components/InputV'
+import { GetAllMenuParentsQuery, MenuParentInput } from '@/__generated__/graphql'
+import { KTSVG } from '@/_metronic/helpers'
+import { InputV } from '@/components/InputV'
 import { useFormik } from 'formik'
-import { useCreateMenuParent, useDeleteMenuParent, useUpdateMenuParent } from 'hook/useMenu'
+import { useCreateMenuParent, useDeleteMenuParent, useUpdateMenuParent } from '@/hook/useMenu'
 import { useCallback, useState } from 'react'
 import { Col, Form, Modal, Row } from 'react-bootstrap'
 import Swal from 'sweetalert2'
-import { UpdateQuerys } from 'types/TGlobal'
+import { UpdateQuerys } from '@/types/TGlobal'
 import * as Yup from 'yup'
 
 type Props = {

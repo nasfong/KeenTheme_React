@@ -15,35 +15,61 @@ import './_metronic/assets/sass/style.scss'
 // import './_metronic/assets/sass/style.dark.scss'
 import './_metronic/assets/sass/style.react.scss'
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
-import { RouterProvider } from 'react-router-dom'
-import { router } from 'routes/Routes'
+// import { RouterProvider } from 'react-router-dom'
+// import { router } from 'routes/Routes'
 // import './_metronic/assets/sass/plugins.scss'
 import { setContext } from '@apollo/client/link/context'
-import React from 'react'
+import React, { Suspense } from 'react'
 import {
   // CssBaseline,
   ThemeProvider,
 } from '@mui/material'
-import { theme } from 'config/theme'
-import RoutesApp from 'routes/RoutesApp'
-import { PermissionProvider } from 'routes/PermissionsContext'
 import { Provider } from 'react-redux'
-import { store } from 'helpers/store'
+import { persistor, store, useAuthSelector } from './context/authentication/store'
+import { PersistGate } from 'redux-persist/integration/react'
+import { GraphqlProvider } from './layout/GraphqlProvider'
+import { theme } from '@/config/theme'
+import RoutesApp from '@/routes/RoutesApp'
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient() // Tanstack
+
+
 const httpLink = createHttpLink({
   uri: 'http://localhost:5000/graphql',
 })
-const authLink = setContext((_, { headers }) => {
-  const token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik5hc0ZvbmdzZGRkIiwicGFzc3dvcmQiOiJpcm9uMDA3MTEiLCJpYXQiOjE2OTYzMjUxMDR9.5YFF4OrWQ8UUUwjwvU8xfz456ef444G_Viqecrmu6hE'
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : '',
-    },
+// const authLink = setContext((_, { headers }) => {
+//   const token = store.getState().auth?.token
+
+//   return {
+//     headers: {
+//       ...headers,
+//       authorization: token ? `Bearer ${token}` : '',
+//     }
+//   }
+// })
+
+const authLink = setContext(async (_, { headers }) => {
+  // Your logic to check if the token is expired and refresh it
+  const { state } = useAuthSelector(state => state.auth);
+
+  if (state?.token) {
+    // Call your refresh token function
+    // Get the new token after refresh
+    const newToken = state.token; // Update this based on how you manage your refreshed token
+
+    // Return the headers with the new token
+    return {
+      headers: {
+        ...headers,
+        authorization: newToken ? `Bearer ${newToken}` : '',
+      },
+    };
   }
-})
+
+  // If the token is not expired, use the existing headers
+  return { headers };
+});
+
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
@@ -53,26 +79,31 @@ const client = new ApolloClient({
   // queryDeduplication: false
 })
 
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <QueryClientProvider client={queryClient}>
-        <ThemeProvider theme={theme}>
-          {/* <CssBaseline /> */}
-          <MasterInit>
-            <I18nextProvider i18n={i18n}>
-              <Provider store={store}>
-                <PermissionProvider>
+    <Provider store={store}>
+      <PersistGate persistor={persistor} loading={<div>Persist Loading...</div>}>
+        {/* <ApolloProvider client={client}> */}
+        <GraphqlProvider>
+          <QueryClientProvider client={queryClient}>
+            <ThemeProvider theme={theme}>
+              {/* <CssBaseline /> */}
+              <MasterInit>
+                <I18nextProvider i18n={i18n}>
                   {/* App */}
-                  <RouterProvider router={router} />
-                  {/* <RoutesApp /> */}
-                </PermissionProvider>
-              </Provider>
-            </I18nextProvider>
-          </MasterInit>
-          <ReactQueryDevtools />
-        </ThemeProvider>
-      </QueryClientProvider>
-    </ApolloProvider>
-  </React.StrictMode>,
+                  <Suspense fallback={<>Loading......................</>}>
+                    {/* <RouterProvider router={router} /> */}
+                    <RoutesApp />
+                  </Suspense>
+                </I18nextProvider>
+              </MasterInit>
+              <ReactQueryDevtools />
+            </ThemeProvider>
+          </QueryClientProvider>
+        </GraphqlProvider>
+        {/* </ApolloProvider> */}
+      </PersistGate>
+    </Provider>
+  </React.StrictMode>
 )

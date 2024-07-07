@@ -6,8 +6,8 @@ import {
   DELETE_MENU_PARENT,
   UPDATE_MENU,
   UPDATE_MENU_PARENT,
-} from 'graphql/mutations/menu.mutation'
-import { GET_ALL_MENUS, GET_ALL_MENU_PARENTS, GET_ALL_SIDE_MENUS } from 'graphql/querys/menu.query'
+} from '../graphql/mutations/menu.mutation'
+import { GET_ALL_MENUS, GET_ALL_MENU_PARENTS, GET_ALL_SIDE_MENUS } from '../graphql/querys/menu.query'
 
 // Query
 export const useQueryMenu = () => {

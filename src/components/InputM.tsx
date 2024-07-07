@@ -1,36 +1,38 @@
-import { TextField, TextFieldProps } from '@mui/material'
-import { Controller, FieldValues, Path, RegisterOptions, UseFormReturn } from 'react-hook-form'
+import { TextField, TextFieldProps } from '@mui/material';
+import { Control, Controller, FieldPath, FieldValues, RegisterOptions } from 'react-hook-form';
 
 type Props<T extends FieldValues> = TextFieldProps & {
-  rules?:
-    | Omit<
-        RegisterOptions<T, Path<T> & (string | undefined)>,
-        'valueAsNumber' | 'valueAsDate' | 'setValueAs' | 'disabled'
-      >
-    | undefined
-  methods: UseFormReturn<T, any, undefined>
-  name: Path<T>
-}
+  rules?: Omit<RegisterOptions<T, FieldPath<T>>, 'valueAsNumber' | 'valueAsDate' | 'setValueAs' | 'disabled'>;
+  control?: Control<T>;
+  name: FieldPath<T>;
+};
 
-export function InputM2<T extends FieldValues>({ methods, ...props }: Props<T>) {
-  const {
-    control,
-    formState: { errors },
-  } = methods
+export function InputM2<T extends FieldValues>({ control, ...props }: Props<T>) {
+
+  // const error = props.name.split('.').reduce<any>((obj, key) => obj?.[key], errors) as { message?: string };
+
   return (
     <Controller
       control={control}
       name={props.name}
       rules={props.rules}
-      render={({ field }) => (
+      defaultValue={'' as T[FieldPath<T>]}
+      render={({ field, fieldState }) => (
         <TextField
-          fullWidth
-          error={!!errors[props.name]}
-          helperText={errors[props.name]?.message as string}
           {...props}
           {...field}
+          fullWidth
+          margin="dense"
+          error={!!fieldState.error}
+          helperText={fieldState.error?.message}
+          label={
+            <>
+              {props.label} {' '}
+              {props.rules?.required && <span style={{ color: 'red' }}>*</span>}
+            </>
+          }
         />
       )}
     />
-  )
+  );
 }

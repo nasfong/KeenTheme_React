@@ -13,6 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
+    "\n  mutation login($input: Login) {\n    login(input: $input) {\n      token\n      message\n    }\n  }\n": types.LoginDocument,
     "\n  mutation createMenu($input: MenuInput) {\n    createMenu(input: $input) {\n      id\n      name\n      parent\n      url\n      icon\n      color\n      order\n      status\n    }\n  }\n": types.CreateMenuDocument,
     "\n  mutation updateMenu($id: ID!, $input: MenuInput) {\n    updateMenu(id: $id, input: $input) {\n      id\n      name\n      parent\n      url\n      icon\n      color\n      order\n      status\n    }\n  }\n": types.UpdateMenuDocument,
     "\n  mutation createMenuParent($input: MenuParentInput) {\n    createMenuParent(input: $input) {\n      id\n      name\n      order\n    }\n  }\n": types.CreateMenuParentDocument,
@@ -28,10 +29,11 @@ const documents = {
     "\n  mutation createUser($input: UserInput) {\n    createUser(input: $input) {\n      id\n      username\n      password\n      email\n      role {\n        id\n        name\n      }\n    }\n  }\n": types.CreateUserDocument,
     "\n  mutation UpdateUser($input: UserInput, $id: ID!) {\n    updateUser(input: $input, id: $id) {\n      id\n      username\n      password\n      email\n      role {\n        id\n        name\n      }\n    }\n  }\n": types.UpdateUserDocument,
     "\n  mutation deleteUser($id: ID!) {\n    deleteUser(id: $id)\n  }\n": types.DeleteUserDocument,
+    "\n  query GetAllCustomers {\n    getAllCustomers {\n      id\n      userId\n      name\n      age\n      phone\n    }\n  }\n": types.GetAllCustomersDocument,
     "\n  query getAllMenus {\n    getAllMenus {\n      id\n      name\n      parent\n      url\n      icon\n      color\n      order\n      status\n    }\n  }\n": types.GetAllMenusDocument,
     "\n  query getAllMenuParents {\n    getAllMenuParents {\n      id\n      name\n      order\n    }\n  }\n": types.GetAllMenuParentsDocument,
     "\n  query getAllSideMenus {\n    getAllSideMenus\n  }\n": types.GetAllSideMenusDocument,
-    "\n  query getPermissionDropdown {\n    getPermissionDropdown \n  }\n": types.GetPermissionDropdownDocument,
+    "\n  query getPermissionDropdown {\n    getPermissionDropdown \n    getAllMenus {\n      id\n      name\n      parent\n      url\n      icon\n      color\n      order\n      status\n    }\n  }\n": types.GetPermissionDropdownDocument,
     "\n  query getAllPermissions {\n    getAllPermissions {\n      id\n      name\n      role {\n        id \n        name\n      }\n    }\n  }\n": types.GetAllPermissionsDocument,
     "\n  query Recipes($amount: Int) {\n    recipes(amount: $amount) {\n      id\n      name\n      description\n      thumbsUp\n      thumbsDown\n    }\n  }\n": types.RecipesDocument,
     "\n  query getRoleDropdown {\n    getRoleDropdown \n  }\n": types.GetRoleDropdownDocument,
@@ -54,6 +56,10 @@ const documents = {
  */
 export function gql(source: string): unknown;
 
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "\n  mutation login($input: Login) {\n    login(input: $input) {\n      token\n      message\n    }\n  }\n"): (typeof documents)["\n  mutation login($input: Login) {\n    login(input: $input) {\n      token\n      message\n    }\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -117,6 +123,10 @@ export function gql(source: "\n  mutation deleteUser($id: ID!) {\n    deleteUser
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function gql(source: "\n  query GetAllCustomers {\n    getAllCustomers {\n      id\n      userId\n      name\n      age\n      phone\n    }\n  }\n"): (typeof documents)["\n  query GetAllCustomers {\n    getAllCustomers {\n      id\n      userId\n      name\n      age\n      phone\n    }\n  }\n"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function gql(source: "\n  query getAllMenus {\n    getAllMenus {\n      id\n      name\n      parent\n      url\n      icon\n      color\n      order\n      status\n    }\n  }\n"): (typeof documents)["\n  query getAllMenus {\n    getAllMenus {\n      id\n      name\n      parent\n      url\n      icon\n      color\n      order\n      status\n    }\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
@@ -129,7 +139,7 @@ export function gql(source: "\n  query getAllSideMenus {\n    getAllSideMenus\n 
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  query getPermissionDropdown {\n    getPermissionDropdown \n  }\n"): (typeof documents)["\n  query getPermissionDropdown {\n    getPermissionDropdown \n  }\n"];
+export function gql(source: "\n  query getPermissionDropdown {\n    getPermissionDropdown \n    getAllMenus {\n      id\n      name\n      parent\n      url\n      icon\n      color\n      order\n      status\n    }\n  }\n"): (typeof documents)["\n  query getPermissionDropdown {\n    getPermissionDropdown \n    getAllMenus {\n      id\n      name\n      parent\n      url\n      icon\n      color\n      order\n      status\n    }\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

@@ -8,7 +8,7 @@ import { useFormik } from 'formik'
 import { CREATE_PERMISSION, UPDATE_PERMISSION } from 'graphql/mutations/permission.mutation'
 import { GET_ROLE_DROPDOWN } from 'graphql/querys/role.query'
 import { Dispatch, SetStateAction, useEffect } from 'react'
-import { Form, Modal } from 'react-bootstrap'
+import { Col, Form, Modal, Row } from 'react-bootstrap'
 import { UpdateQuerys } from 'types/TGlobal'
 import * as Yup from 'yup'
 
@@ -35,6 +35,8 @@ const PermissionModal = ({ modal, setModal, permission, updateQuery }: Props) =>
     initialValues: {
       name: '',
       role: [],
+      // group: '',
+      // key: ''
     },
     validationSchema: Yup.object({
       name: Yup.string().required('Username is required'),
@@ -94,7 +96,7 @@ const PermissionModal = ({ modal, setModal, permission, updateQuery }: Props) =>
   }, [permission])
 
   return (
-    <Modal show={modal} onHide={handleClose}>
+    <Modal show={modal} onHide={handleClose} size='lg'>
       <Modal.Header>
         <Modal.Title>Modal heading</Modal.Title>
         <div className='btn btn-icon btn-sm btn-light-primary' onClick={handleClose}>
@@ -103,9 +105,30 @@ const PermissionModal = ({ modal, setModal, permission, updateQuery }: Props) =>
       </Modal.Header>
       <Form onSubmit={formik.handleSubmit}>
         <Modal.Body>
-          <Form.Group className='mb-5'>
-            <Form.Label className='form-label text-nowrap required'>Name</Form.Label>
-            <InputV name='name' formik={formik} />
+          <Form.Group as={Row} className='mb-5'>
+            <Col lg={6}>
+              <Form.Label className='form-label text-nowrap required'>Name</Form.Label>
+              <InputV name='name' formik={formik} />
+            </Col>
+            <Col lg={6}>
+              <Form.Label className='form-label text-nowrap required'>
+                Group
+              </Form.Label>
+              <Select name='group' formik={formik}>
+                <option value=''>Please choose</option>
+                {roleDropdown?.getRoleDropdown
+                  ? Object.keys(roleDropdown?.getRoleDropdown).map((key) => (
+                    <option key={key} value={key}>
+                      {roleDropdown?.getRoleDropdown[key]}
+                    </option>
+                  ))
+                  : null}
+              </Select>
+            </Col>
+          </Form.Group>
+          <Form.Group className='mb-5 col-8'>
+            <Form.Label className='form-label text-nowrap required'>Key Name</Form.Label>
+            <InputV name='key' formik={formik} />
           </Form.Group>
           <Form.Group className='mb-5'>
             <Form.Label column lg='4' className='form-label text-nowrap'>
@@ -115,13 +138,14 @@ const PermissionModal = ({ modal, setModal, permission, updateQuery }: Props) =>
               <option value=''>Please choose</option>
               {roleDropdown?.getRoleDropdown
                 ? Object.keys(roleDropdown?.getRoleDropdown).map((key) => (
-                    <option key={key} value={key}>
-                      {roleDropdown?.getRoleDropdown[key]}
-                    </option>
-                  ))
+                  <option key={key} value={key}>
+                    {roleDropdown?.getRoleDropdown[key]}
+                  </option>
+                ))
                 : null}
             </Select>
           </Form.Group>
+
         </Modal.Body>
         <Modal.Footer>
           <button className='btn btn-light' onClick={handleClose}>

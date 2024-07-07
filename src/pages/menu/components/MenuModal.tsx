@@ -1,13 +1,13 @@
-import { GetAllMenusQuery, Menu, MenuInput } from '__generated__/graphql'
-import { KTSVG } from '_metronic/helpers'
-import useOnceCall from 'app/utils/useOneCall'
-import { InputV } from 'components/InputV'
-import { Select } from 'components/Select'
+import { GetAllMenusQuery, Menu, MenuInput } from '@/__generated__/graphql'
+import { KTSVG } from '@/_metronic/helpers'
+import useOnceCall from '@/app/utils/useOneCall'
+import { InputV } from '@/components/InputV'
+import { Select } from '@/components/Select'
 import { useFormik } from 'formik'
-import { useCreateMenu, useQueryMenuParent, useUpdateMenu } from 'hook/useMenu'
+import { useCreateMenu, useQueryMenuParent, useUpdateMenu } from '@/hook/useMenu'
 import { useEffect, useState } from 'react'
 import { Col, Form, Modal, Row } from 'react-bootstrap'
-import { UpdateQuerys } from 'types/TGlobal'
+import { UpdateQuerys } from '@/types/TGlobal'
 import * as Yup from 'yup'
 import MenuParentModal from './MenuParentModal'
 
@@ -16,7 +16,7 @@ type Props = {
   handleCloseModal: () => void
   dataInput: Menu | null
   updateQuery: UpdateQuerys<GetAllMenusQuery>
-  duplicate?: { name?: string[]; order?: number[] }
+  duplicate?: { name?: string[]; order?: (number | undefined | null)[] }
 }
 
 const MenuModal: React.FC<Props> = ({
@@ -42,7 +42,7 @@ const MenuModal: React.FC<Props> = ({
     return { isUnique: !exitingNames?.includes(name) }
   }
 
-  const checkNumberUniqueness = async (name: number, exitingNames?: number[]) => {
+  const checkNumberUniqueness = async (name: number, exitingNames?: (number | undefined | null)[]) => {
     return { isUnique: !exitingNames?.includes(name) }
   }
   // Formik
